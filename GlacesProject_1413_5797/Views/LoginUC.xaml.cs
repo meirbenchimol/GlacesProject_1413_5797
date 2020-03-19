@@ -31,6 +31,16 @@ namespace PL.Views
             LoginVM = new LoginVM(this);
             this.DataContext = LoginVM;
         }
+
+
+        private void PasswordBox_PasswordChanged(object sender, RoutedEventArgs e)
+        {
+            if (this.DataContext != null)
+            { ((dynamic)this.DataContext).Password = ((PasswordBox)sender).Password; }
+        }
     }
    
+
+
+
 }

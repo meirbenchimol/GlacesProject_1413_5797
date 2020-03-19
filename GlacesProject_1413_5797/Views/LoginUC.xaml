@@ -7,9 +7,9 @@
              mc:Ignorable="d" 
              d:DesignHeight="200" d:DesignWidth="400">
     <Grid>
-
-        <TextBox x:Name="Id"  HorizontalAlignment="Left" Height="23" Margin="150,40,0,0" TextWrapping="Wrap" Text="{Binding Id}" VerticalAlignment="Top" Width="100" />
-        <TextBox  x:Name="Password" HorizontalAlignment="Left" Height="23" Margin="150,80,0,0" TextWrapping="Wrap" Text="{Binding Password}" VerticalAlignment="Top" Width="100"/>
-        <Button Content="Login" HorizontalAlignment="Left" Margin="150,131,0,0" VerticalAlignment="Top" Width="100"/>
+        <TextBox x:Name="Id"  HorizontalAlignment="Left" Height="23" Margin="150,30,0,0" TextWrapping="Wrap" Text="{Binding Id}" VerticalAlignment="Top" Width="100" />
+        <PasswordBox  x:Name="Password" HorizontalAlignment="Left" Height="23" Margin="150,70,0,0" PasswordChanged="PasswordBox_PasswordChanged" VerticalAlignment="Top" Width="100"/>
+        <Button Content="Login" HorizontalAlignment="Left" Margin="150,120,0,0" VerticalAlignment="Top" Width="100" />
+        <Button Content="Register" HorizontalAlignment="Left" Margin="150,160,0,0" VerticalAlignment="Top" Width="100"/>
     </Grid>
 </UserControl>

@@ -16,9 +16,7 @@ namespace PL.ViewModel
         public RegisterShopVM( RegisterShopUC registerShopUC)
         {
             CurrentModel = new RegisterShopModel();
-            this.shopUC = registerShopUC;
-
-
+            this.ShopUC = registerShopUC;
 
         }
 
@@ -48,7 +46,61 @@ namespace PL.ViewModel
             }
         }
 
-        private RegisterShopUC shopUC;
+        public string Adress
+        {
+
+            private get { return CurrentModel.MyShop.Adress; }
+            set
+            {
+                CurrentModel.MyShop.Adress = value;
+                if (PropertyChanged != null)
+                    PropertyChanged(this, new PropertyChangedEventArgs("Adress"));
+            }
+        }
+
+        public string Phone
+        {
+
+            private get { return CurrentModel.MyShop.Phone; }
+            set
+            {
+                CurrentModel.MyShop.Phone = value;
+                if (PropertyChanged != null)
+                    PropertyChanged(this, new PropertyChangedEventArgs("Phone"));
+            }
+        }
+
+
+        public string FaceBook
+        {
+
+            private get { return CurrentModel.MyShop.FaceBookLink; }
+            set
+            {
+                CurrentModel.MyShop.FaceBookLink = value;
+                if (PropertyChanged != null)
+                    PropertyChanged(this, new PropertyChangedEventArgs("FaceBookLink"));
+            }
+        }
+
+
+        public string WebSite
+        {
+            private get { return CurrentModel.MyShop.WebSiteLink; }
+            set
+            {
+                CurrentModel.MyShop.WebSiteLink = value;
+                if (PropertyChanged != null)
+                    PropertyChanged(this, new PropertyChangedEventArgs("WebSiteLink"));
+            }
+        }
+
+
+        private RegisterShopUC ShopUC;
+
+
+
+      
 
        
     }

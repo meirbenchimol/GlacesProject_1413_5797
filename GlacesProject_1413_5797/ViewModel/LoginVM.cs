@@ -21,7 +21,6 @@ namespace PL.ViewModel
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-
         private LoginUC LoginUC;
 
     }
