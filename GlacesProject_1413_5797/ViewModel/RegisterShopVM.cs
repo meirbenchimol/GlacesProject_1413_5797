@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.ComponentModel;
 using PL.Models;
 using PL.Views;
+using PL.Commands;
 
 namespace PL.ViewModel
 {
@@ -17,6 +18,8 @@ namespace PL.ViewModel
         {
             CurrentModel = new RegisterShopModel();
             this.ShopUC = registerShopUC;
+            this.MyCommand = new Command();
+            MyCommand.callComplete += registerShop;
 
         }
 
@@ -98,10 +101,19 @@ namespace PL.ViewModel
 
         private RegisterShopUC ShopUC;
 
+        public SpecialCommand MyCommand { get; set; }
 
 
-      
 
-       
+        #region  functions
+
+
+        public void RegisterShop(string obj)
+        {
+
+        }
+
+          #endregion
+
     }
 }

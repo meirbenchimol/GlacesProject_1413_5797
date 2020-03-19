@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using PL.Models;
 using PL.Views;
 using System.ComponentModel;
+using PL.Commands;
 
 namespace PL.ViewModel
 {
@@ -22,6 +23,8 @@ namespace PL.ViewModel
         public event PropertyChangedEventHandler PropertyChanged;
 
         private LoginUC LoginUC;
+
+        public SpecialCommand specialCommand;
 
     }
 }

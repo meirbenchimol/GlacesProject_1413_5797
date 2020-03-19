@@ -7,9 +7,10 @@ using System.Windows.Input;
 
 namespace PL.Commands
 {
-    public class Command :ICommand
+    public class SpecialCommand : ICommand
     {
-        public event Action callComplete;
+
+        public event Action<String> callComplete;
 
         public event EventHandler CanExecuteChanged
         {
@@ -25,9 +26,7 @@ namespace PL.Commands
         public void Execute(object parameter)
         {
             if (callComplete != null)
-            callComplete();
+                callComplete(parameter.ToString());
         }
     }
-}
-
 }
