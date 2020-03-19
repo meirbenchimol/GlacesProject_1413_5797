@@ -9,11 +9,11 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
         <TextBox HorizontalAlignment="Left" Name="ID" Text="{Binding Id}"  Height="23" Margin="355,44,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"  />
-        <TextBox HorizontalAlignment="Left"  Name="Password" Height="23" Margin="355,91,0,0" TextWrapping="Wrap" Text="{Binding Password}"  VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="355,147,0,0" TextWrapping="Wrap" Text="{Binding Adress}"  VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="355,192,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="355,246,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="355,302,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" RenderTransformOrigin="-0.005,-0.436"/>
+        <TextBox HorizontalAlignment="Left"   Name="Password" Height="23" Margin="355,91,0,0" TextWrapping="Wrap" Text="{Binding Password}"  VerticalAlignment="Top" Width="120"/>
+        <TextBox   Name="Adress" HorizontalAlignment="Left" Height="23" Margin="355,147,0,0" TextWrapping="Wrap" Text="{Binding Adress}"  VerticalAlignment="Top" Width="120"/>
+        <TextBox  Name="Phone" HorizontalAlignment="Left" Height="23" Margin="355,192,0,0" TextWrapping="Wrap" Text="{Binding Phone}" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="FaceBook" HorizontalAlignment="Left" Height="23" Margin="355,246,0,0" TextWrapping="Wrap" Text="{Binding FaceBookLink}" VerticalAlignment="Top" Width="120"/>
+        <TextBox  Name="WebSite"  HorizontalAlignment="Left" Height="23" Margin="355,302,0,0" TextWrapping="Wrap" Text="{Binding WebSiteLink}" VerticalAlignment="Top" Width="120" RenderTransformOrigin="-0.005,-0.436"/>
         <Button Content="Register" HorizontalAlignment="Left" Margin="355,372,0,0" VerticalAlignment="Top" Width="120" Height="46"/>
 
     </Grid>
