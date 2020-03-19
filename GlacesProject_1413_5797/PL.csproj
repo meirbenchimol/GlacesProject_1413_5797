@@ -68,7 +68,9 @@
     <Compile Include="Commands\Command.cs" />
     <Compile Include="Commands\SpecialCommand.cs" />
     <Compile Include="Models\LoginModel.cs" />
+    <Compile Include="Models\MainModel.cs" />
     <Compile Include="ViewModel\LoginVM.cs" />
+    <Compile Include="ViewModel\MainVM.cs" />
     <Compile Include="Views\LoginUC.xaml.cs">
       <DependentUpon>LoginUC.xaml</DependentUpon>
     </Compile>

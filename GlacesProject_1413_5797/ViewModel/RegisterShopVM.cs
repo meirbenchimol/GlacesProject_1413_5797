@@ -18,8 +18,8 @@ namespace PL.ViewModel
         {
             CurrentModel = new RegisterShopModel();
             this.ShopUC = registerShopUC;
-            this.MyCommand = new Command();
-            MyCommand.callComplete += registerShop;
+            this.MyCommand = new SpecialCommand();
+            MyCommand.callComplete += RegisterShop;
 
         }
 

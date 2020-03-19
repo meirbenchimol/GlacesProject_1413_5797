@@ -12,6 +12,10 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using PL.Models;
+using PL.ViewModel;
+using PL.Views;
+
 
 namespace GlacesProject_1413_5797
 {
@@ -20,9 +24,22 @@ namespace GlacesProject_1413_5797
     /// </summary>
     public partial class MainWindow : Window
     {
+        public MainVM mainVM;
+        public LoginUC loginUC;
+        
         public MainWindow()
         {
             InitializeComponent();
+            mainVM = new MainVM();
+            this.DataContext = mainVM;
+            
+        }
+
+        private void ShopArea(object sender, RoutedEventArgs e)
+        {
+            loginUC = new LoginUC();
+            ((MainWindow)System.Windows.Application.Current.MainWindow).inner_grid.Children.Clear();
+            ((MainWindow)System.Windows.Application.Current.MainWindow).inner_grid.Children.Add(loginUC);
         }
     }
 }
