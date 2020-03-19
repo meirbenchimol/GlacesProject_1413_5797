@@ -5,8 +5,26 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GlacesProject_1413_5797"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
+        Title="MainWindow" Height="550" Width="800">
+    <Grid  >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid HorizontalAlignment="Left"  Grid.Row="0" Width="800">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="3*"/>
+            </Grid.RowDefinitions>
+            <Button HorizontalAlignment="Right" Padding="5" Margin="15">Shop Area</Button>
+
+            <TextBlock Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="30" Text="Welcom to Ice Cream Center"></TextBlock>
+        </Grid>
+
+        <StackPanel Grid.Row="1">
+            <Button Margin="20" Width="150" Height="50">Search Ice Cream</Button>
+            <Button Margin="20" Width="150" Height="50">Comment Ice Cream </Button>
+        </StackPanel>
+
     </Grid>
 </Window>
