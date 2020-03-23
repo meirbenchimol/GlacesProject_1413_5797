@@ -131,7 +131,7 @@ namespace BL
             return MyDal.GetAllIceCream(predicate);
         }
 
-        public bool CheckIceCream(int Id, string ShopId)
+        public bool CheckIceCream(string Id, string ShopId)
         {
             return MyDal.CheckIceCream(Id, ShopId);
         }

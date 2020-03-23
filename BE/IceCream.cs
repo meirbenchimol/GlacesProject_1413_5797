@@ -18,7 +18,7 @@ namespace BE
     public class IceCream
     {
         [Key, Column(Order = 0)]
-        public int Id { get; set; }
+        public string Id { get; set; }
         [Key, Column(Order =1)]
         public string ShopId { get; set; }
 
@@ -42,6 +42,14 @@ namespace BE
         }
 
 
+        public string Image
+        {
+            get { return Image; }
+
+            set { Image = images[0]; }
+        }
+
+
         public float? Energy { get; set; }
 
         public float?  Proteins { get; set; }
@@ -56,14 +64,9 @@ namespace BE
         public List<string> Comments
         {
             get { return comments; }
+
+            set { comments = value; }
         }
-
-
-
-
-
-
-
 
     }
 }

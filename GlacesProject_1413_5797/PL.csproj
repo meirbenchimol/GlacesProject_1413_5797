@@ -67,10 +67,15 @@
     </ApplicationDefinition>
     <Compile Include="Commands\Command.cs" />
     <Compile Include="Commands\SpecialCommand.cs" />
+    <Compile Include="Models\AddIceCreamModel.cs" />
     <Compile Include="Models\LoginModel.cs" />
     <Compile Include="Models\MainModel.cs" />
+    <Compile Include="ViewModel\AddIceCreamVM.cs" />
     <Compile Include="ViewModel\LoginVM.cs" />
     <Compile Include="ViewModel\MainVM.cs" />
+    <Compile Include="Views\AddIceCreamUC.xaml.cs">
+      <DependentUpon>AddIceCreamUC.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\LoginUC.xaml.cs">
       <DependentUpon>LoginUC.xaml</DependentUpon>
     </Compile>
@@ -90,6 +95,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\AddIceCreamUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\LoginUC.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

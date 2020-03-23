@@ -53,7 +53,7 @@ namespace DAL
         }
 
 
-        public bool CheckIceCream(int ID, string ShopID)
+        public bool CheckIceCream(string ID, string ShopID)
         {
 
             using (var db = new IceCreamDB())
@@ -116,7 +116,7 @@ namespace DAL
             }
         }
 
-        public IceCream FindIceCream(int ID, string ShopId)
+        public IceCream FindIceCream(string ID, string ShopId)
         {
             using (var db = new IceCreamDB())
             {
