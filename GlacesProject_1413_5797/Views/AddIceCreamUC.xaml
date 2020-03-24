@@ -22,9 +22,7 @@
                 <DataTrigger Binding="{Binding ElementName=Id, Path=Text}" Value="">
                     <Setter Property="Button.IsEnabled" Value="False"/>
                 </DataTrigger>
-                <DataTrigger Binding="{Binding ElementName=TasteComboBox, Path=SelectedIndex}" Value="-1">
-                    <Setter Property="Button.IsEnabled" Value="False"/>
-                </DataTrigger>
+               
             </Style.Triggers>
         </Style>
         <Style x:Key="ComboBoxStyle" TargetType="ComboBox">
@@ -45,11 +43,11 @@
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
-        <Label  Content="AddIceCream"  Grid.Row="0" Height="30" FontSize="15"  FontWeight="Bold" HorizontalAlignment="Center" Margin="182,1,198,0.2" Width="120"></Label>
+        <Label  Content="Add IceCream"  Grid.Row="0" Height="30" FontSize="15"  FontWeight="Bold" HorizontalAlignment="Center" Margin="182,1,198,0.2" Width="120"></Label>
         <TextBox x:Name="ID"   Style="{StaticResource InputStyle}" Grid.Row="1" HorizontalAlignment="Left" Height="23" Margin="182,5.8,0,0"  TextWrapping="Wrap" Text="{Binding ID}" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="Description"  Style="{StaticResource InputStyle}" HorizontalAlignment="Left" Height="23" Margin="182,9.8,0,0" Grid.Row="3" Grid.RowSpan="2" TextWrapping="Wrap" Text="{Binding Description}" VerticalAlignment="Top" Width="120"/>
         <Image  x:Name="Image"  HorizontalAlignment="Left" Height="45" Margin="182,56,0,-69" Grid.Row="4" VerticalAlignment="Top" Width="120" Source="{Binding Image}" RenderTransformOrigin="0.539,1.079"/>
-        <Button Content="Add"  Command="{Binding MyCommand}"  Grid.Row="5" HorizontalAlignment="Left" Margin="182,92,0,-51.6"  VerticalAlignment="Top" Width="141" Height="18"/>
+        <Button Content="Add" BorderBrush="Black"  FontStyle="Italic"  FontWeight="Bold"  Style="{StaticResource ButtonStyle}"  Command="{Binding MyCommand}"  Grid.Row="5" HorizontalAlignment="Left" Margin="182,92,0,-51.6"  VerticalAlignment="Top" Width="141" Height="18"/>
         <TextBox  Style="{StaticResource InputStyle}" HorizontalAlignment="Left" Height="23" Margin="182,9,0,0" Grid.Row="2" TextWrapping="Wrap" Text="{Binding Taste}" VerticalAlignment="Top" Width="120"/>
 
 

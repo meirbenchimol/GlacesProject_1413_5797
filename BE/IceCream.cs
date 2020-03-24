@@ -34,6 +34,18 @@ namespace BE
         public string Description { get; set; }
 
 
+        public string Presentation
+        {
+            get {
+                string s = Id;
+                for ( int i = 0;i<taste.Count;i++)
+                {
+                    s += taste[i].ToString();
+                }
+                return s;
+               }
+        }
+
         private List<string> images = new List<string>();
 
         public List<string> Images

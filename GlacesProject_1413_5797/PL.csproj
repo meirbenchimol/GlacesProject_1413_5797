@@ -76,6 +76,9 @@
     <Compile Include="Views\AddIceCreamUC.xaml.cs">
       <DependentUpon>AddIceCreamUC.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\GraduateIceCreamUC.xaml.cs">
+      <DependentUpon>GraduateIceCreamUC.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\LoginUC.xaml.cs">
       <DependentUpon>LoginUC.xaml</DependentUpon>
     </Compile>
@@ -96,6 +99,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Views\AddIceCreamUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\GraduateIceCreamUC.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

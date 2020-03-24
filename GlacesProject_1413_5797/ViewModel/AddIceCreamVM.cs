@@ -44,19 +44,52 @@ namespace PL.ViewModel
         }
         
 
-        public List<Taste> taste
+        public string  Taste
         {
-            get { return CurrentModel.MyIC.taste; }
+            get {
+                    string s="";
+                for (int i = 0; i < CurrentModel.MyIC.taste.Count; i++)
+                    s+= CurrentModel.MyIC.taste[i].ToString() + "'";
+
+                return s;
+                            
+                 }
 
             set
             {
+                string Taste = value;
+                String[] taste = Taste.Split(',');
+                if (PropertyChanged != null)
+                    PropertyChanged(this, new PropertyChangedEventArgs("Taste"));
+                int j = 0;
+                for (int i = 0; i < Taste.Count(); i++)
+                {
 
+                    if (Taste[i].Equals(BE.Taste.Chocolate) || Taste[i].Equals(BE.Taste.Vanilla)
+                        || Taste[i].Equals(BE.Taste.Pistachio) || Taste[i].Equals(BE.Taste.Strawberry))
+                        CurrentModel.MyIC.taste[j++] = (BE.Taste)Taste[i];
+                }
+            }
+        }
+
+        public string Description
+        {
+            get { return CurrentModel.MyIC.Description; }
+            set
+            {
+                CurrentModel.MyIC.Description = value;
+                if (PropertyChanged != null)
+                    PropertyChanged(this, new PropertyChangedEventArgs("Description"));
             }
         }
 
 
+
+
         public void MyCommand_AddIceCream(string obj)
         {
+
+            CurrentModel.AddIceCream();
 
         }
 
