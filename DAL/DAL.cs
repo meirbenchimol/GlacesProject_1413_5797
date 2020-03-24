@@ -99,7 +99,7 @@ namespace DAL
         }
 
 
-        public IEnumerable<IceCream> FindListIceCream(Taste taste, float energy, float calories, float proteins, float minmark, float maxmark)
+        public IEnumerable<IceCream> FindListIceCream(Taste taste, double energy, double calories, double proteins, double minmark, double maxmark)
         {
 
             using (var db = new IceCreamDB())
@@ -110,7 +110,7 @@ namespace DAL
                             && (!(energy > (m.Energy + 10)) || (energy < (m.Energy - 10)))
                              && (!(calories > (m.Calories + 10)) || (calories < (m.Calories - 10)))
                               && (!(proteins > (m.Proteins + 10)) || (proteins < (m.Proteins - 10)))
-                              && (float)m.marks[0] >= minmark && (float)m.marks[m.marks.Count] <= maxmark  //for the evaluation
+                              && (double)m.marks[0] >= minmark && (double)m.marks[m.marks.Count] <= maxmark  //for the evaluation
                             select m;
                 return query;
             }

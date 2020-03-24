@@ -26,7 +26,7 @@
         </Grid.ColumnDefinitions>
 
         <StackPanel Grid.Row="0" Grid.Column="4" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <Button Padding="15" Click="ShopArea" >Shop Area</Button>
+            <Button Padding="15" Click="ShopArea" BorderThickness="2">Shop Area</Button>
         </StackPanel>
 
         <Grid x:Name="inner_grid" Grid.Row="1" Grid.Column="1" Grid.RowSpan="4" Grid.ColumnSpan="3">
@@ -37,10 +37,10 @@
                     <RowDefinition Height="3*"/>
                 </Grid.RowDefinitions>
 
-                <TextBlock Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="30" Text="Welcom to Ice Cream Center"></TextBlock>
+                <TextBlock Grid.Row="0" VerticalAlignment="Center" FontWeight="Bold" HorizontalAlignment="Center" FontSize="30" Text="Welcome to Ice Cream Center"></TextBlock>
                 <StackPanel Grid.Row="1" VerticalAlignment="Center">
-                    <Button Margin="20" Width="150" Height="50">Search Ice Cream</Button>
-                    <Button Margin="20" Width="150" Height="50">Comment Ice Cream</Button>
+                    <Button Margin="20" Width="150" Height="50" BorderThickness="2" FontWeight="Bold">Search Ice Cream</Button>
+                    <Button Margin="20" Width="150" Height="50" BorderThickness="2" FontWeight="Bold">Graduate Ice Cream</Button>
                 </StackPanel>
             </Grid>
 

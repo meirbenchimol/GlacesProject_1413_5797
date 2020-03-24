@@ -85,6 +85,9 @@
     <Compile Include="Views\RegisterShopUC.xaml.cs">
       <DependentUpon>RegisterShopUC.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\SearchIceCreamUC.xaml.cs">
+      <DependentUpon>SearchIceCreamUC.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -111,6 +114,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\RegisterShopUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SearchIceCreamUC.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

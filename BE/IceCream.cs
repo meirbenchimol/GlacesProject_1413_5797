@@ -62,11 +62,11 @@ namespace BE
         }
 
 
-        public float? Energy { get; set; }
+        public double? Energy { get; set; }
 
-        public float?  Proteins { get; set; }
+        public double?  Proteins { get; set; }
 
-        public float? Calories { get; set; }
+        public double? Calories { get; set; }
 
         public ArrayList marks = new ArrayList();
 
