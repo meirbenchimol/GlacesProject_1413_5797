@@ -23,6 +23,7 @@ namespace PL.Views
     public partial class GraduateIceCreamUC : UserControl
     {
 
+
         public Bl MyBl { get; set; }
         public GraduateIceCreamUC()
         {
@@ -32,21 +33,17 @@ namespace PL.Views
             IceCreamComboBox.ItemsSource = MyBl.GetAllIceCream();
             IceCreamComboBox.DisplayMemberPath = "Presentation";
             IceCreamComboBox.SelectedValuePath = "ID";
-            ShopComboBox.IsEnabled = false;
+           
         }
 
-        private void IceCream_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            IceCream selectedIC = IceCreamComboBox.SelectedItem as IceCream;
-            ShopComboBox.ItemsSource = MyBl.GetAllShop(x => x.Products.Contains(selectedIC));
-            IceCreamComboBox.DisplayMemberPath = "ID";
-            IceCreamComboBox.SelectedValuePath = "ID";
-            ShopComboBox.IsEnabled = true;
-        }
+       
 
+       
         private void Graduate(object sender, RoutedEventArgs e)
         {
-
+            IceCream Ic =  IceCreamComboBox.SelectedItem as IceCream;
+            new GraduationUC(Ic);
+            
         }
     }
 }

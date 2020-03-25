@@ -41,5 +41,19 @@ namespace BE
             get { return products; }
         }
 
+
+        public bool ShopTaste(Taste taste)
+        {
+            for(int i=0;i<=products.Count;i++)
+            {
+                if (products[i].taste.Contains(taste))
+                    return true;
+
+            }
+
+            return false;
+            
+        }
+
     }
 }

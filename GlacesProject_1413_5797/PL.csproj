@@ -68,9 +68,11 @@
     <Compile Include="Commands\Command.cs" />
     <Compile Include="Commands\SpecialCommand.cs" />
     <Compile Include="Models\AddIceCreamModel.cs" />
+    <Compile Include="Models\GraduateICModel.cs" />
     <Compile Include="Models\LoginModel.cs" />
     <Compile Include="Models\MainModel.cs" />
     <Compile Include="ViewModel\AddIceCreamVM.cs" />
+    <Compile Include="ViewModel\GraduateIceCreamVM.cs" />
     <Compile Include="ViewModel\LoginVM.cs" />
     <Compile Include="ViewModel\MainVM.cs" />
     <Compile Include="Views\AddIceCreamUC.xaml.cs">
@@ -78,6 +80,9 @@
     </Compile>
     <Compile Include="Views\GraduateIceCreamUC.xaml.cs">
       <DependentUpon>GraduateIceCreamUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\GraduationUC.xaml.cs">
+      <DependentUpon>GraduationUC.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\LoginUC.xaml.cs">
       <DependentUpon>LoginUC.xaml</DependentUpon>
@@ -106,6 +111,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\GraduateIceCreamUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\GraduationUC.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
