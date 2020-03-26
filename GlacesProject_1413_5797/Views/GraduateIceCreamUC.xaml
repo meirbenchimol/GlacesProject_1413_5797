@@ -31,7 +31,7 @@
 
         <Label Content="Select an IceCream"  HorizontalAlignment="Left" Margin="153,16,0,0" VerticalAlignment="Top" Width="120"/>
         <Button Content="Graduate" Style="{StaticResource ButtonStyle}" HorizontalAlignment="Left" Margin="153,162,0,0" VerticalAlignment="Top" Width="120" RenderTransformOrigin="-0.361,0.571" Click="Graduate"/>
-        <ComboBox Name="IceCreamComboBox"  Style="{StaticResource ComboBoxStyle}" HorizontalAlignment="Left" Margin="153,62,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="IceCream_SelectionChanged"/>
+        <ComboBox Name="IceCreamComboBox"  Style="{StaticResource ComboBoxStyle}" HorizontalAlignment="Left" Margin="153,62,0,0" VerticalAlignment="Top" Width="120" />
 
     </Grid>
 </UserControl>

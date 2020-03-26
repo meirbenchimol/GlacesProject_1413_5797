@@ -10,21 +10,25 @@ using PL.Commands;
 
 namespace PL.ViewModel
 {
-    public class LoginVM : INotifyPropertyChanged
+    public class LoginVM : 
     {
         public LoginVM(LoginUC LoginUC)
         {
             CurrentModel = new LoginModel();
             this.LoginUC = LoginUC;
+            
         }
 
         public LoginModel CurrentModel { get; set; }
 
-        public event PropertyChangedEventHandler PropertyChanged;
+        
 
         private LoginUC LoginUC;
 
         public SpecialCommand specialCommand;
+
+
+
 
     }
 }

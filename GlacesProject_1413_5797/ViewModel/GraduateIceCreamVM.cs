@@ -96,7 +96,12 @@ namespace PL.ViewModel
         public string Comments
         {
 
-            set { GraduateICModel.IceCream.Comments.Add(value); }
+            set { GraduateICModel.IceCream.Comments.Add(value);
+                if (PropertyChanged != null)
+                    PropertyChanged(this, new PropertyChangedEventArgs("Comments"));
+
+
+            }
 
 
         }
@@ -106,7 +111,13 @@ namespace PL.ViewModel
         public string Grades
         {
 
-            set { GraduateICModel.IceCream.marks.Add(value); }
+            set {
+                GraduateICModel.IceCream.marks.Add(value);
+                if (PropertyChanged != null)
+                    PropertyChanged(this, new PropertyChangedEventArgs("Grades"));
+
+
+            }
 
 
         }

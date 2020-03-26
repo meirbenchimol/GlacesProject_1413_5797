@@ -67,8 +67,8 @@
                 <RowDefinition Height="auto" />
             </Grid.RowDefinitions>
 
-            <Label Content="Your Grade : " FontWeight="Bold" Grid.Column="0"  Grid.Row="1" HorizontalAlignment="Left" Margin="10,7.2,0,0" VerticalAlignment="Top" Width="86"/>
-            <Slider Grid.Column="1" HorizontalAlignment="Left" Grid.Row="1" Margin="10,10.2,0,0" Minimum="0" Maximum="10" Value="5" VerticalAlignment="Top" Width="259"/>
+            <Label Content="Your Grade : " FontWeight="Bold" Grid.Column="0"   Grid.Row="1" HorizontalAlignment="Left" Margin="10,7.2,0,0" VerticalAlignment="Top" Width="86"/>
+            <Slider Grid.Column="1" HorizontalAlignment="Left" Grid.Row="1" Margin="10,10.2,0,0" Minimum="0" Maximum="10" Value="{Binding Grades}" VerticalAlignment="Top" Width="259"/>
             <Label Content="Comments : "  FontWeight="Bold" HorizontalAlignment="Left" Margin="10,4.4,0,0" Grid.Row="2" VerticalAlignment="Top" Width="348" Grid.ColumnSpan="2" Grid.RowSpan="3"/>
             <TextBox HorizontalAlignment="Left" Height="50" Margin="10,27.8,0,-73.8" Grid.Row="3" TextWrapping="Wrap" Text="{Binding Comments}" VerticalAlignment="Top" Width="356" Grid.ColumnSpan="2"/>
             <Image Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="55" Margin="35,76.4,0,-69" Grid.Row="6" VerticalAlignment="Top" Width="297"/>
