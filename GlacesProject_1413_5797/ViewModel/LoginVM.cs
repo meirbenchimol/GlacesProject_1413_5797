@@ -10,7 +10,7 @@ using PL.Commands;
 
 namespace PL.ViewModel
 {
-    public class LoginVM : 
+    public class LoginVM  
     {
         public LoginVM(LoginUC LoginUC)
         {

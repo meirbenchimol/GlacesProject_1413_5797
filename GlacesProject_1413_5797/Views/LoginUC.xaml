@@ -1,15 +1,102 @@
-﻿<UserControl x:Class="PL.Views.LoginUC"
+﻿<UserControl
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PL.Views"
+             xmlns:Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero" x:Class="PL.Views.LoginUC"
              mc:Ignorable="d" 
-             d:DesignHeight="200" d:DesignWidth="400">
-    <Grid>
-        <TextBox x:Name="Id"  HorizontalAlignment="Left" Height="23" Margin="150,30,0,0" TextWrapping="Wrap" Text="{Binding Id}" VerticalAlignment="Top" Width="100" />
-        <PasswordBox  x:Name="Password" HorizontalAlignment="Left" Height="23" Margin="150,70,0,0" PasswordChanged="PasswordBox_PasswordChanged" VerticalAlignment="Top" Width="100"/>
-        <Button Content="Login" HorizontalAlignment="Left" Margin="150,120,0,0" VerticalAlignment="Top" Width="100" />
-        <Button Content="Register" HorizontalAlignment="Left" Margin="150,160,0,0" VerticalAlignment="Top" Width="100"/>
+             d:DesignHeight="400" d:DesignWidth="400">
+    <UserControl.Resources>
+        <LinearGradientBrush x:Key="ButtonNormalBackground" EndPoint="0,1" StartPoint="0,0">
+            <GradientStop Color="#F3F3F3" Offset="0"/>
+            <GradientStop Color="#EBEBEB" Offset="0.5"/>
+            <GradientStop Color="#DDDDDD" Offset="0.5"/>
+            <GradientStop Color="#CDCDCD" Offset="1"/>
+        </LinearGradientBrush>
+        <SolidColorBrush x:Key="ButtonNormalBorder" Color="#FF707070"/>
+        <Style x:Key="registerButton" TargetType="{x:Type Button}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource ButtonFocusVisual}"/>
+            <Setter Property="Background" Value="{StaticResource ButtonNormalBackground}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource ButtonNormalBorder}"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Themes:ButtonChrome x:Name="Chrome" BorderBrush="{TemplateBinding BorderBrush}" Background="{TemplateBinding Background}" RenderMouseOver="{TemplateBinding IsMouseOver}" RenderPressed="{TemplateBinding IsPressed}" RenderDefaulted="{TemplateBinding IsDefaulted}" SnapsToDevicePixels="true">
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Themes:ButtonChrome>
+                        <ControlTemplate.Triggers>
+
+                            <Trigger Property="ToggleButton.IsChecked" Value="true">
+                                <Setter Property="RenderPressed" TargetName="Chrome" Value="true"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Foreground" Value="#ADADAD"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="Transparent"/>
+                                <Setter Property="ContentTemplate">
+                                    <Setter.Value>
+                                        <DataTemplate>
+                                            <TextBlock TextDecorations="Underline" Text="{TemplateBinding Content}"/>
+                                        </DataTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+    <Grid  Grid.Row="1" Grid.Column="1" Grid.RowSpan="4" Grid.ColumnSpan="4">
+        <StackPanel Margin="30,10,30,10">
+
+
+            <StackPanel.Background>
+                <SolidColorBrush Color="Azure" Opacity="0.65"/>
+            </StackPanel.Background>
+            <TextBlock Text="Sign In" HorizontalAlignment="Center"  Margin="0,15,0,40" FontFamily="Arial" 
+                       FontSize="40" 
+                       FontWeight="Bold"
+                       Foreground="#FF534C4C"/>
+            <TextBlock Text="Username" FontSize="12" Background="{x:Null}"  HorizontalAlignment="Center" MinWidth="170"/>
+            <TextBox x:Name="Id"  TextWrapping="Wrap" Text="{Binding Id}" HorizontalAlignment="Center" Padding="40,5"  VerticalAlignment="Top" 
+                 FontSize="16"
+                 BorderBrush="Black"
+                 MinWidth="170"
+                 Margin="0,0,0,20"
+                 Background="#FFF6F6F6"
+                 Foreground="DarkGray"
+                 TextAlignment="Center"/>
+            <TextBlock Text="Password" FontSize="12" Background="{x:Null}"  HorizontalAlignment="Center" MinWidth="170"/>
+
+            <PasswordBox  x:Name="Password" HorizontalAlignment="Center" Padding="40,5"  PasswordChanged="PasswordBox_PasswordChanged" VerticalAlignment="Top" 
+                 FontSize="16"
+                 MinWidth="170"
+                 BorderBrush="Black"
+                 Background="#FFF6F6F6"
+                 Foreground="DarkGray"
+                 Margin="0,0,0,20"
+                 />
+            <Button Content="Login" HorizontalAlignment="Center"  VerticalAlignment="Top"   Margin="0,0,15,10" Width="100"
+                Background="#FF64CCF1"
+                Foreground="White"
+                FontFamily="Arial"
+                Padding="5"
+                FontSize="20" 
+                Style="{DynamicResource RoundedButtonStyle}" />
+            <Button Content="Register" HorizontalAlignment="Center" Click="Register"  VerticalContentAlignment="Bottom" Background="{x:Null}" BorderBrush="{x:Null}" Margin="146,0" Style="{DynamicResource registerButton}" />
+
+
+        </StackPanel>
+
     </Grid>
 </UserControl>
+
+

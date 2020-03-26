@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using PL.Models;
 using PL.ViewModel;
+using PL;
 
 namespace PL.Views
 {
@@ -25,6 +26,7 @@ namespace PL.Views
     public partial class LoginUC : UserControl
     {
         public LoginVM LoginVM;
+        public RegisterShopVM registerShopVM;
         public LoginUC()
         {
             InitializeComponent();
@@ -38,8 +40,21 @@ namespace PL.Views
             if (this.DataContext != null)
             { ((dynamic)this.DataContext).Password = ((PasswordBox)sender).Password; }
         }
+
+
+
+        private void Register(object sender, RoutedEventArgs e)
+        {
+            RegisterShopUC registerShopUC = new RegisterShopUC();
+            registerShopVM = new RegisterShopVM(registerShopUC);
+            ((MainWindow)System.Windows.Application.Current.MainWindow).inner_grid.Children.Clear();
+            ((MainWindow)System.Windows.Application.Current.MainWindow).inner_grid.Children.Add(registerShopUC);
+
+        }
     }
    
+
+
 
 
 

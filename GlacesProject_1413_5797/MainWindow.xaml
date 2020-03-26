@@ -1,19 +1,23 @@
-﻿<Window x:Class="GlacesProject_1413_5797.MainWindow"
+﻿<Window x:Class="PL.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:GlacesProject_1413_5797"
+        xmlns:local="clr-namespace:PL"
         mc:Ignorable="d"
         Title="MainWindow" Height="550" Width="800">
+
     <Grid  >
+        <Grid.Background>
+            <ImageBrush ImageSource="image/font_ice_cream.jpg"/>
+        </Grid.Background>
         <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="79*"/>
+            <RowDefinition Height="94*"/>
+            <RowDefinition Height="86*"/>
+            <RowDefinition Height="87*"/>
+            <RowDefinition Height="86*"/>
+            <RowDefinition Height="87*"/>
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
@@ -21,35 +25,68 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
-
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <StackPanel Grid.Row="0" Grid.Column="4" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <Button Padding="15" Click="ShopArea" BorderThickness="2">Shop Area</Button>
+        <StackPanel Grid.Row="0" Grid.Column="3" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Margin="86,14,85.6,15.2" Width="146">
+            <Button  Click="ShopArea"  
+                    Background="#17a2b8"
+                    Foreground="Black" 
+                    FontSize="18"
+                    Height="50"
+                    Padding="10"
+                    FontFamily="Arial" Style="{DynamicResource RoundedButtonStyle}" Width="146" >
+                <StackPanel Orientation="Horizontal" >
+                    <Image Source="image/shopIcon.png" Width="30"  Height="30" Margin="0,0,15,0" HorizontalAlignment="Left" VerticalAlignment="Center"></Image>
+                    <TextBlock VerticalAlignment="Center" FontSize="13" FontWeight="Bold" Text="Shop Area"></TextBlock>
+                </StackPanel>
+            </Button>
+
         </StackPanel>
 
-        <Grid x:Name="inner_grid" Grid.Row="1" Grid.Column="1" Grid.RowSpan="4" Grid.ColumnSpan="3">
+        <Grid x:Name="inner_grid" Grid.Column="1" Grid.RowSpan="6" Grid.ColumnSpan="4" Margin="0.6,78,156.6,86.8">
 
-            <Grid >
+            <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="3*"/>
                 </Grid.RowDefinitions>
 
-                <TextBlock Grid.Row="0" VerticalAlignment="Center" FontWeight="Bold" HorizontalAlignment="Center" FontSize="30" Text="Welcome to Ice Cream Center"></TextBlock>
+                <TextBlock Grid.Row="0" VerticalAlignment="Center" Padding="20" HorizontalAlignment="Center" FontSize="30" Text="Welcome to Ice Cream Center" FontFamily="Arial  Bold" FontWeight="Bold" Cursor="" OpacityMask="#FFF10C0C">
+
+                    <TextBlock.Background>
+                        <SolidColorBrush Color="Azure" Opacity="0.65" />
+                    </TextBlock.Background>
+
+                </TextBlock>
+
                 <StackPanel Grid.Row="1" VerticalAlignment="Center">
-                    <Button Margin="20" Width="150" Height="50" BorderThickness="2" FontWeight="Bold">Search Ice Cream</Button>
-                    <Button Margin="20" Width="150" Height="50" BorderThickness="2" FontWeight="Bold">Graduate Ice Cream</Button>
+                    <Button   Background="#28a745"
+                    Foreground="White" 
+                    FontSize="18"
+                    Height="50"
+                    FontFamily="Arial" Style="{DynamicResource RoundedButtonStyle}" Margin="123,30,143,20"  >
+                        <StackPanel Orientation="Horizontal" >
+                            <Image Source="image/searchIcon.png" Width="30"  Height="30" Margin="0,0,15,0" HorizontalAlignment="Left" VerticalAlignment="Center"></Image>
+                            <TextBlock VerticalAlignment="Center" Text="Search Ice Cream"></TextBlock>
+                        </StackPanel>
+                    </Button>
+                    <Button   Background="#28a745"
+                    Foreground="White" 
+                    FontSize="18"
+                    Height="50"
+                    FontFamily="Arial" Style="{DynamicResource RoundedButtonStyle}" Margin="123,20,143,20"  >
+                        <StackPanel Orientation="Horizontal" >
+                            <Image Source="image/commentIcon.png" Width="30"  Height="30" Margin="0,0,15,0" HorizontalAlignment="Left" VerticalAlignment="Center"></Image>
+                            <TextBlock VerticalAlignment="Center" Text="Comment Ice Cream"></TextBlock>
+                        </StackPanel>
+                    </Button>
                 </StackPanel>
             </Grid>
-
-            
-
         </Grid>
 
 
-       
+
 
     </Grid>
 </Window>

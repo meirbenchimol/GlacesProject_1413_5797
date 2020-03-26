@@ -17,7 +17,7 @@ using PL.ViewModel;
 using PL.Views;
 
 
-namespace GlacesProject_1413_5797
+namespace PL
 {
     /// <summary>
     /// Logique d'interaction pour MainWindow.xaml

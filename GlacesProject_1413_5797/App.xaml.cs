@@ -6,7 +6,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace GlacesProject_1413_5797
+namespace PL
+
 {
     /// <summary>
     /// Logique d'interaction pour App.xaml
