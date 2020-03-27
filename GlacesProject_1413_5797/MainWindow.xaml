@@ -3,15 +3,17 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:PL"
         mc:Ignorable="d"
-        Title="MainWindow" Height="550" Width="800">
+        Title="MainWindow" Height="600" Width="800" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None">
 
     <Grid  >
         <Grid.Background>
             <ImageBrush ImageSource="image/font_ice_cream.jpg"/>
         </Grid.Background>
         <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
             <RowDefinition Height="79*"/>
             <RowDefinition Height="94*"/>
             <RowDefinition Height="86*"/>
@@ -28,23 +30,39 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <StackPanel Grid.Row="0" Grid.Column="3" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Margin="86,14,85.6,15.2" Width="146">
-            <Button  Click="ShopArea"  
+        <Grid Grid.Row="0" Grid.ColumnSpan="5" Background="#FFCAE2F7">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right"  Background="{x:Null}" >
+                <Button x:Name="ButtonHome" Width="30" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" Style="{StaticResource ButtonMeir}" Click="ButtonHome_Click">
+                    <materialDesign:PackIcon Width="25" Height="25" Kind="Home" Focusable="False"/>
+                </Button>
+                <Button  x:Name="ButtonPower" Width="30" Height="30" Foreground="Black"  Background="{x:Null}" BorderBrush="{x:Null}" Click="ButtonPower_Click" Style="{StaticResource ButtonMeir}" >
+                    <materialDesign:PackIcon Kind="Power" Width="27" Height="27"  ></materialDesign:PackIcon>
+                </Button>
+            </StackPanel>
+        </Grid>
+
+        <Grid x:Name="homeGrid" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5" Grid.RowSpan="7">
+            
+        </Grid>
+
+        <Grid x:Name="shopAreaGrid" Grid.Row="1" Grid.Column="3" Grid.ColumnSpan="2">
+            <StackPanel   HorizontalAlignment="Right" VerticalAlignment="Center" Margin="30,10" Height="55"  Width="150" >
+                <Button  Click="ShopArea"  
                     Background="#17a2b8"
                     Foreground="Black" 
                     FontSize="18"
-                    Height="50"
                     Padding="10"
-                    FontFamily="Arial" Style="{DynamicResource RoundedButtonStyle}" Width="146" >
-                <StackPanel Orientation="Horizontal" >
-                    <Image Source="image/shopIcon.png" Width="30"  Height="30" Margin="0,0,15,0" HorizontalAlignment="Left" VerticalAlignment="Center"></Image>
-                    <TextBlock VerticalAlignment="Center" FontSize="13" FontWeight="Bold" Text="Shop Area"></TextBlock>
-                </StackPanel>
-            </Button>
+                    FontFamily="Arial" Style="{DynamicResource RoundedButtonStyle}"  >
+                    <StackPanel Orientation="Horizontal" >
+                        <Image Source="image/shopIcon.png" Width="30"  Height="30" Margin="0,0,15,0" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                        <TextBlock VerticalAlignment="Center" FontSize="13" FontWeight="Bold" Text="Shop Area"/>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+        </Grid>
+        
 
-        </StackPanel>
-
-        <Grid x:Name="inner_grid" Grid.Column="1" Grid.RowSpan="6" Grid.ColumnSpan="4" Margin="0.6,78,156.6,86.8">
+        <Grid x:Name="inner_grid" Grid.Row="1" Grid.Column="1" Grid.RowSpan="6" Grid.ColumnSpan="4" Margin="0.6,78,156.6,86.8">
 
             <Grid>
                 <Grid.RowDefinitions>
@@ -65,20 +83,22 @@
                     Foreground="White" 
                     FontSize="18"
                     Height="50"
-                    FontFamily="Arial" Style="{DynamicResource RoundedButtonStyle}" Margin="123,30,143,20"  >
+                    FontFamily="Arial" Style="{DynamicResource RoundedButtonStyle}" Margin="123,30,104,20"  >
                         <StackPanel Orientation="Horizontal" >
-                            <Image Source="image/searchIcon.png" Width="30"  Height="30" Margin="0,0,15,0" HorizontalAlignment="Left" VerticalAlignment="Center"></Image>
-                            <TextBlock VerticalAlignment="Center" Text="Search Ice Cream"></TextBlock>
+                            <Image Source="image/searchIcon.png" Width="30"  Height="30" Margin="0,0,15,0" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                            <TextBlock VerticalAlignment="Center" Text="Search Ice Cream"/>
                         </StackPanel>
                     </Button>
                     <Button   Background="#28a745"
                     Foreground="White" 
                     FontSize="18"
+                    Padding="10"
+                    MinWidth="190"
                     Height="50"
-                    FontFamily="Arial" Style="{DynamicResource RoundedButtonStyle}" Margin="123,20,143,20"  >
+                    FontFamily="Arial" Style="{DynamicResource RoundedButtonStyle}" Margin="123,20,104,20"  >
                         <StackPanel Orientation="Horizontal" >
-                            <Image Source="image/commentIcon.png" Width="30"  Height="30" Margin="0,0,15,0" HorizontalAlignment="Left" VerticalAlignment="Center"></Image>
-                            <TextBlock VerticalAlignment="Center" Text="Comment Ice Cream"></TextBlock>
+                            <Image Source="image/commentIcon.png" Width="30"  Height="30" Margin="0,0,15,0" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                            <TextBlock VerticalAlignment="Center" Text="Comment Ice Cream"/>
                         </StackPanel>
                     </Button>
                 </StackPanel>
