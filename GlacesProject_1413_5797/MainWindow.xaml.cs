@@ -39,7 +39,17 @@ namespace PL
         {
             loginUC = new LoginUC();
             ((MainWindow)System.Windows.Application.Current.MainWindow).inner_grid.Children.Clear();
+            ((MainWindow)System.Windows.Application.Current.MainWindow).shopAreaGrid.Children.Clear();
             ((MainWindow)System.Windows.Application.Current.MainWindow).inner_grid.Children.Add(loginUC);
+        }
+
+        private void ButtonPower_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+
+        private void ButtonHome_Click(object sender, RoutedEventArgs e)
+        {
         }
     }
 }
