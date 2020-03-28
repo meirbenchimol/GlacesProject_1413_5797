@@ -17,7 +17,7 @@ namespace GlacesProject_1413_5797.Views
     /// <summary>
     /// Interaction logic for ShopAreaUC.xaml
     /// </summary>
-    public partial class ShopAreaUC : 
+    public partial class ShopAreaUC  
     {
         public ShopAreaUC()
         {

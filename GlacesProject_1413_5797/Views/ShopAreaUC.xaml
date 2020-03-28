@@ -2,10 +2,11 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GlacesProject_1413_5797.Views"
         mc:Ignorable="d"
-        Title="ShopAreaUC" Height="450" Width="800">
+        Title="ShopAreaUC" Height="560" Width="900">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
@@ -17,7 +18,7 @@
 
         <Grid Grid.Row="0"  >
             <Grid.RowDefinitions>
-                <RowDefinition Height="160"/>
+                <RowDefinition Height="190"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <Grid.Background>
@@ -31,10 +32,109 @@
             </Grid.Effect>
 
             <Grid Grid.Row="0" >
-                
+
+                <Ellipse Width="140" Height="140" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,15" Stroke="Azure" >
+                    <Ellipse.Fill >
+                        <ImageBrush ImageSource="../Image/font_ice_cream.jpg" Stretch="Fill"  AlignmentX="Center" AlignmentY="Center" >
+                        </ImageBrush>
+                    </Ellipse.Fill>
+                </Ellipse>
+                <TextBlock Text="Shop Name" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="20" FontWeight="Bold" FontFamily="Arial"/>
             </Grid>
+
+            <StackPanel Grid.Row="1" VerticalAlignment="top" Margin="0,30">
+                <Grid Margin="13,3" Height="33">
+                    <materialDesign:PackIcon Kind="AddressMarker" HorizontalAlignment="Left" VerticalAlignment="Top"  />
+                    <TextBlock Margin="20,0,0,0" TextWrapping="Wrap" Text="15 rue Gerard Philipe 31130 Balma"  HorizontalAlignment="Left" Width="125"></TextBlock>
+                </Grid>
+                <Grid Margin="13,3" Height="33">
+                    <materialDesign:PackIcon Kind="Phone" HorizontalAlignment="Left" VerticalAlignment="Top"  />
+                    <TextBlock Margin="20,0,0,0" TextWrapping="Wrap" Text="05 62 52 12 55"  HorizontalAlignment="Left" Width="125"></TextBlock>
+                </Grid>
+                <Grid Margin="13,3" Height="33">
+                    <materialDesign:PackIcon Kind="Web" HorizontalAlignment="Left" VerticalAlignment="Top"  />
+                    <TextBlock Margin="20,0,0,0" TextWrapping="Wrap" Text="www.shop.com"  HorizontalAlignment="Left" Width="125"></TextBlock>
+                </Grid>
+                <Grid Margin="13,3" Height="33">
+                    <materialDesign:PackIcon Kind="Facebook" HorizontalAlignment="Left" VerticalAlignment="Top"  />
+                    <TextBlock Margin="20,0,0,0" TextWrapping="Wrap" Text="www.facebook/shopname.com"  HorizontalAlignment="Left" Width="125"></TextBlock>
+                </Grid>
+            </StackPanel>
+
+            <StackPanel Grid.Row="1" VerticalAlignment="Bottom">
+                <Button  Background="#ffc107" Margin="10" Padding="5" Style="{StaticResource RoundedButtonStyle}">
+                    <Grid Width="100" >
+                        <materialDesign:PackIcon Kind="Update" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold" />
+                        <TextBlock Text="UPDATE" FontWeight="Bold" HorizontalAlignment="Center"></TextBlock>
+                    </Grid>
+                </Button>
+            </StackPanel>
             
-            
+   
+        </Grid>
+
+        <Grid Grid.Column="1">
+            <Grid.Background>
+                <ImageBrush ImageSource="../Image/font_ice_cream.jpg" Stretch="fill" Opacity="0.2"/>
+            </Grid.Background>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="50"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <ScrollViewer>
+                <Grid  x:Name="ice_cream_grid" Grid.Row="0">
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="200"></RowDefinition>
+                        <RowDefinition Height="200"></RowDefinition>
+                        <RowDefinition Height="200"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid Grid.Row="0" Grid.Column="0" >
+                        
+                        <Grid Background="White" Margin="20,30,20,20">
+                            <Grid.Effect>
+                                <DropShadowEffect RenderingBias="Quality" BlurRadius="10" ShadowDepth="1" Color="#FFAFD5F7" />
+                            </Grid.Effect>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"></RowDefinition>
+                                <RowDefinition Height="50"></RowDefinition>
+                            </Grid.RowDefinitions>
+
+                            <StackPanel Grid.Row="1">
+                                <TextBlock Text="Ice Crream Chocolate" Padding="5" HorizontalAlignment="Center"></TextBlock>
+                            </StackPanel>
+                        </Grid>
+
+                        <Border CornerRadius="  5 5 2 2 "  Margin="30 15 30 70">
+                            <Border.Background>
+                                <ImageBrush ImageSource="../image/iceCream_choco.jpg"/>
+                            </Border.Background>
+                        </Border>
+                    </Grid>
+                </Grid>
+
+                
+
+            </ScrollViewer>
+           
+
+
+            <StackPanel Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Button  Background="#007bff" Margin="10" Width="150" Padding="10" Style="{StaticResource RoundedButtonStyle}">
+                    <Grid Width="150" >
+                        <materialDesign:PackIcon Kind="Plus" HorizontalAlignment="Left" Foreground="White" VerticalAlignment="Center"  />
+                        <TextBlock Text="Add Ice Cream" FontWeight="Bold" HorizontalAlignment="Center" Foreground="White"></TextBlock>
+                    </Grid>
+                </Button>
+            </StackPanel>
+
         </Grid>
 
     </Grid>
