@@ -6,9 +6,9 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:PL"
         mc:Ignorable="d"
-        Title="MainWindow" Height="600" Width="800" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None">
+        Title="MainWindow" Height="600" Width="900" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None">
 
-    <Grid  >
+    <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="image/font_ice_cream.jpg"/>
         </Grid.Background>
