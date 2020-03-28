@@ -22,12 +22,12 @@ namespace PL.Views
     public partial class RegisterShopUC : UserControl
     {
 
-        public RegisterShopVM shopVM { get; set; }
+        public RegisterShopVM ShopVM { get; set; }
         public RegisterShopUC()
         {
             InitializeComponent();
-            shopVM = new RegisterShopVM(this);
-            this.DataContext = shopVM;
+            ShopVM = new RegisterShopVM(this);
+            this.DataContext = ShopVM;
         }
 
 
@@ -35,6 +35,11 @@ namespace PL.Views
         {
             if (this.DataContext != null)
             { ((dynamic)this.DataContext).Password = ((PasswordBox)sender).Password; }
+        }
+
+        private void add_profile_img_btn_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

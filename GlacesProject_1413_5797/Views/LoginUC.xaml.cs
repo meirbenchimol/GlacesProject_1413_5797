@@ -51,6 +51,7 @@ namespace PL.Views
             ((MainWindow)System.Windows.Application.Current.MainWindow).inner_grid.Children.Add(registerShopUC);
 
         }
+
     }
    
 
