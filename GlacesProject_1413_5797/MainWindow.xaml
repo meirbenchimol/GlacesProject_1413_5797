@@ -8,7 +8,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="600" Width="900" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None">
 
-    <Grid>
+    <Grid Name="Window">
         <Grid.Background>
             <ImageBrush ImageSource="image/font_ice_cream.jpg"/>
         </Grid.Background>

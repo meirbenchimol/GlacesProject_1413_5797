@@ -7,8 +7,8 @@
              xmlns:Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero" 
              mc:Ignorable="d" 
              d:DesignHeight="400" d:DesignWidth="400">
-    
-    
+
+
     <UserControl.Resources>
         <LinearGradientBrush x:Key="ButtonNormalBackground" EndPoint="0,1" StartPoint="0,0">
             <GradientStop Color="#F3F3F3" Offset="0"/>
@@ -71,7 +71,7 @@
                  TextAlignment="Center"/>
             <TextBlock Text="Password" FontSize="12" Background="{x:Null}"  HorizontalAlignment="Center" MinWidth="170"/>
 
-            <PasswordBox  x:Name="Password" HorizontalAlignment="Center" Padding="40,5"  PasswordChanged="PasswordBox_PasswordChanged" VerticalAlignment="Top" 
+            <PasswordBox  x:Name="Password" HorizontalAlignment="Center" Padding="40,5"  VerticalAlignment="Top" 
                  FontSize="16"
                  MinWidth="170"
                  BorderBrush="Black"
@@ -79,14 +79,14 @@
                  Foreground="DarkGray"
                  Margin="0,0,0,20"
                  />
-            <Button Content="Login" HorizontalAlignment="Center"  VerticalAlignment="Top"   Margin="0,0,15,10" Width="100"
+            <Button Content="Login" HorizontalAlignment="Center"  VerticalAlignment="Top"   Margin="112,0,128,10" Width="100"
                 Background="#FF64CCF1"
                 Foreground="White"
                 FontFamily="Arial"
                 Padding="5"
                 FontSize="20" 
-                Style="{DynamicResource RoundedButtonStyle}" />
-            <Button Content="Register" HorizontalAlignment="Center" Click="Register"  VerticalContentAlignment="Bottom" Background="{x:Null}" BorderBrush="{x:Null}" Margin="146,0" Style="{DynamicResource registerButton}" />
+                Style="{DynamicResource RoundedButtonStyle}" Height="35" />
+            <Button Content="Register" HorizontalAlignment="Center" Click="Register"  VerticalContentAlignment="Bottom"  Background="{x:Null}"  BorderBrush="{x:Null}" Margin="94,0"  Height="28" Width="152" />
 
 
         </StackPanel>

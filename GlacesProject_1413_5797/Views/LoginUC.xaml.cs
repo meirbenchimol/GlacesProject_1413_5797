@@ -35,11 +35,7 @@ namespace PL.Views
         }
 
 
-        private void PasswordBox_PasswordChanged(object sender, RoutedEventArgs e)
-        {
-            if (this.DataContext != null)
-            { ((dynamic)this.DataContext).Password = ((PasswordBox)sender).Password; }
-        }
+      
 
 
 
@@ -51,6 +47,7 @@ namespace PL.Views
             ((MainWindow)System.Windows.Application.Current.MainWindow).inner_grid.Children.Add(registerShopUC);
 
         }
+
     }
    
 

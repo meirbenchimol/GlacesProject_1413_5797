@@ -5,12 +5,16 @@ using System.Text;
 using System.Threading.Tasks;
 using BE;
 using BL;
+using PL.ViewModel;
+using PL.Views;
 
 namespace PL.Models
 {
     public class LoginModel
     {
         public Shop CurrentShop { get; set; }
+
+        public ShopAreaUC shopAreaUC;
 
         public Bl MyBl { get; set; }
 
@@ -23,7 +27,11 @@ namespace PL.Models
                 return false;
             else
             {
+                shopAreaUC = new ShopAreaUC(shop);
                 CurrentShop = shop;
+                ((MainWindow)System.Windows.Application.Current.MainWindow).mainVM.UpdateShop(shop);
+                ((MainWindow)System.Windows.Application.Current.MainWindow).inner_grid.Children.Clear();
+                ((MainWindow)System.Windows.Application.Current.MainWindow).inner_grid.Children.Add(shopAreaUC);
                 return true;
             }
 

@@ -11,17 +11,27 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using PL.ViewModel;
+using BE;
 
-namespace GlacesProject_1413_5797.Views
+
+namespace PL.Views
 {
     /// <summary>
     /// Interaction logic for ShopAreaUC.xaml
     /// </summary>
     public partial class ShopAreaUC  
     {
-        public ShopAreaUC()
+        public Shop Shop { get; set; }
+        public ShopAreaVM shopAreaVM { get; set; }
+
+        public ShopAreaUC(Shop shop)
         {
             InitializeComponent();
+            Shop = shop;
+            shopAreaVM = new ShopAreaVM(this);
+            this.DataContext = shopAreaVM;
+
         }
     }
 }
