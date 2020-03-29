@@ -18,6 +18,7 @@ namespace PL.Models
 
         public Bl MyBl { get; set; }
 
+  
 
         public bool findShopByLogin(string id, string password)
         {

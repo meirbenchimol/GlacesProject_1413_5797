@@ -18,8 +18,6 @@ namespace PL.ViewModel
 
         public event PropertyChangedEventHandler PropertyChanged;
         public ShopAreaModel CurrentModel { get; set; }
-
-
         private ShopAreaUC shopAreaUC;
         
 
@@ -41,9 +39,7 @@ namespace PL.ViewModel
             set { value = CurrentModel.shop.Id;
                 if (PropertyChanged != null)
                     PropertyChanged(this, new PropertyChangedEventArgs("ID"));
-
                 }
-
         }
 
 
