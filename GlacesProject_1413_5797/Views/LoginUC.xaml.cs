@@ -26,7 +26,7 @@ namespace PL.Views
     public partial class LoginUC : UserControl
     {
         public LoginVM LoginVM;
-        public RegisterShopVM registerShopVM;
+       
         public LoginUC()
         {
             InitializeComponent();
@@ -35,14 +35,13 @@ namespace PL.Views
         }
 
 
-      
-
+          
 
 
         private void Register(object sender, RoutedEventArgs e)
         {
             RegisterShopUC registerShopUC = new RegisterShopUC();
-            registerShopVM = new RegisterShopVM(registerShopUC);
+            
             ((MainWindow)System.Windows.Application.Current.MainWindow).inner_grid.Children.Clear();
             ((MainWindow)System.Windows.Application.Current.MainWindow).inner_grid.Children.Add(registerShopUC);
 

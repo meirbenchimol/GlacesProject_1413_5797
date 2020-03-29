@@ -83,6 +83,7 @@
                 Background="#FF64CCF1"
                 Foreground="White"
                 FontFamily="Arial"
+                Command="{Binding specialCommand}"
                 Padding="5"
                 FontSize="20" 
                 Style="{DynamicResource RoundedButtonStyle}" Height="35" />

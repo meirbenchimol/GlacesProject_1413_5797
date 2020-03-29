@@ -57,7 +57,7 @@
                  Margin="0,0,0,20"
                  Background="#FFF6F6F6"
                  Foreground="DarkGray"
-                 TextAlignment="Center"/>
+                 TextAlignment="Left"/>
                 
                 <TextBlock Text="Password" FontSize="12" Background="{x:Null}"  HorizontalAlignment="Center" MinWidth="250"/>
                 <PasswordBox  x:Name="Password" HorizontalAlignment="Center" Padding="40,5"  PasswordChanged="PasswordBox_PasswordChanged" VerticalAlignment="Top" 
@@ -100,7 +100,7 @@
                  />
                 
                 <TextBlock Text=" Your link to facebook" FontSize="12" Background="{x:Null}"  HorizontalAlignment="Center" MinWidth="250"/>
-                <PasswordBox x:Name="facebook"  HorizontalAlignment="Center" Padding="40,5"  VerticalAlignment="Top" 
+                <TextBox x:Name="facebook"  HorizontalAlignment="Center" Padding="40,5"  VerticalAlignment="Top" 
                  FontSize="16"
                  MinWidth="250"
                  BorderBrush="Black"
@@ -110,7 +110,7 @@
                  />
 
                 <TextBlock Text=" Your link to your website" FontSize="12" Background="{x:Null}"  HorizontalAlignment="Center" MinWidth="250"/>
-                <PasswordBox x:Name="website"  HorizontalAlignment="Center" Padding="40,5"  VerticalAlignment="Top" 
+                <TextBox x:Name="website"  HorizontalAlignment="Center" Padding="40,5"  VerticalAlignment="Top" 
                  FontSize="16"
                  MinWidth="250"
                  BorderBrush="Black"
@@ -126,7 +126,7 @@
         </ScrollViewer>
 
         <StackPanel Grid.Row="2" HorizontalAlignment="Center"  VerticalAlignment="Center" >
-            <Button Content="Register"    
+            <Button Content="Register"   x:Name="register_btn" Click="register_btn_Click"
                 Background="#FF64CCF1"
                 Foreground="White"
                 FontFamily="Arial"

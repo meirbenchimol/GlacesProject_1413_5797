@@ -41,5 +41,10 @@ namespace PL.Views
         {
 
         }
+
+        private void register_btn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
