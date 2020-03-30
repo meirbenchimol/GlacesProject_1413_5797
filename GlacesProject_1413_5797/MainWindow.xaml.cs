@@ -26,6 +26,7 @@ namespace PL
     {
         public MainVM mainVM;
         public LoginUC loginUC;
+        public GraduateIceCreamUC graduateIceCream;
         
         public MainWindow()
         {
@@ -50,6 +51,15 @@ namespace PL
 
         private void ButtonHome_Click(object sender, RoutedEventArgs e)
         {
+        }
+
+        private void graduate_btn_Click(object sender, RoutedEventArgs e)
+        {
+            graduateIceCream = new GraduateIceCreamUC();
+            ((MainWindow)System.Windows.Application.Current.MainWindow).inner_grid.Children.Clear();
+            ((MainWindow)System.Windows.Application.Current.MainWindow).shopAreaGrid.Children.Clear();
+            ((MainWindow)System.Windows.Application.Current.MainWindow).inner_grid.Children.Add(graduateIceCream);
+
         }
     }
 }

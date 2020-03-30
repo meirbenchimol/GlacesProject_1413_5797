@@ -89,7 +89,7 @@
                             <TextBlock VerticalAlignment="Center" Text="Search Ice Cream"/>
                         </StackPanel>
                     </Button>
-                    <Button   Background="#28a745"
+                    <Button x:Name="graduate_btn"  Background="#28a745" Click="graduate_btn_Click"
                     Foreground="White" 
                     FontSize="18"
                     Padding="10"
@@ -98,7 +98,7 @@
                     FontFamily="Arial" Style="{DynamicResource RoundedButtonStyle}" Margin="123,20,104,20"  >
                         <StackPanel Orientation="Horizontal" >
                             <Image Source="image/commentIcon.png" Width="30"  Height="30" Margin="0,0,15,0" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                            <TextBlock VerticalAlignment="Center" Text="Comment Ice Cream"/>
+                            <TextBlock VerticalAlignment="Center" Text="Graduate Ice Cream"/>
                         </StackPanel>
                     </Button>
                 </StackPanel>
