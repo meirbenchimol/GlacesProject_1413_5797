@@ -4,6 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BE;
+using System.Security;
+using System.Net;
+using System.IO;
+using System.Collections;
+using System.Data.Entity.Core.Objects;
+using System.Data.Entity;
+using System.Collections.ObjectModel;
+
 
 namespace DAL
 {

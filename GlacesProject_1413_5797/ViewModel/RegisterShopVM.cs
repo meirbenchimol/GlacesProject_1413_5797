@@ -111,6 +111,7 @@ namespace PL.ViewModel
         public void RegisterShop(string obj)
         {
 
+
         }
 
           #endregion

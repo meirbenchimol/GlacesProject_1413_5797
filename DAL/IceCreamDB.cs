@@ -10,7 +10,6 @@ namespace DAL
 {
     class IceCreamDB : DbContext
     {
-
         public DbSet<Shop> Shops { get; set; }
         public DbSet<IceCream> IceCreams { get; set; }
     }

@@ -21,8 +21,6 @@ namespace PL.ViewModel
             this.LoginUC = LoginUC;
             this.specialCommand = new SpecialCommand();
             specialCommand.callComplete += Login_Command;
-
-                
         }
 
         public LoginModel CurrentModel { get; set; }
@@ -31,7 +29,7 @@ namespace PL.ViewModel
 
         private LoginUC LoginUC;
 
-        public SpecialCommand specialCommand;
+        public SpecialCommand specialCommand { get; set; }
 
 
         public void Login_Command(string obj)
@@ -40,7 +38,8 @@ namespace PL.ViewModel
 
             if(found)
                 System.Windows.MessageBox.Show("great!", "great", MessageBoxButton.OK, MessageBoxImage.Exclamation);
-
+            else
+                System.Windows.MessageBox.Show("error!", "error", MessageBoxButton.OK, MessageBoxImage.Exclamation);
 
         }
 

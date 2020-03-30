@@ -129,6 +129,7 @@
             <Button Content="Register"   x:Name="register_btn" Click="register_btn_Click"
                 Background="#FF64CCF1"
                 Foreground="White"
+                
                 FontFamily="Arial"
                 Padding="30,5"
                 FontSize="20" 
