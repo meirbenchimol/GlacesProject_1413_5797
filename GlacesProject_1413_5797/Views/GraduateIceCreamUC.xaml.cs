@@ -31,9 +31,9 @@ namespace PL.Views
             InitializeComponent();
             MyBl = new Bl();
             ShopComboBox.ItemsSource = MyBl.GetAllShop();
-            IceCreamComboBox.DisplayMemberPath = "ID";
-            IceCreamComboBox.SelectedValuePath = "ID";
-
+            ShopComboBox.DisplayMemberPath = "ID";
+            ShopComboBox.SelectedValuePath = "ID";
+           
         }
 
 
@@ -50,10 +50,11 @@ namespace PL.Views
 
         private void Shop_Selected(object sender, SelectionChangedEventArgs e)
         {
+            IceCreamComboBox.IsEnabled = true;
             Shop shop = ShopComboBox.SelectedItem as Shop;
             IceCreamComboBox.ItemsSource = shop.Products;
             IceCreamComboBox.DisplayMemberPath = "Representation";
-            IceCreamComboBox.SelectedValuePath = "ID";
+            IceCreamComboBox.SelectedValuePath = "Representation";
 
         }
     }

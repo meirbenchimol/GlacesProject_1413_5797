@@ -22,6 +22,8 @@ namespace BE
         public string Phone { get; set; }
 
 
+        static string id="shop";
+
         public String FaceBookLink { get; set; }
 
 
@@ -53,6 +55,25 @@ namespace BE
 
             return false;
             
+        }
+
+
+        public Shop()
+        {
+
+            Id = id;
+            id += "a";
+            Password = "1704";
+            Adress = "8 Place de Bordeaux, Strasbourg";
+            Phone = "0584226257";
+            WebSiteLink = "shop.com";
+            FaceBookLink = "shop fb";
+            products.Add(new IceCream());
+            products.Add(new IceCream());
+            products.Add(new IceCream());
+            images.Add("shopIcon.png");
+
+
         }
 
     }

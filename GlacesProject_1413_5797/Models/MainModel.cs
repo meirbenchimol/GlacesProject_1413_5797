@@ -13,7 +13,7 @@ namespace PL.Models
 
         public MainModel()
         {
-            Current_Shop = new Shop();
+           // Current_Shop = new Shop();
         }
     }
 }

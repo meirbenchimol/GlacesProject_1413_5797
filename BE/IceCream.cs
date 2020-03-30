@@ -91,10 +91,14 @@ namespace BE
             Id = id;
             id += "a";
             ShopId = "shop";
-            taste[0] += "Chocolate";
-
-
-
+            taste.Add("Chocolate");
+            images.Add("iceCream_choco.png");
+            comments.Add("");
+            marks.Add(5);
+            Energy = 70;
+            Proteins = 80;
+            Calories = 85;
+            Description = "";
         }
 
     }

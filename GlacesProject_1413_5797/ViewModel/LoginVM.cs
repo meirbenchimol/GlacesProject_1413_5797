@@ -9,6 +9,8 @@ using System.ComponentModel;
 using PL.Commands;
 using BE;
 
+using System.Windows;
+
 namespace PL.ViewModel
 {
     public class LoginVM
@@ -36,8 +38,8 @@ namespace PL.ViewModel
         {
             bool found = CurrentModel.findShopByLogin(LoginUC.Id.Text, LoginUC.Password.Password);
 
-
-                
+            if(found)
+                System.Windows.MessageBox.Show("great!", "great", MessageBoxButton.OK, MessageBoxImage.Exclamation);
 
 
         }

@@ -19,6 +19,13 @@ namespace PL.Models
         public Bl MyBl { get; set; }
 
   
+        public LoginModel()
+        {
+            MyBl = new Bl();
+            CurrentShop = new Shop();
+            MyBl.AddShop(CurrentShop);
+
+        }
 
         public bool findShopByLogin(string id, string password)
         {
