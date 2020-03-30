@@ -42,7 +42,7 @@ namespace BE
         }
 
 
-        public bool ShopTaste(Taste taste)
+        public bool ShopTaste(string taste)
         {
             for(int i=0;i<=products.Count;i++)
             {

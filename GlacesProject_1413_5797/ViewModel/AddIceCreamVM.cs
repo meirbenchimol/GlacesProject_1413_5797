@@ -61,14 +61,8 @@ namespace PL.ViewModel
                 String[] taste = Taste.Split(',');
                 if (PropertyChanged != null)
                     PropertyChanged(this, new PropertyChangedEventArgs("Taste"));
-                int j = 0;
-                for (int i = 0; i < Taste.Count(); i++)
-                {
+                CurrentModel.MyIC.taste = taste.ToList();
 
-                    if (Taste[i].Equals(BE.Taste.Chocolate) || Taste[i].Equals(BE.Taste.Vanilla)
-                        || Taste[i].Equals(BE.Taste.Pistachio) || Taste[i].Equals(BE.Taste.Strawberry))
-                        CurrentModel.MyIC.taste[j++] = (BE.Taste)Taste[i];
-                }
             }
         }
 

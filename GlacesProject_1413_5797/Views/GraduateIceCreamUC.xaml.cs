@@ -27,23 +27,34 @@ namespace PL.Views
         public Bl MyBl { get; set; }
         public GraduateIceCreamUC()
         {
-            
+
             InitializeComponent();
             MyBl = new Bl();
-            IceCreamComboBox.ItemsSource = MyBl.GetAllIceCream();
-            IceCreamComboBox.DisplayMemberPath = "Presentation";
+            ShopComboBox.ItemsSource = MyBl.GetAllShop();
+            IceCreamComboBox.DisplayMemberPath = "ID";
             IceCreamComboBox.SelectedValuePath = "ID";
-           
+
         }
 
-       
 
-       
+
+
+
+
         private void Graduate(object sender, RoutedEventArgs e)
         {
-            IceCream Ic =  IceCreamComboBox.SelectedItem as IceCream;
+            IceCream Ic = IceCreamComboBox.SelectedItem as IceCream;
             new GraduationUC(Ic);
-            
+
+        }
+
+        private void Shop_Selected(object sender, SelectionChangedEventArgs e)
+        {
+            Shop shop = ShopComboBox.SelectedItem as Shop;
+            IceCreamComboBox.ItemsSource = shop.Products;
+            IceCreamComboBox.DisplayMemberPath = "Representation";
+            IceCreamComboBox.SelectedValuePath = "ID";
+
         }
     }
 }

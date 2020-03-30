@@ -84,7 +84,7 @@ namespace DAL
             }
 
         }
-        public IEnumerable<IceCream> FindListIceCream(Taste taste, string ShopID)
+        public IEnumerable<IceCream> FindListIceCream(string taste, string ShopID)
         {
 
             using (var db = new IceCreamDB())
@@ -99,7 +99,7 @@ namespace DAL
         }
 
 
-        public IEnumerable<IceCream> FindListIceCream(Taste taste, double energy, double calories, double proteins, double minmark, double maxmark)
+        public IEnumerable<IceCream> FindListIceCream(string taste, double energy, double calories, double proteins, double minmark, double maxmark)
         {
 
             using (var db = new IceCreamDB())

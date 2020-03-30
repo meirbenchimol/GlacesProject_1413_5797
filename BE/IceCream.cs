@@ -12,6 +12,7 @@ using BE;
 
 namespace BE
 
+   
 {
     
 
@@ -22,14 +23,15 @@ namespace BE
         [Key, Column(Order =1)]
         public string ShopId { get; set; }
 
-        public List<Taste> taste = new List<Taste>();
+        public List<string> taste = new List<string>();
 
-        public List<Taste> Taste
+        public List<string> Taste
         {
             get { return taste; }
         }
-        //comment test git meir
+    //comment test git meir
 
+        static string  id;
 
         public string Description { get; set; }
 
@@ -78,6 +80,21 @@ namespace BE
             get { return comments; }
 
             set { comments = value; }
+        }
+
+
+
+
+        public IceCream()
+        {
+
+            Id = id;
+            id += "a";
+            ShopId = "shop";
+            taste[0] += "Chocolate";
+
+
+
         }
 
     }
