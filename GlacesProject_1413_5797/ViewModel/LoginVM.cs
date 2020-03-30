@@ -8,7 +8,6 @@ using PL.Views;
 using System.ComponentModel;
 using PL.Commands;
 using BE;
-
 using System.Windows;
 
 namespace PL.ViewModel

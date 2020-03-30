@@ -31,7 +31,7 @@ namespace BE
         }
     //comment test git meir
 
-        static string  id;
+        static string  id="";
 
         public string Description { get; set; }
 
@@ -58,7 +58,7 @@ namespace BE
 
         public string Image
         {
-            get { return Image; }
+            get { return images[0]; }
 
             set { Image = images[0]; }
         }

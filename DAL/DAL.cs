@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BE;
+using System.Windows;
 using System.Security;
 using System.Net;
 using System.IO;
@@ -11,7 +12,8 @@ using System.Collections;
 using System.Data.Entity.Core.Objects;
 using System.Data.Entity;
 using System.Collections.ObjectModel;
-
+//using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json.Linq;
 
 namespace DAL
 {
@@ -152,7 +154,7 @@ namespace DAL
         {
 
 
-
+            
             using (var db = new IceCreamDB())
             {
                 var query = from m in db.Shops
@@ -184,15 +186,23 @@ namespace DAL
         }
 
 
-        public void AddShop(Shop s)
+        public   void AddShop(Shop s)
         {
-            using (var db = new IceCreamDB())
-            {
-                db.Shops.Add(s);
-                db.SaveChanges();
-            }
-        }
 
+            try
+            {
+                using (var db = new IceCreamDB())
+                {
+                    db.Shops.Add(s);
+                    db.SaveChanges();
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception("Erreur");
+            }
+
+        }
         public void UpdateShop(Shop pre_shop, Shop current_shop)
         {
 
@@ -210,7 +220,7 @@ namespace DAL
             }
 
 
-        }
+        } 
 
         public Shop findShopByLogin(String id, string password)
         {
