@@ -42,8 +42,17 @@ namespace DAL.Migrations
                     b.Property<string>("Image")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Images")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<double?>("Proteins")
                         .HasColumnType("float");
+
+                    b.Property<string>("Taste")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("marks")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id", "ShopId");
 
@@ -61,6 +70,9 @@ namespace DAL.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("FaceBookLink")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Images")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Password")

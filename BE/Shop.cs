@@ -32,31 +32,21 @@ namespace BE
 
         private List<String> images = new List<string>();
 
-        public List<String> Images
+        public string [] Images
         {
-            get { return images;}
+            get; set;
         }
 
-        private List<IceCream> products= new List<IceCream>();
+      
 
-        public List<IceCream> Products
+        public IceCream [] Products
         {
-            get { return products; }
+            get;
+            set;
         }
 
 
-        public bool ShopTaste(string taste)
-        {
-            for(int i=0;i<=products.Count;i++)
-            {
-                if (products[i].taste.Contains(taste))
-                    return true;
-
-            }
-
-            return false;
-            
-        }
+        
 
 
         public Shop()
@@ -69,9 +59,8 @@ namespace BE
             Phone = "0584226257";
             WebSiteLink = "shop.com";
             FaceBookLink = "shop fb";
-            products.Add(new IceCream());
-            products.Add(new IceCream());
-            products.Add(new IceCream());
+            Products[0] = new IceCream();
+            Products[1] = new IceCream();
             images.Add("shopIcon.png");
 
 

@@ -36,6 +36,29 @@ namespace DAL
 
             builder.Entity<IceCream>().HasKey(s => new { s.Id, s.ShopId });
 
+
+
+            builder.Entity<IceCream>()
+          .Property(e => e.Taste)
+          .HasConversion(v => string.Join(";", v), v => v.Split(new char[] { ';' }, StringSplitOptions.RemoveEmptyEntries));
+
+
+           builder.Entity<IceCream>()
+          .Property(e => e.Images)
+          .HasConversion(v => string.Join(";", v), v => v.Split(new char[] { ';' }, StringSplitOptions.RemoveEmptyEntries));
+
+            var converter = new ValueConverter<int[], String>(
+                v => String.Join(";", v),
+                v => v.Split(';').Select(val => int.Parse(val)).ToArray());
+
+            builder.Entity<IceCream>()
+            .Property(e => e.marks)
+            .HasConversion(converter);
+
+
+            builder.Entity<Shop>()
+           .Property(e => e.Images)
+           .HasConversion(v => string.Join(";", v), v => v.Split(new char[] { ';' }, StringSplitOptions.RemoveEmptyEntries));
         }
 
     }

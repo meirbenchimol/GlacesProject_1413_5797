@@ -104,7 +104,7 @@ namespace BL
         public void UpdateIceCream(IceCream pre_IC, IceCream current_IceCream)
 
         {
-            current_IceCream.marks.Sort();
+            //current_IceCream.marks;
             MyDal.UpdateIceCream(pre_IC, current_IceCream);
         }
 

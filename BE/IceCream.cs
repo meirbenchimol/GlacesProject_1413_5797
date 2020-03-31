@@ -24,12 +24,9 @@ namespace BE
        [Key,ForeignKey("Shop"), Column(Order =1)]
         public string ShopId { get; set; }
 
-        public List<string> taste = new List<string>();
+        public string[] Taste { get; set; }
 
-        public List<string> Taste
-        {
-            get { return taste; }
-        }
+    
     //comment test git meir
 
         static string  id="";
@@ -41,9 +38,9 @@ namespace BE
         {
             get {
                 string s = Id;
-                for ( int i = 0;i<taste.Count;i++)
+                for ( int i = 0;i< Taste.ToList().Count;i++)
                 {
-                    s += taste[i].ToString();
+                    s += Taste[i].ToString();
                 }
                 return s;
                }
@@ -51,9 +48,9 @@ namespace BE
 
         private List<string> images = new List<string>();
 
-        public List<string> Images
+        public string [] Images
         {
-            get { return images; }
+            get;set;
         }
 
 
@@ -71,7 +68,7 @@ namespace BE
 
         public double? Calories { get; set; }
 
-        public ArrayList marks = new ArrayList();
+        public int[] marks { get; set; }
 
 
       
@@ -89,10 +86,10 @@ namespace BE
             Id = id;
             id += "a";
             ShopId = "shop";
-            taste.Add("Chocolate");
-            images.Add("iceCream_choco.png");
-            Comments[0] = "";
-            marks.Add(5);
+            Taste[0]="Chocolate";
+            images[0]="iceCream_choco.png";
+            Comments[0] = "ggg";
+            marks[0]= 5;
             Energy = 70;
             Proteins = 80;
             Calories = 85;

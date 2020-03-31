@@ -48,8 +48,8 @@ namespace PL.ViewModel
         {
             get {
                     string s="";
-                for (int i = 0; i < CurrentModel.MyIC.taste.Count; i++)
-                    s+= CurrentModel.MyIC.taste[i].ToString() + "'";
+                for (int i = 0; i < CurrentModel.MyIC.Taste.ToList().Count; i++)
+                    s+= CurrentModel.MyIC.Taste[i].ToString() + "'";
 
                 return s;
                             
@@ -61,7 +61,7 @@ namespace PL.ViewModel
                 String[] taste = Taste.Split(',');
                 if (PropertyChanged != null)
                     PropertyChanged(this, new PropertyChangedEventArgs("Taste"));
-                CurrentModel.MyIC.taste = taste.ToList();
+                CurrentModel.MyIC.Taste = taste;
 
             }
         }

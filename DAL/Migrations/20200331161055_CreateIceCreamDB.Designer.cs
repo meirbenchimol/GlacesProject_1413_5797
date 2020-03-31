@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DAL.Migrations
 {
     [DbContext(typeof(IceCreamDB))]
-    [Migration("20200331152831_CreateIceCreamDB")]
+    [Migration("20200331161055_CreateIceCreamDB")]
     partial class CreateIceCreamDB
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -44,8 +44,17 @@ namespace DAL.Migrations
                     b.Property<string>("Image")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Images")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<double?>("Proteins")
                         .HasColumnType("float");
+
+                    b.Property<string>("Taste")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("marks")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id", "ShopId");
 
@@ -63,6 +72,9 @@ namespace DAL.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("FaceBookLink")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Images")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Password")

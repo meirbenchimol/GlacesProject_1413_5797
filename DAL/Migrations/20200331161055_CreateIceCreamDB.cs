@@ -15,7 +15,8 @@ namespace DAL.Migrations
                     Adress = table.Column<string>(nullable: true),
                     Phone = table.Column<string>(nullable: true),
                     FaceBookLink = table.Column<string>(nullable: true),
-                    WebSiteLink = table.Column<string>(nullable: true)
+                    WebSiteLink = table.Column<string>(nullable: true),
+                    Images = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -28,11 +29,14 @@ namespace DAL.Migrations
                 {
                     Id = table.Column<string>(nullable: false),
                     ShopId = table.Column<string>(nullable: false),
+                    Taste = table.Column<string>(nullable: true),
                     Description = table.Column<string>(nullable: true),
+                    Images = table.Column<string>(nullable: true),
                     Image = table.Column<string>(nullable: true),
                     Energy = table.Column<double>(nullable: true),
                     Proteins = table.Column<double>(nullable: true),
                     Calories = table.Column<double>(nullable: true),
+                    marks = table.Column<string>(nullable: true),
                     Comments = table.Column<string>(nullable: true)
                 },
                 constraints: table =>

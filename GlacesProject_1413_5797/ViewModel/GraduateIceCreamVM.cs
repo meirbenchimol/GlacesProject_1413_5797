@@ -96,7 +96,11 @@ namespace PL.ViewModel
         public string Comments
         {
 
-            set { //GraduateICModel.IceCream.Comments.value);
+            set {
+                int i = 0;
+                for (int j = 0; j < GraduateICModel.IceCream.Comments.Length; j++)
+                    i++;
+                GraduateICModel.IceCream.Comments[i] = value;
                 if (PropertyChanged != null)
                     PropertyChanged(this, new PropertyChangedEventArgs("Comments"));
 
@@ -112,7 +116,17 @@ namespace PL.ViewModel
         {
 
             set {
-                GraduateICModel.IceCream.marks.Add(value);
+
+
+                int i = 0;
+                for (int j = 0; j < GraduateICModel.IceCream.marks.Length; j++)
+                    i++;
+                GraduateICModel.IceCream.marks[i] = Int32.Parse(value);
+                     
+               
+                
+                        
+
                 if (PropertyChanged != null)
                     PropertyChanged(this, new PropertyChangedEventArgs("Grades"));
 
