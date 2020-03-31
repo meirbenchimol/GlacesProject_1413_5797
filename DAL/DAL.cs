@@ -9,10 +9,10 @@ using System.Security;
 using System.Net;
 using System.IO;
 using System.Collections;
-using System.Data.Entity.Core.Objects;
-using System.Data.Entity;
+//using System.Data.Entity.Core.Objects;
+//using System.Data.Entity;
 using System.Collections.ObjectModel;
-//using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json.Linq;
 
 namespace DAL

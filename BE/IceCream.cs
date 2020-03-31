@@ -6,9 +6,10 @@ using System.Text;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Threading.Tasks;
-using System.Data.Entity;
+//using System.Data.Entity;
 using System.Drawing;
 using BE;
+using Microsoft.EntityFrameworkCore;
 
 namespace BE
 
@@ -20,7 +21,7 @@ namespace BE
     {
         [Key, Column(Order = 0)]
         public string Id { get; set; }
-        [Key, Column(Order =1)]
+       [Key,ForeignKey("Shop"), Column(Order =1)]
         public string ShopId { get; set; }
 
         public List<string> taste = new List<string>();
@@ -72,15 +73,12 @@ namespace BE
 
         public ArrayList marks = new ArrayList();
 
-        private List<string> comments = new List<string>();
+
+      
+        public string[] Comments { get; set; }
 
 
-        public List<string> Comments
-        {
-            get { return comments; }
-
-            set { comments = value; }
-        }
+       
 
 
 
@@ -93,7 +91,7 @@ namespace BE
             ShopId = "shop";
             taste.Add("Chocolate");
             images.Add("iceCream_choco.png");
-            comments.Add("");
+            Comments[0] = "";
             marks.Add(5);
             Energy = 70;
             Proteins = 80;

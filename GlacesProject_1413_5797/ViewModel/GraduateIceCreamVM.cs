@@ -96,7 +96,7 @@ namespace PL.ViewModel
         public string Comments
         {
 
-            set { GraduateICModel.IceCream.Comments.Add(value);
+            set { //GraduateICModel.IceCream.Comments.value);
                 if (PropertyChanged != null)
                     PropertyChanged(this, new PropertyChangedEventArgs("Comments"));
 
