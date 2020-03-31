@@ -15,21 +15,32 @@ namespace BE
 
    
 {
-    
+
 
     public class IceCream
     {
         [Key, Column(Order = 0)]
         public string Id { get; set; }
-       [Key,ForeignKey("Shop"), Column(Order =1)]
+        [Key, ForeignKey("Shop"), Column(Order = 1)]
         public string ShopId { get; set; }
 
-        public string[] Taste { get; set; }
+        public string[] Taste
 
-    
-    //comment test git meir
+        {
+            get { return taste.ToArray(); }
 
-        static string  id="";
+            set { Comments = taste.ToArray(); }
+
+        }
+
+
+
+        public List<string> taste = new List<string>();
+
+
+        //comment test git meir
+
+        static string id = "";
 
         public string Description { get; set; }
 
@@ -38,44 +49,69 @@ namespace BE
         {
             get {
                 string s = Id;
-                for ( int i = 0;i< Taste.ToList().Count;i++)
+                for (int i = 0; i < Taste.ToList().Count; i++)
                 {
                     s += Taste[i].ToString();
                 }
                 return s;
-               }
+            }
         }
 
-        private List<string> images = new List<string>();
 
-        public string [] Images
+        public string[] Images 
+
         {
-            get;set;
+            get { return images.ToArray(); }
+
+            set { Images = images.ToArray(); }
+
         }
 
+
+
+        public List<string> images = new List<string>();
 
         public string Image
         {
-            get { return images[0]; }
+            get { return Images[0]; }
 
-            set { Image = images[0]; }
+            set { Image = Images[0]; }
         }
 
 
         public double? Energy { get; set; }
 
-        public double?  Proteins { get; set; }
+        public double? Proteins { get; set; }
 
         public double? Calories { get; set; }
 
-        public int[] marks { get; set; }
+        public int[] Marks
+
+        {
+            get { return marks.ToArray(); }
+
+            set { Marks = marks.ToArray(); }
+
+        }
 
 
-      
-        public string[] Comments { get; set; }
+
+        public List<int> marks = new List<int>();
 
 
-       
+
+        public string[] Comments
+
+        {
+            get { return comments.ToArray(); }
+
+            set { Comments = comments.ToArray(); }
+
+        }
+    
+
+
+        public List<string> comments = new List<string>();
 
 
 
@@ -86,10 +122,10 @@ namespace BE
             Id = id;
             id += "a";
             ShopId = "shop";
-            Taste[0]="Chocolate";
-            images[0]="iceCream_choco.png";
-            Comments[0] = "ggg";
-            marks[0]= 5;
+            taste.Add("Chocolate");
+            images.Add("iceCream_choco.png");
+            comments.Add("");
+            marks.Add(5);
             Energy = 70;
             Proteins = 80;
             Calories = 85;

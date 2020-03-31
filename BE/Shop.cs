@@ -41,9 +41,11 @@ namespace BE
 
         public IceCream [] Products
         {
-            get;
-            set;
+            get { return products.ToArray(); }
+            set { Products = products.ToArray(); }
         }
+
+        public List<IceCream> products = new List<IceCream>();
 
 
         
@@ -59,8 +61,6 @@ namespace BE
             Phone = "0584226257";
             WebSiteLink = "shop.com";
             FaceBookLink = "shop fb";
-            Products[0] = new IceCream();
-            Products[1] = new IceCream();
             images.Add("shopIcon.png");
 
 

@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 using BE;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
+using Microsoft.EntityFrameworkCore.SqlServer;
+
 
 namespace DAL
 {
@@ -22,7 +24,7 @@ namespace DAL
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server=.\SQLEXPRESS;Database=IceCreamDB;Trusted_Connection=True;");
+            optionsBuilder.UseSqlServer(@"Server=.\SQLEXPRESS;Database=LocalDB;Trusted_Connection=True;");
 
         }
 
