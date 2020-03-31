@@ -34,7 +34,7 @@
             </Style.Triggers>
         </Style>
     </UserControl.Resources>
-    <Grid Margin="0,0,0,0" >
+    <Grid  Grid.Column="1">
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>

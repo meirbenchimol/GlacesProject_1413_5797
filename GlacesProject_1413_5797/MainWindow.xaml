@@ -14,21 +14,11 @@
         </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="40"/>
-            <RowDefinition Height="79*"/>
-            <RowDefinition Height="94*"/>
-            <RowDefinition Height="86*"/>
-            <RowDefinition Height="87*"/>
-            <RowDefinition Height="86*"/>
-            <RowDefinition Height="87*"/>
+            <RowDefinition Height="*"/>
+
         </Grid.RowDefinitions>
 
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
+
 
         <Grid Grid.Row="0" Grid.ColumnSpan="5" Background="#FFCAE2F7">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right"  Background="{x:Null}" >
@@ -41,69 +31,97 @@
             </StackPanel>
         </Grid>
 
-        <Grid x:Name="homeGrid" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5" Grid.RowSpan="7">
-            
-        </Grid>
+        <Grid x:Name="homeGrid" Grid.Row="1" >
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
 
-        <Grid x:Name="shopAreaGrid" Grid.Row="1" Grid.Column="3" Grid.ColumnSpan="2">
-            <StackPanel   HorizontalAlignment="Right" VerticalAlignment="Center" Margin="30,10" Height="55"  Width="150" >
-                <Button  Click="ShopArea"  
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+
+                <StackPanel Grid.Row="0">
+                    <Button x:Name="shopAreaBtnBis" Click="shopAreaBtnBis_Click">Shop area</Button>
+                </StackPanel>
+
+                <Grid x:Name="shopAreaGrid" Grid.Row="0" Grid.Column="3" Grid.ColumnSpan="2">
+                    <StackPanel   HorizontalAlignment="Right" VerticalAlignment="Center" Margin="30,10" Height="55"  Width="150" >
+                        <Button  Click="ShopArea"  
                     Background="#17a2b8"
                     Foreground="Black" 
                     FontSize="18"
                     Padding="10"
                     FontFamily="Arial" Style="{DynamicResource RoundedButtonStyle}"  >
-                    <StackPanel Orientation="Horizontal" >
-                        <Image Source="image/shopIcon.png" Width="30"  Height="30" Margin="0,0,15,0" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                        <TextBlock VerticalAlignment="Center" FontSize="13" FontWeight="Bold" Text="Shop Area"/>
+                            <StackPanel Orientation="Horizontal" >
+                                <Image Source="image/shopIcon.png" Width="30"  Height="30" Margin="0,0,15,0" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                                <TextBlock VerticalAlignment="Center" FontSize="13" FontWeight="Bold" Text="Shop Area"/>
+                            </StackPanel>
+                        </Button>
                     </StackPanel>
-                </Button>
-            </StackPanel>
-        </Grid>
-        
+                </Grid>
 
-        <Grid x:Name="inner_grid" Grid.Row="1" Grid.Column="1" Grid.RowSpan="6" Grid.ColumnSpan="4" Margin="0.6,78,156.6,86.8">
 
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="3*"/>
-                </Grid.RowDefinitions>
+                <Grid x:Name="inner_grid" Grid.Row="1" Grid.Column="1" Grid.RowSpan="5" Grid.ColumnSpan="3" >
 
-                <TextBlock Grid.Row="0" VerticalAlignment="Center" Padding="20" HorizontalAlignment="Center" FontSize="30" Text="Welcome to Ice Cream Center" FontFamily="Arial  Bold" FontWeight="Bold" Cursor="" OpacityMask="#FFF10C0C">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="3*"/>
+                        </Grid.RowDefinitions>
 
-                    <TextBlock.Background>
-                        <SolidColorBrush Color="Azure" Opacity="0.65" />
-                    </TextBlock.Background>
+                        <TextBlock Grid.Row="0" VerticalAlignment="Center" Padding="20" HorizontalAlignment="Center" FontSize="30" Text="Welcome to Ice Cream Center" FontFamily="Arial  Bold" FontWeight="Bold" Cursor="" OpacityMask="#FFF10C0C">
 
-                </TextBlock>
+                            <TextBlock.Background>
+                                <SolidColorBrush Color="Azure" Opacity="0.65" />
+                            </TextBlock.Background>
 
-                <StackPanel Grid.Row="1" VerticalAlignment="Center">
-                    <Button   Background="#28a745"
+                        </TextBlock>
+
+                        <StackPanel Grid.Row="1" VerticalAlignment="Center">
+                            <Button   Background="#28a745"
                     Foreground="White" 
                     FontSize="18"
                     Height="50"
                     FontFamily="Arial" Style="{DynamicResource RoundedButtonStyle}" Margin="123,30,104,20"  >
-                        <StackPanel Orientation="Horizontal" >
-                            <Image Source="image/searchIcon.png" Width="30"  Height="30" Margin="0,0,15,0" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                            <TextBlock VerticalAlignment="Center" Text="Search Ice Cream"/>
-                        </StackPanel>
-                    </Button>
-                    <Button x:Name="graduate_btn"  Background="#28a745" Click="graduate_btn_Click"
+                                <StackPanel Orientation="Horizontal" >
+                                    <Image Source="image/searchIcon.png" Width="30"  Height="30" Margin="0,0,15,0" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                                    <TextBlock VerticalAlignment="Center" Text="Search Ice Cream"/>
+                                </StackPanel>
+                            </Button>
+                            <Button x:Name="graduate_btn"  Background="#28a745" Click="graduate_btn_Click"
                     Foreground="White" 
                     FontSize="18"
                     Padding="10"
                     MinWidth="190"
                     Height="50"
                     FontFamily="Arial" Style="{DynamicResource RoundedButtonStyle}" Margin="123,20,104,20"  >
-                        <StackPanel Orientation="Horizontal" >
-                            <Image Source="image/commentIcon.png" Width="30"  Height="30" Margin="0,0,15,0" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                            <TextBlock VerticalAlignment="Center" Text="Graduate Ice Cream"/>
+                                <StackPanel Orientation="Horizontal" >
+                                    <Image Source="image/commentIcon.png" Width="30"  Height="30" Margin="0,0,15,0" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                                    <TextBlock VerticalAlignment="Center" Text="Graduate Ice Cream"/>
+                                </StackPanel>
+                            </Button>
                         </StackPanel>
-                    </Button>
-                </StackPanel>
+                    </Grid>
+                </Grid>
+
+
+
             </Grid>
+    
         </Grid>
+
+
 
 
 

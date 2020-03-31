@@ -54,7 +54,7 @@ namespace DAL
                 v => v.Split(';').Select(val => int.Parse(val)).ToArray());
 
             builder.Entity<IceCream>()
-            .Property(e => e.marks)
+            .Property(e => e.Marks)
             .HasConversion(converter);
 
 
