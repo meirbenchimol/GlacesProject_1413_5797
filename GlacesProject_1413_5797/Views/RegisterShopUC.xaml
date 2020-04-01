@@ -7,7 +7,7 @@
              xmlns:local="clr-namespace:PL.Views"
              mc:Ignorable="d" 
              d:DesignHeight="550" d:DesignWidth="800">
-    
+
     <Grid  Grid.Row="1" Grid.Column="1" Grid.RowSpan="4" Grid.ColumnSpan="3">
         <Grid.Background>
             <SolidColorBrush  Color="Azure" Opacity="0.65"></SolidColorBrush>
@@ -18,16 +18,16 @@
             <RowDefinition Height="1*"></RowDefinition>
 
         </Grid.RowDefinitions>
-        
-        
-      
+
+
+
         <StackPanel Grid.Row="0">
             <TextBlock Text="Register" HorizontalAlignment="Center"  Margin="0,15,0,40" FontFamily="Arial" 
                        FontSize="40" 
                        FontWeight="Bold"
                        Foreground="#FF534C4C"/>
         </StackPanel>
-       
+
 
         <ScrollViewer Grid.Row="1" Padding="30 ,0" >
             <StackPanel >
@@ -45,9 +45,9 @@
                             </Ellipse.Fill>
                         </Ellipse>
                     </Button.Content>
-                   
+
                 </Button>
-                
+
 
                 <TextBlock Text="Username" Padding="0 20 0 0" FontSize="12" Background="{x:Null}"  HorizontalAlignment="Center" MinWidth="250"/>
                 <TextBox x:Name="Id"  TextWrapping="Wrap" Text="{Binding Id}" HorizontalAlignment="Center" Padding="40,5"  VerticalAlignment="Top" 
@@ -58,7 +58,7 @@
                  Background="#FFF6F6F6"
                  Foreground="DarkGray"
                  TextAlignment="Left"/>
-                
+
                 <TextBlock Text="Password" FontSize="12" Background="{x:Null}"  HorizontalAlignment="Center" MinWidth="250"/>
                 <PasswordBox  x:Name="Password" HorizontalAlignment="Center" Padding="40,5"  PasswordChanged="PasswordBox_PasswordChanged" VerticalAlignment="Top" 
                  FontSize="16"
@@ -98,7 +98,7 @@
                  Foreground="DarkGray"
                  Margin="0,0,0,20"
                  />
-                
+
                 <TextBlock Text=" Your link to facebook" FontSize="12" Background="{x:Null}"  HorizontalAlignment="Center" MinWidth="250"/>
                 <TextBox x:Name="facebook"  HorizontalAlignment="Center" Padding="40,5"  VerticalAlignment="Top" 
                  FontSize="16"
@@ -122,7 +122,7 @@
 
             </StackPanel>
 
-            
+
         </ScrollViewer>
 
         <StackPanel Grid.Row="2" HorizontalAlignment="Center"  VerticalAlignment="Center" >
@@ -137,7 +137,7 @@
 
 
         </StackPanel>
-        
+
 
     </Grid>
 </UserControl>

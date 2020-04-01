@@ -29,13 +29,13 @@ namespace PL
         public LoginUC loginUC;
         public GraduateIceCreamUC graduateIceCream;
         public ShopAreaUC shopAreaUC;
-        
+
         public MainWindow()
         {
             InitializeComponent();
             mainVM = new MainVM();
             this.DataContext = mainVM;
-            
+
         }
 
         private void ShopArea(object sender, RoutedEventArgs e)

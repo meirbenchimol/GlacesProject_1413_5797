@@ -51,7 +51,7 @@ namespace BE
 
 
 
-        public Shop()
+       /* public Shop()
         {
 
             Id = id;
@@ -62,6 +62,6 @@ namespace BE
             WebSiteLink = "shop.com";
             FaceBookLink = "shop fb";
             images.Add("shopIcon.png");
-        }
+        }*/
     }
 }
