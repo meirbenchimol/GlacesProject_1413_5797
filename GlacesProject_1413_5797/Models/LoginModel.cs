@@ -22,8 +22,8 @@ namespace PL.Models
         public LoginModel()
         {
             MyBl = new Bl();
-            CurrentShop = new Shop();
-            MyBl.AddShop(CurrentShop);
+           // CurrentShop = new Shop();
+           // MyBl.AddShop(CurrentShop);
 
         }
 
