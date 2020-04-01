@@ -32,7 +32,9 @@ namespace PL.Views
             this.DataContext = AddIceCreamVM;
         }
 
-
-
+        private void CalculeBtn_Click(object sender, RoutedEventArgs e)
+        {
+            attribut_grid.Visibility = Visibility.Visible;
+        }
     }
 }

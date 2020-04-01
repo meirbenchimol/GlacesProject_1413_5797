@@ -304,6 +304,9 @@
   <ItemGroup>
     <Resource Include="Image\iceCream_choco.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\icProfileImg.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
