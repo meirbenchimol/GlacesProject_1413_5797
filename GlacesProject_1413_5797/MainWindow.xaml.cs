@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using PL.Models;
 using PL.ViewModel;
 using PL.Views;
+using BE;
 
 
 namespace PL
@@ -27,6 +28,7 @@ namespace PL
         public MainVM mainVM;
         public LoginUC loginUC;
         public GraduateIceCreamUC graduateIceCream;
+        public ShopAreaUC shopAreaUC;
         
         public MainWindow()
         {
@@ -60,6 +62,14 @@ namespace PL
             ((MainWindow)System.Windows.Application.Current.MainWindow).shopAreaGrid.Children.Clear();
             ((MainWindow)System.Windows.Application.Current.MainWindow).inner_grid.Children.Add(graduateIceCream);
 
+        }
+
+        private void shopAreaBtnBis_Click(object sender, RoutedEventArgs e)
+        {
+            Shop shop = new Shop();
+            shopAreaUC = new ShopAreaUC(shop);
+            ((MainWindow)System.Windows.Application.Current.MainWindow).homeGrid.Children.Clear();
+            ((MainWindow)System.Windows.Application.Current.MainWindow).homeGrid.Children.Add(shopAreaUC);
         }
     }
 }
