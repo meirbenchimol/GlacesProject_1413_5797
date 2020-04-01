@@ -183,9 +183,9 @@ namespace DAL
             using (var db = new IceCreamDB())
             {
                 if (predicate == null)
-                    return db.Shops;
+                    return db.Shops.ToList<Shop>();
 
-                return from s in db.Shops
+                return  (IEnumerable < Shop > ) from s in db.Shops
                        where (predicate(s))
                        select s;
             }

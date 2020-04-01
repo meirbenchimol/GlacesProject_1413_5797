@@ -45,13 +45,13 @@ namespace DAL.Migrations
                     b.Property<string>("Images")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Marks")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<double?>("Proteins")
                         .HasColumnType("float");
 
                     b.Property<string>("Taste")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("marks")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id", "ShopId");

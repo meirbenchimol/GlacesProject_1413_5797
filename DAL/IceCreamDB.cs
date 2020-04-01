@@ -16,8 +16,7 @@ namespace DAL
     class IceCreamDB : DbContext
     {
 
-       public IceCreamDB(DbContextOptions<IceCreamDB> options) : base(options)
-        {
+      
         
 
         public DbSet<Shop> Shops { get; set; }
