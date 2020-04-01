@@ -12,7 +12,7 @@ namespace BE
 {
     public class Shop
     {
-        [Key , Column(Order=0)]
+        [Key, Column(Order = 0)]
         public string Id { get; set; }
 
         public string Password { get; set; }
@@ -23,7 +23,7 @@ namespace BE
         public string Phone { get; set; }
 
 
-        static string id="shop";
+        public static string id = "shopa";
 
         public String FaceBookLink { get; set; }
 
@@ -32,14 +32,14 @@ namespace BE
 
         private List<String> images = new List<string>();
 
-        public string [] Images
+        public string[] Images
         {
             get; set;
         }
 
-      
 
-        public IceCream [] Products
+
+        public IceCream[] Products
         {
             get { return products.ToArray(); }
             set { Products = products.ToArray(); }
@@ -48,7 +48,7 @@ namespace BE
         public List<IceCream> products = new List<IceCream>();
 
 
-        
+
 
 
         public Shop()
@@ -62,9 +62,6 @@ namespace BE
             WebSiteLink = "shop.com";
             FaceBookLink = "shop fb";
             images.Add("shopIcon.png");
-
-
         }
-
     }
 }

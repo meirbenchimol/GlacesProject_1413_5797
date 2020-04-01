@@ -1,4 +1,4 @@
-﻿<Window x:Class="PL.Views.ShopAreaUC"
+﻿<UserControl x:Class="PL.Views.ShopAreaUC"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -6,8 +6,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PL.Views"
         mc:Ignorable="d"
-        Title="ShopAreaUC" Height="560" Width="900">
-    <Grid>
+         Height="560" Width="900">
+    <Grid Grid.Row="1" Grid.RowSpan="4">
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
@@ -73,80 +73,83 @@
 
         </Grid>
 
-        <Grid Grid.Column="1">
-            <Grid.Background>
-                <ImageBrush ImageSource="../Image/font_ice_cream.jpg" Stretch="fill" Opacity="0.2"/>
-            </Grid.Background>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*"></RowDefinition>
-                <RowDefinition Height="50"></RowDefinition>
-            </Grid.RowDefinitions>
+        <Grid Grid.Column="1" x:Name="ice_cream_grid">
+            <Grid>
+                <Grid.Background>
+                    <ImageBrush ImageSource="../Image/font_ice_cream.jpg" Stretch="fill" Opacity="0.1"/>
+                </Grid.Background>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="50"></RowDefinition>
+                </Grid.RowDefinitions>
 
-            <ScrollViewer>
-                <Grid  x:Name="ice_cream_grid" Grid.Row="0">
+                <ScrollViewer>
+                    <Grid  Grid.Row="0">
 
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="200"></RowDefinition>
-                        <RowDefinition Height="200"></RowDefinition>
-                        <RowDefinition Height="200"></RowDefinition>
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"></ColumnDefinition>
-                        <ColumnDefinition Width="*"></ColumnDefinition>
-                        <ColumnDefinition Width="*"></ColumnDefinition>
-                    </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="200"></RowDefinition>
+                            <RowDefinition Height="200"></RowDefinition>
+                            <RowDefinition Height="200"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
 
-                    <Grid Grid.Row="0" Grid.Column="0" >
+                        <Grid Grid.Row="0" Grid.Column="0" >
 
-                        <Grid Background="White" Margin="20,30,20,10">
-                            <Grid.Effect>
-                                <DropShadowEffect RenderingBias="Quality" BlurRadius="10" ShadowDepth="1" Color="#FFAFD5F7" />
-                            </Grid.Effect>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="*"></RowDefinition>
-                                <RowDefinition Height="25"></RowDefinition>
-                                <RowDefinition Height="35"></RowDefinition>
+                            <Grid Background="White" Margin="20,30,20,10">
+                                <Grid.Effect>
+                                    <DropShadowEffect RenderingBias="Quality" BlurRadius="10" ShadowDepth="1" Color="#FFAFD5F7" />
+                                </Grid.Effect>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"></RowDefinition>
+                                    <RowDefinition Height="25"></RowDefinition>
+                                    <RowDefinition Height="35"></RowDefinition>
 
-                            </Grid.RowDefinitions>
+                                </Grid.RowDefinitions>
 
-                            <StackPanel Grid.Row="1">
-                                <TextBlock Text="Ice Cream Chocolate" Padding="5" FontFamily="Arial Black" HorizontalAlignment="Center"></TextBlock>
-                            </StackPanel>
-                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="2">
-                                <Button  Background="#ffc107" Margin="5"  Style="{StaticResource RoundedButtonStyle}">
-                                    <Grid Width="80" >
-                                        <materialDesign:PackIcon Kind="Update" Margin="3,0" HorizontalAlignment="Left" Foreground="White" VerticalAlignment="Center"  />
-                                        <TextBlock Text="Update" HorizontalAlignment="Left" Foreground="White" Margin="24,0,0,0"></TextBlock>
-                                    </Grid>
-                                </Button>
-                                <Button  Background="#dc3545" Margin="5"  Style="{StaticResource RoundedButtonStyle}">
-                                    <Grid Width="80" >
-                                        <materialDesign:PackIcon Kind="Delete" Margin="3,0" HorizontalAlignment="Left" Foreground="White" VerticalAlignment="Center"  />
-                                        <TextBlock Text="delete" HorizontalAlignment="Left" Foreground="White" Margin="24,0,0,0"></TextBlock>
-                                    </Grid>
-                                </Button>
-                            </StackPanel>
+                                <StackPanel Grid.Row="1">
+                                    <TextBlock Text="Ice Cream Chocolate" Padding="5" FontFamily="Arial Black" HorizontalAlignment="Center"></TextBlock>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="2">
+                                    <Button  Background="#ffc107" Margin="5"  Style="{StaticResource RoundedButtonStyle}">
+                                        <Grid Width="80" >
+                                            <materialDesign:PackIcon Kind="Update" Margin="3,0" HorizontalAlignment="Left" Foreground="White" VerticalAlignment="Center"  />
+                                            <TextBlock Text="Update" HorizontalAlignment="Left" Foreground="White" Margin="24,0,0,0"></TextBlock>
+                                        </Grid>
+                                    </Button>
+                                    <Button  Background="#dc3545" Margin="5"  Style="{StaticResource RoundedButtonStyle}">
+                                        <Grid Width="80" >
+                                            <materialDesign:PackIcon Kind="Delete" Margin="3,0" HorizontalAlignment="Left" Foreground="White" VerticalAlignment="Center"  />
+                                            <TextBlock Text="delete" HorizontalAlignment="Left" Foreground="White" Margin="24,0,0,0"></TextBlock>
+                                        </Grid>
+                                    </Button>
+                                </StackPanel>
+                            </Grid>
+
+                            <Border CornerRadius="  5 5 2 2 "  Margin="30 15 30 70">
+                                <Border.Background>
+                                    <ImageBrush ImageSource="../image/iceCream_choco.jpg"/>
+                                </Border.Background>
+                            </Border>
                         </Grid>
-
-                        <Border CornerRadius="  5 5 2 2 "  Margin="30 15 30 70">
-                            <Border.Background>
-                                <ImageBrush ImageSource="../image/iceCream_choco.jpg"/>
-                            </Border.Background>
-                        </Border>
                     </Grid>
-                </Grid>
-            </ScrollViewer>
+                </ScrollViewer>
 
-            <StackPanel Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center">
-                <Button  Background="#007bff" Margin="10" Width="150" Padding="10" Style="{StaticResource RoundedButtonStyle}">
-                    <Grid Width="150" >
-                        <materialDesign:PackIcon Kind="Plus" HorizontalAlignment="Left" Foreground="White" VerticalAlignment="Center"  />
-                        <TextBlock Text="Add Ice Cream" FontWeight="Bold" HorizontalAlignment="Center" Foreground="White"></TextBlock>
-                    </Grid>
-                </Button>
-            </StackPanel>
+                <StackPanel Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <Button x:Name="addIceCreamBtn" Click="addIceCreamBtn_Click" Background="#007bff" Margin="10" Width="150" Padding="10" Style="{StaticResource RoundedButtonStyle}">
+                        <Grid Width="150" >
+                            <materialDesign:PackIcon Kind="Plus" HorizontalAlignment="Left" Foreground="White" VerticalAlignment="Center"  />
+                            <TextBlock Text="Add Ice Cream" FontWeight="Bold" HorizontalAlignment="Center" Foreground="White"></TextBlock>
+                        </Grid>
+                    </Button>
+                </StackPanel>
+
+            </Grid>
 
         </Grid>
 
     </Grid>
-</Window>
+</UserControl>

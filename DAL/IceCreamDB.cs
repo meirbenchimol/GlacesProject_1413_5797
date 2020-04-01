@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,9 +16,9 @@ namespace DAL
     class IceCreamDB : DbContext
     {
 
-       /* public IceCreamDB(DbContextOptions<IceCreamDB> options) : base(options)
-        {
-        }*/
+        /* public IceCreamDB(DbContextOptions<IceCreamDB> options) : base(options)
+         {
+         }*/
 
         public DbSet<Shop> Shops { get; set; }
         public DbSet<IceCream> IceCreams { get; set; }
@@ -29,8 +30,8 @@ namespace DAL
         }
 
 
-       
-       protected override void OnModelCreating(ModelBuilder builder)
+
+        protected override void OnModelCreating(ModelBuilder builder)
         {
             builder.Entity<IceCream>()
            .Property(e => e.Comments)
@@ -45,16 +46,16 @@ namespace DAL
           .HasConversion(v => string.Join(";", v), v => v.Split(new char[] { ';' }, StringSplitOptions.RemoveEmptyEntries));
 
 
-           builder.Entity<IceCream>()
-          .Property(e => e.Images)
-          .HasConversion(v => string.Join(";", v), v => v.Split(new char[] { ';' }, StringSplitOptions.RemoveEmptyEntries));
+            builder.Entity<IceCream>()
+           .Property(e => e.Images)
+           .HasConversion(v => string.Join(";", v), v => v.Split(new char[] { ';' }, StringSplitOptions.RemoveEmptyEntries));
 
             var converter = new ValueConverter<int[], String>(
                 v => String.Join(";", v),
                 v => v.Split(';').Select(val => int.Parse(val)).ToArray());
 
             builder.Entity<IceCream>()
-            .Property(e => e.marks)
+            .Property(e => e.Marks)
             .HasConversion(converter);
 
 

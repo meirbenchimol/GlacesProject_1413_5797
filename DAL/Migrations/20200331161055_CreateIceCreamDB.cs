@@ -36,7 +36,7 @@ namespace DAL.Migrations
                     Energy = table.Column<double>(nullable: true),
                     Proteins = table.Column<double>(nullable: true),
                     Calories = table.Column<double>(nullable: true),
-                    marks = table.Column<string>(nullable: true),
+                    Marks = table.Column<string>(nullable: true),
                     Comments = table.Column<string>(nullable: true)
                 },
                 constraints: table =>

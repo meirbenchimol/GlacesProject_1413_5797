@@ -22,7 +22,7 @@
                 <DataTrigger Binding="{Binding ElementName=Id, Path=Text}" Value="">
                     <Setter Property="Button.IsEnabled" Value="False"/>
                 </DataTrigger>
-               
+
             </Style.Triggers>
         </Style>
         <Style x:Key="ComboBoxStyle" TargetType="ComboBox">
@@ -34,7 +34,7 @@
             </Style.Triggers>
         </Style>
     </UserControl.Resources>
-    <Grid Margin="0,0,0,0" >
+    <Grid  Grid.Column="1">
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>

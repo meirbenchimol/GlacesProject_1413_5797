@@ -20,10 +20,12 @@ namespace PL.Views
     /// <summary>
     /// Interaction logic for ShopAreaUC.xaml
     /// </summary>
-    public partial class ShopAreaUC  
+    public partial class ShopAreaUC
     {
         public Shop Shop { get; set; }
         public ShopAreaVM shopAreaVM { get; set; }
+        public AddIceCreamUC addIceCreamUC;
+
 
         public ShopAreaUC(Shop shop)
         {
@@ -33,5 +35,14 @@ namespace PL.Views
             this.DataContext = shopAreaVM;
 
         }
+
+        private void addIceCreamBtn_Click(object sender, RoutedEventArgs e)
+        {
+            addIceCreamUC = new AddIceCreamUC();
+
+            ((MainWindow)System.Windows.Application.Current.MainWindow).homeGrid.Children.Add(addIceCreamUC);
+        }
+
+
     }
 }

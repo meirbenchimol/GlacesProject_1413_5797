@@ -13,6 +13,7 @@ using System.Collections;
 //using System.Data.Entity;
 using System.Collections.ObjectModel;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Data.SqlClient;
 using Newtonsoft.Json.Linq;
 
 namespace DAL
@@ -194,19 +195,23 @@ namespace DAL
         public   void AddShop(Shop s)
         {
 
-            try
-            {
-                using (var db = new IceCreamDB())
-                {
-                    db.Shops.Add(s);
-                    db.SaveChanges();
-                }
-            }
-            catch (Exception e)
-            {
-                throw new Exception("Erreur");
-            }
 
+            var db = new IceCreamDB();
+            db.Shops.Add(s);
+            db.SaveChanges();
+            /* try
+             {
+                 using (var db = new IceCreamDB())
+                 {
+                     db.Shops.Add(s);
+                     db.SaveChanges();
+                 }
+             }
+             catch (Exception e)
+             {
+                 throw new Exception("Erreur");
+             }
+             */
         }
         public void UpdateShop(Shop pre_shop, Shop current_shop)
         {
