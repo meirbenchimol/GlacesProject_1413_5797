@@ -29,6 +29,7 @@ namespace PL
         public LoginUC loginUC;
         public GraduateIceCreamUC graduateIceCream;
         public ShopAreaUC shopAreaUC;
+        public ProfileBarUC profileBarUC;
 
         public MainWindow()
         {
@@ -68,8 +69,11 @@ namespace PL
         {
             Shop shop = new Shop();
             shopAreaUC = new ShopAreaUC(shop);
-            ((MainWindow)System.Windows.Application.Current.MainWindow).homeGrid.Children.Clear();
-            ((MainWindow)System.Windows.Application.Current.MainWindow).homeGrid.Children.Add(shopAreaUC);
+            profileBarUC = new ProfileBarUC(shop);
+            ((MainWindow)System.Windows.Application.Current.MainWindow).inner_grid.Children.Clear();
+            ((MainWindow)System.Windows.Application.Current.MainWindow).shopAreaGrid.Children.Clear();
+            ((MainWindow)System.Windows.Application.Current.MainWindow).profile_grid.Children.Add(profileBarUC);
+            ((MainWindow)System.Windows.Application.Current.MainWindow).content_grid.Children.Add(shopAreaUC);
         }
     }
 }

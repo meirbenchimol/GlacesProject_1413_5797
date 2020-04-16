@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using PL.Models;
 using PL.ViewModel;
+using BE;
 
 
 namespace PL.Views
@@ -23,6 +24,8 @@ namespace PL.Views
     /// </summary>
     public partial class AddIceCreamUC : UserControl
     {
+        public ShopAreaUC shopAreaUC;
+        public Shop shop;
         public AddIceCreamVM AddIceCreamVM { get; set; }
 
         public AddIceCreamUC()
@@ -35,6 +38,15 @@ namespace PL.Views
         private void CalculeBtn_Click(object sender, RoutedEventArgs e)
         {
             attribut_grid.Visibility = Visibility.Visible;
+        }
+
+        private void bnt_return_Click(object sender, RoutedEventArgs e)
+        {
+            
+            shopAreaUC = new ShopAreaUC(shop);
+            ((MainWindow)System.Windows.Application.Current.MainWindow).content_grid.Children.Clear();
+            ((MainWindow)System.Windows.Application.Current.MainWindow).content_grid.Children.Add(shopAreaUC);
+
         }
     }
 }

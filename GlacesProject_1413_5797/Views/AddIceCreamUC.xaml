@@ -44,14 +44,27 @@
                 <RowDefinition Height="60"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"></ColumnDefinition>
-                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
+                <ColumnDefinition Width="3*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <Grid.Background>
-                <ImageBrush ImageSource="/GlacesProject_1413_5797;component/Image/font_ice_cream.jpg"/>
+                <ImageBrush Opacity="0.5" ImageSource="/GlacesProject_1413_5797;component/Image/font_ice_cream.jpg"/>
             </Grid.Background>
 
+            <Button x:Name="bnt_return" HorizontalAlignment="Left" Grid.Row="0" Margin="10" Padding="5" Grid.Column="0"
+                    VerticalAlignment="top"
+                    Style="{StaticResource ButtonMeir}"
+                    Click="bnt_return_Click"
+                    Background="OrangeRed"
+                    >
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" >
+                    <materialDesign:PackIcon Width="20" Height="20" Kind="ArrowBackCircle" Focusable="False"/>
+                    <TextBlock VerticalAlignment="Center" FontSize="12" FontWeight="Bold" Padding="03">Back</TextBlock>
+                </StackPanel>
+                
+            </Button>
             <StackPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center">
+                
                 <TextBlock FontFamily="Arial Black" Foreground="#FF22374B" FontSize="22" FontWeight="Bold"  >Put All Information of your Ice Cream</TextBlock>
             </StackPanel>
 
@@ -67,7 +80,7 @@
                         <RowDefinition Height="7*"></RowDefinition>
                         <RowDefinition Height="2*"></RowDefinition>
                     </Grid.RowDefinitions>
-                    <Grid Grid.Row="0" Margin="100,10,40,10">
+                    <Grid Grid.Row="0" Margin="30,10">
                         <Grid.Effect>
                             <DropShadowEffect RenderingBias="Quality" ShadowDepth="1" Color="#FF0F1317" />
                         </Grid.Effect>
@@ -87,35 +100,29 @@
 
             <StackPanel Grid.Row="1" Grid.Column="1">
                 <TextBlock Text="Ice Cream Name" FontSize="12" Background="{x:Null}"  HorizontalAlignment="Left" Margin="20,10,20,0"/>
-                <TextBox x:Name="ICName"  TextWrapping="Wrap" Text="{Binding ID}" HorizontalAlignment="Left" Padding="40,5"  VerticalAlignment="Top" 
+                <TextBox x:Name="ICName"  TextWrapping="Wrap" Text="{Binding ID}" HorizontalAlignment="Stretch" Padding="40,5"  VerticalAlignment="Top" 
                  FontSize="16"
                  BorderBrush="Black"
-                 MinWidth="320"
-                 MaxWidth="320"
-                 Margin="20,0,0,20"
+                 Margin="20,0,20,20"
                  Background="#FFF6F6F6"
                  Foreground="DarkGray"
                  TextAlignment="Left" />
 
                 <TextBlock Text="Ice Cream Taste (ex: chocolate,vanille,..)" FontSize="12" Background="{x:Null}"  HorizontalAlignment="Left" Margin="20,10,20,0"/>
-                <TextBox x:Name="taste"  TextWrapping="Wrap" Text="{Binding taste}" HorizontalAlignment="Left" Padding="40,5"  VerticalAlignment="Top" 
+                <TextBox x:Name="taste"  TextWrapping="Wrap" Text="{Binding taste}" HorizontalAlignment="Stretch" Padding="40,5"  VerticalAlignment="Top" 
                  FontSize="16"
                  BorderBrush="Black"
-                 MinWidth="320"
-                 MaxWidth="320"
-                 Margin="20,0,0,20"
+                 Margin="20,0,20,20"
                  Background="#FFF6F6F6"
                  Foreground="DarkGray"
                  TextAlignment="Left" />
 
                 <TextBlock Text="Description of your product" FontSize="12" Background="{x:Null}"  HorizontalAlignment="Left" Margin="20,10,20,0"/>
-                <TextBox x:Name="description"  TextWrapping="Wrap" Text="{Binding Description}" HorizontalAlignment="Left" Padding="40,5"  VerticalAlignment="Top" 
+                <TextBox x:Name="description"  TextWrapping="Wrap" Text="{Binding Description}" HorizontalAlignment="Stretch" Padding="40,5"  VerticalAlignment="Top" 
                  FontSize="16"
                  BorderBrush="Black"
-                 MinWidth="320"
-                 MaxWidth="320"
                  MinHeight="50"
-                 Margin="20,0,0,20"
+                 Margin="20,0,20,20"
                  Background="#FFF6F6F6"
                  Foreground="DarkGray"
                  TextAlignment="Left" />
@@ -123,7 +130,7 @@
             </StackPanel>
 
             <StackPanel Grid.Row="2" Grid.Column="1" >
-                <Button Style="{StaticResource RoundedButtonStyle}" x:Name="CalculeBtn" Click="CalculeBtn_Click" Background="Orange" Padding="5" Margin="40,10">Calculate the Value of your product</Button>
+                <Button Style="{StaticResource RoundedButtonStyle}" x:Name="CalculeBtn" Click="CalculeBtn_Click" Background="Orange" Padding="5" Margin="50,10">Calculate the Value of your product</Button>
                 <Grid x:Name="attribut_grid" Visibility="Hidden">
                     <Grid.ColumnDefinitions >
                         <ColumnDefinition Width="3*"></ColumnDefinition>

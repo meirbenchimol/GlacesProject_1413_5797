@@ -6,72 +6,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PL.Views"
         mc:Ignorable="d"
-         Height="560" Width="900">
+         Height="560" Width="720">
     <Grid Grid.Row="1" Grid.RowSpan="4">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="170"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
-
-        <Grid Grid.Row="0"  >
-            <Grid.RowDefinitions>
-                <RowDefinition Height="190"/>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
-            <Grid.Background>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#FFFBFFFF"/>
-                    <GradientStop Color="#FFCCFDFF" Offset="1"/>
-                </LinearGradientBrush>
-            </Grid.Background>
-            <Grid.Effect>
-                <DropShadowEffect RenderingBias="Quality" BlurRadius="20" ShadowDepth="1" Color="#FF8CC4F5" />
-            </Grid.Effect>
-
-            <Grid Grid.Row="0" >
-
-                <Ellipse Width="140" Height="140" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,15" Stroke="Azure" >
-                    <Ellipse.Fill >
-                        <ImageBrush ImageSource="../Image/font_ice_cream.jpg" Stretch="Fill"  AlignmentX="Center" AlignmentY="Center" >
-                        </ImageBrush>
-                    </Ellipse.Fill>
-                </Ellipse>
-                <TextBlock Text="{Binding ID}" HorizontalAlignment="Center" VerticalAlignment="Bottom"  FontSize="20" FontWeight="Bold" FontFamily="Arial"/>
-            </Grid>
-
-            <StackPanel Grid.Row="1" VerticalAlignment="top" Margin="0,30">
-                <Grid Margin="13,3" Height="33">
-                    <materialDesign:PackIcon Kind="AddressMarker" HorizontalAlignment="Left" VerticalAlignment="Top"  />
-                    <TextBlock Margin="20,0,0,0" TextWrapping="Wrap" Text="{Binding Adress}"  HorizontalAlignment="Left" Width="125"></TextBlock>
-                </Grid>
-                <Grid Margin="13,3" Height="33">
-                    <materialDesign:PackIcon Kind="Phone" HorizontalAlignment="Left" VerticalAlignment="Top"  />
-                    <TextBlock Margin="20,0,0,0" TextWrapping="Wrap" Text="{Binding Phone}"  HorizontalAlignment="Left" Width="125"></TextBlock>
-                </Grid>
-                <Grid Margin="13,3" Height="33">
-                    <materialDesign:PackIcon Kind="Web" HorizontalAlignment="Left" VerticalAlignment="Top"  />
-                    <TextBlock Margin="20,0,0,0" TextWrapping="Wrap" Text="{Binding WebSite}"  HorizontalAlignment="Left" Width="125"></TextBlock>
-                </Grid>
-                <Grid Margin="13,3" Height="33">
-                    <materialDesign:PackIcon Kind="Facebook" HorizontalAlignment="Left" VerticalAlignment="Top"  />
-                    <TextBlock Margin="20,0,0,0" TextWrapping="Wrap" Text="{Binding FaceBook}"  HorizontalAlignment="Left" Width="125"></TextBlock>
-                </Grid>
-            </StackPanel>
-
-            <StackPanel Grid.Row="1" VerticalAlignment="Bottom">
-                <Button  Background="#ffc107" Margin="10" Padding="5" Style="{StaticResource RoundedButtonStyle}">
-                    <Grid Width="100" >
-                        <materialDesign:PackIcon Kind="Update" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold" />
-                        <TextBlock Text="UPDATE" FontWeight="Bold" HorizontalAlignment="Center"></TextBlock>
-                    </Grid>
-                </Button>
-            </StackPanel>
-
-
-        </Grid>
+       
 
         <Grid Grid.Column="1" x:Name="ice_cream_grid">
             <Grid>

@@ -43,7 +43,7 @@
                 </Grid.RowDefinitions>
 
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="180"/>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
@@ -73,11 +73,11 @@
                     </StackPanel>
                 </Grid>
 
-                <Grid x:Name="profile_grid" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Grid.RowSpan="6">
+                <Grid x:Name="profile_grid" Grid.Row="0" Grid.Column="0"  Grid.RowSpan="6">
                     
                 </Grid>
 
-                <Grid x:Name="content_grid" Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="5" Grid.RowSpan="6">
+                <Grid x:Name="content_grid" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="6" Grid.RowSpan="6">
                     
                 </Grid>
 
