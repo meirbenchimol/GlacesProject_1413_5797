@@ -30,23 +30,7 @@ namespace DAL
                 db.IceCreams.Add(i);
                 db.SaveChanges();
 
-                var query1 = from m in db.Shops
-                             where (m.Id == i.ShopId)
-                             select m;
-
-                var query2 = from m in db.Shops
-                             where (m.Id == i.ShopId)
-                             select m;
-
-                Shop s = query2.FirstOrDefault<Shop>();
-                int j = 0;
-                while (s.Products[j] != null)
-                    j++;
-
-                s.Products[j] = i; 
-
-
-                UpdateShop(s, (Shop)query2);
+               
             }
         }
 

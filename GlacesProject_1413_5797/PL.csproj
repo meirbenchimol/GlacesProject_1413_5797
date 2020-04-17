@@ -282,20 +282,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BE\BE.csproj">
-      <Project>{9be576c9-e4c7-4119-a6e0-90052e37abdc}</Project>
-      <Name>BE</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\BL\BL.csproj">
-      <Project>{23164d69-fa96-446e-83b5-c357487a07c4}</Project>
-      <Name>BL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\DAL\DAL.csproj">
-      <Project>{749220b8-ee04-48f4-9375-9c113e9474bd}</Project>
-      <Name>DAL</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Views\profileImg.jpg" />
   </ItemGroup>
   <ItemGroup>
@@ -315,6 +301,20 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Image\icProfileImg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BE\BE.csproj">
+      <Project>{9be576c9-e4c7-4119-a6e0-90052e37abdc}</Project>
+      <Name>BE</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BL\BL.csproj">
+      <Project>{23164d69-fa96-446e-83b5-c357487a07c4}</Project>
+      <Name>BL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{749220b8-ee04-48f4-9375-9c113e9474bd}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

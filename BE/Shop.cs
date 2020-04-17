@@ -23,7 +23,7 @@ namespace BE
         public string Phone { get; set; }
 
 
-        public static string id = "shopa";
+        public static string id = "raphael";
 
         public String FaceBookLink { get; set; }
 
@@ -39,29 +39,17 @@ namespace BE
 
 
 
-        public IceCream[] Products
-        {
-            get { return products.ToArray(); }
-            set { Products = products.ToArray(); }
-        }
-
-        public List<IceCream> products = new List<IceCream>();
-
-
-
-
-
-       /* public Shop()
+     
+        public Shop()
         {
 
             Id = id;
-            id += "a";
-            Password = "1704";
+            Password = "2710";
             Adress = "8 Place de Bordeaux, Strasbourg";
             Phone = "0584226257";
             WebSiteLink = "shop.com";
             FaceBookLink = "shop fb";
             images.Add("shopIcon.png");
-        }*/
+        }
     }
 }

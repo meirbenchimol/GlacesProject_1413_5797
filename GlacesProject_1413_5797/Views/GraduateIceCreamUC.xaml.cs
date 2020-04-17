@@ -52,10 +52,10 @@ namespace PL.Views
         {
             IceCreamComboBox.IsEnabled = true;
             Shop shop = ShopComboBox.SelectedItem as Shop;
-            IceCreamComboBox.ItemsSource = shop.Products.ToList();
+          /*  IceCreamComboBox.ItemsSource = shop.Products.ToList();
             IceCreamComboBox.DisplayMemberPath = "Presentation";
             IceCreamComboBox.SelectedValuePath = "Presentation";
-
+            */
         }
     }
 }
