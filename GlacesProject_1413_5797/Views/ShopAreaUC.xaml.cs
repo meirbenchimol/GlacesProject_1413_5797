@@ -39,8 +39,8 @@ namespace PL.Views
         private void addIceCreamBtn_Click(object sender, RoutedEventArgs e)
         {
             addIceCreamUC = new AddIceCreamUC();
-
-            ((MainWindow)System.Windows.Application.Current.MainWindow).homeGrid.Children.Add(addIceCreamUC);
+            ((MainWindow)System.Windows.Application.Current.MainWindow).content_grid.Children.Clear();
+            ((MainWindow)System.Windows.Application.Current.MainWindow).content_grid.Children.Add(addIceCreamUC);
         }
 
 

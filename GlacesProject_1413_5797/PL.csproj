@@ -175,11 +175,13 @@
     <Compile Include="Models\GraduateICModel.cs" />
     <Compile Include="Models\LoginModel.cs" />
     <Compile Include="Models\MainModel.cs" />
+    <Compile Include="Models\ProfileBarModel.cs" />
     <Compile Include="Models\ShopAreaModel.cs" />
     <Compile Include="ViewModel\AddIceCreamVM.cs" />
     <Compile Include="ViewModel\GraduateIceCreamVM.cs" />
     <Compile Include="ViewModel\LoginVM.cs" />
     <Compile Include="ViewModel\MainVM.cs" />
+    <Compile Include="ViewModel\ProfileBarVM.cs" />
     <Compile Include="ViewModel\ShopAreaVM.cs" />
     <Compile Include="Views\AddIceCreamUC.xaml.cs">
       <DependentUpon>AddIceCreamUC.xaml</DependentUpon>
@@ -192,6 +194,9 @@
     </Compile>
     <Compile Include="Views\LoginUC.xaml.cs">
       <DependentUpon>LoginUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProfileBarUC.xaml.cs">
+      <DependentUpon>ProfileBarUC.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\RegisterShopUC.xaml.cs">
       <DependentUpon>RegisterShopUC.xaml</DependentUpon>
@@ -228,6 +233,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\LoginUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ProfileBarUC.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -303,6 +312,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Image\iceCream_choco.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\icProfileImg.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
