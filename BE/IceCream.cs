@@ -119,8 +119,7 @@ namespace BE
         public IceCream()
         {
 
-            Id = id;
-            id += "a";
+            Id ="essai";
             ShopId = "shop";
             taste.Add("Chocolate");
             images.Add("iceCream_choco.png");

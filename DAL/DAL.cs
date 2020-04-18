@@ -29,8 +29,6 @@ namespace DAL
             {
                 db.IceCreams.Add(i);
                 db.SaveChanges();
-
-               
             }
         }
 
@@ -78,7 +76,7 @@ namespace DAL
                 if (predicate == null)
                     return db.IceCreams;
 
-                return from i in db.IceCreams
+                return (IEnumerable<IceCream>) from i in db.IceCreams
                        where (predicate(i))
                        select i;
             }

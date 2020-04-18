@@ -18,7 +18,7 @@ namespace PL.Models
         {
             bl = new Bl();
             Current_Shop = new Shop();
-            bl.AddShop(Current_Shop);
+          //  bl.AddShop(Current_Shop);
 
         }
     }
