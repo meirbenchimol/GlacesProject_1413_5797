@@ -4,19 +4,20 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PL.Views"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d" 
-             d:DesignHeight="200" d:DesignWidth="400">
+             d:DesignHeight="300" d:DesignWidth="400">
     <UserControl.Resources>
         <Style x:Key="ButtonStyle" TargetType="Button">
-        <Style.Triggers>
-            <DataTrigger Binding="{Binding ElementName=IceCreamComboBox, Path=SelectedIndex}" Value="-1">
-                <Setter Property="Button.IsEnabled" Value="False"/>
-            </DataTrigger>
-            <DataTrigger Binding="{Binding ElementName=ShopComboBox, Path=SelectedIndex}" Value="-1">
-                <Setter Property="Button.IsEnabled" Value="False"/>
-            </DataTrigger>
-        </Style.Triggers>
-    </Style>
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding ElementName=Taste, Path=Text}" Value="">
+                    <Setter Property="Button.IsEnabled" Value="False"/>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding ElementName=ShopComboBox, Path=SelectedIndex}" Value="-1">
+                    <Setter Property="Button.IsEnabled" Value="False"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
         <Style x:Key="ComboBoxStyle" TargetType="ComboBox">
             <Style.Triggers>
                 <Trigger Property="SelectedIndex" Value="-1">
@@ -25,13 +26,41 @@
                 </Trigger>
             </Style.Triggers>
         </Style>
-        </UserControl.Resources>
-    <Grid>
+    </UserControl.Resources>
+    <Grid Background="#FFFDC666" Opacity="0.5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"></RowDefinition>
+            <RowDefinition Height="4*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
 
+        <StackPanel Orientation="Horizontal" Grid.Row="0" HorizontalAlignment="Center">
+            <Label Content="Select an IceCream that you eated for share your comment" FontWeight="Bold" FontSize="10"
+               HorizontalAlignment="Center"  VerticalAlignment="Center" >
+            </Label>
+            <materialDesign:PackIcon Kind="CommentEditOutline"  VerticalAlignment="Center" Foreground="DeepPink" Height="50"  Width="60"  />
+        </StackPanel>
 
-        <Label Content="Select an IceCream" FontWeight="Bold"  HorizontalAlignment="Left" Margin="153,16,0,0" VerticalAlignment="Top" Width="120"/>
-        <Button Content="Graduate" Style="{StaticResource ButtonStyle}" HorizontalAlignment="Left" Margin="153,162,0,0" VerticalAlignment="Top" Width="120" RenderTransformOrigin="-0.361,0.571" Click="Graduate"/>
-        <ComboBox Name="IceCreamComboBox"  Style="{StaticResource ComboBoxStyle}"  IsEnabled="False" HorizontalAlignment="Left" Margin="153,112,0,0" VerticalAlignment="Top" Width="120" />
-        <ComboBox Name="ShopComboBox"   Style="{StaticResource ComboBoxStyle}"     HorizontalAlignment="Left" Margin="153,62,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="Shop_Selected" />
+        <Grid Grid.Row="1" VerticalAlignment="Center">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition> 
+            </Grid.RowDefinitions>
+            <StackPanel Orientation="Horizontal" Margin="10,20 " Grid.Row="0">
+                <materialDesign:PackIcon Kind="Shop"  VerticalAlignment="Center" Foreground="Blue"  />
+                <Label FontSize="10">Select the shop where you eat the iceCream :</Label>
+                <ComboBox Name="ShopComboBox"   Style="{StaticResource ComboBoxStyle}"   VerticalAlignment="Top" Width="120" SelectionChanged="Shop_Selected" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="10,20" Grid.Row="1">
+                <materialDesign:PackIcon Kind="IceCream"  VerticalAlignment="Center" Foreground="Blue"  />
+                <Label FontSize="10">Select the shop where you eat the iceCream :</Label>
+                <ComboBox Name="IceCreamComboBox"  Style="{StaticResource ComboBoxStyle}" IsEnabled="False" HorizontalAlignment="Center"  VerticalAlignment="Center" MinWidth="120" />
+            </StackPanel>
+
+        </Grid>
+        <StackPanel Grid.Row="2">
+            <Button Content="Graduate" Style="{StaticResource ButtonMeir}" HorizontalAlignment="Center" 
+                    VerticalAlignment="Center" Padding="20,3" Click="Graduate" Background="DeepPink" Foreground="White"/>
+        </StackPanel>
     </Grid>
 </UserControl>
