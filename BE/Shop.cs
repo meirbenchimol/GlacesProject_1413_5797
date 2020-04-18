@@ -34,7 +34,9 @@ namespace BE
 
         public string[] Images
         {
-            get; set;
+            get { return images.ToArray(); }
+
+            set { value = images.ToArray(); }
         }
 
 
@@ -50,6 +52,7 @@ namespace BE
             WebSiteLink = "shop.com";
             FaceBookLink = "shop fb";
             images.Add("shopIcon.png");
+            
         }
     }
 }

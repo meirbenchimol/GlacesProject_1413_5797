@@ -35,7 +35,7 @@
         </Grid.RowDefinitions>
 
         <StackPanel Orientation="Horizontal" Grid.Row="0" HorizontalAlignment="Center">
-            <Label Content="Select an IceCream that you eated for share your comment" FontWeight="Bold" FontSize="10"
+            <Label Content="Select an IceCream that you eat for share your comment" FontWeight="Bold" FontSize="10"
                HorizontalAlignment="Center"  VerticalAlignment="Center" >
             </Label>
             <materialDesign:PackIcon Kind="CommentEditOutline"  VerticalAlignment="Center" Foreground="DeepPink" Height="50"  Width="60"  />

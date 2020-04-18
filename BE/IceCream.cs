@@ -63,7 +63,7 @@ namespace BE
         {
             get { return images.ToArray(); }
 
-            set { Images = images.ToArray(); }
+            set { value = images.ToArray(); }
 
         }
 
@@ -73,10 +73,10 @@ namespace BE
 
         public string Image
         {
-            get { return Images[0]; }
-
-            set { Image = Images[0]; }
+            get { return images.ElementAt(0).ToString(); }
+            set { value = images.ElementAt(0).ToString(); }
         }
+        
 
 
         public double? Energy { get; set; }
@@ -90,7 +90,7 @@ namespace BE
         {
             get { return marks.ToArray(); }
 
-            set { Marks = marks.ToArray(); }
+            set { value = marks.ToArray(); }
 
         }
 
@@ -105,7 +105,7 @@ namespace BE
         {
             get { return comments.ToArray(); }
 
-            set { Comments = comments.ToArray(); }
+            set { value = comments.ToArray(); }
 
         }
     
@@ -129,6 +129,8 @@ namespace BE
             Proteins = 80;
             Calories = 85;
             Description = "";
+            Calories = 85;
+            ///Image = images.ElementAt(0).ToString();
         }
 
     }

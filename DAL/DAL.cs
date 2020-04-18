@@ -74,11 +74,13 @@ namespace DAL
             using (var db = new IceCreamDB())
             {
                 if (predicate == null)
-                    return db.IceCreams;
+                    return db.IceCreams.ToList<IceCream>();
 
-                return (IEnumerable<IceCream>) from i in db.IceCreams
-                       where (predicate(i))
+                var list =  from i in db.IceCreams
+                       where predicate(i) // a revoir 
                        select i;
+
+                return list.ToList<IceCream>();
             }
 
         }

@@ -1,4 +1,6 @@
-﻿using System;
+﻿
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -31,11 +33,10 @@ namespace PL.Views
             InitializeComponent();
             MyBl = new Bl();
             IceCream iceCream = new IceCream();
-            // MyBl.AddIceCream(iceCream);
             ShopComboBox.ItemsSource = MyBl.GetAllShop();
             ShopComboBox.DisplayMemberPath = "Id";
             ShopComboBox.SelectedValuePath = "Id";
-           
+        
         }
 
 
@@ -54,6 +55,7 @@ namespace PL.Views
         {
             IceCreamComboBox.IsEnabled = true;
             Shop shop = ShopComboBox.SelectedItem as Shop;
+            
             IceCreamComboBox.ItemsSource = MyBl.GetAllIceCream();
             IceCreamComboBox.DisplayMemberPath = "Presentation";
             IceCreamComboBox.SelectedValuePath = "Presentation";
