@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using PL.ViewModel;
 using System.Windows.Media;
+using Microsoft.Win32;
 
 namespace PL.Views
 {
@@ -40,6 +41,10 @@ namespace PL.Views
 
         private void add_profile_img_btn_Click(object sender, RoutedEventArgs e)
         {
+            String url = "";
+            Microsoft.Win32.OpenFileDialog open = new OpenFileDialog();
+            open.Filter = "Image Files(*.jpg; *.jpeg; *.png;)|*.jpg; *jpeg; *png;";
+            
 
         }
 

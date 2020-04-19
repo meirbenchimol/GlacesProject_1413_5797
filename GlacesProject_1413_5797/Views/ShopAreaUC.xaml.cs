@@ -27,10 +27,11 @@ namespace PL.Views
         public AddIceCreamUC addIceCreamUC;
 
 
-        public ShopAreaUC(Shop shop)
+        public ShopAreaUC(string shopId)
         {
             InitializeComponent();
-            Shop = shop;
+            Shop = new Shop();
+            Shop.Id = shopId;
             shopAreaVM = new ShopAreaVM(this);
             this.DataContext = shopAreaVM;
 
@@ -38,7 +39,7 @@ namespace PL.Views
 
         private void addIceCreamBtn_Click(object sender, RoutedEventArgs e)
         {
-            addIceCreamUC = new AddIceCreamUC();
+            addIceCreamUC = new AddIceCreamUC(Shop.Id);
             ((MainWindow)System.Windows.Application.Current.MainWindow).content_grid.Children.Clear();
             ((MainWindow)System.Windows.Application.Current.MainWindow).content_grid.Children.Add(addIceCreamUC);
         }

@@ -8,11 +8,22 @@ using PL.Models;
 using PL.Views;
 using PL.Commands;
 using BE;
+using System.Windows;
 
 namespace PL.ViewModel
 {
     public class AddIceCreamVM  : INotifyPropertyChanged
     {
+
+
+        public AddIceCreamVM(AddIceCreamUC addIceCreamUC)
+        {
+            CurrentModel = new AddIceCreamModel(addIceCreamUC.ShopId);
+            this.addIceCreamUC = addIceCreamUC;
+            this.MyCommand = new SpecialCommand();
+            MyCommand.callComplete += AddIceCream;
+        }
+
 
         public AddIceCreamModel CurrentModel { get; set; }
 
@@ -20,16 +31,6 @@ namespace PL.ViewModel
 
         private AddIceCreamUC addIceCreamUC;
         public SpecialCommand MyCommand { get; set; }
-
-        public AddIceCreamVM(AddIceCreamUC addIceCreamUC)
-        {
-            CurrentModel = new AddIceCreamModel();
-            MyCommand = new SpecialCommand();
-            this.addIceCreamUC = addIceCreamUC;
-            MyCommand.callComplete += MyCommand_AddIceCream;
-        }
-
-
 
 
         public string Id
@@ -78,14 +79,24 @@ namespace PL.ViewModel
         }
 
 
+        #region  functions
 
 
-        public void MyCommand_AddIceCream(string obj)
+        public void AddIceCream(string obj)
         {
 
-            CurrentModel.AddIceCream();
+            bool found = CurrentModel.MyBl.CheckIceCream(CurrentModel.MyIC.Id, CurrentModel.MyIC.ShopId);
+            if (found)
+                MessageBox.Show("Warning !!  IceCream  with same ID already exists !!", "Warning", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+            else
+            {
+                CurrentModel.AddIceCream();
+                MessageBox.Show("Great !! You have add Ice Cream  !!", "Welcome", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+            }
 
         }
+
+        #endregion 
 
     }
 }

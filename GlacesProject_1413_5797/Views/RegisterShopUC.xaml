@@ -54,7 +54,7 @@
                     <Button.Content>
                         <Ellipse Width="140" Height="140" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,15" Stroke="Azure"  >
                             <Ellipse.Fill >
-                                <ImageBrush ImageSource="profileImg.jpg" Stretch="Fill"  AlignmentX="Center" AlignmentY="Center" >
+                                <ImageBrush x:Name="imgProfile" ImageSource="/GlacesProject_1413_5797;component/Image/profileImg.jpg" Stretch="Fill"  AlignmentX="Center" AlignmentY="Center" >
                                 </ImageBrush>
                             </Ellipse.Fill>
                         </Ellipse>

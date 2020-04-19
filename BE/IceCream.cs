@@ -29,7 +29,9 @@ namespace BE
         {
             get { return taste.ToArray(); }
 
-            set { Comments = taste.ToArray(); }
+            set { Comments = taste.ToArray();
+                value = taste.ToArray();
+            }
 
         }
 
@@ -131,7 +133,6 @@ namespace BE
             Proteins = 80;
             Calories = 85;
             Description = "";
-            Calories = 85;
             ///Image = images.ElementAt(0).ToString();
         }
 

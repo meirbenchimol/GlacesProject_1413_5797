@@ -25,12 +25,13 @@ namespace PL.Views
     public partial class AddIceCreamUC : UserControl
     {
         public ShopAreaUC shopAreaUC;
-        public Shop shop;
+        public string ShopId;
         public AddIceCreamVM AddIceCreamVM { get; set; }
 
-        public AddIceCreamUC()
+        public AddIceCreamUC(string shopId)
         {
             InitializeComponent();
+            ShopId = shopId;
             AddIceCreamVM = new AddIceCreamVM(this);
             this.DataContext = AddIceCreamVM;
         }
@@ -40,13 +41,15 @@ namespace PL.Views
             attribut_grid.Visibility = Visibility.Visible;
         }
 
-        private void bnt_return_Click(object sender, RoutedEventArgs e)
+        private void Bnt_return_Click(object sender, RoutedEventArgs e)
         {
             
-            shopAreaUC = new ShopAreaUC(shop);
+            shopAreaUC = new ShopAreaUC(ShopId);
             ((MainWindow)System.Windows.Application.Current.MainWindow).content_grid.Children.Clear();
             ((MainWindow)System.Windows.Application.Current.MainWindow).content_grid.Children.Add(shopAreaUC);
 
         }
+
+       
     }
 }

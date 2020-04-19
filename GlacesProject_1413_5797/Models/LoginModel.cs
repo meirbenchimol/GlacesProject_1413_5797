@@ -36,11 +36,14 @@ namespace PL.Models
                 return false;
             else
             {
-                shopAreaUC = new ShopAreaUC(shop);
+                shopAreaUC = new ShopAreaUC(shop.Id);
                 profileBarUC = new ProfileBarUC(shop);
                 ((MainWindow)System.Windows.Application.Current.MainWindow).mainVM.UpdateShop(shop);
+                ((MainWindow)System.Windows.Application.Current.MainWindow).content_grid.Children.Clear();
                 ((MainWindow)System.Windows.Application.Current.MainWindow).inner_grid.Children.Clear();
-                ((MainWindow)System.Windows.Application.Current.MainWindow).inner_grid.Children.Add(shopAreaUC);
+                ((MainWindow)System.Windows.Application.Current.MainWindow).profile_grid.Children.Clear();
+
+                ((MainWindow)System.Windows.Application.Current.MainWindow).content_grid.Children.Add(shopAreaUC);
                 ((MainWindow)System.Windows.Application.Current.MainWindow).profile_grid.Children.Add(profileBarUC);
                 return true;
             }

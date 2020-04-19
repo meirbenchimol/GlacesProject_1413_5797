@@ -30,6 +30,7 @@ namespace PL
         public GraduateIceCreamUC graduateIceCream;
         public ShopAreaUC shopAreaUC;
         public ProfileBarUC profileBarUC;
+        public HomeUC homeUC;
 
         public MainWindow()
         {
@@ -43,6 +44,8 @@ namespace PL
         {
             loginUC = new LoginUC();
             ((MainWindow)System.Windows.Application.Current.MainWindow).inner_grid.Children.Clear();
+            ((MainWindow)System.Windows.Application.Current.MainWindow).profile_grid.Children.Clear();
+            ((MainWindow)System.Windows.Application.Current.MainWindow).content_grid.Children.Clear();
             ((MainWindow)System.Windows.Application.Current.MainWindow).shopAreaGrid.Children.Clear();
             ((MainWindow)System.Windows.Application.Current.MainWindow).inner_grid.Children.Add(loginUC);
         }
@@ -54,6 +57,12 @@ namespace PL
 
         private void ButtonHome_Click(object sender, RoutedEventArgs e)
         {
+            homeUC = new HomeUC();
+            ((MainWindow)System.Windows.Application.Current.MainWindow).inner_grid.Children.Clear();
+            ((MainWindow)System.Windows.Application.Current.MainWindow).content_grid.Children.Clear();
+            ((MainWindow)System.Windows.Application.Current.MainWindow).profile_grid.Children.Clear();
+            ((MainWindow)System.Windows.Application.Current.MainWindow).inner_grid.Children.Add(homeUC);
+
         }
 
         private void graduate_btn_Click(object sender, RoutedEventArgs e)
@@ -61,6 +70,8 @@ namespace PL
             graduateIceCream = new GraduateIceCreamUC();
             ((MainWindow)System.Windows.Application.Current.MainWindow).inner_grid.Children.Clear();
             ((MainWindow)System.Windows.Application.Current.MainWindow).shopAreaGrid.Children.Clear();
+            ((MainWindow)System.Windows.Application.Current.MainWindow).profile_grid.Children.Clear();
+            ((MainWindow)System.Windows.Application.Current.MainWindow).content_grid.Children.Clear();
             ((MainWindow)System.Windows.Application.Current.MainWindow).inner_grid.Children.Add(graduateIceCream);
 
         }
@@ -68,7 +79,7 @@ namespace PL
         private void shopAreaBtnBis_Click(object sender, RoutedEventArgs e)
         {
             Shop shop = new Shop();
-            shopAreaUC = new ShopAreaUC(shop);
+            shopAreaUC = new ShopAreaUC(shop.Id);
             profileBarUC = new ProfileBarUC(shop);
             ((MainWindow)System.Windows.Application.Current.MainWindow).inner_grid.Children.Clear();
             ((MainWindow)System.Windows.Application.Current.MainWindow).shopAreaGrid.Children.Clear();

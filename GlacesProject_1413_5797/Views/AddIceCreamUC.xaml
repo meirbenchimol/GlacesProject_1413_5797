@@ -54,7 +54,7 @@
             <Button x:Name="bnt_return" HorizontalAlignment="Left" Grid.Row="0" Margin="10" Padding="5" Grid.Column="0"
                     VerticalAlignment="top"
                     Style="{StaticResource ButtonMeir}"
-                    Click="bnt_return_Click"
+                    Click="Bnt_return_Click"
                     Background="OrangeRed"
                     >
                 <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" >
@@ -100,7 +100,7 @@
 
             <StackPanel Grid.Row="1" Grid.Column="1">
                 <TextBlock Text="Ice Cream Name" FontSize="12" Background="{x:Null}"  HorizontalAlignment="Left" Margin="20,10,20,0"/>
-                <TextBox x:Name="ICName"  TextWrapping="Wrap" Text="{Binding ID}" HorizontalAlignment="Stretch" Padding="40,5"  VerticalAlignment="Top" 
+                <TextBox x:Name="Id"  TextWrapping="Wrap" Text="{Binding Id}" HorizontalAlignment="Stretch" Padding="40,5"  VerticalAlignment="Top" 
                  FontSize="16"
                  BorderBrush="Black"
                  Margin="20,0,20,20"
@@ -109,7 +109,7 @@
                  TextAlignment="Left" />
 
                 <TextBlock Text="Ice Cream Taste (ex: chocolate,vanille,..)" FontSize="12" Background="{x:Null}"  HorizontalAlignment="Left" Margin="20,10,20,0"/>
-                <TextBox x:Name="taste"  TextWrapping="Wrap" Text="{Binding taste}" HorizontalAlignment="Stretch" Padding="40,5"  VerticalAlignment="Top" 
+                <TextBox x:Name="Taste"  TextWrapping="Wrap" Text="{Binding Taste}" HorizontalAlignment="Stretch" Padding="40,5"  VerticalAlignment="Top" 
                  FontSize="16"
                  BorderBrush="Black"
                  Margin="20,0,20,20"
@@ -118,7 +118,7 @@
                  TextAlignment="Left" />
 
                 <TextBlock Text="Description of your product" FontSize="12" Background="{x:Null}"  HorizontalAlignment="Left" Margin="20,10,20,0"/>
-                <TextBox x:Name="description"  TextWrapping="Wrap" Text="{Binding Description}" HorizontalAlignment="Stretch" Padding="40,5"  VerticalAlignment="Top" 
+                <TextBox x:Name="Description"  TextWrapping="Wrap" Text="{Binding Description}" HorizontalAlignment="Stretch" Padding="40,5"  VerticalAlignment="Top" 
                  FontSize="16"
                  BorderBrush="Black"
                  MinHeight="50"
@@ -171,7 +171,10 @@
             </StackPanel>
 
             <StackPanel Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Center">
-                <Button x:Name="addIceCreamBtn"  Background="#007bff" Margin="10" Width="150" Padding="10" Style="{StaticResource RoundedButtonStyle}">
+                <Button x:Name="addIceCreamBtn" 
+                        Command="{Binding MyCommand}"
+                        CommandParameter="{Binding ElementName=Id, Path=Text}"
+                        Background="#007bff" Margin="10" Width="150" Padding="10" Style="{StaticResource RoundedButtonStyle}">
                     <Grid Width="150" >
                         <materialDesign:PackIcon Kind="Plus" HorizontalAlignment="Left" Foreground="White" VerticalAlignment="Center"  />
                         <TextBlock Text="Add Ice Cream" FontWeight="Bold" HorizontalAlignment="Center" Foreground="White"></TextBlock>

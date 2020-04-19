@@ -37,11 +37,12 @@ namespace PL.Models
         internal void AddShop()
         {
             MyBl.AddShop(MyShop);
-            shopAreaUC = new ShopAreaUC(MyShop);
+            shopAreaUC = new ShopAreaUC(MyShop.Id);
             profileBarUC = new ProfileBarUC(MyShop);
             ((MainWindow)System.Windows.Application.Current.MainWindow).mainVM.UpdateShop(MyShop);
+            ((MainWindow)System.Windows.Application.Current.MainWindow).content_grid.Children.Clear();
             ((MainWindow)System.Windows.Application.Current.MainWindow).inner_grid.Children.Clear();
-            ((MainWindow)System.Windows.Application.Current.MainWindow).inner_grid.Children.Add(shopAreaUC);
+            ((MainWindow)System.Windows.Application.Current.MainWindow).content_grid.Children.Add(shopAreaUC);
             ((MainWindow)System.Windows.Application.Current.MainWindow).profile_grid.Children.Add(profileBarUC);
         }
 

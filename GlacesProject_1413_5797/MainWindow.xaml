@@ -15,13 +15,14 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="40"/>
             <RowDefinition Height="*"/>
-
         </Grid.RowDefinitions>
-
 
 
         <Grid Grid.Row="0" Grid.ColumnSpan="5" Background="#FFCAE2F7">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right"  Background="{x:Null}" >
+                <Button  x:Name="ButtonShop" Width="30" Height="30" Margin="2,0,10,0" Foreground="Black"  Background="{x:Null}" BorderBrush="{x:Null}" Click="ShopArea"  Style="{StaticResource ButtonMeir}" >
+                    <materialDesign:PackIcon Kind="Shop" Width="27" Height="27"  ></materialDesign:PackIcon>
+                </Button>
                 <Button x:Name="ButtonHome" Width="30" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" Style="{StaticResource ButtonMeir}" Click="ButtonHome_Click">
                     <materialDesign:PackIcon Width="25" Height="25" Kind="Home" Focusable="False"/>
                 </Button>
@@ -49,7 +50,7 @@
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="180"/>
                 </Grid.ColumnDefinitions>
 
 
@@ -130,10 +131,6 @@
             </Grid>
 
         </Grid>
-
-
-
-
 
 
     </Grid>

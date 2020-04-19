@@ -43,6 +43,8 @@ namespace PL.Views
             RegisterShopUC registerShopUC = new RegisterShopUC();
             
             ((MainWindow)System.Windows.Application.Current.MainWindow).inner_grid.Children.Clear();
+            ((MainWindow)System.Windows.Application.Current.MainWindow).profile_grid.Children.Clear();
+            ((MainWindow)System.Windows.Application.Current.MainWindow).content_grid.Children.Clear();
             ((MainWindow)System.Windows.Application.Current.MainWindow).inner_grid.Children.Add(registerShopUC);
 
         }
