@@ -129,11 +129,16 @@ namespace BL
             return MyDal.FindListIceCream(taste, ShopID);
         }
 
-        public IEnumerable<IceCream> GetAllIceCream(Func<IceCream, bool> predicate = null)
+        public IEnumerable<IceCream> GetIceCreamFromShop(String shopid)
+        {
+            return MyDal.GetIceCreamFromShop(shopid);
+        }
+
+
+        public IEnumerable<IceCream> GetAllIceCream(Func<IceCream,bool> predicate=null)
         {
             return MyDal.GetAllIceCream(predicate);
         }
-
         public bool CheckIceCream(string Id, string ShopId)
         {
             return MyDal.CheckIceCream(Id, ShopId);

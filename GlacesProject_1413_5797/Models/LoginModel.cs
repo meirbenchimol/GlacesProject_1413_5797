@@ -16,14 +16,15 @@ namespace PL.Models
 
         public ShopAreaUC shopAreaUC;
 
+        public ProfileBarUC profileBarUC;
+
         public Bl MyBl { get; set; }
 
   
         public LoginModel()
         {
             MyBl = new Bl();
-           // CurrentShop = new Shop();
-           // MyBl.AddShop(CurrentShop);
+            
 
         }
 
@@ -36,10 +37,11 @@ namespace PL.Models
             else
             {
                 shopAreaUC = new ShopAreaUC(shop);
-                CurrentShop = shop;
+                profileBarUC = new ProfileBarUC(shop);
                 ((MainWindow)System.Windows.Application.Current.MainWindow).mainVM.UpdateShop(shop);
                 ((MainWindow)System.Windows.Application.Current.MainWindow).inner_grid.Children.Clear();
                 ((MainWindow)System.Windows.Application.Current.MainWindow).inner_grid.Children.Add(shopAreaUC);
+                ((MainWindow)System.Windows.Application.Current.MainWindow).profile_grid.Children.Add(profileBarUC);
                 return true;
             }
 

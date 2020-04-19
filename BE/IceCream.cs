@@ -48,10 +48,12 @@ namespace BE
         public string Presentation
         {
             get {
-                string s = Id;
+                string s = Id + " " ;
                 for (int i = 0; i < Taste.ToList().Count; i++)
                 {
-                    s += Taste[i].ToString();
+                    s +=  Taste[i].ToString();
+                    if (i < (Taste.ToList().Count - 1))
+                        s += ", " ;
                 }
                 return s;
             }

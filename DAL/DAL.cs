@@ -69,6 +69,22 @@ namespace DAL
 
         }
 
+        public IEnumerable<IceCream> GetIceCreamFromShop(string shopid)
+        {
+            using (var db = new IceCreamDB())
+            {
+              
+                var list =  from i in db.IceCreams
+                       where i.ShopId == shopid 
+                       select i;
+
+                return list.ToList<IceCream>();
+            }
+
+        }
+
+
+
         public IEnumerable<IceCream> GetAllIceCream(Func<IceCream, bool> predicate = null)
         {
             using (var db = new IceCreamDB())
@@ -76,14 +92,13 @@ namespace DAL
                 if (predicate == null)
                     return db.IceCreams.ToList<IceCream>();
 
-                var list =  from i in db.IceCreams
-                       where predicate(i) // a revoir 
-                       select i;
-
-                return list.ToList<IceCream>();
+                return (IEnumerable<IceCream>)from s in db.IceCreams
+                                          where (predicate(s))
+                                          select s;
             }
-
         }
+
+
         public IEnumerable<IceCream> FindListIceCream(string taste, string ShopID)
         {
 

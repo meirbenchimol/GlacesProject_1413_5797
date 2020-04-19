@@ -56,7 +56,7 @@ namespace PL.Views
             IceCreamComboBox.IsEnabled = true;
             Shop shop = ShopComboBox.SelectedItem as Shop;
             
-            IceCreamComboBox.ItemsSource = MyBl.GetAllIceCream();
+            IceCreamComboBox.ItemsSource = MyBl.GetIceCreamFromShop(shop.Id);
             IceCreamComboBox.DisplayMemberPath = "Presentation";
             IceCreamComboBox.SelectedValuePath = "Presentation";
             

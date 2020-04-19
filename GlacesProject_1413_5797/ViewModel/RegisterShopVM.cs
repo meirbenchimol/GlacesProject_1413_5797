@@ -7,6 +7,7 @@ using System.ComponentModel;
 using PL.Models;
 using PL.Views;
 using PL.Commands;
+using System.Windows;
 
 namespace PL.ViewModel
 {
@@ -19,7 +20,7 @@ namespace PL.ViewModel
             CurrentModel = new RegisterShopModel();
             this.ShopUC = registerShopUC;
             this.MyCommand = new SpecialCommand();
-            MyCommand.callComplete += RegisterShop;
+            MyCommand.callComplete +=  RegisterShop;
 
         }
 
@@ -111,6 +112,15 @@ namespace PL.ViewModel
         public void RegisterShop(string obj)
         {
 
+            bool found = CurrentModel.MyBl.CheckShopExist(CurrentModel.MyShop.Id);
+            if(found)
+                MessageBox.Show("Warning !! A Shop  with same ID already exists !!", "Warning", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+            else
+            {
+                CurrentModel.AddShop();
+                MessageBox.Show("Great !! You're now a Shop of our company  !!", "Welcome", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+            }
+           
 
         }
 

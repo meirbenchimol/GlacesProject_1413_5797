@@ -36,9 +36,9 @@ namespace PL.ViewModel
             bool found = CurrentModel.findShopByLogin(LoginUC.Id.Text, LoginUC.Password.Password);
 
             if(found)
-                System.Windows.MessageBox.Show("great!", "great", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                System.Windows.MessageBox.Show("Great! Welcome to your shop space !!", "Great", MessageBoxButton.OK, MessageBoxImage.Exclamation);
             else
-                System.Windows.MessageBox.Show("error!", "error", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                System.Windows.MessageBox.Show("Error! You can't access to your shop space !!", "Error", MessageBoxButton.OK, MessageBoxImage.Exclamation);
 
         }
 

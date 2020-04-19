@@ -7,6 +7,18 @@
              xmlns:local="clr-namespace:PL.Views"
              mc:Ignorable="d" 
              d:DesignHeight="550" d:DesignWidth="800">
+    <UserControl.Resources>
+        <Style x:Key="ButtonStyle" TargetType="Button">
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding ElementName=Password, Path=Backround}" Value="Red">
+                    <Setter Property="Button.IsEnabled" Value="False"/>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding ElementName=ConfirmPassword, Path=Background}" Value="Red">
+                    <Setter Property="Button.IsEnabled" Value="False"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+    </UserControl.Resources>
 
     <Grid  Grid.Row="1" Grid.Column="1" Grid.RowSpan="4" Grid.ColumnSpan="3">
         <Grid.Background>
@@ -19,6 +31,8 @@
 
         </Grid.RowDefinitions>
 
+       
+       
 
 
         <StackPanel Grid.Row="0">
@@ -55,7 +69,7 @@
                  BorderBrush="Black"
                  MinWidth="250"
                  Margin="0,0,0,20"
-                 Background="#FFF6F6F6"
+                 Background="WhiteSmoke"
                  Foreground="DarkGray"
                  TextAlignment="Left"/>
 
@@ -64,57 +78,59 @@
                  FontSize="16"
                  MinWidth="250"
                  BorderBrush="Black"
-                 Background="#FFF6F6F6"
+                 Background="WhiteSmoke"
                  Foreground="DarkGray"
                  Margin="0,0,0,20"
                  />
 
                 <TextBlock Text=" Confirm your Password" FontSize="12" Background="{x:Null}"  HorizontalAlignment="Center" MinWidth="250"/>
-                <PasswordBox  HorizontalAlignment="Center" Padding="40,5"  PasswordChanged="PasswordBox_PasswordChanged" VerticalAlignment="Top" 
+                <PasswordBox  x:Name="ConfirmPassword" HorizontalAlignment="Center" Padding="40,5"  PasswordChanged="ConfirmPasswordBox_PasswordChanged" VerticalAlignment="Top" 
                  FontSize="16"
                  MinWidth="250"
                  BorderBrush="Black"
-                 Background="#FFF6F6F6"
+                 Background="WhiteSmoke"
                  Foreground="DarkGray"
                  Margin="0,0,0,20"
                  />
 
                 <TextBlock Text=" Address" FontSize="12" Background="{x:Null}"  HorizontalAlignment="Center" MinWidth="250"/>
-                <TextBox x:Name="address"  HorizontalAlignment="Center" Padding="40,5"  VerticalAlignment="Top" 
+                <TextBox x:Name="Adress"  HorizontalAlignment="Center" Padding="40,5"  VerticalAlignment="Top" 
                  FontSize="16"
+                 Text="{Binding Adress}"
                  MinWidth="250"
                  BorderBrush="Black"
-                 Background="#FFF6F6F6"
+                 Background="WhiteSmoke"
                  Foreground="DarkGray"
                  Margin="0,0,0,20"
                  />
 
                 <TextBlock Text=" Phone Number" FontSize="12" Background="{x:Null}"  HorizontalAlignment="Center" MinWidth="250"/>
-                <TextBox x:Name="phoneNumber"   HorizontalAlignment="Center" Padding="40,5"  VerticalAlignment="Top" 
+                <TextBox x:Name="Phone"  Text="{Binding Phone}"  HorizontalAlignment="Center" Padding="40,5"  VerticalAlignment="Top" 
                  FontSize="16"
                  MinWidth="250"
                  BorderBrush="Black"
-                 Background="#FFF6F6F6"
+                 Background="WhiteSmoke"
                  Foreground="DarkGray"
                  Margin="0,0,0,20"
                  />
 
                 <TextBlock Text=" Your link to facebook" FontSize="12" Background="{x:Null}"  HorizontalAlignment="Center" MinWidth="250"/>
-                <TextBox x:Name="facebook"  HorizontalAlignment="Center" Padding="40,5"  VerticalAlignment="Top" 
+                <TextBox x:Name="FaceBook"   Text="{Binding FaceBook}" HorizontalAlignment="Center" Padding="40,5"  VerticalAlignment="Top" 
                  FontSize="16"
                  MinWidth="250"
                  BorderBrush="Black"
-                 Background="#FFF6F6F6"
+                 Background="WhiteSmoke"
                  Foreground="DarkGray"
                  Margin="0,0,0,20"
                  />
 
                 <TextBlock Text=" Your link to your website" FontSize="12" Background="{x:Null}"  HorizontalAlignment="Center" MinWidth="250"/>
-                <TextBox x:Name="website"  HorizontalAlignment="Center" Padding="40,5"  VerticalAlignment="Top" 
+                <TextBox x:Name="WebSite"  HorizontalAlignment="Center" Padding="40,5"  VerticalAlignment="Top" 
                  FontSize="16"
                  MinWidth="250"
+                 Text="{Binding WebSite}" 
                  BorderBrush="Black"
-                 Background="#FFF6F6F6"
+                 Background="WhiteSmoke"
                  Foreground="DarkGray"
                  Margin="0,0,0,40"
                  />
@@ -126,14 +142,16 @@
         </ScrollViewer>
 
         <StackPanel Grid.Row="2" HorizontalAlignment="Center"  VerticalAlignment="Center" >
-            <Button Content="Register"   x:Name="register_btn" Click="register_btn_Click"
+            <Button Content="Register"   x:Name="register_btn"
+                Command="{Binding MyCommand}"
+                CommandParameter="{Binding ElementName=Id, Path=Text}"
                 Background="#FF64CCF1"
                 Foreground="White"
-                
+                Style="{StaticResource ButtonStyle}"
                 FontFamily="Arial"
                 Padding="30,5"
                 FontSize="20" 
-                Style="{DynamicResource RoundedButtonStyle}" />
+                />
 
 
         </StackPanel>

@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using PL.ViewModel;
+using System.Windows.Media;
 
 namespace PL.Views
 {
@@ -42,9 +43,22 @@ namespace PL.Views
 
         }
 
-        private void register_btn_Click(object sender, RoutedEventArgs e)
-        {
+       
 
+        private void ConfirmPasswordBox_PasswordChanged(object sender, RoutedEventArgs e)
+        {
+            if (((PasswordBox)sender).Password != this.Password.Password)
+            {
+                Password.Background = Brushes.Red;
+                ConfirmPassword.Background = Brushes.Red;
+                //throw new Exception("Warning !!! You must enter the same password !!");
+            }
+            else
+            {
+                Password.Background = Brushes.WhiteSmoke;
+                ConfirmPassword.Background = Brushes.WhiteSmoke;
+            }
+           
         }
     }
 }

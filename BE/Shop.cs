@@ -45,12 +45,12 @@ namespace BE
         public Shop()
         {
 
-            Id = id;
+            Id = "";
             Password = "2710";
-            Adress = "8 Place de Bordeaux, Strasbourg";
-            Phone = "0584226257";
-            WebSiteLink = "shop.com";
-            FaceBookLink = "shop fb";
+            Adress = "";
+            Phone = "058";
+            WebSiteLink = "";
+            FaceBookLink = "";
             images.Add("shopIcon.png");
             
         }

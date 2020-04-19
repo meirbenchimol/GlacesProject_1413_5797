@@ -23,8 +23,6 @@ namespace PL.ViewModel
         public void UpdateShop(Shop shop)
         {
             mainModel.Current_Shop = shop;
-            
-
         }
     }
 }
