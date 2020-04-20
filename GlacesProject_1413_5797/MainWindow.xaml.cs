@@ -27,7 +27,8 @@ namespace PL
     {
         public MainVM mainVM;
         public LoginUC loginUC;
-        public GraduateIceCreamUC graduateIceCream;
+        public GraduateIceCreamUC GraduateIceCream;
+        public SearchIceCreamUC SearchIceCream;
         public ShopAreaUC shopAreaUC;
         public ProfileBarUC profileBarUC;
         public HomeUC homeUC;
@@ -67,12 +68,12 @@ namespace PL
 
         private void graduate_btn_Click(object sender, RoutedEventArgs e)
         {
-            graduateIceCream = new GraduateIceCreamUC();
+            GraduateIceCream = new GraduateIceCreamUC();
             ((MainWindow)System.Windows.Application.Current.MainWindow).inner_grid.Children.Clear();
             ((MainWindow)System.Windows.Application.Current.MainWindow).shopAreaGrid.Children.Clear();
             ((MainWindow)System.Windows.Application.Current.MainWindow).profile_grid.Children.Clear();
             ((MainWindow)System.Windows.Application.Current.MainWindow).content_grid.Children.Clear();
-            ((MainWindow)System.Windows.Application.Current.MainWindow).inner_grid.Children.Add(graduateIceCream);
+            ((MainWindow)System.Windows.Application.Current.MainWindow).inner_grid.Children.Add(GraduateIceCream);
 
         }
 
@@ -85,6 +86,17 @@ namespace PL
             ((MainWindow)System.Windows.Application.Current.MainWindow).shopAreaGrid.Children.Clear();
             ((MainWindow)System.Windows.Application.Current.MainWindow).profile_grid.Children.Add(profileBarUC);
             ((MainWindow)System.Windows.Application.Current.MainWindow).content_grid.Children.Add(shopAreaUC);
+        }
+
+        private void search_btn_Click(object sender, RoutedEventArgs e)
+        {
+
+            SearchIceCream = new SearchIceCreamUC();
+            ((MainWindow)System.Windows.Application.Current.MainWindow).inner_grid.Children.Clear();
+            ((MainWindow)System.Windows.Application.Current.MainWindow).shopAreaGrid.Children.Clear();
+            ((MainWindow)System.Windows.Application.Current.MainWindow).profile_grid.Children.Clear();
+            ((MainWindow)System.Windows.Application.Current.MainWindow).content_grid.Children.Clear();
+            ((MainWindow)System.Windows.Application.Current.MainWindow).inner_grid.Children.Add(SearchIceCream);
         }
     }
 }

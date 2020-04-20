@@ -6,7 +6,7 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:PL"
         mc:Ignorable="d"
-        Title="MainWindow" Height="600" Width="900" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None">
+        Title="MainWindow" Height="650" Width="900" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None">
 
     <Grid Name="Window">
         <Grid.Background>
@@ -104,7 +104,7 @@
                     Foreground="White" 
                     FontSize="18"
                     Height="50"
-                    FontFamily="Arial" Style="{DynamicResource RoundedButtonStyle}" Margin="123,30,104,20"  >
+                    FontFamily="Arial"  x:Name="search_btn"  Style="{DynamicResource RoundedButtonStyle}" Margin="123,30,104,20" Click="search_btn_Click"  >
                                 <StackPanel Orientation="Horizontal" >
                                     <Image Source="image/searchIcon.png" Width="30"  Height="30" Margin="0,0,15,0" HorizontalAlignment="Left" VerticalAlignment="Center"/>
                                     <TextBlock VerticalAlignment="Center" Text="Search Ice Cream"/>
