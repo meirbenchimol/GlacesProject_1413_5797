@@ -19,7 +19,7 @@ namespace PL.ViewModel
         public event PropertyChangedEventHandler PropertyChanged;
 
         private GraduationUC GraduationUC;
-        public SpecialCommand MyCommand;
+        public SpecialCommand MyCommand { get; set;  }
 
         public HomeUC homeUC { get; set; }
 
@@ -132,17 +132,18 @@ namespace PL.ViewModel
         private void MyCommand_UpdateIceCream(string parameter)
         {
 
-            MessageBox.Show("Thanks for your appreciation !! See you soon !!", "Thanks", MessageBoxButton.OK, MessageBoxImage.Exclamation);
-            homeUC = new HomeUC();
-            ((MainWindow)System.Windows.Application.Current.MainWindow).inner_grid.Children.Clear();
-            ((MainWindow)System.Windows.Application.Current.MainWindow).content_grid.Children.Clear();
-            ((MainWindow)System.Windows.Application.Current.MainWindow).profile_grid.Children.Clear();
-            ((MainWindow)System.Windows.Application.Current.MainWindow).inner_grid.Children.Add(homeUC);
-            GraduateICModel.UpdateIceCream(GraduationUC.SelectedIceCream, GraduateICModel.IceCream);
+              
+              MessageBox.Show("Thanks for your appreciation !! See you soon !!", "Thanks", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+              homeUC = new HomeUC();
+              ((MainWindow)System.Windows.Application.Current.MainWindow).inner_grid.Children.Clear();
+              ((MainWindow)System.Windows.Application.Current.MainWindow).content_grid.Children.Clear();
+              ((MainWindow)System.Windows.Application.Current.MainWindow).profile_grid.Children.Clear();
+              ((MainWindow)System.Windows.Application.Current.MainWindow).inner_grid.Children.Add(homeUC);
+              GraduateICModel.UpdateIceCream(GraduationUC.SelectedIceCream, GraduateICModel.IceCream);
+          }
+
+
+
         }
-
-
-
-    }
 
 }

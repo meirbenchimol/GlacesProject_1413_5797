@@ -37,10 +37,6 @@ namespace PL.Views
    
         }
 
-
-
-
-
-
+       
     }
 }
