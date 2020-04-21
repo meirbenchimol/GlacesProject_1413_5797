@@ -38,7 +38,7 @@
 
         <Grid Grid.Row="1" >
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="150"/>
                 <ColumnDefinition Width="400"/>
             </Grid.ColumnDefinitions>
 
@@ -65,25 +65,25 @@
                         <RowDefinition Height="*" />
                     </Grid.RowDefinitions>
                     <Border Style="{StaticResource notCalledBorder}"  Grid.Row="0">
-                        <Label Name="ID"   Content="{Binding ID}" FontSize="10" FontWeight="DemiBold" HorizontalAlignment="Center" Margin="57,10,43,7" Width="100"></Label>
+                        <Label Name="ID"   Content="{Binding ID}" FontSize="9" FontWeight="DemiBold" HorizontalAlignment="Left" Margin="14.2,9.2,0,8.2" Width="100"></Label>
                     </Border>
                     <Border Style="{StaticResource notCalledBorder}"  Grid.Row="1">
-                        <Label Name="ShopID" Content="{Binding ShopID}" FontSize="10" FontWeight="DemiBold" HorizontalAlignment="Center" Margin="57,10,43,7" Width="100"></Label>
+                        <Label Name="ShopID" Content="{Binding ShopID}" FontSize="9" FontWeight="DemiBold" HorizontalAlignment="Center" Margin="14,10,43,7" Width="100"></Label>
                     </Border>
                     <Border Style="{StaticResource notCalledBorder}"  Grid.Row="2">
-                        <Label Name="Presentation" Content="{Binding Presentation}" FontSize="10" FontWeight="DemiBold" HorizontalAlignment="Center" Margin="57,10,43,7" Width="100"></Label>
+                        <Label Name="Presentation" Content="{Binding Presentation}" FontSize="9" FontWeight="DemiBold" HorizontalAlignment="Center" Margin="14,10,43,7" Width="100"></Label>
                     </Border>
                     <Border Style="{StaticResource notCalledBorder}"  Grid.Row="3">
-                        <Label Name="Grade" Content="{Binding Grade}" FontSize="10" FontWeight="DemiBold" HorizontalAlignment="Center"   Margin="57,10,43,7" Width="100"></Label>
+                        <Label Name="Grade" Content="{Binding Grade}" FontSize="9" FontWeight="DemiBold" HorizontalAlignment="Center"   Margin="14,10,43,7" Width="100"></Label>
                     </Border>
                     <Border Style="{StaticResource notCalledBorder}"  Grid.Row="4">
-                        <Label Name="Energy" Content="{Binding Energy}"  HorizontalAlignment="Center" FontSize="10" FontWeight="DemiBold" Margin="57,10,43,7" Width="100"></Label>
+                        <Label Name="Energy" Content="{Binding Energy}"  HorizontalAlignment="Center" FontSize="9" FontWeight="DemiBold" Margin="14,10,43,7" Width="100"></Label>
                     </Border>
                     <Border Style="{StaticResource notCalledBorder}"  Grid.Row="5">
-                        <Label Name="Proteins" Content="{Binding Proteins}" HorizontalAlignment="Center" FontSize="10" FontWeight="DemiBold" Margin="57,10,43,7" Width="100"></Label>
+                        <Label Name="Proteins" Content="{Binding Proteins}" HorizontalAlignment="Center" FontSize="9" FontWeight="DemiBold" Margin="14,10,43,7" Width="100"></Label>
                     </Border>
                     <Border Style="{StaticResource notCalledBorder}"  Grid.Row="6">
-                        <Label Name="Calories" Content="{Binding Calories}" FontSize="10" FontWeight="DemiBold"  HorizontalAlignment="Center" Margin="57,10,43,7" Width="100"></Label>
+                        <Label Name="Calories" Content="{Binding Calories}" FontSize="9" FontWeight="DemiBold"  HorizontalAlignment="Center" Margin="14,10,43,7" Width="100"></Label>
                     </Border>
 
                 </Grid>

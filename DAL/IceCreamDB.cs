@@ -32,15 +32,15 @@ namespace DAL
 
         protected override void OnModelCreating(ModelBuilder builder)
          {
-             builder.Entity<IceCream>()
-            .Property(e => e.Comments)
-            .HasConversion(v => string.Join(";", v), v => v.Split(new char[] { ';' }, StringSplitOptions.RemoveEmptyEntries));
+            
 
              builder.Entity<IceCream>().HasKey(s => new { s.Id, s.ShopId });
 
+           /* builder.Entity<IceCream>()
+           .Property(e => e.Comments)
+           .HasConversion(v => string.Join(",", v), v => v.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries));
 
-
-             builder.Entity<IceCream>()
+            builder.Entity<IceCream>()
            .Property(e => e.Taste)
            .HasConversion(v => string.Join(";", v), v => v.Split(new char[] { ';' }, StringSplitOptions.RemoveEmptyEntries));
 
@@ -60,7 +60,7 @@ namespace DAL
 
              builder.Entity<Shop>()
             .Property(e => e.Images)
-            .HasConversion(v => string.Join(";", v), v => v.Split(new char[] { ';' }, StringSplitOptions.RemoveEmptyEntries));
+            .HasConversion(v => string.Join(";", v), v => v.Split(new char[] { ';' }, StringSplitOptions.RemoveEmptyEntries));*/
          }
          
     }

@@ -89,7 +89,16 @@ namespace PL.ViewModel
 
         public string Grade
         {
-            get { return GraduationUC.SelectedIceCream.marks[0].ToString(); }
+            get
+            {
+
+
+                string[] grade = GraduationUC.SelectedIceCream.Marks.Split(',').ToArray();
+
+
+                return  grade[0];
+
+            }
         }
 
 
@@ -102,8 +111,7 @@ namespace PL.ViewModel
                 GraduateICModel.IceCream.comments.Add(value);
                 if (PropertyChanged != null)
                     PropertyChanged(this, new PropertyChangedEventArgs("Comments"));
-
-
+                
             }
 
 
@@ -117,7 +125,11 @@ namespace PL.ViewModel
             set {
 
                 GraduateICModel.IceCream.marks.Add(Int32.Parse(value));
-                GraduateICModel.IceCream.marks[0] = (Int32) GraduateICModel.IceCream.marks.Average();
+             
+               
+                GraduateICModel.IceCream.marks[0] = (Int32) GraduateICModel.IceCream.marks.Skip(1).Take(GraduateICModel.IceCream.marks.Count-1).Average();
+
+              
                     
                 if (PropertyChanged != null)
                     PropertyChanged(this, new PropertyChangedEventArgs("Grades"));
@@ -139,7 +151,9 @@ namespace PL.ViewModel
               ((MainWindow)System.Windows.Application.Current.MainWindow).content_grid.Children.Clear();
               ((MainWindow)System.Windows.Application.Current.MainWindow).profile_grid.Children.Clear();
               ((MainWindow)System.Windows.Application.Current.MainWindow).inner_grid.Children.Add(homeUC);
-              GraduateICModel.UpdateIceCream(GraduationUC.SelectedIceCream, GraduateICModel.IceCream);
+            GraduateICModel.IceCream.Proteins = 50;
+            GraduateICModel.IceCream.UpdateData();
+            GraduateICModel.UpdateIceCream(GraduationUC.SelectedIceCream, GraduateICModel.IceCream);
           }
 
 

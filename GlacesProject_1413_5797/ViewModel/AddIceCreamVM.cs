@@ -48,21 +48,17 @@ namespace PL.ViewModel
         public string  Taste
         {
             get {
-                    string s="";
-                for (int i = 0; i < CurrentModel.MyIC.Taste.ToList().Count; i++)
-                    s+= CurrentModel.MyIC.Taste[i].ToString() + "'";
-
-                return s;
+                    string s= CurrentModel.MyIC.Taste;
+                     return s;
                             
                  }
 
             set
             {
-                string Taste = value;
-                String[] taste = Taste.Split(',');
+                CurrentModel.MyIC.Taste = value;
                 if (PropertyChanged != null)
                     PropertyChanged(this, new PropertyChangedEventArgs("Taste"));
-                CurrentModel.MyIC.Taste = taste;
+               
 
             }
         }

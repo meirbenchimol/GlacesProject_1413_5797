@@ -32,11 +32,29 @@ namespace BE
 
         private List<String> images = new List<string>();
 
-        public string[] Images
+        public string Images
         {
-            get { return images.ToArray(); }
+            get
+            {
+                string Image="";
+                Image  += images.ElementAt(0).ToString();
+                for (int i = 1; i < images.Count; i++)
+                {
+                    Image += "," + images.ElementAt(i).ToString(); ;
+                }
+                return Image;
 
-            set { value = images.ToArray(); }
+            }
+
+            
+            set
+            {
+                value += images.ElementAt(0).ToString();
+                for (int i = 1; i < images.Count; i++)
+                {
+                    value += "," + images.ElementAt(i).ToString(); ;
+                }
+            }
         }
 
 

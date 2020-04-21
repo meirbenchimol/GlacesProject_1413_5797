@@ -24,16 +24,19 @@ namespace BE
         [Key, ForeignKey("Shop"), Column(Order = 1)]
         public string ShopId { get; set; }
 
-        public string[] Taste
+      
 
+        
+
+
+        public string Taste
         {
-            get { return taste.ToArray(); }
-
-            set { Comments = taste.ToArray();
-                value = taste.ToArray();
-            }
-
+            get;
+            set;
+           
         }
+
+  
 
 
 
@@ -42,7 +45,7 @@ namespace BE
 
         //comment test git meir
 
-        static string id = "";
+       
 
         public string Description { get; set; }
 
@@ -50,25 +53,24 @@ namespace BE
         public string Presentation
         {
             get {
-                string s = Id + " " ;
-                for (int i = 0; i < Taste.ToList().Count; i++)
-                {
-                    s +=  Taste[i].ToString();
-                    if (i < (Taste.ToList().Count - 1))
-                        s += ", " ;
-                }
+
+                string s = Id + " " + Taste ;
+              
                 return s;
             }
         }
 
 
-        public string[] Images 
+
+
+        public string Images 
 
         {
-            get { return images.ToArray(); }
+            get;
 
-            set { value = images.ToArray(); }
 
+            set;
+            
         }
 
 
@@ -89,12 +91,13 @@ namespace BE
 
         public double? Calories { get; set; }
 
-        public int[] Marks
+        public string  Marks
 
         {
-            get { return marks.ToArray(); }
+            get;
 
-            set { value = marks.ToArray(); }
+            set;
+          
 
         }
 
@@ -104,20 +107,57 @@ namespace BE
 
 
 
-        public string[] Comments
+        public string Comments
 
         {
-            get { return comments.ToArray(); }
 
-            set { value = comments.ToArray(); }
+            get;
+            set;
+           
 
-        }
+}
     
 
 
         public List<string> comments = new List<string>();
 
 
+       
+        /// <summary>
+        /// Update the elements of our database
+        /// </summary>
+       public void UpdateData()
+        {
+            Marks = "";
+            Marks += marks.ElementAt(0).ToString();
+            for (int i = 1; i < marks.Count; i++)
+            {
+                Marks += "," + marks.ElementAt(i).ToString(); ;
+            }
+
+            Comments = "";
+            Comments += comments.ElementAt(0).ToString();
+            for (int i = 1; i < comments.Count; i++)
+            {
+                Comments += "," + comments.ElementAt(i).ToString(); ;
+            }
+
+            Images = "";
+            Images += images.ElementAt(0).ToString();
+            for (int i = 1; i < images.Count; i++)
+            {
+                Images += "," + images.ElementAt(i).ToString(); ;
+            }
+            Image = images.ElementAt(0).ToString();
+
+        }
+
+        public void UpdateLists()
+        {
+            marks = Marks.Split(',').Select(int.Parse).ToList();
+            comments = Comments.Split(',').ToList();
+            images = Images.Split(',').ToList();
+        }
 
 
         public IceCream()
@@ -128,11 +168,14 @@ namespace BE
             taste.Add("Chocolate");
             images.Add("iceCream_choco.png");
             comments.Add("");
+            
             marks.Add(5);
+          
             Energy = 70;
             Proteins = 80;
             Calories = 85;
             Description = "";
+            
             ///Image = images.ElementAt(0).ToString();
         }
 
