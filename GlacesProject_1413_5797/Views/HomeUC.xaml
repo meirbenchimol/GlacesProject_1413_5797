@@ -25,7 +25,7 @@
             </TextBlock>
 
             <StackPanel Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center">
-                <Button   Background="#28a745"
+                <Button   Background="#28a745"  Click="search_btn_Click"
                     Foreground="White" 
                     FontSize="18"
                     Height="50"

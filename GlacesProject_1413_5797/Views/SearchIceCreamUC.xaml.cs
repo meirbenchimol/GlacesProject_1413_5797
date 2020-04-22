@@ -22,24 +22,35 @@ namespace PL.Views
     public partial class SearchIceCreamUC : UserControl
     {
         public Bl MyBl { get; set; }
+        public ListIceCreamUC  listIceCreamUC { get; set; }
 
         public SearchIceCreamUC()
         {
             InitializeComponent();
             MyBl = new Bl();
+            this.TasteComboBox.ItemsSource = taste;
+            
+            
 
         }
 
 
+        List<string> taste = new List<string> { "Pistachio", "Fraise", "Chocolate", "Vanille" };
 
         
 
         private void Search(object sender, RoutedEventArgs e)
         {
 
-          
-            IEnumerable<BE.IceCream> IceCreams =  MyBl.FindListIceCream(Taste.Text.ToString(), Energy.Value, Calories.Value, Proteins.Value, Minimum.Value, Maximum.Value);
+            string Taste = TasteComboBox.SelectedItem.ToString();
 
+
+            
+            IEnumerable<BE.IceCream> IceCreams =  MyBl.FindListIceCream(Taste, Energy.Value, Calories.Value, Proteins.Value, Minimum.Value, Maximum.Value);
+           // IEnumerable<BE.IceCream> IceCreams = MyBl.GetAllIceCream();
+            listIceCreamUC = new ListIceCreamUC(IceCreams);
+            ((MainWindow)System.Windows.Application.Current.MainWindow).inner_grid.Children.Clear();
+            ((MainWindow)System.Windows.Application.Current.MainWindow).inner_grid.Children.Add(listIceCreamUC);
 
         }
     }

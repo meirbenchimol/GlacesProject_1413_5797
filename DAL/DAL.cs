@@ -119,15 +119,16 @@ namespace DAL
 
             using (var db = new IceCreamDB())
             {
+                
 
                 var query = from m in db.IceCreams
                             where m.Taste.Contains(taste)
                             && (!(energy > (m.Energy + 10)) || (energy < (m.Energy - 10)))
                              && (!(calories > (m.Calories + 10)) || (calories < (m.Calories - 10)))
                               && (!(proteins > (m.Proteins + 10)) || (proteins < (m.Proteins - 10)))
-                              && (double)m.marks[1] >= minmark && (double)m.marks[m.marks.Count] <= maxmark  //for the evaluation
+                            /*  && (double)m.marks[1] >= minmark && (double)m.marks[m.marks.Count] <= maxmark  *///for the evaluation
                             select m;
-                return query;
+                return query.ToList<IceCream>();
             }
         }
 

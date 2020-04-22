@@ -22,6 +22,9 @@ namespace PL.Views
     {
         public LoginUC loginUC;
         public GraduateIceCreamUC graduateIceCream;
+        public SearchIceCreamUC searchIceCreamUC;
+
+
         public HomeUC()
         {
             InitializeComponent();
@@ -43,6 +46,18 @@ namespace PL.Views
 
         }
 
-       
+
+
+        private void search_btn_Click(object sender, RoutedEventArgs e)
+        {
+
+            searchIceCreamUC = new SearchIceCreamUC();
+            ((MainWindow)System.Windows.Application.Current.MainWindow).inner_grid.Children.Clear();
+            ((MainWindow)System.Windows.Application.Current.MainWindow).shopAreaGrid.Children.Clear();
+            ((MainWindow)System.Windows.Application.Current.MainWindow).profile_grid.Children.Clear();
+            ((MainWindow)System.Windows.Application.Current.MainWindow).content_grid.Children.Clear();
+            ((MainWindow)System.Windows.Application.Current.MainWindow).inner_grid.Children.Add(searchIceCreamUC);
+        }
+
     }
 }
