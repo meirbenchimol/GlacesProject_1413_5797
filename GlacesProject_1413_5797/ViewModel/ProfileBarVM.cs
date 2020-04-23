@@ -20,7 +20,7 @@ namespace PL.ViewModel
         public ProfileBarModel CurrentModel { get; set; }
         private ProfileBarUC profileBarUC;
 
-        private SpecialCommand MyCommand { get; set; }
+        public SpecialCommand MyCommand { get; set; }
 
 
         public UpdateShopUC updateShopUC;
