@@ -1,0 +1,161 @@
+﻿<UserControl x:Class="PL.Views.UpdateShopUC"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PL.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <Style x:Key="ButtonStyle" TargetType="Button">
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding ElementName=Password, Path=Backround}" Value="Red">
+                    <Setter Property="Button.IsEnabled" Value="False"/>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding ElementName=ConfirmPassword, Path=Background}" Value="Red">
+                    <Setter Property="Button.IsEnabled" Value="False"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+    </UserControl.Resources>
+
+    <Grid  Grid.Row="1" Grid.Column="1" Grid.RowSpan="4" Grid.ColumnSpan="3">
+        <Grid.Background>
+            <SolidColorBrush  Color="Azure" Opacity="0.65"></SolidColorBrush>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="3*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+
+        </Grid.RowDefinitions>
+
+
+
+
+
+        <StackPanel Grid.Row="0">
+            <TextBlock Text="Update" HorizontalAlignment="Center"  Margin="0,15,0,40" FontFamily="Arial" 
+                       FontSize="40" 
+                       FontWeight="Bold"
+                       Foreground="#FF534C4C"/>
+        </StackPanel>
+
+
+        <ScrollViewer Grid.Row="1" Padding="30 ,0" >
+            <StackPanel >
+
+                <StackPanel.Background>
+                    <SolidColorBrush Color="Azure" Opacity="0.65"/>
+                </StackPanel.Background>
+
+                <Button x:Name="add_profile_img_btn" HorizontalAlignment="Center"  VerticalAlignment="Center" Background="{x:Null}" Click="add_profile_img_btn_Click" Style="{StaticResource RoundedButtonStyle}" >
+                    <Button.Content>
+                        <Ellipse Width="140" Height="140" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,15" Stroke="Azure"  >
+                            <Ellipse.Fill >
+                                <ImageBrush x:Name="imgProfile" ImageSource="/GlacesProject_1413_5797;component/Image/profileImg.jpg" Stretch="Fill"  AlignmentX="Center" AlignmentY="Center" >
+                                </ImageBrush>
+                            </Ellipse.Fill>
+                        </Ellipse>
+                    </Button.Content>
+
+                </Button>
+
+
+                <TextBlock Text="Username" Padding="0 20 0 0" FontSize="12" Background="{x:Null}"  HorizontalAlignment="Center" MinWidth="250"/>
+                <TextBox x:Name="Id"  TextWrapping="Wrap" Text="{Binding Id}" HorizontalAlignment="Center" Padding="40,5"  VerticalAlignment="Top" 
+                 FontSize="16"
+                 BorderBrush="Black"
+                 MinWidth="250"
+                 Margin="0,0,0,20"
+                 Background="WhiteSmoke"
+                 Foreground="DarkGray"
+                 TextAlignment="Left"/>
+
+                <TextBlock Text="Password" FontSize="12" Background="{x:Null}"  HorizontalAlignment="Center" MinWidth="250"/>
+                <PasswordBox  x:Name="Password" HorizontalAlignment="Center" Padding="40,5"  PasswordChanged="PasswordBox_PasswordChanged" VerticalAlignment="Top" 
+                 FontSize="16"
+                 MinWidth="250"
+                 BorderBrush="Black"
+                 Background="WhiteSmoke"
+                 Foreground="DarkGray"
+                 Margin="0,0,0,20"
+                 />
+
+                <TextBlock Text=" Confirm your Password" FontSize="12" Background="{x:Null}"  HorizontalAlignment="Center" MinWidth="250"/>
+                <PasswordBox  x:Name="ConfirmPassword" HorizontalAlignment="Center" Padding="40,5"  PasswordChanged="ConfirmPasswordBox_PasswordChanged" VerticalAlignment="Top" 
+                 FontSize="16"
+                 MinWidth="250"
+                 BorderBrush="Black"
+                 Background="WhiteSmoke"
+                 Foreground="DarkGray"
+                 Margin="0,0,0,20"
+                 />
+
+                <TextBlock Text=" Address" FontSize="12" Background="{x:Null}"  HorizontalAlignment="Center" MinWidth="250"/>
+                <TextBox x:Name="Adress"  HorizontalAlignment="Center" Padding="40,5"  VerticalAlignment="Top" 
+                 FontSize="16"
+                 Text="{Binding Adress}"
+                 MinWidth="250"
+                 BorderBrush="Black"
+                 Background="WhiteSmoke"
+                 Foreground="DarkGray"
+                 Margin="0,0,0,20"
+                 />
+
+                <TextBlock Text=" Phone Number" FontSize="12" Background="{x:Null}"  HorizontalAlignment="Center" MinWidth="250"/>
+                <TextBox x:Name="Phone"  Text="{Binding Phone}"  HorizontalAlignment="Center" Padding="40,5"  VerticalAlignment="Top" 
+                 FontSize="16"
+                 MinWidth="250"
+                 BorderBrush="Black"
+                 Background="WhiteSmoke"
+                 Foreground="DarkGray"
+                 Margin="0,0,0,20"
+                 />
+
+                <TextBlock Text=" Your link to facebook" FontSize="12" Background="{x:Null}"  HorizontalAlignment="Center" MinWidth="250"/>
+                <TextBox x:Name="FaceBook"   Text="{Binding FaceBook}" HorizontalAlignment="Center" Padding="40,5"  VerticalAlignment="Top" 
+                 FontSize="16"
+                 MinWidth="250"
+                 BorderBrush="Black"
+                 Background="WhiteSmoke"
+                 Foreground="DarkGray"
+                 Margin="0,0,0,20"
+                 />
+
+                <TextBlock Text=" Your link to your website" FontSize="12" Background="{x:Null}"  HorizontalAlignment="Center" MinWidth="250"/>
+                <TextBox x:Name="WebSite"  HorizontalAlignment="Center" Padding="40,5"  VerticalAlignment="Top" 
+                 FontSize="16"
+                 MinWidth="250"
+                 Text="{Binding WebSite}" 
+                 BorderBrush="Black"
+                 Background="WhiteSmoke"
+                 Foreground="DarkGray"
+                 Margin="0,0,0,40"
+                 />
+
+
+            </StackPanel>
+
+
+        </ScrollViewer>
+
+        <StackPanel Grid.Row="2" HorizontalAlignment="Center"  VerticalAlignment="Center" >
+            <Button Content="Update"   x:Name="register_btn"
+                Command="{Binding MyCommand}"
+                CommandParameter="{Binding ElementName=Id, Path=Text}"
+                Background="#FF64CCF1"
+                Foreground="White"
+                Style="{StaticResource ButtonStyle}"
+                FontFamily="Arial"
+                Padding="30,5"
+                FontSize="20" 
+                />
+
+
+        </StackPanel>
+
+
+
+    </Grid>
+</UserControl>

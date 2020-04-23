@@ -101,6 +101,8 @@ namespace BE
 
         }
 
+       // public double MedianGrade { get; set;  }
+
 
 
         public List<int> marks = new List<int>();
@@ -134,6 +136,8 @@ namespace BE
             {
                 Marks += "," + marks.ElementAt(i).ToString(); ;
             }
+
+            //MedianGrade = double.Parse(marks.ElementAt(0).ToString());
 
             Comments = "";
             Comments += comments.ElementAt(0).ToString();

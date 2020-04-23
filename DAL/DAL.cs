@@ -85,6 +85,8 @@ namespace DAL
 
 
 
+
+
         public IEnumerable<IceCream> GetAllIceCream(Func<IceCream, bool> predicate = null)
         {
             using (var db = new IceCreamDB())
@@ -114,21 +116,24 @@ namespace DAL
         }
 
 
-        public IEnumerable<IceCream> FindListIceCream(string taste, double energy, double calories, double proteins, double minmark, double maxmark)
+        public IEnumerable<IceCream> FindListIceCream(string taste, double energy, double calories, double proteins, double medianmark)
         {
 
             using (var db = new IceCreamDB())
             {
-                
+
+               
+
 
                 var query = from m in db.IceCreams
                             where m.Taste.Contains(taste)
                             && (!(energy > (m.Energy + 10)) || (energy < (m.Energy - 10)))
                              && (!(calories > (m.Calories + 10)) || (calories < (m.Calories - 10)))
                               && (!(proteins > (m.Proteins + 10)) || (proteins < (m.Proteins - 10)))
-                            /*  && (double)m.marks[1] >= minmark && (double)m.marks[m.marks.Count] <= maxmark  *///for the evaluation
+                              /* && /*( ! (Median(m) < medianmark -1)) */
+                                              //for the evaluation
                             select m;
-                return query.ToList<IceCream>();
+                return query.ToList<IceCream>().Where(x=> ! ( Median(x) < medianmark-1));
             }
         }
 
@@ -250,6 +255,19 @@ namespace DAL
 
 
 
+
+        #endregion
+
+
+        #region helpfunctions
+
+
+        static double Median(IceCream iceCream)
+        {
+
+            int [] marks = iceCream.Marks.Split(',').Select(int.Parse).ToArray();
+            return  marks[0];
+        }
 
         #endregion
     }

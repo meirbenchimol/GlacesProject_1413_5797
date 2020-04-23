@@ -8,6 +8,8 @@ using BE;
 using BL;
 using PL.Models;
 using PL.Views;
+using PL.Commands;
+using System.Windows;
 
 namespace PL.ViewModel
 {
@@ -18,13 +20,18 @@ namespace PL.ViewModel
         public ProfileBarModel CurrentModel { get; set; }
         private ProfileBarUC profileBarUC;
 
+        private SpecialCommand MyCommand { get; set; }
+
+
+        public UpdateShopUC updateShopUC;
 
 
         public ProfileBarVM(ProfileBarUC profileBarUC)
         {
             CurrentModel = new ProfileBarModel(profileBarUC.Shop);
             this.profileBarUC = profileBarUC;
-
+            MyCommand = new SpecialCommand();
+            MyCommand.callComplete += UpdateShop;
         }
 
 
@@ -106,5 +113,29 @@ namespace PL.ViewModel
             }
 
         }
+
+
+
+        #region Functions
+
+
+        public void UpdateShop(string obj)
+        {
+            MessageBox.Show("Great! You've updated your shop space  !!", "Great", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+
+            updateShopUC = new UpdateShopUC(CurrentModel.shop);
+            ((MainWindow)System.Windows.Application.Current.MainWindow).inner_grid.Children.Clear();
+            ((MainWindow)System.Windows.Application.Current.MainWindow).content_grid.Children.Clear();
+            ((MainWindow)System.Windows.Application.Current.MainWindow).profile_grid.Children.Clear();
+            ((MainWindow)System.Windows.Application.Current.MainWindow).inner_grid.Children.Add(updateShopUC);
+
+
+
+        }
+
+
+
+
+        #endregion
     }
 }

@@ -177,12 +177,14 @@
     <Compile Include="Models\MainModel.cs" />
     <Compile Include="Models\ProfileBarModel.cs" />
     <Compile Include="Models\ShopAreaModel.cs" />
+    <Compile Include="Models\UpdateShopModel.cs" />
     <Compile Include="ViewModel\AddIceCreamVM.cs" />
     <Compile Include="ViewModel\GraduateIceCreamVM.cs" />
     <Compile Include="ViewModel\LoginVM.cs" />
     <Compile Include="ViewModel\MainVM.cs" />
     <Compile Include="ViewModel\ProfileBarVM.cs" />
     <Compile Include="ViewModel\ShopAreaVM.cs" />
+    <Compile Include="ViewModel\UpdateShopVM.cs" />
     <Compile Include="Views\AddIceCreamUC.xaml.cs">
       <DependentUpon>AddIceCreamUC.xaml</DependentUpon>
     </Compile>
@@ -212,6 +214,9 @@
     </Compile>
     <Compile Include="Views\ShopAreaUC.xaml.cs">
       <DependentUpon>ShopAreaUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UpdateShopUC.xaml.cs">
+      <DependentUpon>UpdateShopUC.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -263,6 +268,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\ShopAreaUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\UpdateShopUC.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

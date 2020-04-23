@@ -32,6 +32,7 @@ namespace PL.Views
         {
             InitializeComponent();
             SelectedIceCream = iceCream;
+          //  MessageBox.Show(SelectedIceCream.Marks.ToCharArray().ElementAt(0).ToString(), "Thanks", MessageBoxButton.OK, MessageBoxImage.Exclamation);
             graduateIceCreamVM = new GraduateIceCreamVM(this);
             this.DataContext = graduateIceCreamVM;
    

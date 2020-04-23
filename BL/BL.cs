@@ -116,12 +116,12 @@ namespace BL
 
         }
 
-        public IEnumerable<IceCream> FindListIceCream(string  taste, double energy, double calories, double proteins, double minmark, double maxmark)
+        public IEnumerable<IceCream> FindListIceCream(string  taste, double energy, double calories, double proteins, double medianmark)
         {
            
 
 
-            return MyDal.FindListIceCream( taste, energy, calories, proteins, minmark, maxmark);
+            return MyDal.FindListIceCream( taste, energy, calories, proteins, medianmark);
         }
 
         public IEnumerable<IceCream> FindListIceCream(string taste, string ShopID)

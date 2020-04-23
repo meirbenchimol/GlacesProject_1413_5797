@@ -3,28 +3,30 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.ComponentModel;
 using PL.Models;
 using PL.Views;
 using PL.Commands;
+using BE;
+using System.ComponentModel;
 using System.Windows;
 
 namespace PL.ViewModel
 {
-    public class RegisterShopVM : INotifyPropertyChanged
+    public class UpdateShopVM: INotifyPropertyChanged
     {
 
 
-        public RegisterShopVM( RegisterShopUC registerShopUC)
+        public UpdateShopVM(UpdateShopUC updateShopUC)
         {
-            CurrentModel = new RegisterShopModel();
-            this.ShopUC = registerShopUC;
+            CurrentModel = new UpdateShopModel();
+            CurrentModel.MyShop = updateShopUC.shop;
+            this.UpdateShopUC = updateShopUC;
             this.MyCommand = new SpecialCommand();
-            MyCommand.callComplete +=  RegisterShop;
+            MyCommand.callComplete += UpdateShop;
 
         }
 
-        public RegisterShopModel CurrentModel { get; set; }
+        public UpdateShopModel CurrentModel { get; set; }
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -100,7 +102,7 @@ namespace PL.ViewModel
         }
 
 
-        private RegisterShopUC ShopUC;
+        private UpdateShopUC UpdateShopUC;
 
         public SpecialCommand MyCommand { get; set; }
 
@@ -109,30 +111,18 @@ namespace PL.ViewModel
         #region  functions
 
 
-        public void UpdateShop()
+        public void UpdateShop(string parameter)
         {
 
-
+            CurrentModel.MyBl.UpdateShop(UpdateShopUC.shop, CurrentModel.MyShop);
+            MessageBox.Show("Great! You've updated your shop space  !!", "Great", MessageBoxButton.OK, MessageBoxImage.Exclamation);
 
 
         }
 
-        public void RegisterShop(string obj)
-        {
-
-            bool found = CurrentModel.MyBl.CheckShopExist(CurrentModel.MyShop.Id);
-            if(found)
-                MessageBox.Show("Warning !! A Shop  with same ID already exists !!", "Warning", MessageBoxButton.OK, MessageBoxImage.Exclamation);
-            else
-            {
-                CurrentModel.AddShop();
-                MessageBox.Show("Great !! You're now a Shop of our company  !!", "Welcome", MessageBoxButton.OK, MessageBoxImage.Exclamation);
-            }
-           
-
-        }
-
-          #endregion
-
+        #endregion
     }
+
+
+
 }

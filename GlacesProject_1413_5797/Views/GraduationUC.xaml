@@ -68,22 +68,22 @@
                         <Label Name="ID"   Content="{Binding ID}" FontSize="9" FontWeight="DemiBold" HorizontalAlignment="Left" Margin="14.2,9.2,0,8.2" Width="100"></Label>
                     </Border>
                     <Border Style="{StaticResource notCalledBorder}"  Grid.Row="1">
-                        <Label Name="ShopID" Content="{Binding ShopID}" FontSize="9" FontWeight="DemiBold" HorizontalAlignment="Center" Margin="14,10,43,7" Width="100"></Label>
+                        <Label Name="ShopID" Content="{Binding ShopID}" FontSize="9" FontWeight="DemiBold" HorizontalAlignment="Left" Margin="14,10,43,7" Width="100"></Label>
                     </Border>
                     <Border Style="{StaticResource notCalledBorder}"  Grid.Row="2">
-                        <Label Name="Presentation" Content="{Binding Presentation}" FontSize="9" FontWeight="DemiBold" HorizontalAlignment="Center" Margin="14,10,43,7" Width="100"></Label>
+                        <Label Name="Presentation" Content="{Binding Presentation}" FontSize="9" FontWeight="DemiBold" HorizontalAlignment="Left" Margin="14,10,43,7" Width="100"></Label>
                     </Border>
                     <Border Style="{StaticResource notCalledBorder}"  Grid.Row="3">
-                        <Label Name="Grade" Content="{Binding Grade}" FontSize="9" FontWeight="DemiBold" HorizontalAlignment="Center"   Margin="14,10,43,7" Width="100"></Label>
+                        <Label Name="Grade" Content="{Binding Grade}" FontSize="9" FontWeight="DemiBold" HorizontalAlignment="Left"   Margin="14,10,43,7" Width="100"></Label>
                     </Border>
                     <Border Style="{StaticResource notCalledBorder}"  Grid.Row="4">
-                        <Label Name="Energy" Content="{Binding Energy}"  HorizontalAlignment="Center" FontSize="9" FontWeight="DemiBold" Margin="14,10,43,7" Width="100"></Label>
+                        <Label Name="Energy" Content="{Binding Energy}"  HorizontalAlignment="Left" FontSize="9" FontWeight="DemiBold" Margin="14,10,43,7" Width="100"></Label>
                     </Border>
                     <Border Style="{StaticResource notCalledBorder}"  Grid.Row="5">
-                        <Label Name="Proteins" Content="{Binding Proteins}" HorizontalAlignment="Center" FontSize="9" FontWeight="DemiBold" Margin="14,10,43,7" Width="100"></Label>
+                        <Label Name="Proteins" Content="{Binding Proteins}" HorizontalAlignment="Left" FontSize="9" FontWeight="DemiBold" Margin="14,10,43,7" Width="100"></Label>
                     </Border>
                     <Border Style="{StaticResource notCalledBorder}"  Grid.Row="6">
-                        <Label Name="Calories" Content="{Binding Calories}" FontSize="9" FontWeight="DemiBold"  HorizontalAlignment="Center" Margin="14,10,43,7" Width="100"></Label>
+                        <Label Name="Calories" Content="{Binding Calories}" FontSize="9" FontWeight="DemiBold"  HorizontalAlignment="Left" Margin="14,10,43,7" Width="100"></Label>
                     </Border>
 
                 </Grid>
@@ -120,7 +120,7 @@
                 </StackPanel>
 
                 <Label Content="Your Grade : " FontWeight="DemiBold" Grid.Column="0"  Grid.Row="1" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="86" />
-                <Slider  Grid.Row="1" HorizontalAlignment="Left" Margin="94,9.2,0,0" Minimum="0" Maximum="10" Value="{Binding Grades}" VerticalAlignment="Top" Width="259" Grid.ColumnSpan="2"/>
+                <Slider  Grid.Row="1" HorizontalAlignment="Left" Margin="94,9.2,0,0" Minimum="0" Name="Grades"  Maximum="10" Value="{Binding Grades}" VerticalAlignment="Top" Width="259" Grid.ColumnSpan="2"/>
                 <Label Content="Comments : "  FontWeight="DemiBold" HorizontalAlignment="Left" VerticalAlignment="Top" Width="348"  Grid.Row="2" Grid.Column="0"/>
                 <TextBox HorizontalAlignment="Left" Height="30" Background="AliceBlue"  Margin="9,11,0,0" Grid.Row="3" TextWrapping="Wrap" Text="{Binding Comments}" VerticalAlignment="Top" Width="356" Grid.ColumnSpan="2" Grid.RowSpan="4" />
                 <Label Content="Add an Image if you want : " FontWeight="DemiBold" HorizontalAlignment="Left"  Grid.Row="4" VerticalAlignment="Top" Grid.ColumnSpan="2" Width="169" Margin="11,54.2,0,0" Height="25" Grid.RowSpan="3" />

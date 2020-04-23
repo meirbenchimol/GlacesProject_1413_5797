@@ -40,7 +40,7 @@ namespace PL.ViewModel
         {
 
 
-            get {   return GraduationUC.SelectedIceCream.Id;  }
+            get { return "ID: " + GraduationUC.SelectedIceCream.Id;  }
 
         }
 
@@ -49,7 +49,7 @@ namespace PL.ViewModel
 
         public string ShopID
         {
-            get { return GraduationUC.SelectedIceCream.ShopId; }
+            get { return "ShopID: " +  GraduationUC.SelectedIceCream.ShopId; }
 
         }
 
@@ -58,14 +58,14 @@ namespace PL.ViewModel
         {
 
 
-            get { return GraduationUC.SelectedIceCream.Presentation; }
+            get { return  GraduationUC.SelectedIceCream.Presentation; }
 
         }
 
 
         public string Energy
         {
-            get { return GraduationUC.SelectedIceCream.Energy.ToString(); }
+            get { return "Energy: " + GraduationUC.SelectedIceCream.Energy.ToString(); }
 
 
         }
@@ -73,7 +73,7 @@ namespace PL.ViewModel
 
         public string Proteins
         {
-            get { return GraduationUC.SelectedIceCream.Proteins.ToString(); }
+            get { return "Proteins: " + GraduationUC.SelectedIceCream.Proteins.ToString(); }
 
 
         }
@@ -82,7 +82,7 @@ namespace PL.ViewModel
 
         public string Calories
         {
-            get { return GraduationUC.SelectedIceCream.Calories.ToString(); }
+            get { return "Calories: " +  GraduationUC.SelectedIceCream.Calories.ToString(); }
 
         }
 
@@ -96,7 +96,7 @@ namespace PL.ViewModel
                 string[] grade = GraduationUC.SelectedIceCream.Marks.Split(',').ToArray();
 
 
-                return  grade[0];
+                return "Grade: " + grade[0];
 
             }
         }
@@ -119,15 +119,12 @@ namespace PL.ViewModel
 
 
 
-        public string Grades
+      /*  public string Grades
         {
 
             set {
 
-                GraduateICModel.IceCream.marks.Add(Int32.Parse(value));
-             
-               
-                GraduateICModel.IceCream.marks[0] = (Int32) GraduateICModel.IceCream.marks.Skip(1).Take(GraduateICModel.IceCream.marks.Count-1).Average();
+              
 
               
                     
@@ -138,20 +135,23 @@ namespace PL.ViewModel
             }
 
 
-        }
+        }*/
 
 
         private void MyCommand_UpdateIceCream(string parameter)
         {
 
-              
-              MessageBox.Show("Thanks for your appreciation !! See you soon !!", "Thanks", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+            GraduateICModel.IceCream.marks.Add((Int32)(GraduationUC.Grades.Value));
+
+
+            GraduateICModel.IceCream.marks[0] = (Int32)GraduateICModel.IceCream.marks.Skip(1).Take(GraduateICModel.IceCream.marks.Count - 1).Average();
+            MessageBox.Show("Thanks for your appreciation !! See you soon !!", "Thanks", MessageBoxButton.OK, MessageBoxImage.Exclamation);
               homeUC = new HomeUC();
               ((MainWindow)System.Windows.Application.Current.MainWindow).inner_grid.Children.Clear();
               ((MainWindow)System.Windows.Application.Current.MainWindow).content_grid.Children.Clear();
               ((MainWindow)System.Windows.Application.Current.MainWindow).profile_grid.Children.Clear();
               ((MainWindow)System.Windows.Application.Current.MainWindow).inner_grid.Children.Add(homeUC);
-            GraduateICModel.IceCream.Proteins = 50;
+            //GraduateICModel.IceCream.Proteins = 50;
 
             GraduateICModel.IceCream.UpdateData();
             GraduateICModel.UpdateIceCream(GraduationUC.SelectedIceCream, GraduateICModel.IceCream);

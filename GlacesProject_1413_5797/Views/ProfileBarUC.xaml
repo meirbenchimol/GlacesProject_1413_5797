@@ -31,7 +31,7 @@
                     </ImageBrush>
                 </Ellipse.Fill>
             </Ellipse>
-            <TextBlock Text="{Binding ID}" HorizontalAlignment="Center" VerticalAlignment="Bottom"  FontSize="20" FontWeight="Bold" FontFamily="Arial"/>
+            <TextBlock  Name="ID"  Text="{Binding ID}" HorizontalAlignment="Center" VerticalAlignment="Bottom"  FontSize="20" FontWeight="Bold" FontFamily="Arial"/>
         </Grid>
 
         <StackPanel Grid.Row="1" VerticalAlignment="top" Margin="0,30">
@@ -54,10 +54,10 @@
         </StackPanel>
 
         <StackPanel Grid.Row="1" VerticalAlignment="Bottom">
-            <Button  Background="#ffc107" Margin="10" Padding="5" Style="{StaticResource RoundedButtonStyle}">
+            <Button  Background="#ffc107"  Command="{Binding MyCommand}"    CommandParameter="{Binding ElementName=ID, Path=Text}"      Margin="10" Padding="5" Style="{StaticResource RoundedButtonStyle}">
                 <Grid Width="100" >
                     <materialDesign:PackIcon Kind="Update" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold" />
-                    <TextBlock Text="UPDATE" FontWeight="Bold" HorizontalAlignment="Center"></TextBlock>
+                    <TextBlock    Text="UPDATE" FontWeight="Bold" HorizontalAlignment="Center" Margin="27,3,27,0" ></TextBlock>
                 </Grid>
             </Button>
         </StackPanel>

@@ -46,7 +46,7 @@ namespace PL.Views
 
 
             
-            IEnumerable<BE.IceCream> IceCreams =  MyBl.FindListIceCream(Taste, Energy.Value, Calories.Value, Proteins.Value, Minimum.Value, Maximum.Value);
+            IEnumerable<BE.IceCream> IceCreams =  MyBl.FindListIceCream(Taste, Energy.Value, Calories.Value, Proteins.Value, Median.Value);
            // IEnumerable<BE.IceCream> IceCreams = MyBl.GetAllIceCream();
             listIceCreamUC = new ListIceCreamUC(IceCreams);
             ((MainWindow)System.Windows.Application.Current.MainWindow).inner_grid.Children.Clear();

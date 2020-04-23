@@ -51,6 +51,8 @@ namespace DAL.Migrations
                     b.Property<double?>("Proteins")
                         .HasColumnType("float");
 
+                   
+
                     b.Property<string>("Taste")
                         .HasColumnType("nvarchar(max)");
 
