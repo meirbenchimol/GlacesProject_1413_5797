@@ -36,8 +36,8 @@
                               IsManipulationEnabled="True" 
                               MouseDoubleClick="AvoidDoubleClick" Margin="99,0,97,0.2" Width="300">
                     <DataGrid.Columns>
-                        <DataGridTextColumn  Header="ID" Width="100" Binding="{Binding Id}" FontSize="10" FontWeight="Normal"/>
-                        <DataGridTextColumn Header="ShopID" Width="100" Binding="{Binding ShopId}" FontSize="10" FontWeight="Normal"/>
+                        <DataGridTextColumn  Header="IceCream" Width="100" Binding="{Binding Id}" FontSize="10" FontWeight="Normal"/>
+                        <DataGridTextColumn Header="Shop" Width="100" Binding="{Binding ShopId}" FontSize="10" FontWeight="Normal"/>
                         <DataGridTextColumn Header="Taste" Width="150" Binding="{Binding Taste}" FontSize="10" FontWeight="Normal"/>
                     </DataGrid.Columns>
 

@@ -24,11 +24,6 @@ namespace BE
         [Key, ForeignKey("Shop"), Column(Order = 1)]
         public string ShopId { get; set; }
 
-      
-
-        
-
-
         public string Taste
         {
             get;
@@ -36,19 +31,9 @@ namespace BE
            
         }
 
-  
-
-
-
         public List<string> taste = new List<string>();
 
-
-        //comment test git meir
-
-       
-
         public string Description { get; set; }
-
 
         public string Presentation
         {
@@ -60,19 +45,11 @@ namespace BE
             }
         }
 
-
-
-
         public string Images 
 
         {
-            get;
-
-
-            set;
-            
+            get;set;   
         }
-
 
 
         public List<string> images = new List<string>();

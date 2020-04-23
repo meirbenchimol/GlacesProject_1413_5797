@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using PL.ViewModel;
 using BE;
+using BL;
 
 
 namespace PL.Views
@@ -25,6 +26,7 @@ namespace PL.Views
         public Shop Shop { get; set; }
         public ShopAreaVM shopAreaVM { get; set; }
         public AddIceCreamUC addIceCreamUC;
+        public Bl MyBl { get; set; }
 
 
         public ShopAreaUC(string shopId)
@@ -34,7 +36,9 @@ namespace PL.Views
             Shop.Id = shopId;
             shopAreaVM = new ShopAreaVM(this);
             this.DataContext = shopAreaVM;
+            MyBl = new Bl();
 
+            ListViewIceCreams.ItemsSource = MyBl.GetIceCreamFromShop(shopId);
         }
 
         private void addIceCreamBtn_Click(object sender, RoutedEventArgs e)
@@ -44,8 +48,25 @@ namespace PL.Views
             ((MainWindow)System.Windows.Application.Current.MainWindow).content_grid.Children.Add(addIceCreamUC);
         }
 
+        private void DeleteBtn_Click(object sender, RoutedEventArgs e)
+        {
 
+        }
 
+        private void UpdateBtn_Click(object sender, RoutedEventArgs e)
+        {
 
+        }
+
+       
+        private void ListViewIceCreams_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+            MessageBox.Show("kk", "Excelent", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+        }
+
+        private void ListViewIceCreams_Selected(object sender, RoutedEventArgs e)
+        {
+        }
     }
 }
