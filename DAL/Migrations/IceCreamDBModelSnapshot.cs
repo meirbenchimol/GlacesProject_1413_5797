@@ -96,7 +96,6 @@ namespace DAL.Migrations
                     b.HasOne("BE.Shop", null)
                         .WithMany("Products")
                         .HasForeignKey("ShopId")
-                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 #pragma warning restore 612, 618

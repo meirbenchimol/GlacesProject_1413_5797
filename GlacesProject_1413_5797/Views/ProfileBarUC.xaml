@@ -12,6 +12,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="190"/>
             <RowDefinition Height="*"/>
+            
         </Grid.RowDefinitions>
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -53,8 +54,8 @@
             </Grid>
         </StackPanel>
 
-        <StackPanel Grid.Row="1" VerticalAlignment="Bottom">
-            <Button  Background="#ffc107"  Command="{Binding MyCommand}"    CommandParameter="{Binding ElementName=ID, Path=Text}"      Margin="10" Padding="5" Style="{StaticResource RoundedButtonStyle}">
+        <StackPanel Grid.Row="2" VerticalAlignment="Bottom">
+            <Button  Background="#ffc107"  Command="{Binding MyCommand}"     CommandParameter="{Binding ElementName=ID, Path=Text}"      Margin="10" Padding="5" Style="{StaticResource RoundedButtonStyle}">
                 <Grid Width="100" >
                     <materialDesign:PackIcon Kind="Update" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold" />
                     <TextBlock    Text="UPDATE" FontWeight="Bold" HorizontalAlignment="Center" Margin="27,3,27,0" ></TextBlock>

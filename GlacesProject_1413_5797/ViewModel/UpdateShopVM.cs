@@ -21,6 +21,8 @@ namespace PL.ViewModel
             CurrentModel = new UpdateShopModel();
             CurrentModel.MyShop = updateShopUC.shop;
             this.UpdateShopUC = updateShopUC;
+            updateShopUC.Password.Password = CurrentModel.MyShop.Password;
+            updateShopUC.ConfirmPassword.Password = CurrentModel.MyShop.Password;
             this.MyCommand = new SpecialCommand();
             MyCommand.callComplete += UpdateShop;
 
