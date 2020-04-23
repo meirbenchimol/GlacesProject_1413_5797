@@ -54,10 +54,6 @@
                 </Grid.ColumnDefinitions>
 
 
-                <StackPanel Grid.Row="0">
-                    <Button x:Name="shopAreaBtnBis" Click="shopAreaBtnBis_Click">Shop area</Button>
-                </StackPanel>
-
                 <Grid x:Name="shopAreaGrid" Grid.Row="0" Grid.Column="5" Grid.ColumnSpan="2">
                     <StackPanel   HorizontalAlignment="Right" VerticalAlignment="Center" Margin="30,10" Height="55"  Width="150" >
                         <Button  Click="ShopArea"  

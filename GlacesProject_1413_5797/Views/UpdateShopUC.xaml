@@ -73,7 +73,7 @@
                  TextAlignment="Left"/>
 
                 <TextBlock Text="Password" FontSize="12" Background="{x:Null}"  HorizontalAlignment="Center" MinWidth="250"/>
-                <PasswordBox  x:Name="Password" HorizontalAlignment="Center" Padding="40,5"  Password="{Binding Password}" PasswordChanged="PasswordBox_PasswordChanged" VerticalAlignment="Top" 
+                <PasswordBox  x:Name="Password" HorizontalAlignment="Center" Padding="40,5"   PasswordChanged="PasswordBox_PasswordChanged" VerticalAlignment="Top" 
                  FontSize="16"
                  MinWidth="250"
                  BorderBrush="Black"

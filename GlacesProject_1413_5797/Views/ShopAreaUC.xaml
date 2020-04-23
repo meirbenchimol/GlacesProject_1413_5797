@@ -13,15 +13,77 @@
         <Grid Grid.Column="1" x:Name="ice_cream_grid">
             <Grid>
                 <Grid.Background>
-                    <ImageBrush ImageSource="../Image/font_ice_cream.jpg" Stretch="fill" Opacity="0.1"/>
+                    <ImageBrush ImageSource="../Image/font_ice_cream.jpg" Stretch="fill" Opacity="0.4"/>
                 </Grid.Background>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"></RowDefinition>
                     <RowDefinition Height="50"></RowDefinition>
                 </Grid.RowDefinitions>
 
-                <ScrollViewer>
-                    <Grid  Grid.Row="0">
+                <ScrollViewer Grid.Row="0" Background="{x:Null}"  >
+                    <StackPanel>
+                        <TextBlock Text="Your IceCream:" Margin="15 0 0 0" FontSize="18" FontWeight="Bold"/>
+                        <StackPanel Margin="20 0 ">
+                            <ItemsControl    x:Name="ListViewIceCreams" Selector.Selected="ListViewIceCreams_Selected"  Selector.SelectionChanged="ListViewIceCreams_SelectionChanged" ItemsSource="{Binding IceCream}">
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate  >
+                                        <Grid Width="220" Height="220">
+                                            <Grid Background="White" Margin="10,30,10,10" Width="210" Height="180">
+                                                <Grid.Effect>
+                                                    <DropShadowEffect RenderingBias="Quality" BlurRadius="10" ShadowDepth="1" Color="#FFAFD5F7" />
+                                                </Grid.Effect>
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="*"></RowDefinition>
+                                                    <RowDefinition Height="25"></RowDefinition>
+                                                    <RowDefinition Height="35"></RowDefinition>
+
+                                                </Grid.RowDefinitions>
+
+                                                <StackPanel Grid.Row="1" Orientation="Horizontal">
+                                                    <TextBlock Text="{Binding Id}" Padding="5"  FontFamily="Arial Black" HorizontalAlignment="Center"></TextBlock>
+                                                    <TextBlock Text="{Binding Taste}" Padding="5" Foreground="Gray" FontFamily="Arial Black" HorizontalAlignment="Center" FontWeight="Medium"></TextBlock>
+
+                                                </StackPanel>
+                                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="2">
+                                                    <Button x:Name="UpdateBtn" Click="UpdateBtn_Click" Background="#ffc107" Margin="5"  Style="{StaticResource RoundedButtonStyle}">
+                                                        <Grid Width="80" >
+                                                            <materialDesign:PackIcon Kind="Update" Margin="3,0" HorizontalAlignment="Left" Foreground="White" VerticalAlignment="Center"  />
+                                                            <TextBlock Text="Update" HorizontalAlignment="Left" Foreground="White" Margin="24,0,0,0"></TextBlock>
+                                                        </Grid>
+                                                    </Button>
+                                                    <Button x:Name="DeleteBtn" Click="DeleteBtn_Click"  Background="#dc3545" Margin="5"  Style="{StaticResource RoundedButtonStyle}">
+                                                        <Grid Width="80" >
+                                                            <materialDesign:PackIcon Kind="Delete" Margin="3,0" HorizontalAlignment="Left" Foreground="White" VerticalAlignment="Center"  />
+                                                            <TextBlock Text="delete" HorizontalAlignment="Left" Foreground="White" Margin="24,0,0,0"></TextBlock>
+                                                        </Grid>
+                                                    </Button>
+                                                </StackPanel>
+                                            </Grid>
+
+                                            <Border CornerRadius="  5 5 2 2 "  Margin="30 15 30 70" Width="180">
+                                                <Border.Background>
+                                                    <ImageBrush ImageSource="/GlacesProject_1413_5797;component/Image/iceCream_choco.jpg"/>
+                                                </Border.Background>
+                                            </Border>
+                                        </Grid>
+
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                                <ItemsControl.ItemsPanel>
+                                    <ItemsPanelTemplate>
+                                        <WrapPanel/>
+                                    </ItemsPanelTemplate>
+                                </ItemsControl.ItemsPanel>
+                            </ItemsControl>
+                        </StackPanel> 
+                    </StackPanel>
+                </ScrollViewer>
+
+                <!--<ScrollViewer>
+                    
+                    
+                    
+                    <Grid Grid.Row="0">
 
                         <Grid.RowDefinitions>
                             <RowDefinition Height="200"></RowDefinition>
@@ -73,7 +135,7 @@
                             </Border>
                         </Grid>
                     </Grid>
-                </ScrollViewer>
+                </ScrollViewer>-->
 
                 <StackPanel Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center">
                     <Button x:Name="addIceCreamBtn" Click="addIceCreamBtn_Click" Background="#007bff" Margin="10" Width="150" Padding="10" Style="{StaticResource RoundedButtonStyle}">
