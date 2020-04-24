@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DAL.Migrations
 {
     [DbContext(typeof(IceCreamDB))]
-    [Migration("20200331161055_CreateIceCreamDB")]
+    [Migration("20200424095611_CreateIceCreamDB")]
     partial class CreateIceCreamDB
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -47,18 +47,16 @@ namespace DAL.Migrations
                     b.Property<string>("Images")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Marks")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<double?>("Proteins")
                         .HasColumnType("float");
 
                     b.Property<string>("Taste")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("marks")
-                        .HasColumnType("nvarchar(max)");
-
                     b.HasKey("Id", "ShopId");
-
-                    b.HasIndex("ShopId");
 
                     b.ToTable("IceCreams");
                 });
@@ -89,15 +87,6 @@ namespace DAL.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Shops");
-                });
-
-            modelBuilder.Entity("BE.IceCream", b =>
-                {
-                    b.HasOne("BE.Shop", null)
-                        .WithMany("Products")
-                        .HasForeignKey("ShopId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

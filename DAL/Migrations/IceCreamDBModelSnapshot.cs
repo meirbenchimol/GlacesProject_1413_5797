@@ -19,50 +19,7 @@ namespace DAL.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("BE.IceCream", b =>
-                {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("ShopId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<double?>("Calories")
-                        .HasColumnType("float");
-
-                    b.Property<string>("Comments")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Description")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<double?>("Energy")
-                        .HasColumnType("float");
-
-                    b.Property<string>("Image")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Images")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Marks")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<double?>("Proteins")
-                        .HasColumnType("float");
-
-                   
-
-                    b.Property<string>("Taste")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id", "ShopId");
-
-                    b.HasIndex("ShopId");
-
-                    b.ToTable("IceCreams");
-                });
-
+          
             modelBuilder.Entity("BE.Shop", b =>
                 {
                     b.Property<string>("Id")
@@ -91,13 +48,47 @@ namespace DAL.Migrations
                     b.ToTable("Shops");
                 });
 
+
             modelBuilder.Entity("BE.IceCream", b =>
-                {
-                    b.HasOne("BE.Shop", null)
-                        .WithMany("Products")
-                        .HasForeignKey("ShopId")
-                        .IsRequired();
-                });
+            {
+                b.Property<string>("Id")
+                    .HasColumnType("nvarchar(450)");
+
+                b.Property<string>("ShopId")
+                    .HasColumnType("nvarchar(450)");
+
+                b.Property<double?>("Calories")
+                    .HasColumnType("float");
+
+                b.Property<string>("Comments")
+                    .HasColumnType("nvarchar(max)");
+
+                b.Property<string>("Description")
+                    .HasColumnType("nvarchar(max)");
+
+                b.Property<double?>("Energy")
+                    .HasColumnType("float");
+
+                b.Property<string>("Image")
+                    .HasColumnType("nvarchar(max)");
+
+                b.Property<string>("Images")
+                    .HasColumnType("nvarchar(max)");
+
+                b.Property<string>("Marks")
+                    .HasColumnType("nvarchar(max)");
+
+                b.Property<double?>("Proteins")
+                    .HasColumnType("float");
+
+                b.Property<string>("Taste")
+                    .HasColumnType("nvarchar(max)");
+
+                b.HasKey("Id", "ShopId");
+
+                b.ToTable("IceCreams");
+            });
+
 #pragma warning restore 612, 618
         }
     }
