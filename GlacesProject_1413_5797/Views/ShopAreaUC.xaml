@@ -17,14 +17,77 @@
                 </Grid.Background>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
                     <RowDefinition Height="50"></RowDefinition>
                 </Grid.RowDefinitions>
 
-                <ScrollViewer Grid.Row="0" Background="{x:Null}"  >
+               
+
+                <ScrollViewer Grid.Row="0" HorizontalContentAlignment="Stretch">
+                    <Grid >
+                        <ListView Background="{x:Null}" x:Name="ListViewIceCream" ItemsSource="{Binding IceCream}" HorizontalContentAlignment="Stretch">
+                            <ListView.ItemTemplate >
+                                <DataTemplate >
+                                    <Grid >
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="200"></ColumnDefinition>
+                                            <ColumnDefinition Width="300"  ></ColumnDefinition>
+                                            <ColumnDefinition Width="200"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+
+                                        <Border Grid.Column="0" Grid.ColumnSpan="3" BorderThickness="0 0 0 1" BorderBrush="Black">
+
+                                        </Border>
+                                       
+
+                                        <Border CornerRadius="10 "  Margin="10" Width="160">
+                                            <Border.Background>
+                                                <ImageBrush ImageSource="/GlacesProject_1413_5797;component/Image/iceCream_choco.jpg"/>
+                                            </Border.Background>
+                                        </Border>
+                                        <StackPanel Grid.Column="1" Margin="20" VerticalAlignment="Center">
+                                            <TextBlock Text="{Binding Id}" FontSize="15"  FontWeight="Bold"></TextBlock>
+                                            <StackPanel Orientation="Horizontal" Margin="0 4">
+                                                <TextBlock Text="Taste: " FontSize="14" FontWeight="Bold"></TextBlock>
+                                                <TextBlock Text="{Binding Taste}" FontSize="14" ></TextBlock>
+                                            </StackPanel>
+                                            <StackPanel Orientation="Horizontal" Margin="0 4">
+                                                <TextBlock Text="Note: " FontSize="14" FontWeight="Bold"></TextBlock>
+                                                <TextBlock Text="{Binding Grades}" FontSize="14" ></TextBlock>
+                                            </StackPanel>
+                                        </StackPanel>
+                                        <StackPanel Orientation="Vertical" Grid.Column="2" VerticalAlignment="Center">
+                                            <Button x:Name="UpdateBtn" Click="UpdateBtn_Click" Background="#ffc107" Width="120" Height="25" Margin="5"  Style="{StaticResource RoundedButtonStyle}">
+                                                <Grid Width="80" >
+                                                    <materialDesign:PackIcon Kind="Update" Margin="3,0" HorizontalAlignment="Left" Foreground="White" VerticalAlignment="Center"  />
+                                                    <TextBlock Text="Update" HorizontalAlignment="Left" Foreground="White" Margin="24,0,0,0"></TextBlock>
+                                                </Grid>
+                                            </Button>
+                                            <Button x:Name="DeleteBtn" Click="DeleteBtn_Click"  Background="#dc3545" Margin="0 15 " Width="120" Height="25"  Style="{StaticResource RoundedButtonStyle}">
+                                                <Grid Width="80" >
+                                                    <materialDesign:PackIcon Kind="Delete" Margin="3,0" HorizontalAlignment="Left" Foreground="White" VerticalAlignment="Center"  />
+                                                    <TextBlock Text="delete" HorizontalAlignment="Left" Foreground="White" Margin="24,0,0,0"></TextBlock>
+                                                </Grid>
+                                            </Button>
+                                        </StackPanel>
+
+                                    </Grid>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                            <ListView.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <WrapPanel Orientation="Vertical"></WrapPanel>
+                                </ItemsPanelTemplate>
+                            </ListView.ItemsPanel>
+                        </ListView>
+                    </Grid>
+                </ScrollViewer>
+                
+                <ScrollViewer Grid.Row="1" Background="{x:Null}"  >
                     <StackPanel>
                         <TextBlock Text="Your IceCream:" Margin="15 0 0 0" FontSize="18" FontWeight="Bold"/>
                         <StackPanel Margin="20 0 ">
-                            <ItemsControl    x:Name="ListViewIceCreams" Selector.Selected="ListViewIceCreams_Selected"  Selector.SelectionChanged="ListViewIceCreams_SelectionChanged" ItemsSource="{Binding IceCream}">
+                            <ItemsControl    x:Name="ListViewIceCreams" Selector.Selected="ListViewIceCreams_Selected"   ItemsSource="{Binding IceCream}">
                                 <ItemsControl.ItemTemplate>
                                     <DataTemplate  >
                                         <Grid Width="220" Height="220">
@@ -49,7 +112,7 @@
                                                         <Grid Width="80" >
                                                             <materialDesign:PackIcon Kind="Update" Margin="3,0" HorizontalAlignment="Left" Foreground="White" VerticalAlignment="Center"  />
                                                             <TextBlock Text="Update" HorizontalAlignment="Left" Foreground="White" Margin="24,0,0,0"></TextBlock>
-                                                        </Grid>
+                                                        </Grid> 
                                                     </Button>
                                                     <Button x:Name="DeleteBtn" Click="DeleteBtn_Click"  Background="#dc3545" Margin="5"  Style="{StaticResource RoundedButtonStyle}">
                                                         <Grid Width="80" >
@@ -137,7 +200,7 @@
                     </Grid>
                 </ScrollViewer>-->
 
-                <StackPanel Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <StackPanel Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center">
                     <Button x:Name="addIceCreamBtn" Click="addIceCreamBtn_Click" Background="#007bff" Margin="10" Width="150" Padding="10" Style="{StaticResource RoundedButtonStyle}">
                         <Grid Width="150" >
                             <materialDesign:PackIcon Kind="Plus" HorizontalAlignment="Left" Foreground="White" VerticalAlignment="Center"  />
