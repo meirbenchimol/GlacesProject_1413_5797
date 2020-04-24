@@ -170,9 +170,9 @@
   <ItemGroup>
     <Compile Include="DAL.cs" />
     <Compile Include="IceCreamDB.cs" />
-    <Compile Include="Migrations\20200331161055_CreateIceCreamDB.cs" />
-    <Compile Include="Migrations\20200331161055_CreateIceCreamDB.designer.cs">
-      <DependentUpon>20200331161055_CreateIceCreamDB.cs</DependentUpon>
+    <Compile Include="Migrations\20200424095611_CreateIceCreamDB.cs" />
+    <Compile Include="Migrations\20200424095611_CreateIceCreamDB.designer.cs">
+      <DependentUpon>20200424095611_CreateIceCreamDB.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\IceCreamDBModelSnapshot.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -218,19 +218,43 @@ namespace DAL
              }
              */
         }
+
+
+
         public void UpdateShop(Shop pre_shop, Shop current_shop)
         {
 
 
             using (var db = new IceCreamDB())
             {
+                var query = from m in db.IceCreams
+                            select m;
+
+                IEnumerable<IceCream> iceCreams = query.ToList<IceCream>().Where(x => x.ShopId == current_shop.Id);
+
+                foreach (var iceCream in iceCreams)
+                {
+                    db.IceCreams.Attach(iceCream);
+                    db.IceCreams.Remove(iceCream);
+                }
+                   
+
                 if (pre_shop != null)//if we get user from main it means he is saved in db..
                 {
+
+                    
                     db.Shops.Attach(pre_shop);
                     db.Shops.Remove(pre_shop);
                     db.SaveChanges();
                 }
+
+
                 db.Shops.Add(current_shop);
+           
+                db.SaveChanges();
+
+                foreach (var iceCream in iceCreams)
+                    db.IceCreams.Add(iceCream);
                 db.SaveChanges();
             }
 
