@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PL.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="560" d:DesignWidth="720">
     <UserControl.Resources>
         <Style x:Key="ButtonStyle" TargetType="Button">
             <Style.Triggers>
@@ -21,11 +21,12 @@
 
     <Grid  Grid.Row="1" Grid.Column="1" Grid.RowSpan="4" Grid.ColumnSpan="3">
         <Grid.Background>
-            <SolidColorBrush  Color="Azure" Opacity="0.65"></SolidColorBrush>
+            <!--<SolidColorBrush  Color="Azure" Opacity="0.65"></SolidColorBrush>-->
+            <ImageBrush ImageSource="/Image/font_ice_cream.jpg" Opacity="0.6"></ImageBrush>
         </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"></RowDefinition>
-            <RowDefinition Height="3*"></RowDefinition>
+            <RowDefinition Height="5*"></RowDefinition>
             <RowDefinition Height="1*"></RowDefinition>
 
         </Grid.RowDefinitions>
@@ -35,14 +36,14 @@
 
 
         <StackPanel Grid.Row="0">
-            <TextBlock Text="Update" HorizontalAlignment="Center"  Margin="0,15,0,40" FontFamily="Arial" 
+            <TextBlock Text="Update Your Shop Profile" HorizontalAlignment="Center"  Margin="0,15,0,40" FontFamily="Arial" 
                        FontSize="40" 
                        FontWeight="Bold"
-                       Foreground="#FF534C4C"/>
+                       Foreground="Black"/>
         </StackPanel>
 
 
-        <ScrollViewer Grid.Row="1" Padding="30 ,0" >
+        <ScrollViewer Grid.Row="1"  Margin="30 0" >
             <StackPanel >
 
                 <StackPanel.Background>

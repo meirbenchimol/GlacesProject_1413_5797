@@ -115,9 +115,11 @@ namespace PL.ViewModel
 
         public void UpdateShop(string parameter)
         {
+            CurrentModel.UpdateShop(UpdateShopUC.shop, CurrentModel.MyShop);
 
-            CurrentModel.MyBl.UpdateShop(UpdateShopUC.shop, CurrentModel.MyShop);
-            MessageBox.Show("Great! You've updated your shop space  !!", "Great", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+            //private ShopAreaUC shopAreaUC = new ShopAreaUC(UpdateShopUC.shop.Id);
+            //profileBarUC = new ProfileBarUC(shop);
+           
 
 
         }

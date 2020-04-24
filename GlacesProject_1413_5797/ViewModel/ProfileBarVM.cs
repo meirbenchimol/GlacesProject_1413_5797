@@ -121,13 +121,13 @@ namespace PL.ViewModel
 
         public void UpdateShop(string obj)
         {
-            MessageBox.Show("Great! You've updated your shop space  !!", "Great", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+            //MessageBox.Show("Great! You've updated your shop space  !!", "Great", MessageBoxButton.OK, MessageBoxImage.Exclamation);
 
             updateShopUC = new UpdateShopUC(CurrentModel.shop);
             ((MainWindow)System.Windows.Application.Current.MainWindow).inner_grid.Children.Clear();
             ((MainWindow)System.Windows.Application.Current.MainWindow).content_grid.Children.Clear();
-            ((MainWindow)System.Windows.Application.Current.MainWindow).profile_grid.Children.Clear();
-            ((MainWindow)System.Windows.Application.Current.MainWindow).inner_grid.Children.Add(updateShopUC);
+            //((MainWindow)System.Windows.Application.Current.MainWindow).profile_grid.Children.Clear();
+            ((MainWindow)System.Windows.Application.Current.MainWindow).content_grid.Children.Add(updateShopUC);
 
 
 

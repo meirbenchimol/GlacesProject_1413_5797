@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 using BE;
 using PL.Views;
 using BL;
-
-
+using System.Windows;
 
 namespace PL.Models
 {
@@ -26,6 +25,18 @@ namespace PL.Models
         {
             MyShop = new Shop();
             MyBl = new Bl();
+        }
+
+        public void UpdateShop(Shop updateShop , Shop currentShop)
+        {
+            MyBl.UpdateShop(updateShop, currentShop);
+            shopAreaUC = new ShopAreaUC(updateShop.Id);
+            profileBarUC = new ProfileBarUC(updateShop);
+            ((MainWindow)System.Windows.Application.Current.MainWindow).content_grid.Children.Clear();
+            ((MainWindow)System.Windows.Application.Current.MainWindow).profile_grid.Children.Clear();
+
+            ((MainWindow)System.Windows.Application.Current.MainWindow).content_grid.Children.Add(shopAreaUC);
+            ((MainWindow)System.Windows.Application.Current.MainWindow).profile_grid.Children.Add(profileBarUC);
         }
 
     }
