@@ -68,7 +68,7 @@
                         <Label Name="ID"   Content="{Binding ID}" FontSize="9" FontWeight="DemiBold" HorizontalAlignment="Left" Margin="14.2,9.2,0,8.2" Width="100"></Label>
                     </Border>
                     <Border Style="{StaticResource notCalledBorder}"  Grid.Row="1">
-                        <Label Name="ShopID" Content="{Binding ShopID}" FontSize="9" FontWeight="DemiBold" HorizontalAlignment="Left" Margin="14,10,43,7" Width="100"></Label>
+                        <Label Name="Shop" Content="{Binding ShopID}" FontSize="9" FontWeight="DemiBold" HorizontalAlignment="Left" Margin="14,10,43,7" Width="100"></Label>
                     </Border>
                     <Border Style="{StaticResource notCalledBorder}"  Grid.Row="2">
                         <Label Name="Presentation" Content="{Binding Presentation}" FontSize="9" FontWeight="DemiBold" HorizontalAlignment="Left" Margin="14,10,43,7" Width="100"></Label>

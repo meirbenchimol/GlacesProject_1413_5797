@@ -49,7 +49,7 @@ namespace PL.ViewModel
 
         public string ShopID
         {
-            get { return "ShopID: " +  GraduationUC.SelectedIceCream.ShopId; }
+            get { return "Shop: " +  GraduationUC.SelectedIceCream.ShopId; }
 
         }
 
