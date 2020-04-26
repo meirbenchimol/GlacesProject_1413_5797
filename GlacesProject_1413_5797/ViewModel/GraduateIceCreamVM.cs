@@ -19,6 +19,7 @@ namespace PL.ViewModel
         public event PropertyChangedEventHandler PropertyChanged;
 
         private GraduationUC GraduationUC;
+        private ProfileBarIceCreamUC ProfileBarIceCreamUC;
         public SpecialCommand MyCommand { get; set;  }
 
         public HomeUC homeUC { get; set; }
@@ -33,7 +34,14 @@ namespace PL.ViewModel
             MyCommand.callComplete += MyCommand_UpdateIceCream;
 
         }
+        public GraduateIceCreamVM(ProfileBarIceCreamUC profileBarIceCreamUC)
+        {
+            GraduateICModel = new GraduateICModel();
+            GraduateICModel.IceCream = profileBarIceCreamUC.iceCream;
+            this.ProfileBarIceCreamUC = profileBarIceCreamUC;
+            
 
+        }
 
 
         public string ID

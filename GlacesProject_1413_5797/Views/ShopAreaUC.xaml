@@ -16,29 +16,30 @@
                     <ImageBrush ImageSource="../Image/font_ice_cream.jpg" Stretch="fill" Opacity="0.4"/>
                 </Grid.Background>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="60"></RowDefinition>
                     <RowDefinition Height="*"></RowDefinition>
                     <RowDefinition Height="50"></RowDefinition>
                 </Grid.RowDefinitions>
 
-               
-
-                <ScrollViewer Grid.Row="0" HorizontalContentAlignment="Stretch">
+                <TextBlock Grid.Row="0" Text="Your Ice Cream :" FontSize="20" FontWeight="Bold" Foreground="Black" 
+                               HorizontalAlignment="Center" Padding="15"  />
+                
+                <ScrollViewer Padding="15 0"  HorizontalContentAlignment="Stretch" Grid.Row="1">
                     <Grid >
-                        <ListView Background="{x:Null}" x:Name="ListViewIceCream" ItemsSource="{Binding IceCream}" HorizontalContentAlignment="Stretch">
-                            <ListView.ItemTemplate >
+                        <ListView Background="{x:Null}"  x:Name="ListViewIceCream" SelectionChanged="ListViewIceCream_SelectionChanged" ItemsSource="{Binding IceCream}" HorizontalContentAlignment="Stretch">
+                            <ListView.ItemTemplate  >
                                 <DataTemplate >
                                     <Grid >
                                         <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="200"></ColumnDefinition>
-                                            <ColumnDefinition Width="300"  ></ColumnDefinition>
-                                            <ColumnDefinition Width="200"></ColumnDefinition>
+                                            <ColumnDefinition Width="190"></ColumnDefinition>
+                                            <ColumnDefinition Width="280"  ></ColumnDefinition>
+                                            <ColumnDefinition Width="190"></ColumnDefinition>
                                         </Grid.ColumnDefinitions>
 
                                         <Border Grid.Column="0" Grid.ColumnSpan="3" BorderThickness="0 0 0 1" BorderBrush="Black">
 
                                         </Border>
-                                       
+
 
                                         <Border CornerRadius="10 "  Margin="10" Width="160">
                                             <Border.Background>
@@ -46,7 +47,11 @@
                                             </Border.Background>
                                         </Border>
                                         <StackPanel Grid.Column="1" Margin="20" VerticalAlignment="Center">
-                                            <TextBlock Text="{Binding Id}" FontSize="15"  FontWeight="Bold"></TextBlock>
+                                            <!--<TextBlock Text="{Binding Id}" FontSize="15"  FontWeight="Bold"></TextBlock>-->
+                                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 4">
+                                                <TextBlock Text="{Binding Id}" FontSize="15"  FontWeight="Bold"></TextBlock>
+                                                <TextBlock Text="IceCream" FontSize="15" ></TextBlock>
+                                            </StackPanel>
                                             <StackPanel Orientation="Horizontal" Margin="0 4">
                                                 <TextBlock Text="Taste: " FontSize="14" FontWeight="Bold"></TextBlock>
                                                 <TextBlock Text="{Binding Taste}" FontSize="14" ></TextBlock>
@@ -82,12 +87,13 @@
                         </ListView>
                     </Grid>
                 </ScrollViewer>
-                
-                <ScrollViewer Grid.Row="1" Background="{x:Null}"  >
+
+
+                <!--<ScrollViewer Grid.Row="1" Background="{x:Null}"  >
                     <StackPanel>
                         <TextBlock Text="Your IceCream:" Margin="15 0 0 0" FontSize="18" FontWeight="Bold"/>
                         <StackPanel Margin="20 0 ">
-                            <ItemsControl    x:Name="ListViewIceCreams" Selector.Selected="ListViewIceCreams_Selected"   ItemsSource="{Binding IceCream}">
+                            <ItemsControl    x:Name="ListViewIceCreams"   ItemsSource="{Binding IceCream}">
                                 <ItemsControl.ItemTemplate>
                                     <DataTemplate  >
                                         <Grid Width="220" Height="220">
@@ -140,7 +146,7 @@
                             </ItemsControl>
                         </StackPanel> 
                     </StackPanel>
-                </ScrollViewer>
+                </ScrollViewer>-->
 
                 <!--<ScrollViewer>
                     

@@ -173,11 +173,22 @@
             <StackPanel Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Center">
                 <Button x:Name="addIceCreamBtn" 
                         Command="{Binding MyCommand}"
+                        Visibility="Visible"
                         CommandParameter="{Binding ElementName=Id, Path=Text}"
                         Background="#007bff" Margin="10" Width="150" Padding="10" Style="{StaticResource RoundedButtonStyle}">
                     <Grid Width="150" >
                         <materialDesign:PackIcon Kind="Plus" HorizontalAlignment="Left" Foreground="White" VerticalAlignment="Center"  />
                         <TextBlock Text="Add Ice Cream" FontWeight="Bold" HorizontalAlignment="Center" Foreground="White"></TextBlock>
+                    </Grid>
+                </Button>
+                <Button x:Name="UpdateIceCreamBtn" 
+                        Visibility="Collapsed"
+                        Command="{Binding MyCommand}"
+                        CommandParameter="{Binding ElementName=Id, Path=Text}"
+                        Background="Orange" Margin="10" Width="150" Padding="10" Style="{StaticResource RoundedButtonStyle}">
+                    <Grid Width="150" >
+                        <materialDesign:PackIcon Kind="Update" HorizontalAlignment="Left" Foreground="White" VerticalAlignment="Center"  />
+                        <TextBlock Text="Update Ice Cream" FontWeight="Bold" HorizontalAlignment="Center" Foreground="White"></TextBlock>
                     </Grid>
                 </Button>
             </StackPanel>

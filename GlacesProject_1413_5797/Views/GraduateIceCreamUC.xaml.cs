@@ -28,6 +28,7 @@ namespace PL.Views
 
         public Bl MyBl { get; set; }
         public GraduationUC graduationUC { get; set; }
+        public ProfileBarIceCreamUC profileBarIceCreamUC { get; set; }
         public GraduateIceCreamUC()
         {
 
@@ -48,8 +49,12 @@ namespace PL.Views
             IceCream Ic = IceCreamComboBox.SelectedItem as IceCream;
             Ic.UpdateLists();
             graduationUC = new GraduationUC(Ic);
+            profileBarIceCreamUC = new ProfileBarIceCreamUC(Ic);
             ((MainWindow)System.Windows.Application.Current.MainWindow).inner_grid.Children.Clear();
-            ((MainWindow)System.Windows.Application.Current.MainWindow).inner_grid.Children.Add(graduationUC);
+            ((MainWindow)System.Windows.Application.Current.MainWindow).content_grid.Children.Clear();
+            ((MainWindow)System.Windows.Application.Current.MainWindow).content_grid.Children.Add(graduationUC);
+            ((MainWindow)System.Windows.Application.Current.MainWindow).profile_grid.Children.Add(profileBarIceCreamUC);
+
 
 
         }

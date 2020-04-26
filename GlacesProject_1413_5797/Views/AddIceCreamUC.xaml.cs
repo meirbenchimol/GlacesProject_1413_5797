@@ -26,6 +26,7 @@ namespace PL.Views
     {
         public ShopAreaUC shopAreaUC;
         public string ShopId;
+        public IceCream currentIceCream;
         public AddIceCreamVM AddIceCreamVM { get; set; }
 
         public AddIceCreamUC(string shopId)
@@ -34,6 +35,19 @@ namespace PL.Views
             ShopId = shopId;
             AddIceCreamVM = new AddIceCreamVM(this);
             this.DataContext = AddIceCreamVM;
+            addIceCreamBtn.Visibility = Visibility.Visible;
+            UpdateIceCreamBtn.Visibility = Visibility.Collapsed;
+        }
+
+        public AddIceCreamUC(string shopId , IceCream iceCream)
+        {
+            InitializeComponent();
+            ShopId = shopId;
+            currentIceCream = iceCream;
+            AddIceCreamVM = new AddIceCreamVM(this  ,iceCream);
+            this.DataContext = AddIceCreamVM;
+            addIceCreamBtn.Visibility = Visibility.Collapsed;
+            UpdateIceCreamBtn.Visibility = Visibility.Visible;
         }
 
         private void CalculeBtn_Click(object sender, RoutedEventArgs e)

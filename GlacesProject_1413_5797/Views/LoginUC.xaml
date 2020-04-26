@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:PL.Views"
              xmlns:Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero" 
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="400">
+             d:DesignHeight="400" d:DesignWidth="400">
 
 
     <UserControl.Resources>
@@ -50,28 +50,41 @@
         </Style>
     </UserControl.Resources>
     <Grid  Grid.Row="1" Grid.Column="1" Grid.RowSpan="3" Grid.ColumnSpan="3">
-        <StackPanel Margin="30,10,30,10">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="70"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="40"></RowDefinition>
+            </Grid.RowDefinitions>
 
 
-            <StackPanel.Background>
-                <SolidColorBrush Color="Azure" Opacity="0.65"/>
-            </StackPanel.Background>
-            <TextBlock Text="Sign In" HorizontalAlignment="Center"  Margin="0,15,0,40" FontFamily="Arial" 
+            <StackPanel Margin="30 0 " Grid.Row="0" >
+                <StackPanel.Background>
+                    <SolidColorBrush Color="Azure" Opacity="0.65"/>
+                </StackPanel.Background>
+                <TextBlock Text="Sign In" HorizontalAlignment="Center"  Margin="0,15,0,40" FontFamily="Arial" 
                        FontSize="40" 
                        FontWeight="Bold"
                        Foreground="#FF534C4C"/>
-            <TextBlock Text="Username" FontSize="12" Background="{x:Null}"  HorizontalAlignment="Center" MinWidth="170"/>
-            <TextBox x:Name="Id"  TextWrapping="Wrap" Text="{Binding Id}" HorizontalAlignment="Center" Padding="40,5"  VerticalAlignment="Top" 
+            </StackPanel>
+
+            <StackPanel Margin="30 0"  Grid.Row="1"  >
+                <StackPanel.Background>
+                    <SolidColorBrush Color="Azure" Opacity="0.65"/>
+                </StackPanel.Background>
+
+                <TextBlock Margin="0 20 0 0" Text="Username" FontSize="12" Background="{x:Null}" HorizontalAlignment="Center" MinWidth="170"/>
+                <TextBox x:Name="Id"  TextWrapping="Wrap" Text="{Binding Id}" HorizontalAlignment="Center" Padding="40,5"  VerticalAlignment="Top" 
                  FontSize="16"
                  BorderBrush="Black"
                  MinWidth="170"
                  Margin="0,0,0,20"
                  Background="#FFF6F6F6"
                  Foreground="DarkGray"
-                 TextAlignment="Center"/>
-            <TextBlock Text="Password" FontSize="12" Background="{x:Null}"  HorizontalAlignment="Center" MinWidth="170"/>
+                 TextAlignment="Left"/>
+                <TextBlock Text="Password" FontSize="12" Background="{x:Null}"  HorizontalAlignment="Center" MinWidth="170"/>
 
-            <PasswordBox  x:Name="Password" HorizontalAlignment="Center" Padding="40,5"  VerticalAlignment="Top" 
+                <PasswordBox  x:Name="Password" HorizontalAlignment="Center" Padding="40,5"  VerticalAlignment="Top" 
                  FontSize="16"
                  MinWidth="170"
                  BorderBrush="Black"
@@ -79,7 +92,7 @@
                  Foreground="DarkGray"
                  Margin="0,0,0,20"
                  />
-            <Button Name="Login"  Content="Login" HorizontalAlignment="Center"  VerticalAlignment="Top"   Margin="112,0,128,10" Width="100"
+                <Button Name="Login"  Content="Login" HorizontalAlignment="Center"  VerticalAlignment="Top"   Margin="112,0,128,10" Width="100"
                 Background="#FF64CCF1"
                 Foreground="White"
                 FontFamily="Arial"
@@ -87,10 +100,20 @@
                 Padding="5"
                 FontSize="20" 
                 Style="{DynamicResource RoundedButtonStyle}" Height="35" />
-            <Button Content="Register" HorizontalAlignment="Center" Click="Register"  VerticalContentAlignment="Bottom"  Background="{x:Null}"  BorderBrush="{x:Null}" Margin="94,0"  Height="28" Width="152" />
+             
 
+            </StackPanel>
 
-        </StackPanel>
+            <StackPanel Margin="30,0,30,0" Grid.Row="2">
+                <StackPanel.Background>
+                    <SolidColorBrush Color="Azure" Opacity="0.65"/>
+                </StackPanel.Background>
+                <Button Content="Don't have a login? Register Now" HorizontalAlignment="Center" Click="Register"
+                    VerticalContentAlignment="Center"  Background="{x:Null}"  BorderBrush="{x:Null}"
+                    Padding="10"  Style="{StaticResource ButtonMeir}" FontWeight="Bold" />
+            </StackPanel>
+        </Grid>
+        
 
     </Grid>
     </UserControl>

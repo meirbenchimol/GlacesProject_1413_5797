@@ -18,14 +18,26 @@ namespace PL.Models
         public Bl MyBl { get; set; }
         public IceCream MyIC { get; set; }
 
+        public IceCream oldIceCream;
+
         public ShopAreaUC shopAreaUC;
 
         public AddIceCreamModel(string shopId)
         {
             MyIC = new IceCream();
+            oldIceCream = MyIC;
             MyIC.ShopId = shopId;
             MyBl = new Bl();
         }
+
+        public AddIceCreamModel(string shopId , IceCream iceCream)
+        {
+            MyIC = iceCream;
+            oldIceCream = iceCream;
+            MyIC.ShopId = shopId;
+            MyBl = new Bl();
+        }
+
 
 
         internal bool CheckIceCream()
@@ -44,6 +56,14 @@ namespace PL.Models
             ((MainWindow)System.Windows.Application.Current.MainWindow).content_grid.Children.Add(shopAreaUC);
 
 
+        }
+
+        internal void UpdateIceCream()
+        {
+            MyBl.UpdateIceCream(oldIceCream, MyIC);
+            shopAreaUC = new ShopAreaUC(MyIC.ShopId);
+            ((MainWindow)System.Windows.Application.Current.MainWindow).content_grid.Children.Clear();
+            ((MainWindow)System.Windows.Application.Current.MainWindow).content_grid.Children.Add(shopAreaUC);
         }
     }
 }

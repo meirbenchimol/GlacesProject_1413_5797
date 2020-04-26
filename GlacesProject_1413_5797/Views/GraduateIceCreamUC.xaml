@@ -27,40 +27,43 @@
             </Style.Triggers>
         </Style>
     </UserControl.Resources>
-    <Grid Background="#FFFDC666" Opacity="0.7">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="2*"></RowDefinition>
-            <RowDefinition Height="4*"></RowDefinition>
-            <RowDefinition Height="*"></RowDefinition>
-        </Grid.RowDefinitions>
-
-        <StackPanel Orientation="Horizontal" Grid.Row="0" HorizontalAlignment="Center">
-            <Label Content="Select an IceCream that you eat for share your comment" FontWeight="Bold" FontSize="13"
-               HorizontalAlignment="Center"  VerticalAlignment="Center" >
-            </Label>
-            <materialDesign:PackIcon Kind="CommentEditOutline"  VerticalAlignment="Center" Foreground="DeepPink" Height="50"  Width="60"  />
-        </StackPanel>
-
-        <Grid Grid.Row="1" VerticalAlignment="Center">
+    <Border BorderThickness="5" CornerRadius="10" Background="#FFFDC666" BorderBrush="#FF09324D">
+        <Grid  >
             <Grid.RowDefinitions>
+                <RowDefinition Height="1*"></RowDefinition>
+                <RowDefinition Height="4*"></RowDefinition>
                 <RowDefinition Height="*"></RowDefinition>
-                <RowDefinition Height="*"></RowDefinition> 
             </Grid.RowDefinitions>
-            <StackPanel Orientation="Horizontal" Margin="20 " Grid.Row="0">
-                <materialDesign:PackIcon Kind="Shop"  VerticalAlignment="Center" Foreground="Blue"  />
-                <Label FontSize="12">Select the shop where you eat the iceCream :</Label>
-                <ComboBox Name="ShopComboBox"   Style="{StaticResource ComboBoxStyle}"   VerticalAlignment="Top" Width="120" SelectionChanged="Shop_Selected" />
-            </StackPanel>
-            <StackPanel Orientation="Horizontal" Margin="20" Grid.Row="1">
-                <materialDesign:PackIcon Kind="IceCream"  VerticalAlignment="Center" Foreground="Blue"  />
-                <Label FontSize="12">Select the shop where you eat the iceCream :</Label>
-                <ComboBox Name="IceCreamComboBox"  Style="{StaticResource ComboBoxStyle}" IsEnabled="False" HorizontalAlignment="Center"  VerticalAlignment="Center" MinWidth="120" />
+
+            <StackPanel Orientation="Horizontal" Grid.Row="0" HorizontalAlignment="Center">
+                <Label Content="Select an IceCream that you eat for share your comment" FontWeight="Bold" FontSize="15"
+               HorizontalAlignment="Center"  VerticalAlignment="Center" >
+                </Label>
+                <materialDesign:PackIcon Kind="CommentEditOutline"  VerticalAlignment="Center" Foreground="DeepPink" Height="50"  Width="60"  />
             </StackPanel>
 
+            <Grid Grid.Row="1" VerticalAlignment="Center">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <StackPanel Orientation="Horizontal" Margin="40 0 0 20 " Grid.Row="0">
+                    <materialDesign:PackIcon Kind="Shop" Width="20" Height="20" VerticalAlignment="Center" Foreground="Blue"  />
+                    <Label FontSize="15">Select the shop where you eat the iceCream :</Label>
+                    <ComboBox Name="ShopComboBox"   Style="{StaticResource ComboBoxStyle}"   VerticalAlignment="Center" Width="130" SelectionChanged="Shop_Selected" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="40 20 0 0" Grid.Row="1">
+                    <materialDesign:PackIcon Width="20" Height="20" Kind="IceCream"  VerticalAlignment="Center" Foreground="Blue"  />
+                    <Label FontSize="15">Select the shop where you eat the iceCream :</Label>
+                    <ComboBox Name="IceCreamComboBox"  Style="{StaticResource ComboBoxStyle}" IsEnabled="False" HorizontalAlignment="Center"  VerticalAlignment="Center" MinWidth="130" />
+                </StackPanel>
+
+            </Grid>
+            <StackPanel Grid.Row="2">
+                <Button Content="Graduate" Style="{StaticResource ButtonMeir}" HorizontalAlignment="Center" 
+                    VerticalAlignment="Center" Padding="50,7" FontSize="14" Click="Graduate" Background="DeepPink" Foreground="White"/>
+            </StackPanel>
         </Grid>
-        <StackPanel Grid.Row="2">
-            <Button Content="Graduate" Style="{StaticResource ButtonMeir}" HorizontalAlignment="Center" 
-                    VerticalAlignment="Center" Padding="30,5" FontSize="12" Click="Graduate" Background="DeepPink" Foreground="White"/>
-        </StackPanel>
-    </Grid>
+    </Border>
+
 </UserControl>

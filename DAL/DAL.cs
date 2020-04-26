@@ -50,6 +50,23 @@ namespace DAL
 
         }
 
+        public void DeleteIceCream( IceCream iceCream)
+        {
+
+
+            using (var db = new IceCreamDB())
+            {
+                if (iceCream != null)
+                {
+                    db.IceCreams.Attach(iceCream);
+                    db.IceCreams.Remove(iceCream);
+                    db.SaveChanges();
+                }
+               
+            }
+
+        }
+
 
         public bool CheckIceCream(string ID, string ShopID)
         {

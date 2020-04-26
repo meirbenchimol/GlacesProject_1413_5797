@@ -175,6 +175,7 @@
     <Compile Include="Models\GraduateICModel.cs" />
     <Compile Include="Models\LoginModel.cs" />
     <Compile Include="Models\MainModel.cs" />
+    <Compile Include="Models\ProfileBarIceCreamModel.cs" />
     <Compile Include="Models\ProfileBarModel.cs" />
     <Compile Include="Models\ShopAreaModel.cs" />
     <Compile Include="Models\IceCreamShopModel.cs" />
@@ -183,6 +184,7 @@
     <Compile Include="ViewModel\GraduateIceCreamVM.cs" />
     <Compile Include="ViewModel\LoginVM.cs" />
     <Compile Include="ViewModel\MainVM.cs" />
+    <Compile Include="ViewModel\ProfileBarIceCreamVM.cs" />
     <Compile Include="ViewModel\ProfileBarVM.cs" />
     <Compile Include="ViewModel\ShopAreaVM.cs" />
     <Compile Include="ViewModel\IceCreamShopVM.cs" />
@@ -207,6 +209,9 @@
     </Compile>
     <Compile Include="Views\LoginUC.xaml.cs">
       <DependentUpon>LoginUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProfileBarIceCreamUC.xaml.cs">
+      <DependentUpon>ProfileBarIceCreamUC.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\ProfileBarUC.xaml.cs">
       <DependentUpon>ProfileBarUC.xaml</DependentUpon>
@@ -263,6 +268,10 @@
     <Page Include="Views\LoginUC.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ProfileBarIceCreamUC.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\ProfileBarUC.xaml">
       <SubType>Designer</SubType>

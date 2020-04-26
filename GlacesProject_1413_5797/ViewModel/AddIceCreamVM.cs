@@ -24,6 +24,13 @@ namespace PL.ViewModel
             MyCommand.callComplete += AddIceCream;
         }
 
+        public AddIceCreamVM(AddIceCreamUC addIceCreamUC, IceCream iceCream)
+        {
+            CurrentModel = new AddIceCreamModel(addIceCreamUC.ShopId , iceCream);
+            this.addIceCreamUC = addIceCreamUC;
+            this.MyCommand = new SpecialCommand();
+            MyCommand.callComplete += UpdateCream;
+        }
 
         public AddIceCreamModel CurrentModel { get; set; }
 
@@ -35,7 +42,7 @@ namespace PL.ViewModel
 
         public string Id
         {
-            get { return CurrentModel.MyIC.Id; }
+            get { return CurrentModel.oldIceCream.Id; }
             set
             {
                 CurrentModel.MyIC.Id = value;
@@ -48,7 +55,7 @@ namespace PL.ViewModel
         public string  Taste
         {
             get {
-                    string s= CurrentModel.MyIC.Taste;
+                    string s= CurrentModel.oldIceCream.Taste;
                      return s;
                             
                  }
@@ -65,7 +72,7 @@ namespace PL.ViewModel
 
         public string Description
         {
-            get { return CurrentModel.MyIC.Description; }
+            get { return CurrentModel.oldIceCream.Description; }
             set
             {
                 CurrentModel.MyIC.Description = value;
@@ -92,7 +99,15 @@ namespace PL.ViewModel
 
         }
 
-        #endregion 
+        public void UpdateCream(string obj)
+        {
+            CurrentModel.UpdateIceCream();
+
+        }
+
+
+
+        #endregion
 
     }
 }

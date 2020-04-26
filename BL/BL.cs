@@ -108,6 +108,10 @@ namespace BL
             MyDal.UpdateIceCream(pre_IC, current_IceCream);
         }
 
+        public void DeleteIceCream(IceCream iceCream)
+        {
+            MyDal.DeleteIceCream(iceCream);
+        }
 
 
         public IceCream FindIceCream(IceCream iceCream)

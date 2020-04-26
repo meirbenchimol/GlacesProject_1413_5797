@@ -15,7 +15,6 @@ using PL.ViewModel;
 using BE;
 using BL;
 
-
 namespace PL.Views
 {
     /// <summary>
@@ -29,6 +28,7 @@ namespace PL.Views
         public Bl MyBl { get; set; }
 
 
+
         public ShopAreaUC(string shopId)
         {
             InitializeComponent();
@@ -38,7 +38,7 @@ namespace PL.Views
             this.DataContext = shopAreaVM;
             MyBl = new Bl();
 
-            ListViewIceCreams.ItemsSource = MyBl.GetIceCreamFromShop(shopId);
+            //ListViewIceCreams.ItemsSource = MyBl.GetIceCreamFromShop(shopId);
             ListViewIceCream.ItemsSource = MyBl.GetIceCreamFromShop(shopId);
         }
 
@@ -51,23 +51,32 @@ namespace PL.Views
 
         private void DeleteBtn_Click(object sender, RoutedEventArgs e)
         {
+            IceCream ic = (IceCream)((Button)sender).DataContext;
+            String b = ic.Id;
+            MyBl.DeleteIceCream(ic);
+            ListViewIceCream.ItemsSource = MyBl.GetIceCreamFromShop(Shop.Id);
+            MessageBox.Show("You have delete "+b, "Warning ", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+
 
         }
 
         private void UpdateBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            IceCream ic = (IceCream)((Button)sender).DataContext;
+            String b = ic.Id;
+            MessageBox.Show(b, "Warning", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+            addIceCreamUC = new AddIceCreamUC(Shop.Id , ic);
+            ((MainWindow)System.Windows.Application.Current.MainWindow).content_grid.Children.Clear();
+            ((MainWindow)System.Windows.Application.Current.MainWindow).content_grid.Children.Add(addIceCreamUC);
         }
 
-       
-        private void ListViewIceCreams_SelectionChanged(object sender, SelectionChangedEventArgs e)
+    
+        private void ListViewIceCream_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            IceCream ic = (IceCream)ListViewIceCream.SelectedItem as IceCream;
+            string itemId = ic.Id;
+            MessageBox.Show(itemId, "Warning", MessageBoxButton.OK, MessageBoxImage.Exclamation);
 
-            MessageBox.Show("kk", "Excelent", MessageBoxButton.OK, MessageBoxImage.Exclamation);
-        }
-
-        private void ListViewIceCreams_Selected(object sender, RoutedEventArgs e)
-        {
         }
     }
 }
