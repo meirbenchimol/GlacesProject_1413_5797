@@ -34,6 +34,7 @@ namespace PL.ViewModel
         }
 
 
+        #region shop 
 
         public string ShopAdress
         {
@@ -60,13 +61,15 @@ namespace PL.ViewModel
         }
 
 
-        public string FaceBook
+        public string ShopFaceBook
         {
             get { return CurrentModel.shop.FaceBookLink; }
 
         }
 
+        #endregion
 
+        #region IceCream
 
 
         public string IceCreamID
@@ -76,6 +79,13 @@ namespace PL.ViewModel
             get { return  CurrentModel.iceCream.Id; }
 
         }
+
+
+        public string IceCreamTaste
+        {
+            get { return CurrentModel.iceCream.Taste; }
+        }
+
 
         public string IceCreamEnergy
         {
@@ -110,13 +120,13 @@ namespace PL.ViewModel
                 string[] grade = CurrentModel.iceCream.Marks.Split(',').ToArray();
 
 
-                return "Grade: " + grade[0];
+                return  grade[0];
 
             }
         }
 
 
-
+        #endregion
 
     }
 

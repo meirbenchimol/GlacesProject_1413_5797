@@ -32,6 +32,8 @@ namespace PL.Views
         public IceCreamShopUC(Shop shop,IceCream iceCream)
         {
             InitializeComponent();
+            this.shop = shop;
+            this.iceCream = iceCream;
             this.IceCreamShopVM = new IceCreamShopVM(this);
             this.DataContext = IceCreamShopVM;
 

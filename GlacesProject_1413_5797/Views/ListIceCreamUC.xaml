@@ -4,18 +4,59 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PL.Views"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d" d:DesignWidth="600" Height="403.132">
     <Grid>
 
-        <Border Grid.Column="1" BorderBrush="#FF6BB3E5" Margin="10" BorderThickness="4">
+
+
+        <Border Grid.Row="0"  BorderBrush="#FF6BB3E5"  BorderThickness="4">
             <Border.Background>
                 <RadialGradientBrush>
                     <GradientStop Color="White" Offset="0"/>
                     <GradientStop Color="#FF61B3FF" Offset="1"/>
                 </RadialGradientBrush>
             </Border.Background>
-            <Grid x:Name="DataGrid_grid" Grid.Column="1">
-                <DataGrid x:Name="PersonDetails" 
+
+
+        </Border>
+
+        <Border Grid.Row="0"  BorderBrush="#FF6BB3E5" Margin="10" BorderThickness="4">
+            <Border.Background>
+                <RadialGradientBrush>
+                    <GradientStop Color="White" Offset="0"/>
+                    <GradientStop Color="#FF61B3FF" Offset="1"/>
+                </RadialGradientBrush>
+            </Border.Background>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="350"/>
+                </Grid.RowDefinitions>
+
+
+                <Grid Grid.Row="0">
+                    <Button x:Name="bnt_return" HorizontalAlignment="Left" Grid.Row="0" Margin="10,10,0,0" Padding="5" Grid.Column="0"
+                    VerticalAlignment="top"
+                    Style="{StaticResource ButtonMeir}"
+                    Click="Bnt_return_Click"
+                    Background="OrangeRed" Height="29" Width="58"
+                    >
+                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" >
+                            <materialDesign:PackIcon Width="20" Height="10" Kind="ArrowBackCircle" Focusable="False"/>
+                            <TextBlock VerticalAlignment="Center" FontSize="10" FontWeight="Bold" Padding="03">Back</TextBlock>
+                        </StackPanel>
+
+                    </Button>
+                    <StackPanel Grid.Row="0" Grid.Column="0" Width="300" HorizontalAlignment="Left" VerticalAlignment="Top" Orientation="Horizontal"  Margin="150,0,0,7.8" Height="43" Grid.ColumnSpan="3">
+                        <materialDesign:PackIcon Width="20" Height="12" Kind="IceCream" Focusable="False" VerticalAlignment="Center"/>
+                        <Label x:Name="IceCreamName"    Content="Select your IceCream"  FontWeight="Bold" VerticalAlignment="Center"   HorizontalAlignment="Left" FontSize="15" Width="184" Margin="0,6,0,6.2" />
+
+                    </StackPanel>
+                </Grid>
+                <Grid x:Name="DataGrid_grid"  Grid.Row="1">
+                    <DataGrid x:Name="PersonDetails" 
                       Visibility="Visible"
                           Height="auto"
                               IsReadOnly="True"
@@ -24,7 +65,7 @@
                       VerticalScrollBarVisibility="Auto"
                       MaxHeight="500"
                       HorizontalAlignment="Center"
-                      HorizontalContentAlignment="Center"
+                      HorizontalContentAlignment="Right"
                       MinRowHeight="30"
                       VerticalContentAlignment="Center"  
                       FontSize="16" 
@@ -34,19 +75,21 @@
                       GridLinesVisibility="Horizontal" 
                       SelectionChanged="OnSelectedItemChanged" 
                               IsManipulationEnabled="True" 
-                              MouseDoubleClick="AvoidDoubleClick" Margin="99,0,97,0.2" Width="300">
-                    <DataGrid.Columns>
-                        <DataGridTextColumn  Header="IceCream" Width="100" Binding="{Binding Id}" FontSize="10" FontWeight="Normal"/>
-                        <DataGridTextColumn Header="Shop" Width="100" Binding="{Binding ShopId}" FontSize="10" FontWeight="Normal"/>
-                        <DataGridTextColumn Header="Taste" Width="150" Binding="{Binding Taste}" FontSize="10" FontWeight="Normal"/>
-                    </DataGrid.Columns>
+                              MouseDoubleClick="AvoidDoubleClick" Margin="50,0,50,0.2" Width="400">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn  Header="IceCream" Width="100"  Binding="{Binding Id}" FontSize="10" FontWeight="Normal"/>
+                            <DataGridTextColumn Header="Shop" Width="150" Binding="{Binding ShopId}" FontSize="10" FontWeight="Normal"/>
+                            <DataGridTextColumn Header="Taste" Width="150" Binding="{Binding Taste}" FontSize="10" FontWeight="Normal"/>
+                        </DataGrid.Columns>
 
-                </DataGrid>
+                    </DataGrid>
+
+                </Grid>
 
             </Grid>
         </Border>
 
 
-       
+
     </Grid>
 </UserControl>

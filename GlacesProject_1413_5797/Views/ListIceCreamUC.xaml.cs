@@ -26,6 +26,8 @@ namespace PL.Views
     {
 
         public Bl bl { get; set; }
+
+        public IceCreamShopUC IceCreamShopUC { get; set; }
        
         public ListIceCreamUC(IEnumerable<IceCream> iceCreams)
         {
@@ -46,7 +48,22 @@ namespace PL.Views
         {
             IceCream ic = (IceCream)PersonDetails.SelectedItem as IceCream;
             string name = ic.Id;
-            MessageBox.Show(name,"Excellent!!",MessageBoxButton.OK, MessageBoxImage.Exclamation);
+            Shop shop = bl.GetAllShop().Where(x => x.Id == ic.ShopId).FirstOrDefault();
+            IceCreamShopUC = new IceCreamShopUC(shop, ic);
+
+            ((MainWindow)System.Windows.Application.Current.MainWindow).inner_grid.Children.Clear();
+            ((MainWindow)System.Windows.Application.Current.MainWindow).content_grid.Children.Clear();
+            ((MainWindow)System.Windows.Application.Current.MainWindow).profile_grid.Children.Clear();
+            ((MainWindow)System.Windows.Application.Current.MainWindow).inner_grid.Children.Add(IceCreamShopUC);
+
+            // MessageBox.Show(name + " " + shop.Id,"Excellent!!",MessageBoxButton.OK, MessageBoxImage.Exclamation);
+
+
+        }
+
+        private void Bnt_return_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

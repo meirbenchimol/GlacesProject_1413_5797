@@ -4,57 +4,63 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PL.Views"
-              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d" 
-             d:DesignHeight="550" d:DesignWidth="800">
-    <Grid>
-        <Grid.Background>
-            <ImageBrush Opacity="0.5" ImageSource="/GlacesProject_1413_5797;component/Image/font_ice_cream.jpg"/>
-        </Grid.Background>
+             d:DesignHeight="400" d:DesignWidth="600">
+    <Grid Background="LightBlue" Opacity="0.7">
+
         <Grid.RowDefinitions>
-            <RowDefinition Height="250"/>
-            <RowDefinition Height="200"/>
+            <RowDefinition Height="150"/>
+            <RowDefinition Height="150"/>
             <RowDefinition Height="100"/>
         </Grid.RowDefinitions>
 
 
         <Grid Grid.Row="0">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="361*"/>
-                <ColumnDefinition Width="0*"/>
-                <ColumnDefinition Width="439*"/>
+                <ColumnDefinition Width="50"/>
+                <ColumnDefinition Width="350"/>
+                <ColumnDefinition Width="200"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="40"/>
-                <RowDefinition Height="200"/>
+                <RowDefinition Height="110"/>
             </Grid.RowDefinitions>
 
-            <Button x:Name="bnt_return" HorizontalAlignment="Left" Grid.Row="0" Margin="10,10,0,0" Padding="5" Grid.Column="0"
+            <Button x:Name="bnt_return" HorizontalAlignment="Left" Grid.Row="0"   Grid.Column="0"
                     VerticalAlignment="top"
                     Style="{StaticResource ButtonMeir}"
                     Click="Bnt_return_Click"
-                    Background="OrangeRed" Height="29" Width="58"
+                    Background="OrangeRed" Height="29" Width="36" Margin="7,5,0,0"
                     >
-                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" >
-                    <materialDesign:PackIcon Width="20" Height="10" Kind="ArrowBackCircle" Focusable="False"/>
-                    <TextBlock VerticalAlignment="Center" FontSize="10" FontWeight="Bold" Padding="03">Back</TextBlock>
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center"  HorizontalAlignment="Left" >
+                    <materialDesign:PackIcon Width="10" Height="10" Kind="ArrowBackCircle" Focusable="False"/>
+                    <TextBlock VerticalAlignment="Center" FontSize="8" Width="31" FontWeight="Bold" Padding="03">Back</TextBlock>
                 </StackPanel>
 
             </Button>
-            <StackPanel Grid.Row="0" Grid.Column="0" Width="300" HorizontalAlignment="Left" VerticalAlignment="Top" Orientation="Horizontal"  Margin="200,0,100,7.8" Height="43" Grid.ColumnSpan="3">
-                <materialDesign:PackIcon Width="20" Height="12" Kind="IceCream" Focusable="False" VerticalAlignment="Top"/>
-                <Label x:Name="IceCreamName"    Content="Your IceCream: "  FontWeight="Bold"    HorizontalAlignment="Left" FontSize="15" Width="130" Margin="0,0,0,0.2" />
-                <TextBlock FontFamily="Arial Black" VerticalAlignment="Center"  HorizontalAlignment="Center"  Text="{Binding IceCreamID}" Foreground="#FF22374B" FontSize="17" FontWeight="Bold" Margin="0,0,0,12.2" Width="141"/>
+            <StackPanel Grid.Row="0" Grid.Column="1" Width="250" HorizontalAlignment="Left" VerticalAlignment="Top" Orientation="Horizontal"  Margin="100,0,-1,0" Height="43" Grid.ColumnSpan="2" Grid.RowSpan="2">
+                <materialDesign:PackIcon Width="20" Height="12" Kind="IceCream" Focusable="False" VerticalAlignment="Center"/>
+                <Label x:Name="IceCreamName"    Content="Your IceCream: "  FontWeight="Bold"   VerticalAlignment="Center"  HorizontalAlignment="Left" FontSize="12" Width="100" Margin="0,0,0,0.2" />
+                <TextBlock FontFamily="Arial Black" VerticalAlignment="Center"  HorizontalAlignment="Center"  Text="{Binding IceCreamID}"  FontSize="12" FontWeight="Bold" Margin="0,14,0,12.2" Width="100" Height="17" />
             </StackPanel>
 
 
-            <Button x:Name="bnt_graduate" HorizontalAlignment="Right" Grid.Row="0" Margin="0,10,10,0" Padding="5" Grid.Column="2"
-                    VerticalAlignment="top"
+            <Button x:Name="bnt_graduate" Grid.Column="2"  HorizontalAlignment="Center" Grid.Row="0"  Margin="0,7,3,0"  Padding="5" 
+                    VerticalAlignment="Top"
                     Style="{StaticResource ButtonMeir}"
                     Click="graduate_return_Click"
-                    Background="OrangeRed" Height="29" Width="80"
+                    Background="OrangeRed" Height="29" Width="76"
                     >
-                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" >
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left" RenderTransformOrigin="0.5,0.5" >
+                    <StackPanel.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="0.043"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </StackPanel.RenderTransform>
                     <materialDesign:PackIcon Width="20" Height="10" Kind="Grade" Focusable="False"/>
                     <TextBlock VerticalAlignment="Center" FontSize="10" FontWeight="Bold" Padding="03">Graduate</TextBlock>
                 </StackPanel>
@@ -64,8 +70,8 @@
 
             <Grid Grid.Row="1" Grid.ColumnSpan="3" Margin="0,0.2,0,-0.4">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="400" />
-                    <ColumnDefinition Width="400" />
+                    <ColumnDefinition Width="300" />
+                    <ColumnDefinition Width="300" />
                 </Grid.ColumnDefinitions>
 
                 <Border Grid.Row="1" Grid.Column="0" BorderThickness="0,0,2,0">
@@ -88,39 +94,39 @@
                 <Grid Grid.Column="1">
 
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="40"/>
-                        <RowDefinition Height="40"/>
-                        <RowDefinition Height="40"/>
-                        <RowDefinition Height="40"/>
-                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="22"/>
+                        <RowDefinition Height="22"/>
+                        <RowDefinition Height="22"/>
+                        <RowDefinition Height="22"/>
+                        <RowDefinition Height="22"/>
                     </Grid.RowDefinitions>
 
-                    <StackPanel  Width="191" Orientation="Horizontal"  Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,8,179,6" >
-                        <materialDesign:PackIcon Width="20" Height="10" Kind="IceCream" Focusable="False"/>
-                        <Label Name="Taste"   Content="Taste : "  FontWeight="Bold" HorizontalAlignment="Left"  />
-                        <TextBlock VerticalAlignment="Center"  HorizontalAlignment="Center"  FontSize="12" FontWeight="Bold" Padding="03" Width="68"><Run Text="{Binding IceCreamTaste}"/></TextBlock>
+                    <StackPanel  Width="191" Orientation="Horizontal"  Height="20" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Left" >
+                        <materialDesign:PackIcon Width="20" Height="8" Kind="IceCream" Focusable="False" VerticalAlignment="Center"/>
+                        <Label Name="Taste"   Content="Taste : " FontSize="7" FontWeight="DemiBold" HorizontalAlignment="Left" Margin="0,1,0,1"  />
+                        <TextBlock VerticalAlignment="Center"  HorizontalAlignment="Center"  FontSize="7" FontWeight="Bold" Padding="03" Width="68" Text="{Binding IceCreamTaste}"></TextBlock>
                     </StackPanel>
 
-                    <StackPanel  Width="191" Grid.Row="1" Orientation="Horizontal"   VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,8,179,6" >
-                        <materialDesign:PackIcon Width="20" Height="10" Kind="Lightbulb" Focusable="False"/>
-                        <Label Name="Energy"   Content="Energy : "  FontWeight="Bold" HorizontalAlignment="Left"  />
-                        <TextBlock VerticalAlignment="Center"  HorizontalAlignment="Center"  FontSize="12" FontWeight="Bold" Padding="03" Width="68"><Run Text="{Binding IceCreamEnergy}"/></TextBlock>
+                    <StackPanel  Width="191" Grid.Row="1" Orientation="Horizontal"  Height="20"  VerticalAlignment="Center"  HorizontalAlignment="Left"  >
+                        <materialDesign:PackIcon Width="20" Height="8" Kind="Lightbulb" Focusable="False" VerticalAlignment="Center"/>
+                        <Label Name="Energy"   Content="Energy : "  FontSize="7" FontWeight="DemiBold" HorizontalAlignment="Left"  Margin="0,1,0,1"  />
+                        <TextBlock VerticalAlignment="Center"  HorizontalAlignment="Center"  FontSize="7" FontWeight="Bold" Padding="03" Width="68" Text="{Binding IceCreamEnergy}"></TextBlock>
                     </StackPanel>
 
-                    <StackPanel  Width="191" Grid.Row="2" Orientation="Horizontal"   VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,8,179,6" >
-                        <materialDesign:PackIcon Width="20" Height="10" Kind="Fish" Focusable="False"/>
-                        <Label Name="Proteins"   Content="Proteins: "   FontWeight="Bold" HorizontalAlignment="Left"  />
-                        <TextBlock VerticalAlignment="Center"  HorizontalAlignment="Center"  FontSize="12" FontWeight="Bold" Padding="03" Width="68"><Run Text="{Binding IceCreamProteins}"/></TextBlock>
+                    <StackPanel  Width="191" Grid.Row="2" Orientation="Horizontal"  Height="20"  VerticalAlignment="Center"   HorizontalAlignment="Left" Margin="0,8,100,6" >
+                        <materialDesign:PackIcon Width="20" Height="8" Kind="Fish" Focusable="False" VerticalAlignment="Center"/>
+                        <Label Name="Proteins"   Content="Proteins: "  FontWeight="DemiBold" FontSize="7" HorizontalAlignment="Left"  Margin="0,1,0,1" />
+                        <TextBlock VerticalAlignment="Center"  HorizontalAlignment="Center"  FontSize="7" FontWeight="Bold" Padding="03" Width="68" Text="{Binding IceCreamProteins}"></TextBlock>
                     </StackPanel>
-                    <StackPanel  Width="191" Grid.Row="3" Orientation="Horizontal"   VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,8,179,6" >
-                        <materialDesign:PackIcon Width="20" Height="10" Kind="Cake" Focusable="False"/>
-                        <Label Name="Calories"   Content="Calories: "  FontWeight="Bold" HorizontalAlignment="Left"  />
-                        <TextBlock VerticalAlignment="Center"  HorizontalAlignment="Center"  FontSize="12" FontWeight="Bold" Padding="03" Width="68"><Run Text="{Binding IceCreamCalories}"/></TextBlock>
+                    <StackPanel  Width="191" Grid.Row="3" Orientation="Horizontal"   Height="20" VerticalAlignment="Center"  HorizontalAlignment="Left" Margin="0,8,100,6" >
+                        <materialDesign:PackIcon Width="20" Height="8" Kind="Cake" Focusable="False" VerticalAlignment="Center"/>
+                        <Label Name="Calories"   Content="Calories: "  FontSize="7"  FontWeight="DemiBold" HorizontalAlignment="Left"   Margin="0,1,0,1" />
+                        <TextBlock VerticalAlignment="Center"  HorizontalAlignment="Center"  FontSize="7" FontWeight="Bold" Padding="03" Width="68" Text="{Binding IceCreamCalories}"></TextBlock>
                     </StackPanel>
-                    <StackPanel  Width="191" Grid.Row="4" Orientation="Horizontal"   VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,8,179,6" >
-                        <materialDesign:PackIcon Width="20" Height="10" Kind="Grade" Focusable="False"/>
-                        <Label Name="Grade"   Content="Grade: "  FontWeight="Bold" HorizontalAlignment="Left"  />
-                        <TextBlock VerticalAlignment="Center"  HorizontalAlignment="Center"  FontSize="12" FontWeight="Bold" Padding="03" Width="64"><Run Text="{Binding IceCreamGrade}"/></TextBlock>
+                    <StackPanel  Width="191" Grid.Row="4" Orientation="Horizontal"   Height="20"  VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0,8,100,6" >
+                        <materialDesign:PackIcon Width="20" Height="8" Kind="Grade" Focusable="False" VerticalAlignment="Center"/>
+                        <Label Name="Grade"   Content="Grade: "   FontSize="7" FontWeight="DemiBold" HorizontalAlignment="Left"  Margin="0,1,0,1" />
+                        <TextBlock VerticalAlignment="Center"  HorizontalAlignment="Center"  FontSize="7" FontWeight="Bold" Padding="03" Width="64" Text="{Binding IceCreamGrade}"></TextBlock>
                     </StackPanel>
                 </Grid>
             </Grid>
@@ -128,27 +134,28 @@
 
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="177*"/>
-                <ColumnDefinition Width="223*"/>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="200"/>
+
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition Height="40"/>
-                <RowDefinition Height="150"/>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="90"/>
             </Grid.RowDefinitions>
 
-            <StackPanel Grid.Row="0"  HorizontalAlignment="Left"  Orientation="Horizontal" Height="40" VerticalAlignment="Bottom" Margin="150,0,0,149"  Width="300" Grid.RowSpan="2">
-                <materialDesign:PackIcon Width="20" Height="12" Kind="Shop" Focusable="False" VerticalAlignment="Top"/>
-                <Label Name="ShopID"   Content="The Shop: "  FontWeight="Bold" Height="30"  HorizontalAlignment="Left" FontSize="15"  />
-                <TextBlock FontFamily="Arial Black"  Text="{Binding ShopID}" Foreground="#FF22374B" FontSize="17" Height="30"  FontWeight="Bold" Width="126" Margin="0,5,0,6"></TextBlock>
+            <StackPanel Grid.Row="0"  HorizontalAlignment="Left"  Orientation="Horizontal" Height="40" VerticalAlignment="Center" Margin="150,0,0,0"  Width="300" Grid.ColumnSpan="3" >
+                <materialDesign:PackIcon Width="20" Height="12" Kind="Shop" Focusable="False" VerticalAlignment="Center"/>
+                <Label Name="ShopID"   Content="The Shop: "  FontWeight="Bold" VerticalAlignment="Center"  Height="30"  HorizontalAlignment="Left" FontSize="12"  />
+                <TextBlock FontFamily="Arial Black"  Text="{Binding ShopName}"  FontSize="12" Height="30"  FontWeight="Bold" Width="126"  VerticalAlignment="Center"></TextBlock>
             </StackPanel>
 
 
 
 
-            <Grid Grid.Row="1" Grid.ColumnSpan="2" Margin="0,0.2,0,0">
+            <Grid Grid.Row="1" Grid.ColumnSpan="3" Margin="0,0.2,0,0.4">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="400" />
-                    <ColumnDefinition Width="400" />
+                    <ColumnDefinition Width="300" />
+                    <ColumnDefinition Width="300" />
                 </Grid.ColumnDefinitions>
 
                 <Border Grid.Row="1" Grid.Column="0" BorderThickness="0,0,2,0">
@@ -171,27 +178,27 @@
                 <Grid Grid.Column="1">
 
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="50"/>
-                        <RowDefinition Height="50"/>
-                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="30"/>
                     </Grid.RowDefinitions>
 
-                    <StackPanel  Width="191" Orientation="Horizontal"  Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,8,179,6" >
-                        <materialDesign:PackIcon Width="20" Height="10" Kind="Phone" Focusable="False"/>
-                        <Label Name="Phone"   Content="Phone : "  FontWeight="Bold" HorizontalAlignment="Left"  />
-                        <TextBlock VerticalAlignment="Center"  HorizontalAlignment="Center"  FontSize="12" FontWeight="Bold" Padding="03" Width="68"><Run Text="{Binding ShopPhone}"/></TextBlock>
+                    <StackPanel  Width="191" Orientation="Horizontal"  Height="25" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0,8,0,6" >
+                        <materialDesign:PackIcon Width="20" Height="10" Kind="Phone" VerticalAlignment="Center" Focusable="False" />
+                        <Label Name="Phone"   Content="Phone : "  FontWeight="Bold"  FontSize="7" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,1,0,1" />
+                        <TextBlock VerticalAlignment="Center"  HorizontalAlignment="Center"  FontSize="7" FontWeight="Bold" Padding="03" Width="68"  Text="{Binding ShopPhone}"/>
                     </StackPanel>
 
-                    <StackPanel  Width="191" Grid.Row="1" Orientation="Horizontal"   VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,8,179,6" >
-                        <materialDesign:PackIcon Width="20" Height="10" Kind="Facebook" Focusable="False"/>
-                        <Label Name="Website"   Content="FaceBook: "  FontWeight="Bold" HorizontalAlignment="Left"  />
-                        <TextBlock VerticalAlignment="Center"  HorizontalAlignment="Center"  FontSize="12" FontWeight="Bold" Padding="03" Width="68"><Run Text="{Binding ShopFaceBook}"/></TextBlock>
+                    <StackPanel  Width="191" Grid.Row="1" Orientation="Horizontal"  Height="25"  VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0,8,0,6" >
+                        <materialDesign:PackIcon Width="20" Height="10" Kind="Facebook" Focusable="False" VerticalAlignment="Center"/>
+                        <Label Name="Website"   Content="FaceBook: " VerticalAlignment="Center"  FontWeight="DemiBold" FontSize="7" HorizontalAlignment="Left"  Margin="0,1,0,1"/>
+                        <TextBlock VerticalAlignment="Center"  HorizontalAlignment="Center"  FontSize="7" FontWeight="Bold" Padding="03" Width="68" Text="{Binding ShopFaceBook}"></TextBlock>
                     </StackPanel>
 
-                    <StackPanel  Width="191" Grid.Row="2" Orientation="Horizontal"   VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,8,179,6" >
-                        <materialDesign:PackIcon Width="20" Height="10" Kind="Web" Focusable="False"/>
-                        <Label Name="Facebook"   Content="WebSite: "   FontWeight="Bold" HorizontalAlignment="Left"  />
-                        <TextBlock VerticalAlignment="Center"  HorizontalAlignment="Center"  FontSize="12" FontWeight="Bold" Padding="03" Width="68"><Run Text="{Binding ShopWebSite}"/></TextBlock>
+                    <StackPanel  Width="191" Grid.Row="2" Height="25" Orientation="Horizontal"   VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0,8,0,6" >
+                        <materialDesign:PackIcon Width="20" Height="10" Kind="Web" Focusable="False" VerticalAlignment="Center"/>
+                        <Label Name="Facebook"   Content="WebSite: " VerticalAlignment="Center"   FontWeight="DemiBold" FontSize="7" HorizontalAlignment="Left" Margin="0,1,0,1" />
+                        <TextBlock VerticalAlignment="Center"  HorizontalAlignment="Center"  FontSize="7" FontWeight="Bold" Padding="03" Width="68" Text="{Binding ShopWebSite}"/>
                     </StackPanel>
                 </Grid>
             </Grid>

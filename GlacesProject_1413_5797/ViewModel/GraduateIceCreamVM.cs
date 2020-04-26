@@ -151,7 +151,7 @@ namespace PL.ViewModel
               ((MainWindow)System.Windows.Application.Current.MainWindow).content_grid.Children.Clear();
               ((MainWindow)System.Windows.Application.Current.MainWindow).profile_grid.Children.Clear();
               ((MainWindow)System.Windows.Application.Current.MainWindow).inner_grid.Children.Add(homeUC);
-            //GraduateICModel.IceCream.Proteins = 50;
+         
 
             GraduateICModel.IceCream.UpdateData();
             GraduateICModel.UpdateIceCream(GraduationUC.SelectedIceCream, GraduateICModel.IceCream);

@@ -20,7 +20,8 @@ namespace PL.Models
         public IceCreamShopModel()
         {
             bl = new Bl();
-
+            iceCream = new IceCream();
+            shop = new Shop();
 
         }
         
