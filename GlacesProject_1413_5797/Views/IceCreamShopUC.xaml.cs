@@ -48,5 +48,15 @@ namespace PL.Views
         {
 
         }
+
+        private void back_btn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void graduate_btn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

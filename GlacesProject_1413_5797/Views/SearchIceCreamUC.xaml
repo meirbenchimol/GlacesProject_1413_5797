@@ -6,9 +6,166 @@
              xmlns:local="clr-namespace:PL.Views"
              mc:Ignorable="d" 
               xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-             d:DesignHeight="350" d:DesignWidth="400">
+              d:DesignHeight="610" d:DesignWidth="720">
 
-    <Grid Background="Gold" Opacity="0.7" >
+    <Grid Background="{x:Null}" Margin="0 0 180 0">
+
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="40" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="20"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Row="1" Grid.Column="1" Background="White">
+            <Grid.Resources>
+                <Style x:Key="InputStyle"
+                TargetType="TextBox">
+                    <Setter Property="FontSize" Value="6"/>
+                    <Setter Property="VerticalAlignment" Value="Center"/>
+                    <Setter Property="Margin" Value="5"/>
+                    <Setter Property="Height" Value="15"/>
+                    <Style.Triggers>
+                        <Trigger Property="Text" Value="">
+                            <Setter Property="Background" Value="Red"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+                <Style x:Key="labelStyle" TargetType="Label">
+                    <Setter Property="FontSize" Value="9"/>
+                    <Setter Property="FontWeight" Value="DemiBold"/>
+                    <Setter Property="Margin" Value="5"/>
+                    <Setter Property="VerticalAlignment" Value="Center"/>
+                    <Setter Property="Height" Value="25"/>
+                </Style>
+                <Style x:Key="ButtonStyle" TargetType="Button">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding ElementName=TasteComboBox, Path=SelectedIndex}" Value="-1">
+                            <Setter Property="Button.IsEnabled" Value="False"/>
+                        </DataTrigger>
+
+                    </Style.Triggers>
+                </Style>
+                <Style x:Key="ComboBoxStyle" TargetType="ComboBox">
+                    <Style.Triggers>
+                        <Trigger Property="SelectedIndex" Value="-1">
+                            <Setter Property="BorderBrush" Value="Red"/>
+                            <Setter Property="BorderThickness" Value="2"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Grid.Resources>
+
+            <Rectangle VerticalAlignment="Top" Height="300">
+                <Rectangle.Fill>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF1689EA"/>
+                        <GradientStop Color="#FF3083C9" Offset="1"/>
+                        <GradientStop Color="#FF55ABF1" Offset="0.5"/>
+                    </LinearGradientBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+            <Border CornerRadius="100" Background="White" Width="70" Height="70" VerticalAlignment="Top" Margin="0 20" >
+                <materialDesign:PackIcon Kind="SearchWeb" Height="50" FontWeight="Bold"  Width="70" VerticalAlignment="Center" HorizontalAlignment="Center"></materialDesign:PackIcon>
+            </Border>
+            <Rectangle Fill="White" Width="400" Height="370" Margin="0 110 0 50 " RadiusX="10" RadiusY="10">
+                <Rectangle.Effect>
+                    <DropShadowEffect BlurRadius="1" Color="Gray"/>
+                </Rectangle.Effect>
+
+            </Rectangle>
+
+            <Grid Width="400" Height="350" Margin="0 110 0 70">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="35"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="3*" ></ColumnDefinition>
+                    <ColumnDefinition Width="7*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="Search for your specific IceCream" HorizontalAlignment="Center"
+                           VerticalAlignment="Top" Margin="5" Foreground="Gray" FontSize="18"
+                           Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="0"/>
+
+                <Label Content="Taste :"  Style="{StaticResource labelStyle}" Grid.Row="1" Grid.Column="0"
+                       FontSize="15" HorizontalAlignment="Left" Margin="10 0" VerticalAlignment="Center"/>
+                <ComboBox Name="TasteComboBox"  Style="{StaticResource ComboBoxStyle}" Grid.Row="1" Grid.Column="1"
+                          HorizontalAlignment="Center"  VerticalAlignment="Center" MinWidth="120" Width="230" />
+
+                <Label Content="Median Grade :"  Style="{StaticResource labelStyle}"  Grid.Row="2" Grid.Column="0"
+                       FontSize="13" HorizontalAlignment="Left" Margin="5 0" VerticalAlignment="Center" />
+                <Slider Name="Median" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Minimum="0" Maximum="10"   Value="5" Grid.Row="2"  Width="230"/>
+
+                <Label Content="Energy : "  Style="{StaticResource labelStyle}"    Grid.Column="0" Grid.Row="3"
+                       FontSize="15" HorizontalAlignment="Left" Margin="10,15,0,15" VerticalAlignment="Center" Height="32" />
+                <Slider Grid.Column="1" Name="Energy" HorizontalAlignment="Center"  Value="50" Minimum="0" Maximum="100"  Grid.Row="3" VerticalAlignment="Center" Width="230"/>
+
+                <Label Content="Proteins : "   Style="{StaticResource labelStyle}"  Grid.Column="0" Grid.Row="4"
+                       FontSize="15" HorizontalAlignment="Left" Margin="10 0" VerticalAlignment="Center"  />
+                <Slider  Name="Proteins" HorizontalAlignment="Center" Grid.Column="1" Grid.Row="4"  Minimum="0" Value="50"  Maximum="100"  VerticalAlignment="Center" Width="230"/>
+
+
+                <Label Content="Calories : "  Style="{StaticResource labelStyle}"  Grid.Column="0" Grid.Row="5"
+                      FontSize="15" HorizontalAlignment="Left" Margin="10 0" VerticalAlignment="Center"/>
+                <Slider Name="Calories"  Grid.Column="1" HorizontalAlignment="Center"  Minimum="0" Value="50"  Maximum="100" Grid.Row="5" VerticalAlignment="Center" Width="230"/>
+
+
+
+            </Grid>
+            <Button Content="Search" Width="160" Height="40" FontSize="16" VerticalAlignment="Bottom" Margin="0 0 0 30" FontWeight="Bold" Background="#FF3083C9"  Click="Search" ></Button>
+            <!--<Button Content="Search" Style="{StaticResource ButtonStyle}" HorizontalAlignment="Left" FontWeight="Bold" Margin="175,14.2,0,-8.8" Grid.Row="2" VerticalAlignment="Top" Width="134" Click="Search"/>-->
+
+        </Grid>
+
+        <!--<StackPanel Orientation="Horizontal" Grid.Row="0" HorizontalAlignment="Center">
+            <Label Content="Search for your specific IceCream" FontWeight="Bold" FontSize="13"
+               HorizontalAlignment="Center"  VerticalAlignment="Center" >
+            </Label>
+            <materialDesign:PackIcon Kind="IceCream"  VerticalAlignment="Center" Foreground="DeepPink" Height="40"  Width="60"  />
+        </StackPanel>
+        <Grid Grid.Row="1" Margin="5">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="300"/>
+            </Grid.ColumnDefinitions>
+            -->
+        <!--<Label Content="Taste :"  Style="{StaticResource labelStyle}"  Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left"/>
+            <ComboBox Name="TasteComboBox"  Style="{StaticResource ComboBoxStyle}" Grid.Column="1"  HorizontalAlignment="Center"  VerticalAlignment="Center" MinWidth="120" Margin="10,6,53,6.2" Width="237" />
+            <Label Content="Median Grade :"  Style="{StaticResource labelStyle}"  Grid.Column="0" Grid.Row="1" HorizontalAlignment="Left"/>
+            <Slider Name="Median" Grid.Column="1" HorizontalAlignment="Left" Margin="5,9.8,0,0" Minimum="0" Maximum="10"   Value="5" Grid.Row="1" VerticalAlignment="Top" Width="246"/>
+            <Label Content="Calories : "  Style="{StaticResource labelStyle}"  Grid.Column="0" Grid.Row="4" HorizontalAlignment="Left"   VerticalAlignment="Top" Width="102" />
+            <Slider Name="Calories"  Grid.Column="1" HorizontalAlignment="Left" Margin="5,9.8,0,0"  Minimum="0" Value="50"  Maximum="100" Grid.Row="4" VerticalAlignment="Top" Width="246"/>
+            <Label Content="Proteins : "   Style="{StaticResource labelStyle}"  Grid.Column="0" Grid.Row="2" HorizontalAlignment="Left"   VerticalAlignment="Top" Width="102" />
+            <Label Content="Energy : "  Style="{StaticResource labelStyle}"    Grid.Column="0" Grid.Row="3" HorizontalAlignment="Left"   Width="102" />
+            <Slider Grid.Column="1" Name="Energy" HorizontalAlignment="Left" Margin="5,9.8,0,0"   Value="50" Minimum="0" Maximum="100"  Grid.Row="3" VerticalAlignment="Top" Width="246"/>
+            <Slider Grid.Column="1" Name="Proteins" HorizontalAlignment="Left" Margin="5,9.8,0,0"  Minimum="0" Value="50"  Maximum="100"  Grid.Row="2" VerticalAlignment="Top" Width="246"/>-->
+        <!--
+        </Grid>
+        <Button Content="Search" Style="{StaticResource ButtonStyle}" HorizontalAlignment="Left" FontWeight="Bold" Margin="175,14.2,0,-8.8" Grid.Row="2" VerticalAlignment="Top" Width="134" Click="Search"/>-->
+
+    </Grid>
+
+    <!--<Grid Background="Gold" Opacity="0.7" >
         <Grid.Resources>
             <Style x:Key="InputStyle"
            TargetType="TextBox">
@@ -85,5 +242,5 @@
         </Grid>
         <Button Content="Search" Style="{StaticResource ButtonStyle}" HorizontalAlignment="Left" FontWeight="Bold" Margin="175,14.2,0,-8.8" Grid.Row="2" VerticalAlignment="Top" Width="134" Click="Search"/>
 
-    </Grid>
+    </Grid>-->
 </UserControl>

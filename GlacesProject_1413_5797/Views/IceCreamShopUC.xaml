@@ -4,12 +4,167 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PL.Views"
+             xmlns:m="clr-namespace:Microsoft.Maps.MapControl.WPF;assembly=Microsoft.Maps.MapControl.WPF"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d" 
-             d:DesignHeight="400" d:DesignWidth="600">
-    <Grid Background="LightBlue" Opacity="0.7">
+             d:DesignHeight="610" d:DesignWidth="900">
+    <Grid Background="#FF13121D" >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="300" ></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
 
-        <Grid.RowDefinitions>
+        <Border CornerRadius="100" Background="White" Width="40" Height="40" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="20 10" >
+            <Button x:Name="back_btn" Click="back_btn_Click" Style="{StaticResource ButtonMeir}" Background="{x:Null}" Width="30" Height="30" >
+                <StackPanel Orientation="Horizontal" >
+                    <materialDesign:PackIcon Kind="ArrowBack" FontWeight="Bold"   VerticalAlignment="Center" HorizontalAlignment="Left" >
+                    </materialDesign:PackIcon>
+                </StackPanel>
+            </Button>
+        </Border>
+
+        <Rectangle  Grid.Column="1" Width="250" Height="300" VerticalAlignment="Top" HorizontalAlignment="Right" 
+               Margin="15" Panel.ZIndex="100" RadiusX="10" RadiusY="10" Fill="WhiteSmoke">
+            <Rectangle.Effect>
+                <DropShadowEffect BlurRadius="1" Color="Gray"/>
+            </Rectangle.Effect>
+
+        </Rectangle>
+
+        <Grid Grid.Column="1" Width="250" Height="300" VerticalAlignment="Top" HorizontalAlignment="Right" 
+               Margin="15" Panel.ZIndex="100">
+            <StackPanel  Width="230" Height="280" >
+                <Image Source="{Binding ShopImage}"  Stretch="Fill" Width="150" Margin="0 15 0 0" Opacity="0.8" />
+                <!--Source="{Binding ShopImage}"-->
+                <TextBlock FontFamily="Arial Black" Foreground="DarkSlateBlue" Text="{Binding ShopName}"  Margin="0 10 0 0"  FontSize="18"   FontWeight="Bold"  HorizontalAlignment="Center"></TextBlock>
+                <!--Text="{Binding ShopName}"-->
+                <StackPanel   Orientation="Horizontal"    HorizontalAlignment="Left" Margin="5,15,0,0" >
+                    <materialDesign:PackIcon Width="20" Foreground="DarkSlateBlue" Height="20" Kind="Phone" VerticalAlignment="Center" Focusable="False" />
+                    <Label Name="Phone"   Content="Phone : " Foreground="DarkSlateBlue" FontWeight="Bold"  FontSize="13" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5,0,0,0" />
+                    <TextBlock VerticalAlignment="Center"  Foreground="DarkSlateBlue" HorizontalAlignment="Left"  FontSize="13"   Text="{Binding ShopPhone}"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal"    HorizontalAlignment="Left" Margin="5,15,0,0" >
+                    <materialDesign:PackIcon Width="20" Foreground="DarkSlateBlue" Height="20" Kind="Facebook" Focusable="False" VerticalAlignment="Center"/>
+                    <Label Name="Website"   Content="FaceBook: " Foreground="DarkSlateBlue" FontWeight="Bold"  FontSize="13" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5,0,0,0" />
+                    <TextBlock VerticalAlignment="Center" Foreground="DarkSlateBlue" HorizontalAlignment="Left"  FontSize="13"   Text="{Binding ShopFaceBook}"></TextBlock>
+                </StackPanel>
+
+                <StackPanel  Orientation="Horizontal"    HorizontalAlignment="Left" Margin="5,15,0,0"  >
+                    <materialDesign:PackIcon Width="20" Foreground="DarkSlateBlue" Height="20" Kind="Web" Focusable="False" VerticalAlignment="Center"/>
+                    <Label Name="Facebook"   Content="WebSite: " Foreground="DarkSlateBlue" FontWeight="Bold"  FontSize="13" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5,0,0,0"  />
+                    <TextBlock VerticalAlignment="Center" Foreground="DarkSlateBlue"  HorizontalAlignment="Left"  FontSize="13"   Text="{Binding ShopWebSite}"/>
+                </StackPanel>
+
+            </StackPanel>
+
+        </Grid>
+
+        <Grid Margin="0 60 0 0" Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="190"></RowDefinition>
+                <RowDefinition Height="150"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="50"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Border BorderBrush="DarkSlateGray" Grid.Row="0" BorderThickness="0 0 0 1" Width="280">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="110"></RowDefinition>
+                        <RowDefinition Height="70"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    
+                    <StackPanel Width="170" HorizontalAlignment="Left">
+                        <TextBlock FontFamily="Arial Black" VerticalAlignment="Top"  HorizontalAlignment="Left" 
+                                   FontSize="18" FontWeight="Bold" Foreground="WhiteSmoke" Text="{Binding IceCreamID}" Margin="0 15 0 0" />
+                        <!--Text="{Binding IceCreamID}"-->
+                        <StackPanel Orientation="Horizontal"  HorizontalAlignment="Left" Margin="0 10 0 0" >
+                            <materialDesign:PackIcon Width="20" Foreground="WhiteSmoke" Height="20" Kind="IceCream" Focusable="False" VerticalAlignment="Center"/>
+                            <Label Name="Taste"   Content="Taste : " FontSize="13" Foreground="WhiteSmoke" FontWeight="DemiBold" HorizontalAlignment="Left"  />
+                            <TextBlock  HorizontalAlignment="Left"  FontSize="13" Foreground="WhiteSmoke"  Text="{Binding IceCreamTaste}"></TextBlock>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal" Margin="0 10 0 0" HorizontalAlignment="Left">
+                            <materialDesign:PackIcon Kind="Star" Foreground="Gold" Margin="1" VerticalAlignment="Center" HorizontalAlignment="Center"
+                                                     Width="20" Height="20"></materialDesign:PackIcon>
+                            <materialDesign:PackIcon Kind="Star" Foreground="Gold" Margin="1" VerticalAlignment="Center" HorizontalAlignment="Center"
+                                                     Width="20" Height="20"></materialDesign:PackIcon>
+                            <materialDesign:PackIcon Kind="Star" Foreground="Gold" Margin="1" VerticalAlignment="Center" HorizontalAlignment="Center"
+                                                     Width="20" Height="20"></materialDesign:PackIcon>
+                            <materialDesign:PackIcon Kind="Star" Foreground="Gold" Margin="1" VerticalAlignment="Center" HorizontalAlignment="Center"
+                                                     Width="20" Height="20"></materialDesign:PackIcon>
+                            <materialDesign:PackIcon Kind="Star" Foreground="Gray" Margin="1" VerticalAlignment="Center" HorizontalAlignment="Center"
+                                                     Width="20" Height="20"></materialDesign:PackIcon>
+                        </StackPanel>
+
+                       
+                        <!--<StackPanel  Width="191" Grid.Row="4" Orientation="Horizontal"   Height="20"  VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0,8,100,6" >
+                            <materialDesign:PackIcon Width="20" Height="8" Kind="Grade" Focusable="False" VerticalAlignment="Center"/>
+                            <Label Name="Grade"   Content="Grade: "   FontSize="7" FontWeight="DemiBold" HorizontalAlignment="Left"  Margin="0,1,0,1" />
+                            <TextBlock VerticalAlignment="Center"  HorizontalAlignment="Center"  FontSize="7" FontWeight="Bold" Padding="03" Width="64" Text="{Binding IceCreamGrade}"></TextBlock>
+                        </StackPanel>-->
+
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="1" >
+                        <StackPanel  Orientation="Horizontal"   HorizontalAlignment="Left" Margin="0 5 0 0" >
+                            <materialDesign:PackIcon Width="20" Height="20" Foreground="WhiteSmoke" Kind="Lightbulb" Focusable="False" VerticalAlignment="Center"/>
+                            <Label Name="Energy"   Content="Energy : "  FontSize="10" Foreground="WhiteSmoke" FontWeight="DemiBold" HorizontalAlignment="Left"    />
+                            <TextBlock VerticalAlignment="Center"  HorizontalAlignment="Center" Foreground="WhiteSmoke" FontSize="10"  Text="{Binding IceCreamEnergy}"></TextBlock>
+
+                            <materialDesign:PackIcon Width="20" Height="20" Margin="10 0 0 0" Kind="Fish" Foreground="WhiteSmoke" Focusable="False" VerticalAlignment="Center"/>
+                            <Label Name="Proteins"   Content="Proteins: " FontSize="10" FontWeight="DemiBold"  HorizontalAlignment="Left"  Foreground="WhiteSmoke" />
+                            <TextBlock VerticalAlignment="Center"  HorizontalAlignment="Center"  FontSize="10" Foreground="WhiteSmoke"  Text="{Binding IceCreamProteins}"></TextBlock>
+
+                            <materialDesign:PackIcon Width="20" Height="20" Margin="10 0 0 0" Kind="Nutrition"  Foreground="WhiteSmoke" Focusable="False" VerticalAlignment="Center"/>
+                            <Label Name="Calories"   Content="Calories: " FontSize="10" FontWeight="DemiBold"  HorizontalAlignment="Left"  Foreground="WhiteSmoke" />
+                            <TextBlock VerticalAlignment="Center"  HorizontalAlignment="Center"  FontSize="10" Foreground="WhiteSmoke" Text="{Binding IceCreamCalories}"></TextBlock>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal" Margin="0 10 0 0">
+                            <materialDesign:PackIcon Width="20" Height="20"  Kind="Note"  Foreground="WhiteSmoke" Focusable="False" VerticalAlignment="Center"/>
+                            <Label Name="Description"   Content="Description: " FontSize="10" FontWeight="DemiBold"  HorizontalAlignment="Left"  Foreground="WhiteSmoke" />
+                            <TextBlock VerticalAlignment="Center"  HorizontalAlignment="Center"  FontSize="10" Foreground="WhiteSmoke" Text="{Binding IceCreamDescription}"></TextBlock>
+                        </StackPanel>
+                      
+                    </StackPanel>
+                    <Image Source="/Image/iceCream_choco.jpg"  Stretch="Fill" Width="100" Height="100" Margin="0 10 0 0" VerticalAlignment="Top" HorizontalAlignment="Right" Opacity="0.8" />
+                    <!--Source="{Binding IceCreamImage}"-->
+                </Grid>
+            </Border>
+
+            <Border BorderBrush="DarkSlateGray" Grid.Row="1" BorderThickness="0 0 0 1" Width="280">
+                <Grid>
+                    <TextBlock Text="Image :" FontSize="15" FontWeight="Bold" Foreground="WhiteSmoke"></TextBlock>
+                </Grid>
+            </Border>
+
+            <Border BorderBrush="DarkSlateGray" Grid.Row="2" BorderThickness="0 0 0 1" Width="280">
+                <Grid>
+                    <TextBlock Text="Comments :" FontSize="15" FontWeight="Bold" Foreground="WhiteSmoke"></TextBlock>
+                </Grid>
+            </Border>
+
+            <Button x:Name="graduate_btn"  Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Center" Padding="15 5"
+                    Background="Orange" Click="graduate_btn_Click" Style="{StaticResource ButtonMeir}">
+                <StackPanel Orientation="Horizontal">
+                    <materialDesign:PackIcon Kind="Grade" Foreground="Black"  VerticalAlignment="Center"
+                                             HorizontalAlignment="Center"></materialDesign:PackIcon>
+                    <TextBlock Text="Gradutate this IceCream" FontSize="13" FontWeight="Bold" ></TextBlock>
+                </StackPanel>
+            </Button>
+            
+        </Grid>
+
+        <m:Map Mode="Road" Grid.Column="1" ZoomLevel="16" Center="31.768593,35.184081,16">
+            <!--il faut rajouter a Center 0.0016,-0.0012-->
+            <Canvas m:MapLayer.Position="31.767772,35.183115,16"
+                    m:MapLayer.PositionOrigin="BottomCenter" Width="40" Height="40">
+                <materialDesign:PackIcon Kind="MapMarker" Width="40 " Height="40" Foreground="red"></materialDesign:PackIcon>
+            </Canvas>
+        </m:Map>
+
+        <!--<Grid.RowDefinitions>
             <RowDefinition Height="150"/>
             <RowDefinition Height="150"/>
             <RowDefinition Height="100"/>
@@ -202,7 +357,7 @@
                     </StackPanel>
                 </Grid>
             </Grid>
-        </Grid>
+        </Grid>-->
 
 
 

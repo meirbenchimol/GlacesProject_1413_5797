@@ -5,8 +5,106 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PL.Views"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-             mc:Ignorable="d" d:DesignWidth="600" Height="403.132">
-    <Grid>
+             mc:Ignorable="d" d:DesignWidth="720" Height="610">
+    <Grid Background="{x:Null}" Margin="0 0 180 0">
+
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="40" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="20"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Row="1" Grid.Column="1" Background="White">
+           
+            <Rectangle VerticalAlignment="Top" Height="300">
+                <Rectangle.Fill>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF1689EA"/>
+                        <GradientStop Color="#FF3083C9" Offset="1"/>
+                        <GradientStop Color="#FF55ABF1" Offset="0.5"/>
+                    </LinearGradientBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+            <Button x:Name="back_btn" Width="80" Height="30" Background="WhiteSmoke" Style="{StaticResource ButtonMeir}" VerticalAlignment="Top"
+                    HorizontalAlignment="Left" Click="back_btn_Click" Margin="10">
+                <StackPanel Orientation="Horizontal" >
+                    <materialDesign:PackIcon Kind="ArrowBack" FontWeight="Bold"   VerticalAlignment="Center" HorizontalAlignment="Left" >
+                        </materialDesign:PackIcon>
+                    <TextBlock Text="back" Margin="10 0"></TextBlock>
+
+                </StackPanel>
+            </Button>
+            <Border CornerRadius="100" Background="White" Width="70" Height="70" VerticalAlignment="Top" Margin="0 20" >
+                <materialDesign:PackIcon Kind="SelectionSearch" Height="50" FontWeight="Bold"  Width="70" VerticalAlignment="Center" HorizontalAlignment="Center"></materialDesign:PackIcon>
+            </Border>
+            <Rectangle Fill="White" Width="400" Height="370" Margin="0 110 0 50 " RadiusX="10" RadiusY="10">
+                <Rectangle.Effect>
+                    <DropShadowEffect BlurRadius="1" Color="Gray"/>
+                </Rectangle.Effect>
+
+            </Rectangle>
+
+            <Grid Width="400" Height="350" Margin="0 110 0 70">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="35"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    
+                </Grid.RowDefinitions>
+
+                <TextBlock Text="Select your IceCream" HorizontalAlignment="Center"
+                           VerticalAlignment="Top" Margin="5" Foreground="Gray" FontSize="18"
+                           Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="0"/>
+
+                <Grid x:Name="DataGrid_grid" Margin="20" Grid.Row="1">
+                    <DataGrid x:Name="PersonDetails" 
+                      Visibility="Visible"
+                          Height="auto"
+                              IsReadOnly="True"
+                      AutoGenerateColumns="False" 
+                      AlternationCount="2"
+                      VerticalScrollBarVisibility="Auto"
+                      MaxHeight="500"
+                      HorizontalAlignment="Center"
+                      HorizontalContentAlignment="Right"
+                      MinRowHeight="30"
+                      VerticalContentAlignment="Center"  
+                      FontSize="16" 
+                      FontWeight="Bold"
+                      ColumnHeaderHeight="36" 
+                      AlternatingRowBackground="#FFB6B6B6" 
+                      GridLinesVisibility="Horizontal" 
+                      SelectionChanged="OnSelectedItemChanged" 
+                              IsManipulationEnabled="True" 
+                              MouseDoubleClick="AvoidDoubleClick"  >
+                        <DataGrid.Columns>
+                            <DataGridTextColumn  Header="IceCream" Width="100"  Binding="{Binding Id}" FontSize="10" FontWeight="Normal"/>
+                            <DataGridTextColumn Header="Shop" Width="150" Binding="{Binding ShopId}" FontSize="10" FontWeight="Normal"/>
+                            <DataGridTextColumn Header="Taste" Width="150" Binding="{Binding Taste}" FontSize="10" FontWeight="Normal"/>
+                        </DataGrid.Columns>
+
+                    </DataGrid>
+
+                </Grid>
+
+
+            </Grid>
+           
+        </Grid>
+
+       
+    </Grid>
+
+
+
+    <!--<Grid>
 
 
 
@@ -91,5 +189,5 @@
 
 
 
-    </Grid>
+    </Grid>-->
 </UserControl>

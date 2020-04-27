@@ -28,6 +28,7 @@ namespace PL.Views
         public Bl bl { get; set; }
 
         public IceCreamShopUC IceCreamShopUC { get; set; }
+        public SearchIceCreamUC SearchIceCreamUC { get; set; }
        
         public ListIceCreamUC(IEnumerable<IceCream> iceCreams)
         {
@@ -54,16 +55,20 @@ namespace PL.Views
             ((MainWindow)System.Windows.Application.Current.MainWindow).inner_grid.Children.Clear();
             ((MainWindow)System.Windows.Application.Current.MainWindow).content_grid.Children.Clear();
             ((MainWindow)System.Windows.Application.Current.MainWindow).profile_grid.Children.Clear();
-            ((MainWindow)System.Windows.Application.Current.MainWindow).inner_grid.Children.Add(IceCreamShopUC);
+            ((MainWindow)System.Windows.Application.Current.MainWindow).full_content_grid.Children.Add(IceCreamShopUC);
 
             // MessageBox.Show(name + " " + shop.Id,"Excellent!!",MessageBoxButton.OK, MessageBoxImage.Exclamation);
 
 
         }
 
-        private void Bnt_return_Click(object sender, RoutedEventArgs e)
-        {
+      
 
+        private void back_btn_Click(object sender, RoutedEventArgs e)
+        {
+            SearchIceCreamUC = new SearchIceCreamUC();
+            ((MainWindow)System.Windows.Application.Current.MainWindow).content_grid.Children.Clear();
+            ((MainWindow)System.Windows.Application.Current.MainWindow).content_grid.Children.Add(SearchIceCreamUC);
         }
     }
 }

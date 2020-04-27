@@ -48,6 +48,7 @@ namespace PL
             ((MainWindow)System.Windows.Application.Current.MainWindow).profile_grid.Children.Clear();
             ((MainWindow)System.Windows.Application.Current.MainWindow).content_grid.Children.Clear();
             ((MainWindow)System.Windows.Application.Current.MainWindow).shopAreaGrid.Children.Clear();
+            ((MainWindow)System.Windows.Application.Current.MainWindow).full_content_grid.Children.Clear();
             ((MainWindow)System.Windows.Application.Current.MainWindow).inner_grid.Children.Add(loginUC);
         }
 
@@ -62,6 +63,7 @@ namespace PL
             ((MainWindow)System.Windows.Application.Current.MainWindow).inner_grid.Children.Clear();
             ((MainWindow)System.Windows.Application.Current.MainWindow).content_grid.Children.Clear();
             ((MainWindow)System.Windows.Application.Current.MainWindow).profile_grid.Children.Clear();
+            ((MainWindow)System.Windows.Application.Current.MainWindow).full_content_grid.Children.Clear();
             ((MainWindow)System.Windows.Application.Current.MainWindow).inner_grid.Children.Add(homeUC);
 
         }
@@ -96,7 +98,7 @@ namespace PL
             ((MainWindow)System.Windows.Application.Current.MainWindow).shopAreaGrid.Children.Clear();
             ((MainWindow)System.Windows.Application.Current.MainWindow).profile_grid.Children.Clear();
             ((MainWindow)System.Windows.Application.Current.MainWindow).content_grid.Children.Clear();
-            ((MainWindow)System.Windows.Application.Current.MainWindow).inner_grid.Children.Add(SearchIceCream);
+            ((MainWindow)System.Windows.Application.Current.MainWindow).content_grid.Children.Add(SearchIceCream);
         }
     }
 }

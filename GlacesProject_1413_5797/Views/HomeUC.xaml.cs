@@ -56,7 +56,7 @@ namespace PL.Views
             ((MainWindow)System.Windows.Application.Current.MainWindow).shopAreaGrid.Children.Clear();
             ((MainWindow)System.Windows.Application.Current.MainWindow).profile_grid.Children.Clear();
             ((MainWindow)System.Windows.Application.Current.MainWindow).content_grid.Children.Clear();
-            ((MainWindow)System.Windows.Application.Current.MainWindow).inner_grid.Children.Add(searchIceCreamUC);
+            ((MainWindow)System.Windows.Application.Current.MainWindow).content_grid.Children.Add(searchIceCreamUC);
         }
 
     }
