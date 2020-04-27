@@ -82,13 +82,13 @@
                     </Grid.RowDefinitions>
                     <Grid Grid.Row="0" Margin="30,10">
                         <Grid.Effect>
-                            <DropShadowEffect RenderingBias="Quality" ShadowDepth="1" Color="#FF0F1317" />
+                            <DropShadowEffect RenderingBias="Quality" ShadowDepth="1" Color="#FF0F0000" />
                         </Grid.Effect>
-                        <Image   Source="../image/iceCream_choco.jpg" Stretch="Fill" Opacity="0.6" />
+                        <Image   Source="{Binding MyImage}" Stretch="Uniform" Opacity="0.6" />
 
                     </Grid>
                     <StackPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
-                        <Button Style="{StaticResource RoundedButtonStyle}"  Background="#FF1079EA" Foreground="White" Padding="40,10">
+                        <Button Style="{StaticResource RoundedButtonStyle}"  Name="ImageButton" Background="#FF1079EA"  Command="{Binding AddCommand}" Foreground="White" Padding="40,10">
                             Add an image
                         </Button>
                     </StackPanel>

@@ -49,13 +49,13 @@
                 </Grid.RowDefinitions>
                 <StackPanel Orientation="Horizontal" Margin="40 0 0 20 " Grid.Row="0">
                     <materialDesign:PackIcon Kind="Shop" Width="20" Height="20" VerticalAlignment="Center" Foreground="Blue"  />
-                    <Label FontSize="15">Select the shop where you eat the iceCream :</Label>
+                    <Label FontSize="15">Select the shop where you eat :</Label>
                     <ComboBox Name="ShopComboBox"   Style="{StaticResource ComboBoxStyle}"   VerticalAlignment="Center" Width="130" SelectionChanged="Shop_Selected" />
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Margin="40 20 0 0" Grid.Row="1">
                     <materialDesign:PackIcon Width="20" Height="20" Kind="IceCream"  VerticalAlignment="Center" Foreground="Blue"  />
-                    <Label FontSize="15">Select the shop where you eat the iceCream :</Label>
-                    <ComboBox Name="IceCreamComboBox"  Style="{StaticResource ComboBoxStyle}" IsEnabled="False" HorizontalAlignment="Center"  VerticalAlignment="Center" MinWidth="130" />
+                    <Label FontSize="15">Select the iceCream you eat : </Label>
+                    <ComboBox x:Name="IceCreamComboBox"  Style="{StaticResource ComboBoxStyle}" IsEnabled="False" HorizontalAlignment="Center"  VerticalAlignment="Center" MinWidth="130" Margin="15,4,0,4.4" />
                 </StackPanel>
 
             </Grid>

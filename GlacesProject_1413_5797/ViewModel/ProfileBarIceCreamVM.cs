@@ -26,7 +26,7 @@ namespace PL.ViewModel
             ProfileBarIceCreamModel = new ProfileBarIceCreamModel();
             ProfileBarIceCreamModel.IceCream = profileBarIceCreamUC.iceCream;
             this.ProfileBarIceCreamUC = profileBarIceCreamUC;
-
+            
 
         }
 
@@ -47,6 +47,14 @@ namespace PL.ViewModel
             get { return ProfileBarIceCreamUC.iceCream.ShopId; }
 
         }
+
+        public string Image
+        {
+            get
+            {  return ProfileBarIceCreamUC.iceCream.Image; }
+        }
+
+
 
         public string Taste
         {

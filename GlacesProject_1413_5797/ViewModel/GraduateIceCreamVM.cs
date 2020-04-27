@@ -9,6 +9,8 @@ using PL.Views;
 using System.ComponentModel;
 using System.Windows;
 using PL.Commands;
+using System.Windows.Forms;
+using System.Windows.Controls;
 
 namespace PL.ViewModel
 {
@@ -22,8 +24,12 @@ namespace PL.ViewModel
         private ProfileBarIceCreamUC ProfileBarIceCreamUC;
         public SpecialCommand MyCommand { get; set;  }
 
+        public SpecialCommand ImageCommand { get; set; }
+
         public HomeUC homeUC { get; set; }
 
+        private string Image { get; set; }
+        
 
         public GraduateIceCreamVM(GraduationUC graduationUC)
         {
@@ -31,7 +37,9 @@ namespace PL.ViewModel
             GraduateICModel.IceCream = graduationUC.SelectedIceCream;
             this.GraduationUC = graduationUC;
             this.MyCommand = new SpecialCommand();
+            this.ImageCommand = new SpecialCommand();
             MyCommand.callComplete += MyCommand_UpdateIceCream;
+            ImageCommand.callComplete += OpenFileCommand;
 
         }
         public GraduateIceCreamVM(ProfileBarIceCreamUC profileBarIceCreamUC)
@@ -126,24 +134,12 @@ namespace PL.ViewModel
         }
 
 
-
-      /*  public string Grades
-        {
-
-            set {
-
-              
-
-              
-                    
-                if (PropertyChanged != null)
-                    PropertyChanged(this, new PropertyChangedEventArgs("Grades"));
+     
 
 
-            }
 
 
-        }*/
+
 
 
         private void MyCommand_UpdateIceCream(string parameter)
@@ -151,9 +147,9 @@ namespace PL.ViewModel
 
             GraduateICModel.IceCream.marks.Add((Int32)(GraduationUC.Grades.Value));
 
-
+            GraduateICModel.IceCream.images.Add(Image.ToString());
             GraduateICModel.IceCream.marks[0] = (Int32)GraduateICModel.IceCream.marks.Skip(1).Take(GraduateICModel.IceCream.marks.Count - 1).Average();
-            MessageBox.Show("Thanks for your appreciation !! See you soon !!", "Thanks", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+            System.Windows.MessageBox.Show("Thanks for your appreciation !! See you soon !!", "Thanks", MessageBoxButton.OK, MessageBoxImage.Exclamation);
               homeUC = new HomeUC();
               ((MainWindow)System.Windows.Application.Current.MainWindow).inner_grid.Children.Clear();
               ((MainWindow)System.Windows.Application.Current.MainWindow).content_grid.Children.Clear();
@@ -164,6 +160,20 @@ namespace PL.ViewModel
             GraduateICModel.IceCream.UpdateData();
             GraduateICModel.UpdateIceCream(GraduationUC.SelectedIceCream, GraduateICModel.IceCream);
           }
+
+        private void OpenFileCommand(string parameter)
+        {
+
+
+            OpenFileDialog open = new OpenFileDialog();
+            open.Filter = "Image files (*.png;*.jpeg)|*.png;*.jpeg|All files (*.*)|*.*";
+            if (open.ShowDialog() == DialogResult.OK)
+            {
+                 Image = open.FileName;
+            }
+
+          //  GraduationUC.addimage.ImageSource = Image;
+        }
 
 
 

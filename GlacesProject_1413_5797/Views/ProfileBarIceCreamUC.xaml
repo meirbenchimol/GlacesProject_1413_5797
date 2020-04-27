@@ -26,7 +26,7 @@
 
             <Ellipse Width="140" Height="140" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,15" Stroke="Azure" >
                 <Ellipse.Fill >
-                    <ImageBrush ImageSource="../Image/iceCream_choco.jpg" Stretch="Fill"  AlignmentX="Center" AlignmentY="Center" >
+                    <ImageBrush ImageSource="{Binding Image}" Stretch="Fill"  AlignmentX="Center" AlignmentY="Center" >
                     </ImageBrush>
                 </Ellipse.Fill>
             </Ellipse>

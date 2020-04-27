@@ -56,8 +56,8 @@ namespace BE
 
         public string Image
         {
-            get { return images.ElementAt(0).ToString(); }
-            set { value = images.ElementAt(0).ToString(); }
+            get;
+            set;
         }
         
 
@@ -129,6 +129,7 @@ namespace BE
             {
                 Images += "," + images.ElementAt(i).ToString(); ;
             }
+
             Image = images.ElementAt(0).ToString();
 
         }
@@ -146,10 +147,10 @@ namespace BE
 
             Id ="essai";
             ShopId = "shop";
-            taste.Add("Chocolate");
+           // taste.Add("Chocolate");
             images.Add("iceCream_choco.png");
             comments.Add("");
-            
+            Image = "../Image/font_ice_cream.jpg";
             marks.Add(5);
           
             Energy = 70;

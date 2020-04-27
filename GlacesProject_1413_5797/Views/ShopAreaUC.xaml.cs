@@ -64,7 +64,7 @@ namespace PL.Views
         {
             IceCream ic = (IceCream)((Button)sender).DataContext;
             String b = ic.Id;
-            MessageBox.Show(b, "Warning", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+           // MessageBox.Show(b, "Warning", MessageBoxButton.OK, MessageBoxImage.Exclamation);
             addIceCreamUC = new AddIceCreamUC(Shop.Id , ic);
             ((MainWindow)System.Windows.Application.Current.MainWindow).content_grid.Children.Clear();
             ((MainWindow)System.Windows.Application.Current.MainWindow).content_grid.Children.Add(addIceCreamUC);

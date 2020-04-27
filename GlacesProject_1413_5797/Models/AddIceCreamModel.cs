@@ -60,7 +60,7 @@ namespace PL.Models
 
         internal void UpdateIceCream()
         {
-            MyBl.UpdateIceCream(oldIceCream, MyIC);
+            MyIC.UpdateData(); MyBl.UpdateIceCream(oldIceCream, MyIC);
             shopAreaUC = new ShopAreaUC(MyIC.ShopId);
             ((MainWindow)System.Windows.Application.Current.MainWindow).content_grid.Children.Clear();
             ((MainWindow)System.Windows.Application.Current.MainWindow).content_grid.Children.Add(shopAreaUC);

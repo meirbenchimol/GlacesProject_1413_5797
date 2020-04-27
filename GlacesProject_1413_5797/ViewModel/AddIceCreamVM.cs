@@ -9,6 +9,9 @@ using PL.Views;
 using PL.Commands;
 using BE;
 using System.Windows;
+using System.Windows.Forms;
+using System.Windows.Controls;
+
 
 namespace PL.ViewModel
 {
@@ -21,7 +24,9 @@ namespace PL.ViewModel
             CurrentModel = new AddIceCreamModel(addIceCreamUC.ShopId);
             this.addIceCreamUC = addIceCreamUC;
             this.MyCommand = new SpecialCommand();
+            AddCommand = new Command();
             MyCommand.callComplete += AddIceCream;
+            AddCommand.callComplete += OpenFileCommand;
         }
 
         public AddIceCreamVM(AddIceCreamUC addIceCreamUC, IceCream iceCream)
@@ -29,15 +34,22 @@ namespace PL.ViewModel
             CurrentModel = new AddIceCreamModel(addIceCreamUC.ShopId , iceCream);
             this.addIceCreamUC = addIceCreamUC;
             this.MyCommand = new SpecialCommand();
+            AddCommand = new Command();
             MyCommand.callComplete += UpdateCream;
+            AddCommand.callComplete += OpenFileCommand;
         }
 
         public AddIceCreamModel CurrentModel { get; set; }
+
+        private string Image { get; set; }
+
 
         public event PropertyChangedEventHandler PropertyChanged;
 
         private AddIceCreamUC addIceCreamUC;
         public SpecialCommand MyCommand { get; set; }
+
+        public Command AddCommand { get; set; }
 
 
         public string Id
@@ -51,6 +63,15 @@ namespace PL.ViewModel
             }
         }
         
+        public string MyImage
+        {
+            get { return CurrentModel.MyIC.Image; }
+
+            set { value = Image;
+                if (PropertyChanged != null)
+                    PropertyChanged(this, new PropertyChangedEventArgs("Image"));
+            }
+        }
 
         public string  Taste
         {
@@ -89,20 +110,40 @@ namespace PL.ViewModel
         {
 
             bool found = CurrentModel.MyBl.CheckIceCream(CurrentModel.MyIC.Id, CurrentModel.MyIC.ShopId);
+            
             if (found)
-                MessageBox.Show("Warning !!  IceCream  with same ID already exists !!", "Warning", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                System.Windows.MessageBox.Show("Warning !!  IceCream  with same ID already exists !!", "Warning", MessageBoxButton.OK, MessageBoxImage.Exclamation);
             else
             {
+                CurrentModel.MyIC.images.RemoveAt(0);
+                CurrentModel.MyIC.images.Add(Image);
+                CurrentModel.MyIC.UpdateData();
                 CurrentModel.AddIceCream();
-                MessageBox.Show("Great !! You have add Ice Cream  !!", "Welcome", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                System.Windows.MessageBox.Show("Great !! You have add Ice Cream  !!", "Welcome", MessageBoxButton.OK, MessageBoxImage.Exclamation);
             }
 
         }
 
         public void UpdateCream(string obj)
         {
+            CurrentModel.MyIC.images.Insert (0,Image);
+          
             CurrentModel.UpdateIceCream();
 
+        }
+
+        private void OpenFileCommand()
+        {
+
+
+            OpenFileDialog open = new OpenFileDialog();
+            open.Filter = "Image files (*.png;*.jpg)|*.png;*.jpg|All files (*.*)|*.*";
+            if (open.ShowDialog() == DialogResult.OK)
+            {
+                Image = open.FileName;
+            }
+            this.MyImage = Image;
+            //  GraduationUC.addimage.ImageSource = Image;
         }
 
 

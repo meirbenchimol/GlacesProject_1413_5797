@@ -46,6 +46,7 @@ namespace PL.Views
             currentIceCream = iceCream;
             AddIceCreamVM = new AddIceCreamVM(this  ,iceCream);
             this.DataContext = AddIceCreamVM;
+            ImageButton.Content = "Change the image";
             addIceCreamBtn.Visibility = Visibility.Collapsed;
             UpdateIceCreamBtn.Visibility = Visibility.Visible;
         }

@@ -43,14 +43,14 @@
 
                                         <Border CornerRadius="10 "  Margin="10" Width="160">
                                             <Border.Background>
-                                                <ImageBrush ImageSource="/GlacesProject_1413_5797;component/Image/iceCream_choco.jpg"/>
+                                                <ImageBrush ImageSource="{Binding Image}"/>
                                             </Border.Background>
                                         </Border>
                                         <StackPanel Grid.Column="1" Margin="20" VerticalAlignment="Center">
                                             <!--<TextBlock Text="{Binding Id}" FontSize="15"  FontWeight="Bold"></TextBlock>-->
                                             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 4">
                                                 <TextBlock Text="{Binding Id}" FontSize="15"  FontWeight="Bold"></TextBlock>
-                                                <TextBlock Text="IceCream" FontSize="15" ></TextBlock>
+                                                <TextBlock Text="  IceCream" FontSize="15" ></TextBlock>
                                             </StackPanel>
                                             <StackPanel Orientation="Horizontal" Margin="0 4">
                                                 <TextBlock Text="Taste: " FontSize="14" FontWeight="Bold"></TextBlock>
