@@ -100,26 +100,26 @@
                            Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="0"/>
 
                 <Label Content="Taste :"  Style="{StaticResource labelStyle}" Grid.Row="1" Grid.Column="0"
-                       FontSize="15" HorizontalAlignment="Left" Margin="10 0" VerticalAlignment="Center"/>
+                       FontSize="13" HorizontalAlignment="Left" Margin="10 0" VerticalAlignment="Center"/>
                 <ComboBox Name="TasteComboBox"  Style="{StaticResource ComboBoxStyle}" Grid.Row="1" Grid.Column="1"
                           HorizontalAlignment="Center"  VerticalAlignment="Center" MinWidth="120" Width="230" />
 
                 <Label Content="Median Grade :"  Style="{StaticResource labelStyle}"  Grid.Row="2" Grid.Column="0"
                        FontSize="13" HorizontalAlignment="Left" Margin="5 0" VerticalAlignment="Center" />
-                <Slider Name="Median" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Minimum="0" Maximum="10"   Value="5" Grid.Row="2"  Width="230"/>
+                <Slider Name="Median" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Minimum="0" Maximum="5"   Value="2.5" Grid.Row="2"  Width="230"/>
 
                 <Label Content="Energy : "  Style="{StaticResource labelStyle}"    Grid.Column="0" Grid.Row="3"
-                       FontSize="15" HorizontalAlignment="Left" Margin="10,15,0,15" VerticalAlignment="Center" Height="32" />
-                <Slider Grid.Column="1" Name="Energy" HorizontalAlignment="Center"  Value="50" Minimum="0" Maximum="100"  Grid.Row="3" VerticalAlignment="Center" Width="230"/>
+                       FontSize="13" HorizontalAlignment="Left" Margin="10,15,0,15" VerticalAlignment="Center" Height="32" />
+                <Slider Grid.Column="1" Name="Energy" HorizontalAlignment="Center"  Value="200" Minimum="0" Maximum="400"  Grid.Row="3" VerticalAlignment="Center" Width="230"/>
 
                 <Label Content="Proteins : "   Style="{StaticResource labelStyle}"  Grid.Column="0" Grid.Row="4"
-                       FontSize="15" HorizontalAlignment="Left" Margin="10 0" VerticalAlignment="Center"  />
-                <Slider  Name="Proteins" HorizontalAlignment="Center" Grid.Column="1" Grid.Row="4"  Minimum="0" Value="50"  Maximum="100"  VerticalAlignment="Center" Width="230"/>
+                       FontSize="13" HorizontalAlignment="Left" Margin="10 0" VerticalAlignment="Center"  />
+                <Slider  Name="Proteins" HorizontalAlignment="Center" Grid.Column="1" Grid.Row="4"  Minimum="0" Value="5"  Maximum="10"  VerticalAlignment="Center" Width="230"/>
 
 
-                <Label Content="Calories : "  Style="{StaticResource labelStyle}"  Grid.Column="0" Grid.Row="5"
-                      FontSize="15" HorizontalAlignment="Left" Margin="10 0" VerticalAlignment="Center"/>
-                <Slider Name="Calories"  Grid.Column="1" HorizontalAlignment="Center"  Minimum="0" Value="50"  Maximum="100" Grid.Row="5" VerticalAlignment="Center" Width="230"/>
+                <Label Content="Fats : "  Style="{StaticResource labelStyle}"  Grid.Column="0" Grid.Row="5"
+                      FontSize="13" HorizontalAlignment="Left" Margin="10 0" VerticalAlignment="Center"/>
+                <Slider Name="Calories"  Grid.Column="1" HorizontalAlignment="Center"  Minimum="0" Value="10"  Maximum="30" Grid.Row="5" VerticalAlignment="Center" Width="230"/>
 
 
 

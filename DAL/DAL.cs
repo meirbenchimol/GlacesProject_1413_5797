@@ -143,14 +143,16 @@ namespace DAL
 
 
                 var query = from m in db.IceCreams
-                            where m.Taste.Contains(taste)
-                            && (!(energy > (m.Energy + 10)) || (energy < (m.Energy - 10)))
-                             && (!(calories > (m.Calories + 10)) || (calories < (m.Calories - 10)))
-                              && (!(proteins > (m.Proteins + 10)) || (proteins < (m.Proteins - 10)))
+                            where 
+                        (!(energy > (m.Energy + 30)) || (energy < (m.Energy - 30)))
+                             && (!(calories > (m.Calories + 5)) || (calories < (m.Calories - 5)))
+                              && (!(proteins > (m.Proteins + 1)) || (proteins < (m.Proteins - 1)))
                               /* && /*( ! (Median(m) < medianmark -1)) */
                                               //for the evaluation
                             select m;
-                return query.ToList<IceCream>().Where(x=> ! ( Median(x) < medianmark-1));
+                return query.ToList<IceCream>().Where(x=> Taste(x.Taste).Contains(taste) && !(Median(x) < medianmark - 1));
+
+             //   .Where(x => !(Median(x) < medianmark - 1))
             }
         }
 
@@ -310,6 +312,13 @@ namespace DAL
             return  marks[0];
         }
 
+        static string[] Taste(string t)
+        {
+
+
+            return t.Split(' ');
+        }
+ 
         #endregion
     }
 }

@@ -50,7 +50,7 @@
                     <SolidColorBrush Color="Azure" Opacity="0.65"/>
                 </StackPanel.Background>
 
-                <Button x:Name="add_profile_img_btn" HorizontalAlignment="Center"  VerticalAlignment="Center" Background="{x:Null}" Click="add_profile_img_btn_Click" Style="{StaticResource RoundedButtonStyle}" >
+                <Button x:Name="add_profile_img_btn" HorizontalAlignment="Center"  VerticalAlignment="Center" Background="{x:Null}" Command="{Binding ImageCommand}" Style="{StaticResource RoundedButtonStyle}" >
                     <Button.Content>
                         <Ellipse Width="140" Height="140" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,15" Stroke="Azure"  >
                             <Ellipse.Fill >

@@ -8,18 +8,21 @@ using PL.Models;
 using PL.Views;
 using PL.Commands;
 using System.Windows;
+using System.Windows.Forms;
+using System.Windows.Controls;
 
 namespace PL.ViewModel
 {
     public class RegisterShopVM : INotifyPropertyChanged
     {
-
+        public Command ImageCommand { get; set; }
 
         public RegisterShopVM( RegisterShopUC registerShopUC)
         {
             CurrentModel = new RegisterShopModel();
             this.ShopUC = registerShopUC;
             this.MyCommand = new SpecialCommand();
+            this.ImageCommand = new Command();
             MyCommand.callComplete +=  RegisterShop;
 
         }
@@ -104,7 +107,21 @@ namespace PL.ViewModel
 
         public SpecialCommand MyCommand { get; set; }
 
+        private string Image { get; set; }
 
+        private void OpenFileCommand()
+        {
+
+
+            OpenFileDialog open = new OpenFileDialog();
+            open.Filter = "Image files (*.png;*.jpg)|*.png;*.jpg|All files (*.*)|*.*";
+            if (open.ShowDialog() == DialogResult.OK)
+            {
+                Image = open.FileName;
+            }
+          //  this.MyImage = Image;
+            //  GraduationUC.addimage.ImageSource = Image;
+        }
 
         #region  functions
 
@@ -122,11 +139,12 @@ namespace PL.ViewModel
 
             bool found = CurrentModel.MyBl.CheckShopExist(CurrentModel.MyShop.Id);
             if(found)
-                MessageBox.Show("Warning !! A Shop  with same ID already exists !!", "Warning", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                System.Windows.MessageBox.Show("Warning !! A Shop  with same ID already exists !!", "Warning", MessageBoxButton.OK, MessageBoxImage.Exclamation);
             else
             {
+               // CurrentModel.MyShop.Images = 
                 CurrentModel.AddShop();
-                MessageBox.Show("Great !! You're now a Shop of our company  !!", "Welcome", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                System.Windows.MessageBox.Show("Great !! You're now a Shop of our company  !!", "Welcome", MessageBoxButton.OK, MessageBoxImage.Exclamation);
             }
            
 

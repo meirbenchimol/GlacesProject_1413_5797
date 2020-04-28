@@ -76,7 +76,7 @@
                 </StackPanel>
 
                 <Label Content="Your Grade : " FontWeight="DemiBold" Grid.Column="0"  Grid.Row="1" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="86" />
-                <Slider  Grid.Row="1" HorizontalAlignment="Left" Margin="94,9.2,0,0" Minimum="0" Name="Grades"  Maximum="10" Value="{Binding Grades}" VerticalAlignment="Top" Width="259" Grid.ColumnSpan="2"/>
+                <Slider  Grid.Row="1" HorizontalAlignment="Left" Margin="94,9.2,0,0" Minimum="0" Name="Grades"  Maximum="5" Value="{Binding Grades}" VerticalAlignment="Top" Width="259" Grid.ColumnSpan="2"/>
                 <Label Content="Comments : "  FontWeight="DemiBold" HorizontalAlignment="Left" VerticalAlignment="Top" Width="348"  Grid.Row="2" Grid.Column="0"/>
                 <TextBox HorizontalAlignment="Left" Height="30" Background="AliceBlue"  Margin="9,11,0,0" Grid.Row="3" TextWrapping="Wrap" Text="{Binding Comments}" VerticalAlignment="Top" Width="356" Grid.ColumnSpan="2" Grid.RowSpan="4" />
                 <Label Name="Add" Content="Add an Image if you want : " FontWeight="DemiBold" HorizontalAlignment="Left"  Grid.Row="4" VerticalAlignment="Top" Grid.ColumnSpan="2" Width="169" Margin="11,44.6,0,0" Height="25" />
