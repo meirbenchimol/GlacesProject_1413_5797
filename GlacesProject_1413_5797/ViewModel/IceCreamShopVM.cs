@@ -80,6 +80,15 @@ namespace PL.ViewModel
 
         }
 
+        public string IceCreamImage
+        {
+
+
+            get { return CurrentModel.iceCream.Image; }
+
+        }
+
+
 
         public string IceCreamTaste
         {
@@ -124,7 +133,13 @@ namespace PL.ViewModel
 
             }
         }
+        public string IceCreamDescription
+        {
 
+
+            get { return CurrentModel.iceCream.Description; }
+
+        }
 
         #endregion
 

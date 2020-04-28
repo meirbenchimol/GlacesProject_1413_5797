@@ -124,13 +124,18 @@ namespace BE
             }
 
             Images = "";
-            Images += images.ElementAt(0).ToString();
+            if (images.ElementAt(0) != null) {
+                Images += images.ElementAt(0).ToString();
+
+            }
             for (int i = 1; i < images.Count; i++)
             {
                 Images += "," + images.ElementAt(i).ToString(); ;
             }
-
-            Image = images.ElementAt(0).ToString();
+            if (images.ElementAt(0) != null)
+            {
+                Image = images.ElementAt(0).ToString();
+            }
 
         }
 

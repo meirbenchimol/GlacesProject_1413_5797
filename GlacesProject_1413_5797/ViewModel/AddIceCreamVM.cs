@@ -127,7 +127,7 @@ namespace PL.ViewModel
         public void UpdateCream(string obj)
         {
             CurrentModel.MyIC.images.Insert (0,Image);
-          
+            CurrentModel.MyIC.UpdateData();
             CurrentModel.UpdateIceCream();
 
         }

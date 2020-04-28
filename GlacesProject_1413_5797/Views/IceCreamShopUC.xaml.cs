@@ -28,6 +28,9 @@ namespace PL.Views
 
         public IceCreamShopVM IceCreamShopVM { get; set; }
 
+        public SearchIceCreamUC SearchIceCreamUC { get; set; }
+        public GraduationUC GraduationUC { get; set; }
+        public ProfileBarIceCreamUC ProfileBarIceCreamUC { get; set; }
 
         public IceCreamShopUC(Shop shop,IceCream iceCream)
         {
@@ -39,24 +42,23 @@ namespace PL.Views
 
         }
 
-        private void Bnt_return_Click(object sender, RoutedEventArgs e)
+        private void Back_btn_Click(object sender, RoutedEventArgs e)
         {
+            SearchIceCreamUC = new SearchIceCreamUC();
+            ((MainWindow)System.Windows.Application.Current.MainWindow).full_content_grid.Children.Clear();
+            ((MainWindow)System.Windows.Application.Current.MainWindow).content_grid.Children.Add(SearchIceCreamUC);
+
+
 
         }
 
-        private void graduate_return_Click(object sender, RoutedEventArgs e)
+        private void Graduate_btn_Click(object sender, RoutedEventArgs e)
         {
-
-        }
-
-        private void back_btn_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void graduate_btn_Click(object sender, RoutedEventArgs e)
-        {
-
+            GraduationUC = new GraduationUC(iceCream);
+            ProfileBarIceCreamUC = new ProfileBarIceCreamUC(iceCream);
+            ((MainWindow)System.Windows.Application.Current.MainWindow).full_content_grid.Children.Clear();
+            ((MainWindow)System.Windows.Application.Current.MainWindow).content_grid.Children.Add(GraduationUC);
+            ((MainWindow)System.Windows.Application.Current.MainWindow).profile_grid.Children.Add(ProfileBarIceCreamUC);
         }
     }
 }
