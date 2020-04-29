@@ -36,9 +36,9 @@ namespace PL.ViewModel
 
         #region shop 
 
-        public string ShopAdress
+        public string ShopAddress
         {
-            get { return CurrentModel.shop.Adress; }
+            get { return CurrentModel.GetGpsAddress( CurrentModel.shop.Adress); }
         }
 
 
