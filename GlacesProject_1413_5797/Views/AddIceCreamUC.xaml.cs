@@ -37,6 +37,7 @@ namespace PL.Views
             ShopId = shopId;
             AddIceCreamVM = new AddIceCreamVM(this);
             this.DataContext = AddIceCreamVM;
+            //this.Taste.TextChanged += null;
             addIceCreamBtn.Visibility = Visibility.Visible;
             UpdateIceCreamBtn.Visibility = Visibility.Collapsed;
         }
@@ -46,6 +47,7 @@ namespace PL.Views
             InitializeComponent();
             ShopId = shopId;
             currentIceCream = iceCream;
+            this.Taste.TextChanged += TasteChanged;
             AddIceCreamVM = new AddIceCreamVM(this  ,iceCream);
             this.DataContext = AddIceCreamVM;
             ImageButton.Content = "Change the image";
@@ -55,11 +57,19 @@ namespace PL.Views
 
         private void CalculeBtn_Click(object sender, RoutedEventArgs e)
         {
-            attribut_grid.Visibility = Visibility.Visible;
+            try
+            {
 
-            getApiFoodDetails("Ice creams, " + this.Taste);
-           // MessageBox.Show(this.AddIceCreamVM.CurrentModel.getApiFoodDetails("Ice creams, "+ this.Taste),
-               // "Warning", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                getApiFoodDetails("Ice creams, " + this.Taste);
+                attribut_grid.Visibility = Visibility.Visible;
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("The System can't identify your taste, Enter a right taste",
+                "Warning", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            
         }
 
         private void Bnt_return_Click(object sender, RoutedEventArgs e)
@@ -127,5 +137,10 @@ namespace PL.Views
 
         }
 
+        private void TasteChanged(object sender, TextChangedEventArgs e)
+        {
+            MessageBox.Show("If you change the Taste, Calculate the IceCreamData",
+               "Important !!", MessageBoxButton.OK, MessageBoxImage.Information);
+        }
     }
 }

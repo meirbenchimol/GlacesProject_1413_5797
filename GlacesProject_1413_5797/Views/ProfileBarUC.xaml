@@ -10,7 +10,7 @@
              d:DesignHeight="560" d:DesignWidth="170">
     <Grid Grid.Row="0"  >
         <Grid.RowDefinitions>
-            <RowDefinition Height="190"/>
+            <RowDefinition Height="200"/>
             <RowDefinition Height="*"/>
             
         </Grid.RowDefinitions>
@@ -26,9 +26,9 @@
 
         <Grid Grid.Row="0" >
 
-            <Ellipse Width="140" Height="140" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,15" Stroke="Azure" >
+            <Ellipse Width="140" Height="170" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,15" Stroke="Azure" >
                 <Ellipse.Fill >
-                    <ImageBrush ImageSource="../Image/font_ice_cream.jpg" Stretch="Fill"  AlignmentX="Center" AlignmentY="Center" >
+                    <ImageBrush ImageSource="{Binding Image}" Stretch="Fill"  AlignmentX="Center" AlignmentY="Center" >
                     </ImageBrush>
                 </Ellipse.Fill>
             </Ellipse>

@@ -30,34 +30,36 @@ namespace BE
 
         public String WebSiteLink { get; set; }
 
-        private List<String> images = new List<string>();
+        public List<String> images = new List<string>();
 
-        public string Images
+       
+           public string Images
+
         {
-            get
-            {
-                string Image="";
-                Image  += images.ElementAt(0).ToString();
-                for (int i = 1; i < images.Count; i++)
-                {
-                    Image += "," + images.ElementAt(i).ToString(); ;
-                }
-                return Image;
+            get; set;
+        }
+    
 
-            }
 
-            
-            set
-            {
-                value += images.ElementAt(0).ToString();
-                for (int i = 1; i < images.Count; i++)
-                {
-                    value += "," + images.ElementAt(i).ToString(); ;
-                }
-            }
+        public void UpdateLists()
+        {
+            images = Images.Split(',').ToList();
         }
 
 
+        public void UpdateData()
+        {
+            Images = "";
+            if (images.ElementAt(0) != null)
+            {
+                Images += images.ElementAt(0).ToString();
+
+            }
+            for (int i = 1; i < images.Count; i++)
+            {
+                Images += "," + images.ElementAt(i).ToString(); ;
+            }
+        }
 
      
         public Shop()
@@ -69,7 +71,7 @@ namespace BE
             Phone = "058";
             WebSiteLink = "";
             FaceBookLink = "";
-            images.Add("shopIcon.png");
+           // images.Add("shopIcon.png");
             
         }
     }

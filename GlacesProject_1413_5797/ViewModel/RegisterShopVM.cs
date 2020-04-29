@@ -24,6 +24,7 @@ namespace PL.ViewModel
             this.MyCommand = new SpecialCommand();
             this.ImageCommand = new Command();
             MyCommand.callComplete +=  RegisterShop;
+            ImageCommand.callComplete += OpenFileCommand;
 
         }
 
@@ -142,7 +143,9 @@ namespace PL.ViewModel
                 System.Windows.MessageBox.Show("Warning !! A Shop  with same ID already exists !!", "Warning", MessageBoxButton.OK, MessageBoxImage.Exclamation);
             else
             {
-               // CurrentModel.MyShop.Images = 
+                if(Image != null)
+                    CurrentModel.MyShop.images.Add(Image);
+                CurrentModel.MyShop.UpdateData();
                 CurrentModel.AddShop();
                 System.Windows.MessageBox.Show("Great !! You're now a Shop of our company  !!", "Welcome", MessageBoxButton.OK, MessageBoxImage.Exclamation);
             }

@@ -120,7 +120,7 @@ namespace BE
             Comments += comments.ElementAt(0).ToString();
             for (int i = 1; i < comments.Count; i++)
             {
-                Comments += "," + comments.ElementAt(i).ToString(); ;
+                Comments += ";" + comments.ElementAt(i).ToString(); ;
             }
 
             Images = "";
@@ -142,7 +142,7 @@ namespace BE
         public void UpdateLists()
         {
             marks = Marks.Split(',').Select(int.Parse).ToList();
-            comments = Comments.Split(',').ToList();
+            comments = Comments.Split(';').ToList();
             images = Images.Split(',').ToList();
         }
 
@@ -153,8 +153,8 @@ namespace BE
             Id ="essai";
             ShopId = "shop";
            // taste.Add("Chocolate");
-            images.Add("iceCream_choco.png");
-            comments.Add("");
+          //  images.Add("iceCream_choco.png");
+            //comments.Add("");
             Image = "../Image/font_ice_cream.jpg";
             marks.Add(5);
           

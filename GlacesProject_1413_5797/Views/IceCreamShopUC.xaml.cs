@@ -39,6 +39,7 @@ namespace PL.Views
             this.iceCream = iceCream;
             this.IceCreamShopVM = new IceCreamShopVM(this);
             this.DataContext = IceCreamShopVM;
+           // this.ImageViewIceCream.ItemsSource = IceCreamShopVM.C
 
         }
 

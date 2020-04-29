@@ -147,7 +147,8 @@ namespace PL.ViewModel
 
             GraduateICModel.IceCream.marks.Add((Int32)(GraduationUC.Grades.Value));
 
-            GraduateICModel.IceCream.images.Add(Image.ToString());
+            if (Image != null)
+                GraduateICModel.IceCream.images.Add(Image.ToString());
             GraduateICModel.IceCream.marks[0] = (Int32)GraduateICModel.IceCream.marks.Skip(1).Take(GraduateICModel.IceCream.marks.Count - 1).Average();
             System.Windows.MessageBox.Show("Thanks for your appreciation !! See you soon !!", "Thanks", MessageBoxButton.OK, MessageBoxImage.Exclamation);
               homeUC = new HomeUC();

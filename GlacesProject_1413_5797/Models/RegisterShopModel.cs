@@ -37,6 +37,7 @@ namespace PL.Models
         internal void AddShop()
         {
             MyBl.AddShop(MyShop);
+            MyShop.UpdateLists();
             shopAreaUC = new ShopAreaUC(MyShop.Id);
             profileBarUC = new ProfileBarUC(MyShop);
             ((MainWindow)System.Windows.Application.Current.MainWindow).mainVM.UpdateShop(MyShop);

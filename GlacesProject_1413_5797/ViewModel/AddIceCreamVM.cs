@@ -11,6 +11,7 @@ using BE;
 using System.Windows;
 using System.Windows.Forms;
 using System.Windows.Controls;
+using Microsoft.Maps;
 
 
 namespace PL.ViewModel
@@ -31,10 +32,16 @@ namespace PL.ViewModel
 
         public AddIceCreamVM(AddIceCreamUC addIceCreamUC, IceCream iceCream)
         {
+
+            
             CurrentModel = new AddIceCreamModel(addIceCreamUC.ShopId , iceCream);
             this.addIceCreamUC = addIceCreamUC;
             this.MyCommand = new SpecialCommand();
             AddCommand = new Command();
+           // addIceCreamUC.Taste.TextChanged += ChangeData;
+            addIceCreamUC.Fats.Text = iceCream.Calories.ToString();
+            addIceCreamUC.Proteins.Text = iceCream.Proteins.ToString();
+            addIceCreamUC.Energy.Text = iceCream.Energy.ToString();
             MyCommand.callComplete += UpdateCream;
             AddCommand.callComplete += OpenFileCommand;
         }
@@ -42,6 +49,7 @@ namespace PL.ViewModel
         public AddIceCreamModel CurrentModel { get; set; }
 
         private string Image { get; set; }
+
 
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -115,7 +123,9 @@ namespace PL.ViewModel
                 System.Windows.MessageBox.Show("Warning !!  IceCream  with same ID already exists !!", "Warning", MessageBoxButton.OK, MessageBoxImage.Exclamation);
             else
             {
-                CurrentModel.MyIC.images.RemoveAt(0);
+
+                if (CurrentModel.MyIC.images.Count != 0)
+                    CurrentModel.MyIC.images.RemoveAt(0);
                 CurrentModel.MyIC.images.Add(Image);
                 CurrentModel.MyIC.Calories = double.Parse(addIceCreamUC.Fats.Text);
                 CurrentModel.MyIC.Proteins = double.Parse(addIceCreamUC.Proteins.Text);
@@ -129,7 +139,18 @@ namespace PL.ViewModel
 
         public void UpdateCream(string obj)
         {
-            CurrentModel.MyIC.images.Insert (0,Image);
+
+            if(Image != null)
+            {
+
+                if (CurrentModel.MyIC.images.Count != 0)
+                    CurrentModel.MyIC.images.RemoveAt(0);
+                CurrentModel.MyIC.images.Insert(0, Image);
+            }
+                
+            CurrentModel.MyIC.Calories = double.Parse(addIceCreamUC.Fats.Text);
+            CurrentModel.MyIC.Proteins = double.Parse(addIceCreamUC.Proteins.Text);
+            CurrentModel.MyIC.Energy = double.Parse(addIceCreamUC.Energy.Text);
             CurrentModel.MyIC.UpdateData();
             CurrentModel.UpdateIceCream();
 
@@ -145,7 +166,7 @@ namespace PL.ViewModel
             {
                 Image = open.FileName;
             }
-            this.MyImage = Image;
+          ///  this.MyImage = Image;
             //  GraduationUC.addimage.ImageSource = Image;
         }
 

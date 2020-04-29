@@ -66,6 +66,12 @@ namespace PL.ViewModel
 
         }
 
+        public string Image
+        {
+            get { return CurrentModel.shop.images[0]; }
+        }
+
+
 
         public string Phone
         {
@@ -123,6 +129,7 @@ namespace PL.ViewModel
         {
             //MessageBox.Show("Great! You've updated your shop space  !!", "Great", MessageBoxButton.OK, MessageBoxImage.Exclamation);
 
+            CurrentModel.shop.UpdateLists();
             updateShopUC = new UpdateShopUC(CurrentModel.shop);
             ((MainWindow)System.Windows.Application.Current.MainWindow).inner_grid.Children.Clear();
             ((MainWindow)System.Windows.Application.Current.MainWindow).content_grid.Children.Clear();

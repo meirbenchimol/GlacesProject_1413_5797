@@ -15,6 +15,7 @@ using System.Collections.ObjectModel;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Data.SqlClient;
 using Newtonsoft.Json.Linq;
+//using Microsoft.Windows.Services.Maps;
 
 namespace DAL
 {
@@ -143,12 +144,10 @@ namespace DAL
 
 
                 var query = from m in db.IceCreams
-                            where 
-                        (!(energy > (m.Energy + 30)) || (energy < (m.Energy - 30)))
-                             && (!(calories > (m.Calories + 5)) || (calories < (m.Calories - 5)))
-                              && (!(proteins > (m.Proteins + 1)) || (proteins < (m.Proteins - 1)))
-                              /* && /*( ! (Median(m) < medianmark -1)) */
-                                              //for the evaluation
+                            where ( energy <= (m.Energy + 30) && energy >= m.Energy -30)
+                    //    (!(energy > (m.Energy + 30)) || ! (energy < (m.Energy - 30)))
+                             && ( (calories <= (m.Calories + 5)) &&  calories >= (m.Calories - 5))
+                              && ( (proteins <=  (m.Proteins + 2)) &&  proteins >= (m.Proteins - 2))
                             select m;
                 return query.ToList<IceCream>().Where(x=> Taste(x.Taste).Contains(taste) && !(Median(x) < medianmark - 1));
 

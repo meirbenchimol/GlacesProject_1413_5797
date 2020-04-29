@@ -16,7 +16,11 @@ using PL.Models;
 using PL.ViewModel;
 using PL.Views;
 using BE;
-
+using GoogleMaps.LocationServices;
+using GoogleMapsApi;
+using System.Net;
+using System.Data;
+using System.IO;
 
 namespace PL
 {
@@ -59,6 +63,7 @@ namespace PL
 
         private void ButtonHome_Click(object sender, RoutedEventArgs e)
         {
+          //  essai();
             homeUC = new HomeUC();
             ((MainWindow)System.Windows.Application.Current.MainWindow).inner_grid.Children.Clear();
             ((MainWindow)System.Windows.Application.Current.MainWindow).content_grid.Children.Clear();
@@ -68,6 +73,40 @@ namespace PL
 
         }
 
+        public  void  essai()
+        {
+            string s = "";
+            string url = "http://maps.google.com/maps/api/geocode/xml?address=" +  "8 Place de Bordeaux , Strasbourg" + "&sensor=false";
+            WebRequest request = WebRequest.Create(url);
+
+            using (WebResponse response = (HttpWebResponse)request.GetResponse())
+            {
+                using (StreamReader reader = new StreamReader(response.GetResponseStream(), Encoding.UTF8))
+                {
+                    DataSet dsResult = new DataSet();
+                    dsResult.ReadXml(reader);
+                    DataTable dtCoordinates = new DataTable();
+                    dtCoordinates.Columns.AddRange(new DataColumn[4] { new DataColumn("Id", typeof(int)),
+                    new DataColumn("Address", typeof(string)),
+                    new DataColumn("Latitude",typeof(string)),
+                    new DataColumn("Longitude",typeof(string)) });
+                    foreach (DataRow row in dsResult.Tables["result"].Rows)
+                    {
+                        string geometry_id = dsResult.Tables["geometry"].Select("result_id = " + row["result_id"].ToString())[0]["geometry_id"].ToString();
+                        DataRow location = dsResult.Tables["location"].Select("geometry_id = " + geometry_id)[0];
+                        dtCoordinates.Rows.Add(row["result_id"], row["formatted_address"], location["lat"], location["lng"]);
+                    }
+
+                    s = dtCoordinates.Columns[2].ToString();
+                    //s = dtCoordinates.Rows[2].ToString();
+                }
+                // return dtCoordinates["Latitude"];
+
+                System.Windows.MessageBox.Show(s, "Warning", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+            }
+
+            // Save lat/long values to DB...
+        }
         private void graduate_btn_Click(object sender, RoutedEventArgs e)
         {
             GraduateIceCream = new GraduateIceCreamUC();

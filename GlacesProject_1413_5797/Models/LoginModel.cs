@@ -36,6 +36,7 @@ namespace PL.Models
                 return false;
             else
             {
+                shop.UpdateLists();
                 shopAreaUC = new ShopAreaUC(shop.Id);
                 profileBarUC = new ProfileBarUC(shop);
                 ((MainWindow)System.Windows.Application.Current.MainWindow).mainVM.UpdateShop(shop);

@@ -126,7 +126,7 @@
                  TextAlignment="Left" />
 
                 <TextBlock Text="Ice Cream Taste (ex: chocolate,vanille,..)" FontSize="12" Background="{x:Null}"  HorizontalAlignment="Left" Margin="20,10,20,0"/>
-                <TextBox x:Name="Taste"  TextWrapping="Wrap" Text="{Binding Taste}" HorizontalAlignment="Stretch" Padding="40,5"  VerticalAlignment="Top" 
+                <TextBox x:Name="Taste"  TextWrapping="Wrap" Text="{Binding Taste}"   HorizontalAlignment="Stretch" Padding="40,5"  VerticalAlignment="Top" 
                  FontSize="16"
                  BorderBrush="Black"
                  Margin="20,0,20,20"

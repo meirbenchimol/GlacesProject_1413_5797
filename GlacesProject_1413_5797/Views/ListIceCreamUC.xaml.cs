@@ -50,6 +50,7 @@ namespace PL.Views
             IceCream ic = (IceCream)PersonDetails.SelectedItem as IceCream;
             string name = ic.Id;
             Shop shop = bl.GetAllShop().Where(x => x.Id == ic.ShopId).FirstOrDefault();
+            shop.UpdateLists();
             IceCreamShopUC = new IceCreamShopUC(shop, ic);
 
             ((MainWindow)System.Windows.Application.Current.MainWindow).inner_grid.Children.Clear();

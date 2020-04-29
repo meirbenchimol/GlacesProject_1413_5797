@@ -34,9 +34,6 @@ namespace PL.Views
             this.DataContext = ProfileBarVM;
         }
 
-        /*private void Test(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show("Great! You've updated your shop space  !!", "Great", MessageBoxButton.OK, MessageBoxImage.Exclamation);
-        }*/
+      
     }
 }

@@ -9,6 +9,7 @@ using PL.Commands;
 using BE;
 using System.ComponentModel;
 using System.Windows;
+using System.Windows.Forms;
 
 namespace PL.ViewModel
 {
@@ -25,13 +26,23 @@ namespace PL.ViewModel
             updateShopUC.ConfirmPassword.Password = CurrentModel.MyShop.Password;
             this.MyCommand = new SpecialCommand();
             MyCommand.callComplete += UpdateShop;
+            ImageCommand = new Command();
+            ImageCommand.callComplete += OpenFileCommand;
 
         }
+
+        private string image { get; set; }
 
         public UpdateShopModel CurrentModel { get; set; }
 
         public event PropertyChangedEventHandler PropertyChanged;
 
+        public Command ImageCommand { get; set; }
+
+        public string Image
+        {
+            get { return CurrentModel.MyShop.images[0]; }
+        }
 
         public string Id
         {
@@ -115,6 +126,10 @@ namespace PL.ViewModel
 
         public void UpdateShop(string parameter)
         {
+
+            CurrentModel.MyShop.images.RemoveAt(0);
+            CurrentModel.MyShop.images.Add(image);
+            CurrentModel.MyShop.UpdateData();
             CurrentModel.UpdateShop(UpdateShopUC.shop, CurrentModel.MyShop);
 
             //private ShopAreaUC shopAreaUC = new ShopAreaUC(UpdateShopUC.shop.Id);
@@ -124,6 +139,20 @@ namespace PL.ViewModel
 
         }
 
+
+        private void OpenFileCommand()
+        {
+
+
+            OpenFileDialog open = new OpenFileDialog();
+            open.Filter = "Image files (*.png;*.jpg)|*.png;*.jpg|All files (*.*)|*.*";
+            if (open.ShowDialog() == DialogResult.OK)
+            {
+                image = open.FileName;
+            }
+            //this.MyImage = Image;
+            //  GraduationUC.addimage.ImageSource = Image;
+        }
         #endregion
     }
 

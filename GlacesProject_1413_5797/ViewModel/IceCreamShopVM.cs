@@ -25,13 +25,13 @@ namespace PL.ViewModel
             CurrentModel = new IceCreamShopModel();
             CurrentModel.iceCream = iceCreamShopUC.iceCream;
             CurrentModel.shop = iceCreamShopUC.shop;
+           
+            CurrentModel.iceCream.UpdateLists();
+            iceCreamShopUC.ImageViewIceCream.ItemsSource = CurrentModel.iceCream.images;
+            iceCreamShopUC.CommentViewIceCream.ItemsSource = CurrentModel.iceCream.comments;
         }
 
-        public string ShopName
-        {
-            get { return CurrentModel.shop.Id; }
-
-        }
+        
 
 
         #region shop 
@@ -66,6 +66,20 @@ namespace PL.ViewModel
             get { return CurrentModel.shop.FaceBookLink; }
 
         }
+
+
+        public string ShopName
+        {
+            get { return CurrentModel.shop.Id; }
+
+        }
+
+
+        public string ShopImage
+        {
+            get { return CurrentModel.shop.images[0]; }
+        }
+
 
         #endregion
 

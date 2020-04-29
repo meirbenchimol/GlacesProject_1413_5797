@@ -34,7 +34,7 @@
         <Grid Grid.Column="1" Width="250" Height="300" VerticalAlignment="Top" HorizontalAlignment="Right" 
                Margin="15" Panel.ZIndex="100">
             <StackPanel  Width="230" Height="280" >
-                <Image Source="{Binding ShopImage}"  Stretch="Fill" Width="150" Margin="0 15 0 0" Opacity="0.8" />
+                <Image Source="{Binding ShopImage}"  Stretch="Fill" Width="150" Margin="40,15,40.4,0" Opacity="0.8" Height="39" />
                 <!--Source="{Binding ShopImage}"-->
                 <TextBlock FontFamily="Arial Black" Foreground="DarkSlateBlue" Text="{Binding ShopName}"  Margin="0 10 0 0"  FontSize="18"   FontWeight="Bold"  HorizontalAlignment="Center"></TextBlock>
                 <!--Text="{Binding ShopName}"-->
@@ -79,7 +79,7 @@
                         <RowDefinition Height="110"></RowDefinition>
                         <RowDefinition Height="70"></RowDefinition>
                     </Grid.RowDefinitions>
-                    
+
                     <StackPanel Width="170" HorizontalAlignment="Left">
                         <TextBlock FontFamily="Arial Black" VerticalAlignment="Top"  HorizontalAlignment="Left" 
                                    FontSize="18" FontWeight="Bold" Foreground="WhiteSmoke" Text="{Binding IceCreamID}" Margin="0 5 0 0" />
@@ -104,7 +104,7 @@
                                                      Width="20" Height="20"></materialDesign:PackIcon>
                         </StackPanel>
 
-                       
+
                         <!--<StackPanel  Width="191" Grid.Row="4" Orientation="Horizontal"   Height="20"  VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0,8,100,6" >
                             <materialDesign:PackIcon Width="20" Height="8" Kind="Grade" Focusable="False" VerticalAlignment="Center"/>
                             <Label Name="Grade"   Content="Grade: "   FontSize="7" FontWeight="DemiBold" HorizontalAlignment="Left"  Margin="0,1,0,1" />
@@ -133,7 +133,7 @@
                             <Label Name="Description"   Content="Description: " FontSize="10" FontWeight="DemiBold"  HorizontalAlignment="Left"  Foreground="WhiteSmoke" />
                             <TextBlock VerticalAlignment="Center"  HorizontalAlignment="Center" TextWrapping="Wrap" FontSize="10" Foreground="WhiteSmoke" Text="{Binding IceCreamDescription}"></TextBlock>
                         </StackPanel>
-                      
+
                     </StackPanel>
                     <Image Source="{Binding IceCreamImage}"  Stretch="Fill" Width="100" Height="100" Margin="0 5 0 0" VerticalAlignment="Top" HorizontalAlignment="Right" Opacity="0.8" />
                     <!--Source="{Binding IceCreamImage}"-->
@@ -142,13 +142,75 @@
 
             <Border BorderBrush="DarkSlateGray" Grid.Row="1" BorderThickness="0 0 0 1" Width="280">
                 <Grid>
-                    <TextBlock Text="Image :" FontSize="15" FontWeight="Bold" Foreground="WhiteSmoke"></TextBlock>
+                    <TextBlock Text="Images :" FontSize="12" FontWeight="Bold" Foreground="WhiteSmoke"></TextBlock>
+                    <ScrollViewer Padding="15 0"  HorizontalContentAlignment="Stretch" Margin="0,21,0,1.6">
+                        <Grid >
+                            <ListView Background="{x:Null}"  x:Name="ImageViewIceCream"   HorizontalContentAlignment="Stretch">
+                                <ListView.ItemTemplate  >
+                                    <DataTemplate >
+                                        <Grid >
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="200" ></ColumnDefinition>
+                                            </Grid.ColumnDefinitions>
+
+                                            <Border Grid.Column="0" Grid.ColumnSpan="3" BorderThickness="0 0 0 1" BorderBrush="Black">
+
+                                            </Border>
+
+
+                                            <Border CornerRadius="10 "  Margin="10" Height="60" Width="160">
+                                                <Border.Background>
+                                                    <ImageBrush ImageSource="{Binding }"/>
+                                                </Border.Background>
+                                            </Border>
+                                        
+                                        </Grid>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                                <ListView.ItemsPanel>
+                                    <ItemsPanelTemplate>
+                                        <WrapPanel Orientation="Vertical"></WrapPanel>
+                                    </ItemsPanelTemplate>
+                                </ListView.ItemsPanel>
+                            </ListView>
+                        </Grid>
+                    </ScrollViewer>
                 </Grid>
             </Border>
 
-            <Border BorderBrush="DarkSlateGray" Grid.Row="2" BorderThickness="0 0 0 1" Width="280">
+            <Border BorderBrush="WhiteSmoke" Grid.Row="2" BorderThickness="0 0 0 1" Width="280">
                 <Grid>
-                    <TextBlock Text="Comments :" FontSize="15" FontWeight="Bold" Foreground="WhiteSmoke"></TextBlock>
+                    <TextBlock Text="Comments :" FontSize="12" FontWeight="Bold" Foreground="WhiteSmoke"></TextBlock>
+                    <ScrollViewer Padding="15 0"  HorizontalContentAlignment="Stretch" Margin="0,21,0,1.6">
+                        <Grid >
+                            <ListView Background="{x:Null}"  x:Name="CommentViewIceCream"   HorizontalContentAlignment="Stretch">
+                                <ListView.ItemTemplate  >
+                                    <DataTemplate >
+                                        <Grid >
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="200" ></ColumnDefinition>
+                                            </Grid.ColumnDefinitions>
+
+
+
+                                            <Border CornerRadius="10 "  Margin="5" Height="30" Width="160">
+                                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 4">
+                                                    <TextBlock Text="Anonymous : " FontSize="10" Foreground="WhiteSmoke"   FontWeight="DemiBold"></TextBlock>
+                                                    <TextBlock Text="{Binding }" FontSize="10 "  Foreground="WhiteSmoke" FontWeight="Normal"></TextBlock>
+                                                </StackPanel>
+                                            </Border>
+
+                                        </Grid>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                                <ListView.ItemsPanel>
+                                    <ItemsPanelTemplate>
+                                        <WrapPanel Orientation="Vertical"></WrapPanel>
+                                    </ItemsPanelTemplate>
+                                </ListView.ItemsPanel>
+                            </ListView>
+                        </Grid>
+                    </ScrollViewer>
                 </Grid>
             </Border>
 
@@ -160,7 +222,7 @@
                     <TextBlock Text="Gradutate this IceCream" FontSize="13" FontWeight="Bold" ></TextBlock>
                 </StackPanel>
             </Button>
-            
+
         </Grid>
 
         <m:Map Mode="Road" Grid.Column="1" CredentialsProvider="AttsGkqIHCOIEA11KtQZDphl5bi8lppin64jeg-ZOOhiS4cdHA_EXJwHSbyZi4Xo"  ZoomLevel="16" Center="31.768593,35.184081,16">
