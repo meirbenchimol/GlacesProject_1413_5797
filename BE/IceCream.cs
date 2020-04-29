@@ -117,6 +117,7 @@ namespace BE
             //MedianGrade = double.Parse(marks.ElementAt(0).ToString());
 
             Comments = "";
+
             Comments += comments.ElementAt(0).ToString();
             for (int i = 1; i < comments.Count; i++)
             {
