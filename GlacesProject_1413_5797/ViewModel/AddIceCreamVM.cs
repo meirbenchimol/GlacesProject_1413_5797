@@ -117,6 +117,9 @@ namespace PL.ViewModel
             {
                 CurrentModel.MyIC.images.RemoveAt(0);
                 CurrentModel.MyIC.images.Add(Image);
+                CurrentModel.MyIC.Calories = double.Parse(addIceCreamUC.Fats.Text);
+                CurrentModel.MyIC.Proteins = double.Parse(addIceCreamUC.Proteins.Text);
+                CurrentModel.MyIC.Energy = double.Parse(addIceCreamUC.Energy.Text);
                 CurrentModel.MyIC.UpdateData();
                 CurrentModel.AddIceCream();
                 System.Windows.MessageBox.Show("Great !! You have add Ice Cream  !!", "Welcome", MessageBoxButton.OK, MessageBoxImage.Exclamation);

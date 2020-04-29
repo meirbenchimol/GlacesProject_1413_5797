@@ -35,7 +35,7 @@ namespace PL.Views
         }
 
 
-        List<string> taste = new List<string> { "Pistachio", "Fraise", "Chocolate", "Vanille" };
+        List<string> taste = new List<string> { "Pistachio", "Strawberry", "Chocolate", "Vanilla" };
 
         
 

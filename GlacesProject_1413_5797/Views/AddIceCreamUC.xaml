@@ -19,11 +19,28 @@
             </Style.Triggers>
         </Style>
         <Style x:Key="ButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="Orange"/>
             <Style.Triggers>
                 <DataTrigger Binding="{Binding ElementName=Id, Path=Text}" Value="">
                     <Setter Property="Button.IsEnabled" Value="False"/>
                 </DataTrigger>
-
+                <DataTrigger Binding="{Binding ElementName=Taste, Path=Text}" Value="">
+                    <Setter Property="Button.IsEnabled" Value="False"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="AddButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="#007bff"/>
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding ElementName=Id, Path=Text}" Value="">
+                    <Setter Property="Button.IsEnabled" Value="False"/>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding ElementName=Taste, Path=Text}" Value="">
+                    <Setter Property="Button.IsEnabled" Value="False"/>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding ElementName=Fats, Path=Text}" Value="">
+                    <Setter Property="Button.IsEnabled" Value="False"/>
+                </DataTrigger>
             </Style.Triggers>
         </Style>
         <Style x:Key="ComboBoxStyle" TargetType="ComboBox">
@@ -130,7 +147,7 @@
             </StackPanel>
 
             <StackPanel Grid.Row="2" Grid.Column="1" >
-                <Button Style="{StaticResource RoundedButtonStyle}" x:Name="CalculeBtn" Click="CalculeBtn_Click" Background="Orange" Padding="5" Margin="50,10">Calculate the Value of your product</Button>
+                <Button Style="{StaticResource ButtonStyle}" x:Name="CalculeBtn" Click="CalculeBtn_Click"   Padding="5" Margin="50,10">Calculate the Value of your product</Button>
                 <Grid x:Name="attribut_grid" Visibility="Hidden">
                     <Grid.ColumnDefinitions >
                         <ColumnDefinition Width="3*"></ColumnDefinition>
@@ -142,7 +159,7 @@
                         <RowDefinition Height="*" ></RowDefinition>
                     </Grid.RowDefinitions>
                     <TextBlock Grid.Column="0" Text="Energy" FontSize="14" Background="{x:Null}"  HorizontalAlignment="Center" VerticalAlignment="Center" />
-                    <TextBox Grid.Column="1" x:Name="f"  TextWrapping="Wrap" Text="{Binding Energy}" HorizontalAlignment="Left"   VerticalAlignment="Top" 
+                    <TextBox Name="Energy" Grid.Column="1" TextWrapping="Wrap"   HorizontalAlignment="Left"   VerticalAlignment="Top" 
                          FontSize="14"
                          BorderBrush="Black"
                          Margin="20,5,0,0"
@@ -150,15 +167,15 @@
                          Foreground="DarkGray"
                          TextAlignment="Left" Height="30" Width="220" />
                     <TextBlock Grid.Column="0" Grid.Row="1"  Text="Protein" FontSize="14" Background="{x:Null}"  HorizontalAlignment="Center" VerticalAlignment="Center" />
-                    <TextBox Grid.Column="1" Grid.Row="1" x:Name="fx"  TextWrapping="Wrap" Text="{Binding Energy}" HorizontalAlignment="Left"   VerticalAlignment="Top" 
+                    <TextBox Grid.Column="1" Grid.Row="1" x:Name="Proteins"  TextWrapping="Wrap"  HorizontalAlignment="Left"   VerticalAlignment="Top" 
                          FontSize="14"
                          BorderBrush="Black"
                          Margin="20,5,0,0"
                          Background="#FFF6F6F6"
                          Foreground="DarkGray"
                          TextAlignment="Left" Height="30" Width="220" />
-                    <TextBlock Grid.Column="0" Grid.Row="2"  Text="Calories" FontSize="14" Background="{x:Null}"  HorizontalAlignment="Center" VerticalAlignment="Center" />
-                    <TextBox Grid.Column="1" Grid.Row="2" x:Name="fxs"  TextWrapping="Wrap" Text="{Binding Energy}" HorizontalAlignment="Left"   VerticalAlignment="Top" 
+                    <TextBlock Grid.Column="0" Grid.Row="2"  Text="Fats" FontSize="14" Background="{x:Null}"  HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    <TextBox Grid.Column="1" Grid.Row="2" x:Name="Fats"  TextWrapping="Wrap"  HorizontalAlignment="Left"   VerticalAlignment="Top" 
                          FontSize="14"
                          BorderBrush="Black"
                          Margin="20,5,0,0"
@@ -175,7 +192,7 @@
                         Command="{Binding MyCommand}"
                         Visibility="Visible"
                         CommandParameter="{Binding ElementName=Id, Path=Text}"
-                        Background="#007bff" Margin="10" Width="150" Padding="10" Style="{StaticResource RoundedButtonStyle}">
+                        Background="#007bff" Margin="10" Width="150" Padding="10" Style="{StaticResource AddButtonStyle}">
                     <Grid Width="150" >
                         <materialDesign:PackIcon Kind="Plus" HorizontalAlignment="Left" Foreground="White" VerticalAlignment="Center"  />
                         <TextBlock Text="Add Ice Cream" FontWeight="Bold" HorizontalAlignment="Center" Foreground="White"></TextBlock>
@@ -185,7 +202,7 @@
                         Visibility="Collapsed"
                         Command="{Binding MyCommand}"
                         CommandParameter="{Binding ElementName=Id, Path=Text}"
-                        Background="Orange" Margin="10" Width="150" Padding="10" Style="{StaticResource RoundedButtonStyle}">
+                        Background="Orange" Margin="10" Width="150" Padding="10" Style="{StaticResource ButtonStyle}">
                     <Grid Width="150" >
                         <materialDesign:PackIcon Kind="Update" HorizontalAlignment="Left" Foreground="White" VerticalAlignment="Center"  />
                         <TextBlock Text="Update Ice Cream" FontWeight="Bold" HorizontalAlignment="Center" Foreground="White"></TextBlock>

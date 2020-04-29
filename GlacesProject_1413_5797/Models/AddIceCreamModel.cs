@@ -5,10 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 using BE;
 using BL;
+using Newtonsoft.Json.Linq;
 using DAL;
 using PL.Views;
-
-
+using System.Net;
+using System.IO;
 
 namespace PL.Models
 {
@@ -60,10 +61,18 @@ namespace PL.Models
 
         internal void UpdateIceCream()
         {
-            MyIC.UpdateData(); MyBl.UpdateIceCream(oldIceCream, MyIC);
+
+            MyIC.UpdateData();
+            MyBl.UpdateIceCream(oldIceCream, MyIC);
             shopAreaUC = new ShopAreaUC(MyIC.ShopId);
             ((MainWindow)System.Windows.Application.Current.MainWindow).content_grid.Children.Clear();
             ((MainWindow)System.Windows.Application.Current.MainWindow).content_grid.Children.Add(shopAreaUC);
         }
+
+
+
+
+
+       
     }
 }
