@@ -45,7 +45,7 @@ namespace PL.Models
             ///* Call This*/
             //gpsAddress = latitude + "," + longitude;
 
-            //string url = "https://maps.googleapis.com/maps/api/directions/json?origin=" + address + "&key=AIzaSyAxjvbB-HIOfRVH4pUlE9SUvx47927cdMU";
+            //string url = "https://maps.googleapis.com/maps/api/directions/json?origin=" + address + "&key=AMU";
 
             //WebRequest request = WebRequest.Create(url);
 
