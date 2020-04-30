@@ -45,6 +45,9 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Geocoding, Version=3.6.0.0, Culture=neutral, PublicKeyToken=7c714700b88674c7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Geocoding.net.3.6.1\lib\net40\Geocoding.dll</HintPath>
+    </Reference>
     <Reference Include="GoogleMaps.LocationServices, Version=1.2.0.5, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\GoogleMaps.LocationServices.1.2.0.5\lib\netstandard2.0\GoogleMaps.LocationServices.dll</HintPath>
     </Reference>
@@ -159,6 +162,7 @@
     <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.2\lib\netstandard2.0\System.Threading.Tasks.Extensions.dll</HintPath>
     </Reference>
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />

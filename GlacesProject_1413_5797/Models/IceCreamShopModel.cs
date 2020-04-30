@@ -6,8 +6,12 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Script.Serialization;
+using System.Xml.Linq;
 using BE;
 using BL;
+using Geocoding;
+using Geocoding.Google;
 using GoogleMaps.LocationServices;
 
 
@@ -35,33 +39,43 @@ namespace PL.Models
         {
             string gpsAddress = "";
 
-            //var locationService = new GoogleLocationService();
-            //var point = locationService.GetLatLongFromAddress(address);
-
-            //var latitude = point.Latitude;
-            //var longitude = point.Longitude;
-
-
-            ///* Call This*/
-            //gpsAddress = latitude + "," + longitude;
-
-            //string url = "https://maps.googleapis.com/maps/api/directions/json?origin=" + address + "&key=AMU";
-
-            //WebRequest request = WebRequest.Create(url);
-
+            //string requestUri = "https://maps.googleapis.com/maps/api/geocode/json?address=YourAdress&key=YourApiKey";
+            //WebRequest request = WebRequest.Create(requestUri);
             //WebResponse response = request.GetResponse();
+            //XDocument xdoc = XDocument.Load(response.GetResponseStream());
+            //XElement result = xdoc.Element("GeocodeResponse").Element("result");
+            //XElement locationElement = result.Element("geometry").Element("location");
+            //XElement lat = locationElement.Element("lat");
+            //XElement lng = locationElement.Element("lng");
+            //gpsAddress = lat.ToString() + "," + lng.ToString();
 
-            //Stream data = response.GetResponseStream();
+            // the code above allows to recover the coordinates gps of an address with the API of google but for
+            //security reasons we will use a specific code to see the performance of our application 
 
-            //StreamReader reader = new StreamReader(data);
+            switch (address)
+            {
+                case "17 Avenue des Champs-Élysées, Paris, France":
+                    gpsAddress = "48.86928176879883,2.3089842796325684";
+                    break;
+                case "Jaffa Street 15, Jérusalem, Israël":
+                    gpsAddress = "31.788742065429688,35.20229721069336";
+                    break;
+                case "Hapisgah Street 21, Jérusalem, Israël":
+                case "21 Hapisga Jerusalem":
+                    gpsAddress = "31.768224716186523,35.18291473388672";
+                    break;
+                case "Havaad Haleumi Street 21, Jérusalem, Israël":
+                case "Mahon lev":
+                default:
+                    gpsAddress = "31.765291213989258,35.19132614135742";
+                    break;
 
-            //// json-formatted string from maps api
-            //string responseFromServer = reader.ReadToEnd();
-
-            //response.Close();
+            }
 
             return gpsAddress;
         }
+
+     
 
 
     }

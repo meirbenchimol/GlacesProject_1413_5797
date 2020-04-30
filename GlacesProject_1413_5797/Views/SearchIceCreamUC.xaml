@@ -106,20 +106,20 @@
 
                 <Label Content="Median Grade :"  Style="{StaticResource labelStyle}"  Grid.Row="2" Grid.Column="0"
                        FontSize="13" HorizontalAlignment="Left" Margin="5 0" VerticalAlignment="Center" />
-                <Slider Name="Median" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Minimum="0" Maximum="5"   Value="2.5" Grid.Row="2"  Width="230"/>
+                <Slider Name="Median" AutoToolTipPlacement="TopLeft" AutoToolTipPrecision="0"  Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Minimum="0" Maximum="5"   Value="2.5" Grid.Row="2"  Width="230"/>
 
                 <Label Content="Energy : "  Style="{StaticResource labelStyle}"    Grid.Column="0" Grid.Row="3"
                        FontSize="13" HorizontalAlignment="Left" Margin="10,15,0,15" VerticalAlignment="Center" Height="32" />
-                <Slider Grid.Column="1" Name="Energy" HorizontalAlignment="Center"  Value="200" Minimum="0" Maximum="400"  Grid.Row="3" VerticalAlignment="Center" Width="230"/>
+                <Slider Grid.Column="1" Name="Energy" AutoToolTipPlacement="TopLeft" AutoToolTipPrecision="0"  HorizontalAlignment="Center"  Value="290" Minimum="0" Maximum="400"  Grid.Row="3" VerticalAlignment="Center" Width="230"/>
 
                 <Label Content="Proteins : "   Style="{StaticResource labelStyle}"  Grid.Column="0" Grid.Row="4"
                        FontSize="13" HorizontalAlignment="Left" Margin="10 0" VerticalAlignment="Center"  />
-                <Slider  Name="Proteins" HorizontalAlignment="Center" Grid.Column="1" Grid.Row="4"  Minimum="0" Value="5"  Maximum="10"  VerticalAlignment="Center" Width="230"/>
+                <Slider  Name="Proteins" AutoToolTipPlacement="TopLeft" AutoToolTipPrecision="0"  HorizontalAlignment="Center" Grid.Column="1" Grid.Row="4"  Minimum="0" Value="8"  Maximum="10"  VerticalAlignment="Center" Width="230"/>
 
 
                 <Label Content="Fats : "  Style="{StaticResource labelStyle}"  Grid.Column="0" Grid.Row="5"
                       FontSize="13" HorizontalAlignment="Left" Margin="10 0" VerticalAlignment="Center"/>
-                <Slider Name="Calories"  Grid.Column="1" HorizontalAlignment="Center"  Minimum="0" Value="10"  Maximum="30" Grid.Row="5" VerticalAlignment="Center" Width="230"/>
+                <Slider Name="Calories" AutoToolTipPlacement="TopLeft" AutoToolTipPrecision="0"  Grid.Column="1" HorizontalAlignment="Center"  Minimum="0" Value="20"  Maximum="30" Grid.Row="5" VerticalAlignment="Center" Width="230"/>
 
 
 

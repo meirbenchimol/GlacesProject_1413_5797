@@ -44,16 +44,16 @@
                     <TextBlock VerticalAlignment="Center"  Foreground="DarkSlateBlue" HorizontalAlignment="Left"  FontSize="13"   Text="{Binding ShopPhone}"/>
                 </StackPanel>
 
+                <StackPanel  Orientation="Horizontal"    HorizontalAlignment="Left" Margin="5,15,0,0"  >
+                    <materialDesign:PackIcon Width="20" Foreground="DarkSlateBlue" Height="20" Kind="Map" Focusable="False" VerticalAlignment="Center"/>
+                    <Label Name="Adress"   Content="Addres: " Foreground="DarkSlateBlue" FontWeight="Bold"  FontSize="13" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5,0,0,0"  />
+                    <TextBlock VerticalAlignment="Center" TextWrapping="Wrap" Foreground="DarkSlateBlue"  HorizontalAlignment="Left"  FontSize="13"   Text="{Binding ShopAddress}"/>
+                </StackPanel>
+                
                 <StackPanel Orientation="Horizontal"    HorizontalAlignment="Left" Margin="5,15,0,0" >
                     <materialDesign:PackIcon Width="20" Foreground="DarkSlateBlue" Height="20" Kind="Facebook" Focusable="False" VerticalAlignment="Center"/>
                     <Label Name="Website"   Content="FaceBook: " Foreground="DarkSlateBlue" FontWeight="Bold"  FontSize="13" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5,0,0,0" />
                     <TextBlock VerticalAlignment="Center" Foreground="DarkSlateBlue" HorizontalAlignment="Left"  FontSize="13"   Text="{Binding ShopFaceBook}"></TextBlock>
-                </StackPanel>
-
-                <StackPanel  Orientation="Horizontal"    HorizontalAlignment="Left" Margin="5,15,0,0"  >
-                    <materialDesign:PackIcon Width="20" Foreground="DarkSlateBlue" Height="20" Kind="Web" Focusable="False" VerticalAlignment="Center"/>
-                    <Label Name="Adress"   Content="Addres: " Foreground="DarkSlateBlue" FontWeight="Bold"  FontSize="13" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5,0,0,0"  />
-                    <TextBlock VerticalAlignment="Center" TextWrapping="Wrap" Foreground="DarkSlateBlue"  HorizontalAlignment="Left"  FontSize="13"   Text="{Binding ShopAddress}"/>
                 </StackPanel>
 
                 <StackPanel  Orientation="Horizontal"    HorizontalAlignment="Left" Margin="5,15,0,0"  >
@@ -225,9 +225,8 @@
 
         </Grid>
 
-        <m:Map Mode="Road" Grid.Column="1" CredentialsProvider="AttsGkqIHCOIEA11KtQZDphl5bi8lppin64jeg-ZOOhiS4cdHA_EXJwHSbyZi4Xo"  ZoomLevel="16" Center="31.768593,35.184081,16">
-            <!--il faut rajouter a Center 0.0016,-0.0012-->
-            <Canvas m:MapLayer.Position="31.767772,35.183115,16"
+        <m:Map Mode="Road" Grid.Column="1" CredentialsProvider="AttsGkqIHCOIEA11KtQZDphl5bi8lppin64jeg-ZOOhiS4cdHA_EXJwHSbyZi4Xo"  ZoomLevel="16" Center="{Binding ShopCoordinatesGps}">
+            <Canvas m:MapLayer.Position="{Binding ShopCoordinatesGps}"
                     m:MapLayer.PositionOrigin="BottomCenter" Width="40" Height="40">
                 <materialDesign:PackIcon Kind="MapMarker" Width="40 " Height="40" Foreground="red"></materialDesign:PackIcon>
             </Canvas>

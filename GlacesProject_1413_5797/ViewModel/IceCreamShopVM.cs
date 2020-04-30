@@ -38,7 +38,13 @@ namespace PL.ViewModel
 
         public string ShopAddress
         {
-            get { return CurrentModel.GetGpsAddress( CurrentModel.shop.Adress); }
+            get { return  CurrentModel.shop.Adress; }
+        }
+
+        public string ShopCoordinatesGps
+        {
+            get { return CurrentModel.GetGpsAddress(CurrentModel.shop.Adress); }
+
         }
 
 
