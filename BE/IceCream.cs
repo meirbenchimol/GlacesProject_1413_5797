@@ -117,12 +117,17 @@ namespace BE
             //MedianGrade = double.Parse(marks.ElementAt(0).ToString());
 
             Comments = "";
-
-            Comments += comments.ElementAt(0).ToString();
-            for (int i = 1; i < comments.Count; i++)
+            comments.Add("");
+            if (comments != null)
             {
-                Comments += ";" + comments.ElementAt(i).ToString(); ;
+                Comments += comments.ElementAt(0).ToString();
+                for (int i = 1; i < comments.Count; i++)
+                {
+                    Comments += ";" + comments.ElementAt(i).ToString(); ;
+                }
+
             }
+           
 
             Images = "";
             if (images.ElementAt(0) != null) {
