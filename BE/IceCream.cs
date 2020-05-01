@@ -78,7 +78,9 @@ namespace BE
 
         }
 
-       // public double MedianGrade { get; set;  }
+
+        [NotMapped]
+        public double MedianGrade { get; set; }
 
 
 
@@ -114,11 +116,11 @@ namespace BE
                 Marks += "," + marks.ElementAt(i).ToString(); ;
             }
 
-            //MedianGrade = double.Parse(marks.ElementAt(0).ToString());
+             MedianGrade = double.Parse(marks.ElementAt(0).ToString());
 
             Comments = "";
-            comments.Add("");
-            if (comments != null)
+            //comments.Add("");
+            if (comments.Count >= 1 )
             {
                 Comments += comments.ElementAt(0).ToString();
                 for (int i = 1; i < comments.Count; i++)
@@ -150,8 +152,11 @@ namespace BE
             marks = Marks.Split(',').Select(int.Parse).ToList();
             comments = Comments.Split(';').ToList();
             images = Images.Split(',').ToList();
+            MedianGrade = double.Parse(marks.ElementAt(0).ToString());
         }
 
+
+   
 
         public IceCream()
         {
@@ -163,8 +168,13 @@ namespace BE
             //comments.Add("");
             Image = "../Image/font_ice_cream.jpg";
             marks.Add(5);
-          
+            
             Energy = 70;
+            // ezer = Marks.Split(',').Select(int.Parse).ToList();
+            //
+
+            //MedianGrade = ezer[0];
+            marks.Clear();
             Proteins = 80;
             Calories = 85;
             Description = "";

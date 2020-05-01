@@ -127,9 +127,15 @@ namespace PL.ViewModel
         public void UpdateShop(string parameter)
         {
 
-            CurrentModel.MyShop.images.RemoveAt(0);
-            CurrentModel.MyShop.images.Add(image);
+            if( image != null)
+            {
+                CurrentModel.MyShop.images.RemoveAt(0);
+                CurrentModel.MyShop.images.Add(image);
+
+            }
+           
             CurrentModel.MyShop.UpdateData();
+            CurrentModel.MyShop.UpdateLists();
             CurrentModel.UpdateShop(UpdateShopUC.shop, CurrentModel.MyShop);
 
             //private ShopAreaUC shopAreaUC = new ShopAreaUC(UpdateShopUC.shop.Id);

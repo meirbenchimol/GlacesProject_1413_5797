@@ -167,7 +167,7 @@ namespace PL.ViewModel
 
 
             OpenFileDialog open = new OpenFileDialog();
-            open.Filter = "Image files (*.png;*.jpeg)|*.png;*.jpeg|All files (*.*)|*.*";
+            open.Filter = "Image files (*.png;*.jpg)|*.png;*.jpg|All files (*.*)|*.*";
             if (open.ShowDialog() == DialogResult.OK)
             {
                  Image = open.FileName;

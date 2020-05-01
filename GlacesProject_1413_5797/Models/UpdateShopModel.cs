@@ -30,8 +30,8 @@ namespace PL.Models
         public void UpdateShop(Shop updateShop , Shop currentShop)
         {
             MyBl.UpdateShop(updateShop, currentShop);
-            shopAreaUC = new ShopAreaUC(updateShop.Id);
-            profileBarUC = new ProfileBarUC(updateShop);
+            shopAreaUC = new ShopAreaUC(currentShop.Id);
+            profileBarUC = new ProfileBarUC(currentShop);
             ((MainWindow)System.Windows.Application.Current.MainWindow).content_grid.Children.Clear();
             ((MainWindow)System.Windows.Application.Current.MainWindow).profile_grid.Children.Clear();
 

@@ -16,7 +16,7 @@ using Microsoft.Maps;
 
 namespace PL.ViewModel
 {
-    public class AddIceCreamVM  : INotifyPropertyChanged
+    public class AddIceCreamVM : INotifyPropertyChanged
     {
 
 
@@ -33,12 +33,12 @@ namespace PL.ViewModel
         public AddIceCreamVM(AddIceCreamUC addIceCreamUC, IceCream iceCream)
         {
 
-            
-            CurrentModel = new AddIceCreamModel(addIceCreamUC.ShopId , iceCream);
+
+            CurrentModel = new AddIceCreamModel(addIceCreamUC.ShopId, iceCream);
             this.addIceCreamUC = addIceCreamUC;
             this.MyCommand = new SpecialCommand();
             AddCommand = new Command();
-           // addIceCreamUC.Taste.TextChanged += ChangeData;
+            // addIceCreamUC.Taste.TextChanged += ChangeData;
             addIceCreamUC.Fats.Text = iceCream.Calories.ToString();
             addIceCreamUC.Proteins.Text = iceCream.Proteins.ToString();
             addIceCreamUC.Energy.Text = iceCream.Energy.ToString();
@@ -70,31 +70,34 @@ namespace PL.ViewModel
                     PropertyChanged(this, new PropertyChangedEventArgs("Id"));
             }
         }
-        
+
         public string MyImage
         {
             get { return CurrentModel.MyIC.Image; }
 
-            set { value = Image;
+            set
+            {
+                value = Image;
                 if (PropertyChanged != null)
                     PropertyChanged(this, new PropertyChangedEventArgs("Image"));
             }
         }
 
-        public string  Taste
+        public string Taste
         {
-            get {
-                    string s= CurrentModel.oldIceCream.Taste;
-                     return s;
-                            
-                 }
+            get
+            {
+                string s = CurrentModel.oldIceCream.Taste;
+                return s;
+
+            }
 
             set
             {
                 CurrentModel.MyIC.Taste = value;
                 if (PropertyChanged != null)
                     PropertyChanged(this, new PropertyChangedEventArgs("Taste"));
-               
+
 
             }
         }
@@ -118,15 +121,20 @@ namespace PL.ViewModel
         {
 
             bool found = CurrentModel.MyBl.CheckIceCream(CurrentModel.MyIC.Id, CurrentModel.MyIC.ShopId);
-            
+
             if (found)
                 System.Windows.MessageBox.Show("Warning !!  IceCream  with same ID already exists !!", "Warning", MessageBoxButton.OK, MessageBoxImage.Exclamation);
             else
             {
 
-                if (CurrentModel.MyIC.images.Count != 0)
-                    CurrentModel.MyIC.images.RemoveAt(0);
-                CurrentModel.MyIC.images.Add(Image);
+                if (Image != null)
+                {
+
+                    CurrentModel.MyIC.images.Add(Image);
+                }
+                else
+                    CurrentModel.MyIC.images.Add("../Image/font_ice_cream.jpg");
+                //  CurrentModel.MyIC.images.Add(Image);
                 CurrentModel.MyIC.Calories = double.Parse(addIceCreamUC.Fats.Text);
                 CurrentModel.MyIC.Proteins = double.Parse(addIceCreamUC.Proteins.Text);
                 CurrentModel.MyIC.Energy = double.Parse(addIceCreamUC.Energy.Text);
@@ -140,14 +148,18 @@ namespace PL.ViewModel
         public void UpdateCream(string obj)
         {
 
-            if(Image != null)
+            if (Image != null)
             {
 
                 if (CurrentModel.MyIC.images.Count != 0)
+                {
                     CurrentModel.MyIC.images.RemoveAt(0);
-                CurrentModel.MyIC.images.Insert(0, Image);
+                    CurrentModel.MyIC.images.Insert(0, Image);
+                }
+              
+
             }
-                
+
             CurrentModel.MyIC.Calories = double.Parse(addIceCreamUC.Fats.Text);
             CurrentModel.MyIC.Proteins = double.Parse(addIceCreamUC.Proteins.Text);
             CurrentModel.MyIC.Energy = double.Parse(addIceCreamUC.Energy.Text);
@@ -166,7 +178,7 @@ namespace PL.ViewModel
             {
                 Image = open.FileName;
             }
-          ///  this.MyImage = Image;
+            ///  this.MyImage = Image;
             //  GraduationUC.addimage.ImageSource = Image;
         }
 

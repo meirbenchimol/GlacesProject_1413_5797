@@ -39,7 +39,12 @@ namespace PL.Views
             MyBl = new Bl();
 
             //ListViewIceCreams.ItemsSource = MyBl.GetIceCreamFromShop(shopId);
-            ListViewIceCream.ItemsSource = MyBl.GetIceCreamFromShop(shopId);
+            IEnumerable<IceCream> iceCreams = MyBl.GetIceCreamFromShop(shopId);
+            foreach (IceCream iceCream in iceCreams)
+                iceCream.UpdateLists();
+
+            ListViewIceCream.ItemsSource = iceCreams;
+
         }
 
         private void addIceCreamBtn_Click(object sender, RoutedEventArgs e)

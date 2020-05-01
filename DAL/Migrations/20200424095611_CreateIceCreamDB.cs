@@ -39,6 +39,7 @@ namespace DAL.Migrations
                    Proteins = table.Column<double>(nullable: true),
                    Calories = table.Column<double>(nullable: true),
                    Marks = table.Column<string>(nullable: true),
+                 //  MedianGrade = table.Column<string>(nullable: true),
                    Comments = table.Column<string>(nullable: true)
                },
                constraints: table =>

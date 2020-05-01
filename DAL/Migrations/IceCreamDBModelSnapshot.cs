@@ -78,6 +78,10 @@ namespace DAL.Migrations
                 b.Property<string>("Marks")
                     .HasColumnType("nvarchar(max)");
 
+
+             //   b.Property<string>("MedianGrade")
+                   // .HasColumnType("nvarchar(max)");
+
                 b.Property<double?>("Proteins")
                     .HasColumnType("float");
 

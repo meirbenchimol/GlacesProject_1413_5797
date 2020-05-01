@@ -30,7 +30,9 @@ namespace BE
 
         public String WebSiteLink { get; set; }
 
-        public List<String> images = new List<string>();
+        public
+            
+        List<String> images = new List<string>();
 
        
            public string Images
