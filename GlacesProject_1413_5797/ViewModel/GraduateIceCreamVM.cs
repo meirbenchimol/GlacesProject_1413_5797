@@ -123,8 +123,11 @@ namespace PL.ViewModel
         {
 
             set {
-               
-                GraduateICModel.IceCream.comments.Add(value);
+
+                if (GraduateICModel.IceCream.comments[0] == "")
+                    GraduateICModel.IceCream.comments.Clear();
+                if(value != "")
+                    GraduateICModel.IceCream.comments.Add(value);
                 if (PropertyChanged != null)
                     PropertyChanged(this, new PropertyChangedEventArgs("Comments"));
                 

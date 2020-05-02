@@ -132,9 +132,9 @@ namespace BE
            
 
             Images = "";
-            if (images.ElementAt(0) != null) {
+            if (images.ElementAt(0) != null)
+            {
                 Images += images.ElementAt(0).ToString();
-
             }
             for (int i = 1; i < images.Count; i++)
             {
@@ -174,7 +174,7 @@ namespace BE
             //
 
             //MedianGrade = ezer[0];
-            marks.Clear();
+           // marks.Clear();
             Proteins = 80;
             Calories = 85;
             Description = "";

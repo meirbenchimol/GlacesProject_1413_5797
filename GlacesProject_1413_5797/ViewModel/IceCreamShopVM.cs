@@ -28,7 +28,9 @@ namespace PL.ViewModel
            
             CurrentModel.iceCream.UpdateLists();
             iceCreamShopUC.ImageViewIceCream.ItemsSource = CurrentModel.iceCream.images;
-            iceCreamShopUC.CommentViewIceCream.ItemsSource = CurrentModel.iceCream.comments;
+            if (CurrentModel.iceCream.comments[0] != "")
+                iceCreamShopUC.CommentViewIceCream.ItemsSource = CurrentModel.iceCream.comments;
+              
         }
 
         
