@@ -38,7 +38,7 @@
 
                 <TextBlock Grid.Row="1" Grid.Column="1" Text="Your Ice Cream :" FontSize="22" FontWeight="Bold" Foreground="Gold" 
                                HorizontalAlignment="Center" VerticalAlignment="Top" Padding="15"  />
-                <ScrollViewer Grid.Column="1"  Padding="15 0 0 15" Margin="0 50 0 0" HorizontalContentAlignment="Stretch" Grid.Row="1">
+                <ScrollViewer Grid.Column="1"  Padding="15 0 0 0" Margin="0 50 0 15" HorizontalContentAlignment="Stretch" Grid.Row="1">
                     <Grid >
                         <ListView Background="{x:Null}"  x:Name="ListViewIceCream" SelectionChanged="ListViewIceCream_SelectionChanged" ItemsSource="{Binding IceCream}" HorizontalContentAlignment="Stretch">
                             <ListView.ItemTemplate  >
