@@ -7,7 +7,7 @@
 
              xmlns:local="clr-namespace:PL.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="560" d:DesignWidth="170">
+             d:DesignHeight="610" d:DesignWidth="180">
     <Grid Grid.Row="0"  >
         <Grid.RowDefinitions>
             <RowDefinition Height="200"/>
@@ -16,41 +16,41 @@
         </Grid.RowDefinitions>
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                <GradientStop Color="#FFFBFFFF"/>
-                <GradientStop Color="#FFCCFDFF" Offset="1"/>
+                <GradientStop Color="#FF13121D"/>
+                <GradientStop Color="#FF13121D" Offset="1"/>
             </LinearGradientBrush>
         </Grid.Background>
         <Grid.Effect>
-            <DropShadowEffect RenderingBias="Quality" BlurRadius="20" ShadowDepth="1" Color="#FF8CC4F5" />
+            <DropShadowEffect RenderingBias="Quality" BlurRadius="5" ShadowDepth="1" Color="#FF8CC4F5" />
         </Grid.Effect>
 
         <Grid Grid.Row="0" >
 
-            <Ellipse Width="140" Height="170" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,15" Stroke="Azure" >
+            <Ellipse Width="150" Height="150" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,15" Stroke="Azure" >
                 <Ellipse.Fill >
                     <ImageBrush ImageSource="{Binding Image}" Stretch="Fill"  AlignmentX="Center" AlignmentY="Center" >
                     </ImageBrush>
                 </Ellipse.Fill>
             </Ellipse>
-            <TextBlock  Name="ID"  Text="{Binding ID}" HorizontalAlignment="Center" VerticalAlignment="Bottom"  FontSize="20" FontWeight="Bold" FontFamily="Arial"/>
+            <TextBlock  Name="ID"  Text="{Binding ID}" Foreground="Gold" HorizontalAlignment="Center" VerticalAlignment="Bottom"  FontSize="20" FontWeight="Bold" FontFamily="Arial"/>
         </Grid>
 
-        <StackPanel Grid.Row="1" VerticalAlignment="top" Margin="0,30">
-            <Grid Margin="13,3" Height="33">
-                <materialDesign:PackIcon Kind="AddressMarker" HorizontalAlignment="Left" VerticalAlignment="Top"  />
-                <TextBlock Margin="20,0,0,0" TextWrapping="Wrap" Text="{Binding Adress}"  HorizontalAlignment="Left" Width="125"></TextBlock>
+        <StackPanel Grid.Row="1" VerticalAlignment="top" Margin="0,50">
+            <Grid Margin="10,5" >
+                <materialDesign:PackIcon Kind="AddressMarker" Width="25" Height="25" Foreground="WhiteSmoke" HorizontalAlignment="Left" VerticalAlignment="Center"  />
+                <TextBlock Margin="30,0,0,0" TextWrapping="Wrap" Text="{Binding Adress}" Foreground="WhiteSmoke" FontSize="15" HorizontalAlignment="Left" Width="125" VerticalAlignment="Bottom"></TextBlock>
             </Grid>
-            <Grid Margin="13,3" Height="33">
-                <materialDesign:PackIcon Kind="Phone" HorizontalAlignment="Left" VerticalAlignment="Top"  />
-                <TextBlock Margin="20,0,0,0" TextWrapping="Wrap" Text="{Binding Phone}"  HorizontalAlignment="Left" Width="125"></TextBlock>
+            <Grid Margin="10 20 0 0" >
+                <materialDesign:PackIcon Kind="Phone" Width="25" Height="25" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="WhiteSmoke"  />
+                <TextBlock Margin="30,0,0,0" TextWrapping="Wrap" Foreground="WhiteSmoke" Text="{Binding Phone}" VerticalAlignment="Center" FontSize="15"  HorizontalAlignment="Left" Width="125"></TextBlock>
             </Grid>
-            <Grid Margin="13,3" Height="33">
-                <materialDesign:PackIcon Kind="Web" HorizontalAlignment="Left" VerticalAlignment="Top"  />
-                <TextBlock Margin="20,0,0,0" TextWrapping="Wrap" Text="{Binding WebSite}"  HorizontalAlignment="Left" Width="125"></TextBlock>
+            <Grid Margin="10 20 0 0" >
+                <materialDesign:PackIcon Kind="Web" Width="25" Height="25" Foreground="WhiteSmoke"  HorizontalAlignment="Left" VerticalAlignment="Center"  />
+                <TextBlock Margin="30,0,0,0" TextWrapping="Wrap" FontSize="15" Foreground="WhiteSmoke" VerticalAlignment="Center" Text="{Binding WebSite}"  HorizontalAlignment="Left" Width="125"></TextBlock>
             </Grid>
-            <Grid Margin="13,3" Height="33">
-                <materialDesign:PackIcon Kind="Facebook" HorizontalAlignment="Left" VerticalAlignment="Top"  />
-                <TextBlock Margin="20,0,0,0" TextWrapping="Wrap" Text="{Binding FaceBook}"  HorizontalAlignment="Left" Width="125"></TextBlock>
+            <Grid Margin="10 20 0 0">
+                <materialDesign:PackIcon Kind="Facebook" Width="25" Height="25" Foreground="WhiteSmoke" HorizontalAlignment="Left" VerticalAlignment="Center"  />
+                <TextBlock Margin="30,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="15" Foreground="WhiteSmoke" Text="{Binding FaceBook}"  HorizontalAlignment="Left" Width="125"></TextBlock>
             </Grid>
         </StackPanel>
 

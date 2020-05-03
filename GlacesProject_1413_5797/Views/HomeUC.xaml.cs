@@ -42,7 +42,7 @@ namespace PL.Views
             graduateIceCream = new GraduateIceCreamUC();
             ((MainWindow)System.Windows.Application.Current.MainWindow).inner_grid.Children.Clear();
             ((MainWindow)System.Windows.Application.Current.MainWindow).shopAreaGrid.Children.Clear();
-            ((MainWindow)System.Windows.Application.Current.MainWindow).inner_grid.Children.Add(graduateIceCream);
+            ((MainWindow)System.Windows.Application.Current.MainWindow).content_grid.Children.Add(graduateIceCream);
 
         }
 

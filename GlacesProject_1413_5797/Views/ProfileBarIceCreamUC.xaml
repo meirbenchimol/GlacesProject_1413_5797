@@ -6,58 +6,58 @@
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              xmlns:local="clr-namespace:PL.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="560" d:DesignWidth="170">
+             d:DesignHeight="610" d:DesignWidth="180">
     <Grid Grid.Row="0"  >
         <Grid.RowDefinitions>
-            <RowDefinition Height="190"/>
+            <RowDefinition Height="210"/>
             <RowDefinition Height="*"/>
             
         </Grid.RowDefinitions>
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                <GradientStop Color="#FFFFBBF3" Offset="0.5"/>
+                <GradientStop Color="#FF13121D" Offset="0.5"/>
             </LinearGradientBrush>
         </Grid.Background>
         <Grid.Effect>
-            <DropShadowEffect RenderingBias="Quality" BlurRadius="15" ShadowDepth="1" Color="#FFFFDAF8" />
+            <DropShadowEffect RenderingBias="Quality" BlurRadius="2" ShadowDepth="1" Color="#FFFFDAF8" />
         </Grid.Effect>
 
         <Grid Grid.Row="0" >
 
-            <Ellipse Width="140" Height="140" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,15" Stroke="Azure" >
+            <Ellipse Width="150" Height="150" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,15" Stroke="Azure" >
                 <Ellipse.Fill >
                     <ImageBrush ImageSource="{Binding Image}" Stretch="Fill"  AlignmentX="Center" AlignmentY="Center" >
                     </ImageBrush>
                 </Ellipse.Fill>
             </Ellipse>
-            <TextBlock  Name="ID"  Text="{Binding ID}" HorizontalAlignment="Center" VerticalAlignment="Bottom"  FontSize="20" FontWeight="Bold" FontFamily="Arial"/>
+            <TextBlock  Name="ID"  Text="{Binding ID}" HorizontalAlignment="Center" VerticalAlignment="Bottom"  FontSize="20" Foreground="WhiteSmoke" FontWeight="Bold" FontFamily="Arial"/>
         </Grid>
 
-        <StackPanel Grid.Row="1" VerticalAlignment="top" Margin="0,30">
-            <Grid Margin="13,5" Height="33">
-                <materialDesign:PackIcon Kind="Shop" Width="20" Height="20" HorizontalAlignment="Left" VerticalAlignment="Center"  />
-                <TextBlock Name="Shop" Margin="25,5,0,0" TextWrapping="Wrap" FontSize="15" Text="{Binding ShopID}"  HorizontalAlignment="Left"  Width="125"></TextBlock>
+        <StackPanel Grid.Row="1" VerticalAlignment="top" Margin="0,40">
+            <Grid Margin="13,10" >
+                <materialDesign:PackIcon Foreground="WhiteSmoke" Kind="Shop" Width="20" Height="20" HorizontalAlignment="Left" VerticalAlignment="Center"  />
+                <TextBlock Name="Shop" Foreground="WhiteSmoke" Margin="25,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="15" Text="{Binding ShopID}"  HorizontalAlignment="Left"  Width="120"></TextBlock>
 
             </Grid>
-            <Grid Margin="13,5" Height="33">
-                <materialDesign:PackIcon Kind="FoodForkDrink" Width="20" Height="20" HorizontalAlignment="Left" VerticalAlignment="Center"  />
-                <TextBlock x:Name="Taste" Margin="25,5,0,0" FontSize="15" TextWrapping="Wrap" Text="{Binding Taste}"  HorizontalAlignment="Left" Width="125"></TextBlock>
+            <Grid Margin="13,10" >
+                <materialDesign:PackIcon Kind="IceCream" Foreground="WhiteSmoke" Width="20" Height="20" HorizontalAlignment="Left" VerticalAlignment="Center"  />
+                <TextBlock x:Name="Taste" Margin="25,0,0,0" VerticalAlignment="Center" Foreground="WhiteSmoke" FontSize="15" TextWrapping="Wrap" Text="{Binding Taste}"  HorizontalAlignment="Left" Width="120"></TextBlock>
             </Grid>
-            <Grid Margin="13,5" Height="33">
-                <materialDesign:PackIcon Kind="Grade" Width="20" Height="20" HorizontalAlignment="Left" VerticalAlignment="Center"  />
-                <TextBlock x:Name="Grade" Margin="25,5,0,0" FontSize="15" TextWrapping="Wrap" Text="{Binding Grade}"  HorizontalAlignment="Left" Width="125"></TextBlock>
+            <Grid Margin="13,10">
+                <materialDesign:PackIcon Kind="Grade" Foreground="WhiteSmoke" Width="20" Height="20" HorizontalAlignment="Left" VerticalAlignment="Center"  />
+                <TextBlock x:Name="Grade" Foreground="WhiteSmoke" VerticalAlignment="Center" Margin="25,0,0,0" FontSize="15" TextWrapping="Wrap" Text="{Binding Grade}"  HorizontalAlignment="Left" Width="120"></TextBlock>
             </Grid>
-            <Grid Margin="13,3" Height="33">
-                <materialDesign:PackIcon Kind="LightningBolt" Width="20" Height="20" HorizontalAlignment="Left" VerticalAlignment="Center"  />
-                <TextBlock x:Name="Energy" Margin="25,5,0,0" FontSize="15" TextWrapping="Wrap" Text="{Binding Energy}"  HorizontalAlignment="Left" Width="125"></TextBlock>
+            <Grid Margin="13,10" >
+                <materialDesign:PackIcon Kind="LightningBolt" Foreground="WhiteSmoke" Width="20" Height="20" HorizontalAlignment="Left" VerticalAlignment="Center"  />
+                <TextBlock x:Name="Energy" Margin="25,0,0,0" VerticalAlignment="Center" Foreground="WhiteSmoke" FontSize="15" TextWrapping="Wrap" Text="{Binding Energy}"  HorizontalAlignment="Left" Width="120"></TextBlock>
             </Grid>
-            <Grid Margin="13,5" Height="33">
-                <materialDesign:PackIcon Kind="Dna" HorizontalAlignment="Left" Width="20" Height="20" VerticalAlignment="Center"  />
-                <TextBlock x:Name="Proteins" Margin="25,5,0,0" FontSize="15" TextWrapping="Wrap" Text="{Binding Proteins}"  HorizontalAlignment="Left" Width="125"></TextBlock>
+            <Grid Margin="13,10" >
+                <materialDesign:PackIcon Kind="Fish" Foreground="WhiteSmoke" HorizontalAlignment="Left" Width="20" Height="20" VerticalAlignment="Center"  />
+                <TextBlock x:Name="Proteins" Foreground="WhiteSmoke" VerticalAlignment="Center" Margin="25,0,0,0" FontSize="15" TextWrapping="Wrap" Text="{Binding Proteins}"  HorizontalAlignment="Left" Width="120"></TextBlock>
             </Grid>
-            <Grid Margin="13,5" Height="33">
-                <materialDesign:PackIcon Kind="Nutrition" HorizontalAlignment="Left" Width="20" Height="20" VerticalAlignment="Center"  />
-                <TextBlock x:Name="Calories" Margin="25,5,0,0" FontSize="15" TextWrapping="Wrap" Text="{Binding Calories}"  HorizontalAlignment="Left" Width="125"></TextBlock>
+            <Grid Margin="13,10" >
+                <materialDesign:PackIcon Kind="Nutrition" Foreground="WhiteSmoke" HorizontalAlignment="Left" Width="20" Height="20" VerticalAlignment="Center"  />
+                <TextBlock x:Name="Calories" Foreground="WhiteSmoke" VerticalAlignment="Center" Margin="25,0,0,0" FontSize="15" TextWrapping="Wrap" Text="{Binding Calories}"  HorizontalAlignment="Left" Width="120"></TextBlock>
             </Grid>
         </StackPanel>
 

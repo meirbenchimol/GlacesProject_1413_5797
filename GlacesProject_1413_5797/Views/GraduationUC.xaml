@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:PL.Views"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d" 
-             d:DesignHeight="420" d:DesignWidth="600">
+             d:DesignHeight="610" d:DesignWidth="720">
     <UserControl.Resources>
         <Style x:Key="InputStyle"
            TargetType="TextBox">
@@ -24,79 +24,81 @@
 
     <Grid >
         <Grid.RowDefinitions>
-            <RowDefinition Height="40"/>
-            <RowDefinition Height="360"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="400"/>
+            <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="520"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
         <Grid.Background>
             <ImageBrush ImageSource="/Image/font_ice_cream.jpg" Opacity="0.8"></ImageBrush>
         </Grid.Background>
 
-        <StackPanel Orientation="Horizontal" Grid.Row="0" HorizontalAlignment="Center">
-            <Label Content="Graduate the IceCream you have selected" FontWeight="Bold" FontSize="18"
-               HorizontalAlignment="Center"  VerticalAlignment="Center" >
-            </Label>
-            <materialDesign:PackIcon Kind="IceCream"  VerticalAlignment="Center" Foreground="DeepPink" Height="30"  Width="60"  />
-        </StackPanel>
+        <Rectangle  Grid.Column="1" Grid.Row="1" Width="520" Height="400" VerticalAlignment="Top" HorizontalAlignment="Right" 
+                RadiusX="15" RadiusY="10" Fill="#FF13121D" Opacity="0.6">
+            <Rectangle.Effect>
+                <DropShadowEffect BlurRadius="1" Color="Gray"/>
+            </Rectangle.Effect>
 
+        </Rectangle>
 
-        <Grid Grid.Row="1" >
-
-
-
-
+        <Grid Grid.Row="1" Grid.Column="1" Margin="15" >
             <Grid >
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="120"/>
-                    <ColumnDefinition Width="280"/>
+                    <ColumnDefinition Width="170"/>
+                    <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
 
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="80" />
-                    <RowDefinition Height="40" />
-                    <RowDefinition Height="auto" />
-                    <RowDefinition Height="auto" />
-                    <RowDefinition Height="auto" />
-                    <RowDefinition Height="auto" />
-                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="2*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
                 </Grid.RowDefinitions>
 
-                <StackPanel Orientation="Horizontal" Grid.Row="0" HorizontalAlignment="Center" Grid.ColumnSpan="2" Margin="51,5,46,5">
-                    <Label Content="Your appreciation :" FontWeight="Bold" FontSize="12"
-               HorizontalAlignment="Center"  VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5" >
-                        <Label.RenderTransform>
-                            <TransformGroup>
-                                <ScaleTransform/>
-                                <SkewTransform/>
-                                <RotateTransform Angle="-0.373"/>
-                                <TranslateTransform/>
-                            </TransformGroup>
-                        </Label.RenderTransform>
-                    </Label>
-                    <materialDesign:PackIcon Kind="PenMinus"  VerticalAlignment="Center" Foreground="DeepPink" Height="30"  Width="60"  />
+                <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Content="Graduate the IceCream you have selected" Foreground="Gold" FontWeight="Bold" FontSize="18"
+                         HorizontalAlignment="Center"  VerticalAlignment="Center" >
+                </Label>
+
+              
+
+                <Label Content="Your Grade : " FontWeight="Bold" Foreground="WhiteSmoke" Grid.Column="0"  Grid.Row="1"
+                       HorizontalAlignment="Left"  VerticalAlignment="Center" FontSize="18"  />
+                <Slider  Grid.Row="1" Grid.Column="1" AutoToolTipPlacement="TopLeft" AutoToolTipPrecision="0"
+                         HorizontalAlignment="Center"  Minimum="0" Name="Grades"  Maximum="5" Value="{Binding Grades}"
+                         VerticalAlignment="Center" Width="270" />
+               
+                <Label Content="Comments : " Foreground="WhiteSmoke" FontWeight="Bold" FontSize="18" HorizontalAlignment="Left" VerticalAlignment="Top"  Grid.Row="2" Grid.Column="0"/>
+                <TextBox Grid.Column="1" Grid.Row="2" HorizontalAlignment="Left" MinHeight="80" Width="320" Background="WhiteSmoke"  Margin="5" TextWrapping="Wrap" Text="{Binding Comments}" VerticalAlignment="Top" />
+
+                <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Center">
+                    <Label Name="Add"  Content="You took a picture of this Ice Cream : " FontWeight="Bold" HorizontalAlignment="Left"  
+                       VerticalAlignment="Center" Foreground="WhiteSmoke" />
+                    <Button x:Name="AddImage" Background="WhiteSmoke" Height="35"   
+                        Padding="20 0"
+                        Margin="10 0"
+                        Style="{StaticResource ButtonMeir}"
+                        Content="Add an Image"
+                        Command="{Binding ImageCommand}"
+                        CommandParameter="{Binding ElementName=Add , Path=Content}" >
+                    </Button>
                 </StackPanel>
+                
+                
 
-                <Label Content="Your Grade : " FontWeight="DemiBold" Grid.Column="0"  Grid.Row="1" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="86" />
-                <Slider  Grid.Row="1" HorizontalAlignment="Left" Margin="94,9.2,0,0" Minimum="0" Name="Grades"  Maximum="5" Value="{Binding Grades}" VerticalAlignment="Top" Width="259" Grid.ColumnSpan="2"/>
-                <Label Content="Comments : "  FontWeight="DemiBold" HorizontalAlignment="Left" VerticalAlignment="Top" Width="348"  Grid.Row="2" Grid.Column="0"/>
-                <TextBox HorizontalAlignment="Left" Height="30" Background="AliceBlue"  Margin="9,11,0,0" Grid.Row="3" TextWrapping="Wrap" Text="{Binding Comments}" VerticalAlignment="Top" Width="356" Grid.ColumnSpan="2" Grid.RowSpan="4" />
-                <Label Name="Add" Content="Add an Image if you want : " FontWeight="DemiBold" HorizontalAlignment="Left"  Grid.Row="4" VerticalAlignment="Top" Grid.ColumnSpan="2" Width="169" Margin="11,44.6,0,0" Height="25" />
-                <Button Grid.Column="0" x:Name="AddImage" Background="LightGray" Padding="0"   Width="90"   Margin="36,69.4,265.6,0.4" Grid.Row="4" Command="{Binding ImageCommand}" CommandParameter="{Binding ElementName=Add , Path=Content}" Grid.RowSpan="2" Grid.ColumnSpan="2">
-                    <Ellipse Margin="0" Height="50" Width="90" RenderTransformOrigin="0.5,0.5">
-                        <Ellipse.RenderTransform>
-                            <TransformGroup>
-                                <ScaleTransform ScaleX="-1"/>
-                                <SkewTransform/>
-                                <RotateTransform/>
-                                <TranslateTransform/>
-                            </TransformGroup>
-                        </Ellipse.RenderTransform>
-                        <Ellipse.Fill>
-                            <ImageBrush ImageSource="../Image/font_ice_cream.jpg" x:Name="addimage"  />
-                        </Ellipse.Fill>
-                    </Ellipse>
-                </Button>
-
-                <Button x:Name="Update" Content="Update"   Command="{Binding MyCommand}" CommandParameter="{Binding ElementName=Add , Path=Content}"    Grid.Row="6" VerticalAlignment="Top" RenderTransformOrigin="0.426,-0.349" Margin="98.2,54.6,42.6,0" Grid.Column="1" />
+                <Button x:Name="Update" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Content="Send"  
+                        Command="{Binding MyCommand}"
+                        CommandParameter="{Binding ElementName=Add , Path=Content}" 
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center"
+                        Padding="50 10" 
+                        Background="Gold"
+                        Style="{StaticResource ButtonMeir}"
+                        />
 
 
 

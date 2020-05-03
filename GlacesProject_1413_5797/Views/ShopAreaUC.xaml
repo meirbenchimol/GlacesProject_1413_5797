@@ -6,7 +6,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PL.Views"
         mc:Ignorable="d"
-         Height="560" Width="720">
+         Height="610" Width="720">
     <Grid Grid.Row="1" Grid.RowSpan="4">
        
 
@@ -16,24 +16,38 @@
                     <ImageBrush ImageSource="../Image/font_ice_cream.jpg" Stretch="fill" Opacity="0.4"/>
                 </Grid.Background>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="60"></RowDefinition>
+                    <RowDefinition Height="30"></RowDefinition>
                     <RowDefinition Height="*"></RowDefinition>
                     <RowDefinition Height="50"></RowDefinition>
                 </Grid.RowDefinitions>
 
-                <TextBlock Grid.Row="0" Text="Your Ice Cream :" FontSize="20" FontWeight="Bold" Foreground="Black" 
-                               HorizontalAlignment="Center" Padding="15"  />
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="40"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="40"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+               
                 
-                <ScrollViewer Padding="15 0"  HorizontalContentAlignment="Stretch" Grid.Row="1">
+                <Rectangle  Grid.Column="1" Grid.Row="1" Width="640" Height="520" VerticalAlignment="Top" HorizontalAlignment="Center" 
+                RadiusX="15" RadiusY="10" Fill="#FF13121D" Opacity="0.6">
+                    <Rectangle.Effect>
+                        <DropShadowEffect BlurRadius="1" Color="Gray"/>
+                    </Rectangle.Effect>
+                </Rectangle>
+
+                <TextBlock Grid.Row="1" Grid.Column="1" Text="Your Ice Cream :" FontSize="22" FontWeight="Bold" Foreground="Gold" 
+                               HorizontalAlignment="Center" VerticalAlignment="Top" Padding="15"  />
+                <ScrollViewer Grid.Column="1"  Padding="15 0 0 15" Margin="0 50 0 0" HorizontalContentAlignment="Stretch" Grid.Row="1">
                     <Grid >
                         <ListView Background="{x:Null}"  x:Name="ListViewIceCream" SelectionChanged="ListViewIceCream_SelectionChanged" ItemsSource="{Binding IceCream}" HorizontalContentAlignment="Stretch">
                             <ListView.ItemTemplate  >
                                 <DataTemplate >
                                     <Grid >
                                         <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="190"></ColumnDefinition>
-                                            <ColumnDefinition Width="280"  ></ColumnDefinition>
-                                            <ColumnDefinition Width="190"></ColumnDefinition>
+                                            <ColumnDefinition Width="150"></ColumnDefinition>
+                                            <ColumnDefinition Width="270"  ></ColumnDefinition>
+                                            <ColumnDefinition Width="150"></ColumnDefinition>
                                         </Grid.ColumnDefinitions>
 
                                         <Border Grid.Column="0" Grid.ColumnSpan="3" BorderThickness="0 0 0 1" BorderBrush="Black">
@@ -41,7 +55,7 @@
                                         </Border>
 
 
-                                        <Border CornerRadius="10 "  Margin="10" Width="160">
+                                        <Border CornerRadius="10 "  Margin="10" Width="140">
                                             <Border.Background>
                                                 <ImageBrush ImageSource="{Binding Image}"/>
                                             </Border.Background>
@@ -206,7 +220,7 @@
                     </Grid>
                 </ScrollViewer>-->
 
-                <StackPanel Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <StackPanel Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
                     <Button x:Name="addIceCreamBtn" Click="addIceCreamBtn_Click" Background="#007bff" Margin="10" Width="150" Padding="10" Style="{StaticResource RoundedButtonStyle}">
                         <Grid Width="150" >
                             <materialDesign:PackIcon Kind="Plus" HorizontalAlignment="Left" Foreground="White" VerticalAlignment="Center"  />

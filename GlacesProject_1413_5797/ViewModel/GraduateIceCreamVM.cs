@@ -174,9 +174,11 @@ namespace PL.ViewModel
             if (open.ShowDialog() == DialogResult.OK)
             {
                  Image = open.FileName;
+                System.Windows.MessageBox.Show("Thanks for adding an picture !!", "Thanks", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+
             }
 
-          //  GraduationUC.addimage.ImageSource = Image;
+            //  GraduationUC.addimage.ImageSource = Image;
         }
 
 
